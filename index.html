@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#1b0f1f"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="description" content="City Hearts — game mô phỏng thành phố và những mối quan hệ">
 <meta name="author" content="Hung Anh"><meta name="copyright" content="Made by Hung Anh"><title>City Hearts — Thành phố và những mối quan hệ</title>
 <style>
 :root{
@@ -5263,7 +5264,7 @@ input,textarea{-webkit-user-select:text;user-select:text}
 #hud .hud-right{right:max(8px,env(safe-area-inset-right))}
 #topbar{top:max(8px,env(safe-area-inset-top))}
 #chRotateHint{display:none;position:fixed;left:50%;top:max(10px,env(safe-area-inset-top));transform:translateX(-50%);z-index:60;background:rgba(217,79,134,.94);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.35);white-space:nowrap}
-.ch-portrait.ch-started #chRotateHint:not(.off){display:block}
+.ch-portrait.ch-started #chRotateHint:not(.off){display:none}
 @media (pointer:coarse){
 button{transition:none}button:hover{transform:none;filter:none}
 .mobile-stick{width:104px!important;height:104px!important;left:max(14px,env(safe-area-inset-left))!important;bottom:max(14px,env(safe-area-inset-bottom))!important;background:rgba(255,200,220,.16)!important;border-color:rgba(255,220,235,.55)!important}
@@ -5323,7 +5324,6 @@ wrap('addPhone',function(o){return function(){if(ok('phone',700))play('phone');r
 /* ---------- Nhạc nền: file có sẵn trên mạng (OpenGameArt, CC0) ---------- */
 /* Ưu tiên file đặt cạnh game: audio/<tên>.mp3 ; nếu không có sẽ tự tải từ URL gốc */
 var TR={
-love:{u:['audio/gasmask_love_loop.mp3','https://opengameart.org/sites/default/files/gasmask_love_loop.mp3'],v:.5},
 calm:{u:['audio/JRPG%20Piano.mp3','https://opengameart.org/sites/default/files/JRPG%20Piano.mp3'],v:.7}
 };
 var unlocked=false;
@@ -5331,7 +5331,7 @@ function mk(t){var a=new Audio();a.loop=true;a.preload='auto';a.volume=0;t.i=0;a
 a.addEventListener('error',function(){if(t.i<t.u.length-1){t.i++;a.src=t.u[t.i];a.load();if(t.on)a.play().catch(function(){});}else t.dead=true;});
 t.a=a;return a;}
 function tick(){
-var g=G(),tgt=(S.music!==false&&unlocked&&!document.hidden)?((g&&g.started)?'calm':'love'):null;
+var g=G(),tgt=(S.music!==false&&unlocked&&!document.hidden)?'calm':null;
 Object.keys(TR).forEach(function(k){var t=TR[k],goal=(k===tgt)?t.v*S.musicVol:0,a=t.a;
 if(!a){if(goal<=0||t.dead)return;a=mk(t);}
 var d=goal-a.volume;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(d)*Math.min(Math.abs(d),.04)));
@@ -5342,22 +5342,31 @@ document.documentElement.classList.toggle('ch-started',!!(g&&g.started));
 setInterval(tick,100);
 ['pointerdown','keydown','touchend'].forEach(function(ev){window.addEventListener(ev,function(){unlocked=true;tick();},{once:true,passive:true});});
 /* ---------- Cài đặt: công tắc + âm lượng nhạc ---------- */
-function rows(){return '<div class="setting-row"><div><strong>Nhạc nền</strong><span>Nhạc tình yêu nhẹ, tự lặp</span></div><button class="mini switch" data-ch-music>'+(S.music!==false?'Bật':'Tắt')+'</button></div>'+
-'<div class="setting-row"><div><strong>Âm lượng nhạc</strong><span>Nhạc: Kenny Chow, Joth (CC0) · OpenGameArt</span></div><input class="range" type="range" min="0" max="1" step="0.05" value="'+S.musicVol+'" data-ch-vol></div>';}
+function rows(){return '<div class="setting-row"><div><strong>Nhạc nền</strong><span>Piano nhẹ, tự lặp</span></div><button class="mini switch" data-ch-music>'+(S.music!==false?'Bật':'Tắt')+'</button></div>'+
+'<div class="setting-row"><div><strong>Âm lượng nhạc</strong><span>Piano: OpenGameArt (CC0)</span></div><input class="range" type="range" min="0" max="1" step="0.05" value="'+S.musicVol+'" data-ch-vol></div>';}
 if(typeof panelHtml==='function'){var _ph=panelHtml;panelHtml=function(k){var h=_ph.apply(this,arguments);
 if(k==='settings'&&typeof h==='string')h=h.replace('<div class="setting-row"><div><strong>Phiên bản',rows()+'<div class="setting-row"><div><strong>Phiên bản');return h;};}
 document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-ch-music]');if(!b)return;
 S.music=!(S.music!==false);save();b.textContent=S.music?'Bật':'Tắt';unlocked=true;play('click');tick();},true);
 document.addEventListener('input',function(e){var r=e.target;if(r&&r.hasAttribute&&r.hasAttribute('data-ch-vol')){S.musicVol=+r.value;save();}});
 /* ---------- Mobile: giữ tỉ lệ 16:9, không méo hình ---------- */
+var P={on:false,k:1,cw:0,w:0};
 function fit(){var a=document.getElementById('app'),c=document.getElementById('game');if(!a||!c)return;
-var w=a.clientWidth,h=a.clientHeight,k=Math.min(w/1280,h/720),cw=Math.round(1280*k),chh=Math.round(720*k),s=c.style;
+var w=a.clientWidth,h=a.clientHeight,s=c.style,pt=h>w*1.1;
+if(pt){var k=Math.min(w/560,h*.58/720),cw=Math.round(1280*k),chh=Math.round(720*k);
+P.on=true;P.k=k;P.cw=cw;P.w=w;
 s.setProperty('inset','auto','important');s.setProperty('width',cw+'px','important');s.setProperty('height',chh+'px','important');
-s.setProperty('left',Math.round((w-cw)/2)+'px','important');s.setProperty('top',Math.round((h-chh)/2)+'px','important');
-s.setProperty('image-rendering',k>=1?'pixelated':'auto','important');
+s.setProperty('top',Math.max(52,Math.round((h-chh)/2-24))+'px','important');s.setProperty('image-rendering','pixelated','important');pan();}
+else{P.on=false;var k2=Math.min(w/1280,h/720),cw2=Math.round(1280*k2),ch2=Math.round(720*k2);
+s.setProperty('inset','auto','important');s.setProperty('width',cw2+'px','important');s.setProperty('height',ch2+'px','important');
+s.setProperty('left',Math.round((w-cw2)/2)+'px','important');s.setProperty('top',Math.round((h-ch2)/2)+'px','important');
+s.setProperty('image-rendering',k2>=1?'pixelated':'auto','important');}
 document.documentElement.classList.toggle('ch-portrait',h>w);}
+function pan(){if(!P.on)return;var g=G(),cx=(g&&g.camera)?g.camera.x:640,l=Math.min(0,Math.max(P.w-P.cw,Math.round(P.w/2-cx*P.k)));
+document.getElementById('game').style.setProperty('left',l+'px','important');}
+(function loop(){pan();requestAnimationFrame(loop);})();
 var hint=document.createElement('div');hint.id='chRotateHint';hint.textContent='↻ Xoay ngang điện thoại để chơi rõ hơn';
-hint.addEventListener('click',function(){hint.classList.add('off');});document.body.appendChild(hint);
+
 window.addEventListener('resize',fit,{passive:true});window.addEventListener('orientationchange',function(){setTimeout(fit,250);});
 if(window.visualViewport)window.visualViewport.addEventListener('resize',fit,{passive:true});
 fit();setTimeout(fit,300);
