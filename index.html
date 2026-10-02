@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#1b0f1f"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="description" content="City Hearts — game mô phỏng thành phố và những mối quan hệ">
 <meta name="author" content="Hung Anh"><meta name="copyright" content="Made by Hung Anh"><title>City Hearts — Thành phố và những mối quan hệ</title>
 <style>
 :root{
@@ -26,7 +25,7 @@ button,input{font:inherit}button{cursor:pointer;border:2px solid var(--line);bac
 #topbar{position:absolute;left:50%;top:10px;transform:translateX(-50%);background:linear-gradient(#f6e9c9,#dfc493);border:2px solid #4c392a;padding:7px 14px;border-radius:5px;pointer-events:auto;min-width:280px;text-align:center;box-shadow:0 4px 0 #3d2b20,0 0 0 1px rgba(255,255,255,.28) inset}.time-label{font-size:13px;font-weight:700;color:#523522}.location-label{font-size:10px;color:#7b654c;margin-top:2px}
 #hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);background:rgba(61,44,31,.92);color:#fff0cf;border:2px solid #3b2a1f;border-radius:5px;padding:8px 12px;pointer-events:none;white-space:nowrap;box-shadow:0 4px 0 #2b1f17;font-size:11px;backdrop-filter:blur(2px)}
 #quickbar{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;pointer-events:auto}.quick{display:flex;align-items:center;gap:5px;background:linear-gradient(#f5e5bd,#dfc593);border:2px solid #513b2b;box-shadow:0 3px 0 #3d2b20,0 0 0 1px rgba(255,255,255,.25) inset;padding:8px 10px;border-radius:5px;font-size:11px}.quick .qicon{font-size:16px}
-#dialogue{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);width:min(940px,calc(100vw - 32px));z-index:15}.dialogue-box{background:#f3e2b9;color:var(--txt);border:3px solid #5d402c;border-radius:7px;box-shadow:var(--shadow);overflow:hidden;position:relative}.speaker{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;background:#805d3f;color:#fff1d1;border-bottom:2px solid #5d402c}.speaker-name{font-weight:700}.speaker-meta{font-size:10px;color:#f4dbb1}.dialogue-body{padding:14px;line-height:1.65;min-height:90px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:0 14px 14px}.choice{text-align:left;min-height:48px;background:#fff1cf}.choice small{display:block;color:#7d684f;margin-top:4px}
+#dialogue{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);width:min(940px,calc(100vw - 32px));z-index:15}.dialogue-box{background:#f3e2b9;color:var(--txt);border:3px solid #5d402c;border-radius:7px;box-shadow:var(--shadow);overflow:hidden;position:relative}.speaker{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;background:#805d3f;color:#fff1d1;border-bottom:2px solid #5d402c}.speaker-name{font-weight:700}.speaker-meta{font-size:10px;color:#f4dbb1}.dialogue-body{padding:14px;line-height:1.65;min-height:90px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:0 14px 14px}.choice{text-align:left;min-height:48px;background:#fff1cf}.choice small{display:none!important}
 .panel{position:absolute;right:10px;top:66px;width:min(410px,calc(100vw - 20px));max-height:calc(100vh - 86px);overflow:auto;z-index:14;background:linear-gradient(#d8b980,#c69d68);color:var(--txt);border:3px solid #503a2b;box-shadow:var(--shadow);border-radius:6px;padding:16px;position:absolute}.panel h3{margin:0 0 8px;color:#4f3625}.panel p{line-height:1.45;color:#6c5740;font-size:12px}.section{padding:11px 0;border-top:2px solid rgba(93,64,44,.35)}.section:first-child{border-top:0}.stat{display:grid;grid-template-columns:92px 1fr 34px;gap:7px;align-items:center;font-size:10px;margin:5px 0}.bar{height:8px;background:#a77e53;border:1px solid #69482f;border-radius:2px;overflow:hidden}.fill{height:100%;background:var(--teal)}
 .menu-row{display:flex;gap:6px;flex-wrap:wrap}.mini{padding:7px 9px;font-size:11px}.phone-list{display:grid;gap:7px}.msg{background:#f0ddb6;border:2px solid #725136;border-radius:5px;padding:9px}.msg strong{display:block;margin-bottom:3px;color:#4f3524}.msg span{font-size:11px;color:#6f5a43;line-height:1.45}.toast{position:absolute;left:50%;top:74px;transform:translateX(-50%);z-index:30;background:#f2dfb9;border:2px solid #5d402c;color:#4f3625;border-radius:5px;padding:9px 13px;box-shadow:var(--shadow);animation:toastIn .18s ease}.fade{animation:fade .22s ease}.scene-dim{position:absolute;inset:0;background:rgba(55,37,25,.38);z-index:9;pointer-events:none;opacity:0;transition:.25s}.scene-dim.on{opacity:1}
 .rel-card{background:#eed6a6;border:2px solid #6b4a32;padding:9px;border-radius:5px;margin:7px 0}.rel-head{display:flex;align-items:center;gap:8px}.rel-avatar{width:34px;height:34px;border:2px solid #5d402c;background:#d7bd8e;display:grid;place-items:center;font-weight:700}.rel-meta{font-size:10px;color:#735d44}.tag{display:inline-block;padding:2px 5px;border:1px solid #7d5a3c;background:#f7e8c3;border-radius:3px;margin-right:3px;font-size:9px}.panel-tabs{display:flex;gap:5px;margin:-2px 0 10px}.panel-tabs button{flex:1}.panel-tabs button.active{background:var(--teal);border-color:#3e7771;color:#fff7dd}
@@ -1256,7 +1255,7 @@ for(const a of game.ambient.filter(a=>a.location===game.location)) drawCharacter
 for(const n of currentNPCs()){
 const s=game.npcState[n.id];const near=Math.hypot(game.x-s.x,game.y-s.y)<95;const mood=s.mood==='warm'?'happy':s.mood==='guarded'?'sad':'neutral';
 drawCharacter(s.x,s.y,n.color,n.gender,mood,false,s.walkPhase||0,n.job);
-ctx.fillStyle='rgba(255,248,222,.98)';ctx.strokeStyle='rgba(50,34,24,.72)';ctx.lineWidth=3;ctx.font='900 13px system-ui,Segoe UI,Arial';ctx.textAlign='center';ctx.strokeText(n.name,s.x,s.y-52);ctx.fillStyle='#352519';ctx.fillText(n.name,s.x,s.y-52);ctx.textAlign='left';
+ctx.fillStyle='rgba(255,248,222,.98)';ctx.strokeStyle='rgba(50,34,24,.88)';ctx.lineWidth=3;ctx.font='900 13px system-ui,Segoe UI,Arial';ctx.textAlign='center';ctx.strokeText(n.name,s.x,s.y-52);ctx.fillStyle='#ff5fa2';ctx.shadowColor='rgba(255,95,162,.58)';ctx.shadowBlur=7;ctx.fillText(n.name,s.x,s.y-52);ctx.shadowBlur=0;ctx.textAlign='left';
 if(near&&!game.dialogue&&!game.panel){ctx.fillStyle='#f4e4bd';ctx.strokeStyle='#5d402c';ctx.fillRect(s.x-14,s.y-70,28,14);ctx.strokeRect(s.x-14,s.y-70,28,14);ctx.fillStyle='#5d402c';ctx.font='bold 8px system-ui';ctx.textAlign='center';ctx.fillText('E',s.x,s.y-60);ctx.textAlign='left';}
 }
 drawCharacter(game.x,game.y,game.gender==='male'?'#4f9ab6':'#b76891',game.gender,'happy',true);
@@ -1648,8 +1647,8 @@ function drawWorldExtras(){
 const lanes=TRAFFIC[game.location]?.lanes||[];
 for(const lane of lanes){ctx.fillStyle='rgba(230,205,130,.55)';for(let x=0;x<1280;x+=72)ctx.fillRect(x,lane.y,32,3);}
 const ap=ACTION_POINTS[game.location];
-if(ap&&!game.dialogue&&!game.panel){ctx.fillStyle='rgba(255,241,202,.9)';ctx.strokeStyle='#5d402c';ctx.lineWidth=1;ctx.fillRect(ap.x-42,ap.y-34,84,18);ctx.strokeRect(ap.x-42,ap.y-34,84,18);ctx.fillStyle='#5b3f2d';ctx.font='bold 8px system-ui';ctx.textAlign='center';ctx.fillText('E · '+ap.label,ap.x,ap.y-22);ctx.textAlign='left';}
-if(!game.dialogue&&!game.panel){for(const p of Object.values(SERVICE_POINTS)){if(p.location!==game.location)continue;ctx.fillStyle='rgba(245,232,194,.96)';ctx.strokeStyle='#4d3a2a';ctx.fillRect(p.x-54,p.y-38,108,20);ctx.strokeRect(p.x-54,p.y-38,108,20);ctx.fillStyle='#3e2d21';ctx.font='bold 9px system-ui';ctx.textAlign='center';ctx.fillText('E · '+p.label,p.x,p.y-24);ctx.textAlign='left';}}
+if(ap&&!game.dialogue&&!game.panel){ctx.fillStyle='rgba(255,116,154,.97)';ctx.strokeStyle='#7a2344';ctx.lineWidth=1;ctx.fillRect(ap.x-42,ap.y-34,84,18);ctx.strokeRect(ap.x-42,ap.y-34,84,18);ctx.fillStyle='#fff7fb';ctx.font='bold 8px system-ui';ctx.textAlign='center';ctx.fillText('E · '+ap.label,ap.x,ap.y-22);ctx.textAlign='left';}
+if(!game.dialogue&&!game.panel){for(const p of Object.values(SERVICE_POINTS)){if(p.location!==game.location)continue;ctx.fillStyle='rgba(109,222,211,.97)';ctx.strokeStyle='#1f6865';ctx.fillRect(p.x-54,p.y-38,108,20);ctx.strokeRect(p.x-54,p.y-38,108,20);ctx.fillStyle='#102f32';ctx.font='bold 9px system-ui';ctx.textAlign='center';ctx.fillText('E · '+p.label,p.x,p.y-24);ctx.textAlign='left';}}
 drawWeather();
 }
 function drawWorld(){drawWorldBase();drawWorldExtras();}
@@ -1669,7 +1668,11 @@ else hint.style.display='none';
 }
 function phoneMessages(){return game.phone.length?`<div class="phone-list">${game.phone.map(m=>`<div class="msg"><strong>${escapeHtml(m.from)} <span style="float:right;color:#6f7991;font-weight:400">${escapeHtml(m.time)}</span></strong><span>${escapeHtml(m.text)}</span></div>`).join('')}</div>`:`<p>Chưa có tin nhắn. NPC sẽ chủ động liên lạc theo tình huống.</p>`}
 function calendarHtml(){return `<p><strong>Ngày ${game.day}</strong> · ${worldTime()}</p><p>Tiến độ câu chuyện: ${game.storyStep}/6</p><p>Số buổi hẹn: ${game.flags.dateCount||0}</p><p>Thu nhập trong ngày: ${game.workedToday?'Đã hoàn thành ca làm':'Chưa hoàn thành ca làm'}</p><p>Năng lượng: ${Math.round(game.energy)}% · Danh tiếng: ${game.reputation}</p>`}
-function socialHtml(){return `<div class="msg"><strong>Bản tin thành phố</strong><span>“Có mùi mưa ở khu Bờ sông.” — một tài khoản ẩn danh</span></div><div class="msg"><strong>Mọi người quanh bạn</strong><span>${currentNPCs().map(n=>n.name).join(' · ')||'Không có ai ở gần lúc này.'}</span></div><div class="msg"><strong>Công việc</strong><span>${game.location==='office'?'Cuộc họp chiều đã bắt đầu.':'Một ngày bình thường ở thành phố.'}</span></div>`}
+function socialHtml(){
+const news=(game.phone||[]).filter(m=>String(m.from)==='Bản tin khu phố').slice(0,6);
+const newsHtml=news.length?news.map(m=>`<div class="msg"><strong>${escapeHtml(m.from)} <span style="float:right;color:#6f7991;font-weight:400">${escapeHtml(m.time||'')}</span></strong><span>${escapeHtml(m.text)}</span></div>`).join(''):`<div class="msg"><strong>Bản tin thành phố</strong><span>“Có mùi mưa ở khu Bờ sông.” — một tài khoản ẩn danh</span></div>`;
+return `${newsHtml}<div class="msg"><strong>Mọi người quanh bạn</strong><span>${currentNPCs().map(n=>n.name).join(' · ')||'Không có ai ở gần lúc này.'}</span></div><div class="msg"><strong>Công việc</strong><span>${game.location==='office'?'Cuộc họp chiều đã bắt đầu.':'Một ngày bình thường ở thành phố.'}</span></div>`;
+}
 function panelHtml(kind){
 if(kind==='map')return `<h3>🗺 Bản đồ thành phố</h3><p>Chọn khu vực. Bạn sẽ xuất hiện tại lối vào gần nhất thay vì bị dịch chuyển vào trong công trình.</p><div class="panel-tabs"><button class="mini active">Khu vực</button></div><div class="menu-row">${LOCS.map(k=>`<button class="mini ${k===game.location?'primary':''}" data-go="${k}">${WORLD[k].name}</button>`).join('')}</div><div class="section"><div class="tag">HIỆN TẠI</div><strong>${WORLD[game.location].name}</strong><p>${WORLD[game.location].subtitle}</p></div>`;
 if(kind==='relations')return `<h3>♡ Mọi người</h3><p>Mỗi người có lịch sống, ký ức và phản ứng riêng. Quan hệ không chỉ có tình yêu mà còn có tình bạn, công việc và sự tin tưởng.</p>${Object.values(NPCS).map(n=>{const s=game.npcState[n.id],r=s.relationship,seen=!!game.flags.met[n.id],score=relationshipScore(n.id);return `<div class="rel-card"><div class="rel-head"><div class="rel-avatar" style="background:${n.color}">${n.name[0]}</div><div><strong>${n.name}</strong><div class="rel-meta">${jobVi(n.job)} · ${seen?'đã gặp':'chưa gặp'} · ${({warm:'thân thiết',open:'cởi mở',guarded:'dè chừng',neutral:'trung lập'})[s.mood]||s.mood}</div></div></div><div style="margin:6px 0">${n.traits.slice(0,3).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}<span class="tag">Mức gắn kết ${score}/100</span></div>${[['interest','Quan tâm'],['trust','Tin tưởng'],['comfort','Thoải mái'],['respect','Tôn trọng']].map(([k,label])=>`<div class="stat"><span>${label}</span><div class="bar"><div class="fill" style="width:${r[k]}%"></div></div><span>${r[k]}</span></div>`).join('')}<div style="font-size:10px;color:#715b44;margin-top:6px">${escapeHtml(s.memory.slice(-1)[0]?.text||n.intro)}</div></div>`}).join('')}`;
@@ -1922,9 +1925,14 @@ else if(g.type==='energy')p=game.energy;
 else if(g.type==='promise')p=ds.promises;
 else if(g.type==='social')p=ds.social;
 g.progress=Math.min(g.target,p);
-if(p>=g.target&&!g.done){g.done=true;game.reputation=clamp(game.reputation+1,0,100);}
+if(p>=g.target&&!g.done){
+g.done=true;
+game.reputation=clamp(game.reputation+1,0,100);
+if(typeof toast==='function')toast(`✓ Hoàn thành mục tiêu: ${g.title}`);
 }
 }
+}
+window.updateGoals=updateGoals;
 function recordVisit(loc){
 ensureDirectorState();
 if(!game.dailyStats.visits.includes(loc))game.dailyStats.visits.push(loc);
@@ -2246,7 +2254,7 @@ style.textContent=`
 .choices{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
 .choices.long-choice{grid-template-columns:minmax(0,1fr)}
 .choice{width:100%;min-width:0;max-width:100%;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;word-break:break-word;line-height:1.35;padding:10px 11px}
-.choice small{display:block;max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+.choice small{display:none!important}
 .panel-tabs button.active{background:var(--teal);border-color:#3e7771;color:#fff7dd}
 .panel-tabs button small{color:inherit;opacity:.8}
 @media(max-width:700px){.goal-hud{top:62px;min-width:260px;max-width:calc(100vw - 28px);font-size:9px}.goal-line:nth-child(n+3){display:none}}
@@ -2964,7 +2972,7 @@ button,input,select,textarea{font-size:15px}
 .dialogue-turn-label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-bottom:5px}
 .choices{grid-template-columns:1fr 1fr;gap:9px;padding:0 14px 15px;max-height:31vh;overflow:auto}
 .choice{font-family:var(--ch-font-game);font-size:15px;line-height:1.35;min-height:56px;padding:11px 13px}
-.choice small{font-size:12px;line-height:1.3}
+.choice small{display:none!important;font-size:12px;line-height:1.3}
 .choice.question-choice{border-color:#3f807a;box-shadow:inset 0 0 0 1px rgba(63,128,122,.25)}
 .choice.question-choice::before{content:'? ';font-weight:900;color:#397c77}
 .panel{font-family:var(--ch-font-ui)}
@@ -3006,7 +3014,7 @@ button,input,select,textarea{font-size:15px}
 .dialogue-body{font-size:17px;font-weight:550;line-height:1.55;min-height:74px;max-height:132px;overflow:auto;padding:13px 15px}
 .choices{max-height:190px;overflow:auto;grid-template-columns:1fr 1fr;gap:8px;padding:0 14px 14px}
 .choice{font-size:15px;line-height:1.4;min-height:52px;padding:11px 12px;border-width:2px}
-.choice small{font-size:12px;line-height:1.3}
+.choice small{display:none!important;font-size:12px;line-height:1.3}
 @media(max-width:700px){
 #dialogue{left:8px;right:8px;transform:none;width:auto;bottom:max(8px,env(safe-area-inset-bottom));}
 .dialogue-box{max-height:46vh;border-width:2px;border-radius:9px}
@@ -3662,6 +3670,7 @@ if(tab&&game.panel==='phone'){
 const body=document.getElementById('phoneTab');
 if(!body)return;
 const key=tab.dataset.tab;
+game._phoneTab=key;
 body.innerHTML=key==='messages'?phoneMessagesEnhanced():key==='contacts'?contactsHtml():key==='calendar'?calendarHtml():socialHtml();
 }
 });
@@ -3673,6 +3682,7 @@ phoneHubHtml=function(){return oldPhoneHub()+phoneMenuButtons();};
 /* When contact is gained, put one natural follow-up into the inbox. */
 const oldAddContact=addContact;
 addContact=function(id,channel){oldAddContact(id,channel);const n=NPCS[id];if(game.started)addPhone(n.name,`“Có gì cứ nhắn tui qua ${CHANNEL_META[channel].label}. Đừng ngại nha :))”`);};
+window.addContact=addContact;
 console.log('[City Hearts] Phone social life patch loaded.');
 })();
 </script>
@@ -3857,21 +3867,21 @@ return `↗ ${p.label}`;
 function drawBusStop(x,y,night){
 ctx.save();
 ctx.fillStyle='rgba(24,31,34,.32)';ctx.fillRect(x-32,y+12,64,5);
-ctx.fillStyle='#5f6d72';ctx.fillRect(x-28,y-8,3,28);ctx.fillRect(x+24,y-8,3,28);
+ctx.fillStyle='#3d9fa0';ctx.fillRect(x-28,y-8,3,28);ctx.fillRect(x+24,y-8,3,28);
 ctx.fillStyle='rgba(197,217,216,.18)';ctx.fillRect(x-25,y-13,50,22);
-ctx.strokeStyle='#81969b';ctx.lineWidth=2;ctx.strokeRect(x-25,y-13,50,22);
-ctx.fillStyle='#31424a';ctx.fillRect(x-22,y+8,44,5);
-ctx.fillStyle='#d7b45f';ctx.fillRect(x-4,y-33,8,20);ctx.fillStyle='#1e3039';ctx.fillRect(x-9,y-39,18,10);ctx.fillStyle='#f2d36f';ctx.font='900 7px system-ui';ctx.textAlign='center';ctx.fillText('BUS',x,y-32);
-ctx.fillStyle='#5c6c70';ctx.fillRect(x+28,y-1,2,16);ctx.fillStyle='#e2c65f';ctx.fillRect(x+24,y-10,10,9);
+ctx.strokeStyle='#6fe2dc';ctx.lineWidth=2;ctx.strokeRect(x-25,y-13,50,22);
+ctx.fillStyle='#235e65';ctx.fillRect(x-22,y+8,44,5);
+ctx.fillStyle='#ffcf5c';ctx.fillRect(x-4,y-33,8,20);ctx.fillStyle='#17343c';ctx.fillRect(x-9,y-39,18,10);ctx.fillStyle='#fff1ac';ctx.font='900 7px system-ui';ctx.textAlign='center';ctx.fillText('BUS',x,y-32);
+ctx.fillStyle='#3b858b';ctx.fillRect(x+28,y-1,2,16);ctx.fillStyle='#ffcf5c';ctx.fillRect(x+24,y-10,10,9);
 if(night){ctx.fillStyle='rgba(255,225,140,.18)';ctx.fillRect(x-38,y-18,76,38)}
 ctx.restore();
 }
 function drawTaxiStand(x,y,night){
 ctx.save();
 ctx.fillStyle='rgba(24,31,34,.30)';ctx.fillRect(x-32,y+12,64,5);
-ctx.fillStyle='#59656a';ctx.fillRect(x-28,y-3,56,4);ctx.fillRect(x-27,y+1,3,17);ctx.fillRect(x+24,y+1,3,17);
-ctx.fillStyle='#d5b458';ctx.fillRect(x-24,y-12,48,9);ctx.fillStyle='#332a1c';ctx.font='900 8px system-ui';ctx.textAlign='center';ctx.fillText('TAXI',x,y-5);
-ctx.fillStyle='#e0c96f';ctx.fillRect(x-8,y+8,16,4);ctx.fillRect(x-30,y+8,8,4);ctx.fillRect(x+22,y+8,8,4);
+ctx.fillStyle='#e96f8c';ctx.fillRect(x-28,y-3,56,4);ctx.fillRect(x-27,y+1,3,17);ctx.fillRect(x+24,y+1,3,17);
+ctx.fillStyle='#ffcf5c';ctx.fillRect(x-24,y-12,48,9);ctx.fillStyle='#472538';ctx.font='900 8px system-ui';ctx.textAlign='center';ctx.fillText('TAXI',x,y-5);
+ctx.fillStyle='#ff7e9c';ctx.fillRect(x-8,y+8,16,4);ctx.fillRect(x-30,y+8,8,4);ctx.fillRect(x+22,y+8,8,4);
 if(night){ctx.fillStyle='rgba(255,214,105,.20)';ctx.fillRect(x-34,y-16,68,34)}
 ctx.restore();
 }
@@ -3885,11 +3895,11 @@ transport==='bus'?drawBusStop(p.x,p.y,isNight):drawTaxiStand(p.x,p.y,isNight);
 const near=nearStop(transport);
 const active=mode===transport;
 ctx.save();
-ctx.fillStyle=near?(active?'rgba(219,207,130,.98)':'rgba(237,229,204,.94)'):'rgba(245,232,194,.84)';
-ctx.strokeStyle=near?'#4d3a2a':'rgba(77,58,42,.82)';ctx.lineWidth=near?2:1;
+ctx.fillStyle=near?(active?'rgba(255,196,86,.99)':'rgba(116,224,215,.96)'):'rgba(227,246,242,.90)';
+ctx.strokeStyle=near?(active?'#8c5a12':'#26736f'):'rgba(52,112,108,.82)';ctx.lineWidth=near?2:1;
 const label=near?(active?`E · ${transport==='bus'?'LÊN XE':'GỌI TAXI'}`:transport==='bus'?'TRẠM XE BUÝT':'ĐIỂM TAXI'):transport==='bus'?'TRẠM XE BUÝT':'ĐIỂM TAXI';
 ctx.font='900 8px system-ui';const w=Math.max(82,ctx.measureText(label).width+18);ctx.fillRect(p.x-w/2,p.y-66,w,19);ctx.strokeRect(p.x-w/2,p.y-66,w,19);
-ctx.fillStyle='#493426';ctx.textAlign='center';ctx.fillText(label,p.x,p.y-53);ctx.restore();
+ctx.fillStyle='#24343a';ctx.textAlign='center';ctx.fillText(label,p.x,p.y-53);ctx.restore();
 }
 }
 function tryBoard(mode){
@@ -4026,6 +4036,7 @@ function notificationAllowed(){return game.started && !game.ending;}
 function renderNotice(item){
 const el=document.createElement('div');
 el.className='phone-notification '+(item.type==='call'?'call':'message');
+el.dataset.noticeId=String(item.id);
 const icon=item.type==='call'?'☎':'✉';
 const title=item.type==='call'?`Cuộc gọi đến · ${item.from}`:`Tin nhắn mới · ${item.from}`;
 const text=item.text|| (item.type==='call'?'Đang gọi cho bạn…':'Bạn có một tin nhắn mới.');
@@ -4065,18 +4076,15 @@ window.notifyIncomingCall=(from,text,npcId)=>pushPhoneAlert('call',from,text,npc
 function flushPendingPhoneNotifications(){
 ensurePhoneNoticeState();
 if(game.dialogue||game.panel||!notificationAllowed())return;
-while(game.pendingPhoneNotifications.messages>0){
-game.pendingPhoneNotifications.messages--;
-const m=game.phone?.[0];
-pushPhoneAlert('message',m?.from||'Điện thoại',m?.text||'Bạn có tin nhắn mới.');
-break;
-}
-while(game.pendingPhoneNotifications.calls>0){
-game.pendingPhoneNotifications.calls--;
-const c=game.phoneAlerts.find(x=>x.type==='call');
-if(c)renderNotice(c);
-break;
-}
+const pendingTotal=Math.min(3,
+  Math.max(0,Number(game.pendingPhoneNotifications.messages)||0)+
+  Math.max(0,Number(game.pendingPhoneNotifications.calls)||0)
+);
+game.pendingPhoneNotifications.messages=0;
+game.pendingPhoneNotifications.calls=0;
+if(!pendingTotal)return;
+const visibleIds=new Set(Array.from(stack.children).map(el=>el.dataset.noticeId));
+game.phoneAlerts.slice(0,20).filter(item=>!visibleIds.has(String(item.id))).slice(0,pendingTotal).forEach(renderNotice);
 }
 /* Upgrade addPhone once at the final layer: every meaningful new message can notify the player. */
 const baseAddPhone=window.addPhone||addPhone;
@@ -4088,6 +4096,10 @@ const isNpcSender=Object.values(NPCS||{}).some(n=>n.name===from);
 const isRelevantSystem=['City Guide','Bản tin khu phố'].includes(String(from));
 if(game.started && after>=before && (isNpcSender||isRelevantSystem)){
 notifyPhoneMessage(from,text);
+if(String(from)==='Bản tin khu phố' && game.panel==='phone' && game._phoneTab==='social'){
+const body=document.getElementById('phoneTab');
+if(body)body.innerHTML=socialHtml();
+}
 }
 return result;
 };
@@ -4189,6 +4201,8 @@ const baseReset=window.resetGame||resetGame;
 window.resetGame=function(){
 const r=baseReset();
 game.phoneAlerts=[];game.phoneNoticeSeq=0;game.phoneCallCooldownUntil=0;game.pendingPhoneNotifications={messages:0,calls:0};
+game._phoneTab='messages';
+if(stack)stack.innerHTML='';
 body.classList.remove('dialogue-active');return r;
 };
 resetGame=window.resetGame;
@@ -4391,7 +4405,7 @@ if(game.location==='park'){
 ctx.save();ctx.globalAlpha=.22;
 for(let i=0;i<18;i++){
 const x=(i*83+performance.now()*.018)%1300;
-const y=565+(i%6)*24;
+const y=586+(i%6)*22;
 ctx.fillStyle=night?'#9fb8c5':'#d7f0e9';
 ctx.fillRect(x,y,26+(i%3)*9,2);
 }
@@ -4463,7 +4477,7 @@ console.log('[City Hearts] Cozy Vietnamese pixel visual pass enabled.');
 .panel-close-btn{position:absolute;right:10px;top:9px;z-index:4;min-width:38px;height:34px;border-radius:9px;background:rgba(245,231,196,.95);border:2px solid #5b4635;color:#3e2f24;font-weight:900;font-size:17px;box-shadow:0 2px 0 rgba(36,24,17,.35)}
 .panel-close-btn:hover{filter:brightness(1.05)}
 .phone-chat-stage{margin:5px auto 8px;text-align:center;font-size:9px;color:#6e6458}
-.branch-note{font-size:10px;color:#6f5a46;padding:7px 9px;background:rgba(255,241,207,.7);border:1px dashed #927153;border-radius:7px;margin:7px 0}
+.branch-note{display:none!important;font-size:10px;color:#6f5a46;padding:7px 9px;background:rgba(255,241,207,.7);border:1px dashed #927153;border-radius:7px;margin:7px 0}
 @media(max-width:700px){.panel-close-btn{right:8px;top:7px;width:40px;height:36px}.phone-chat-scroll{max-height:40vh}.phone-chat-options{padding-bottom:max(4px,env(safe-area-inset-bottom))}}
 </style>
 <script id="cityHeartsSocialBranchesJS">
@@ -5264,7 +5278,7 @@ input,textarea{-webkit-user-select:text;user-select:text}
 #hud .hud-right{right:max(8px,env(safe-area-inset-right))}
 #topbar{top:max(8px,env(safe-area-inset-top))}
 #chRotateHint{display:none;position:fixed;left:50%;top:max(10px,env(safe-area-inset-top));transform:translateX(-50%);z-index:60;background:rgba(217,79,134,.94);color:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.35);white-space:nowrap}
-.ch-portrait.ch-started #chRotateHint:not(.off){display:none}
+.ch-portrait.ch-started #chRotateHint:not(.off){display:block}
 @media (pointer:coarse){
 button{transition:none}button:hover{transform:none;filter:none}
 .mobile-stick{width:104px!important;height:104px!important;left:max(14px,env(safe-area-inset-left))!important;bottom:max(14px,env(safe-area-inset-bottom))!important;background:rgba(255,200,220,.16)!important;border-color:rgba(255,220,235,.55)!important}
@@ -5324,6 +5338,7 @@ wrap('addPhone',function(o){return function(){if(ok('phone',700))play('phone');r
 /* ---------- Nhạc nền: file có sẵn trên mạng (OpenGameArt, CC0) ---------- */
 /* Ưu tiên file đặt cạnh game: audio/<tên>.mp3 ; nếu không có sẽ tự tải từ URL gốc */
 var TR={
+love:{u:['audio/gasmask_love_loop.mp3','https://opengameart.org/sites/default/files/gasmask_love_loop.mp3'],v:.5},
 calm:{u:['audio/JRPG%20Piano.mp3','https://opengameart.org/sites/default/files/JRPG%20Piano.mp3'],v:.7}
 };
 var unlocked=false;
@@ -5331,7 +5346,7 @@ function mk(t){var a=new Audio();a.loop=true;a.preload='auto';a.volume=0;t.i=0;a
 a.addEventListener('error',function(){if(t.i<t.u.length-1){t.i++;a.src=t.u[t.i];a.load();if(t.on)a.play().catch(function(){});}else t.dead=true;});
 t.a=a;return a;}
 function tick(){
-var g=G(),tgt=(S.music!==false&&unlocked&&!document.hidden)?'calm':null;
+var g=G(),tgt=(S.music!==false&&unlocked&&!document.hidden)?((g&&g.started)?'calm':'love'):null;
 Object.keys(TR).forEach(function(k){var t=TR[k],goal=(k===tgt)?t.v*S.musicVol:0,a=t.a;
 if(!a){if(goal<=0||t.dead)return;a=mk(t);}
 var d=goal-a.volume;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(d)*Math.min(Math.abs(d),.04)));
@@ -5342,31 +5357,22 @@ document.documentElement.classList.toggle('ch-started',!!(g&&g.started));
 setInterval(tick,100);
 ['pointerdown','keydown','touchend'].forEach(function(ev){window.addEventListener(ev,function(){unlocked=true;tick();},{once:true,passive:true});});
 /* ---------- Cài đặt: công tắc + âm lượng nhạc ---------- */
-function rows(){return '<div class="setting-row"><div><strong>Nhạc nền</strong><span>Piano nhẹ, tự lặp</span></div><button class="mini switch" data-ch-music>'+(S.music!==false?'Bật':'Tắt')+'</button></div>'+
-'<div class="setting-row"><div><strong>Âm lượng nhạc</strong><span>Piano: OpenGameArt (CC0)</span></div><input class="range" type="range" min="0" max="1" step="0.05" value="'+S.musicVol+'" data-ch-vol></div>';}
+function rows(){return '<div class="setting-row"><div><strong>Nhạc nền</strong><span>Nhạc tình yêu nhẹ, tự lặp</span></div><button class="mini switch" data-ch-music>'+(S.music!==false?'Bật':'Tắt')+'</button></div>'+
+'<div class="setting-row"><div><strong>Âm lượng nhạc</strong><span>Nhạc: Kenny Chow, Joth (CC0) · OpenGameArt</span></div><input class="range" type="range" min="0" max="1" step="0.05" value="'+S.musicVol+'" data-ch-vol></div>';}
 if(typeof panelHtml==='function'){var _ph=panelHtml;panelHtml=function(k){var h=_ph.apply(this,arguments);
 if(k==='settings'&&typeof h==='string')h=h.replace('<div class="setting-row"><div><strong>Phiên bản',rows()+'<div class="setting-row"><div><strong>Phiên bản');return h;};}
 document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-ch-music]');if(!b)return;
 S.music=!(S.music!==false);save();b.textContent=S.music?'Bật':'Tắt';unlocked=true;play('click');tick();},true);
 document.addEventListener('input',function(e){var r=e.target;if(r&&r.hasAttribute&&r.hasAttribute('data-ch-vol')){S.musicVol=+r.value;save();}});
 /* ---------- Mobile: giữ tỉ lệ 16:9, không méo hình ---------- */
-var P={on:false,k:1,cw:0,w:0};
 function fit(){var a=document.getElementById('app'),c=document.getElementById('game');if(!a||!c)return;
-var w=a.clientWidth,h=a.clientHeight,s=c.style,pt=h>w*1.1;
-if(pt){var k=Math.min(w/560,h*.58/720),cw=Math.round(1280*k),chh=Math.round(720*k);
-P.on=true;P.k=k;P.cw=cw;P.w=w;
+var w=a.clientWidth,h=a.clientHeight,k=Math.min(w/1280,h/720),cw=Math.round(1280*k),chh=Math.round(720*k),s=c.style;
 s.setProperty('inset','auto','important');s.setProperty('width',cw+'px','important');s.setProperty('height',chh+'px','important');
-s.setProperty('top',Math.max(52,Math.round((h-chh)/2-24))+'px','important');s.setProperty('image-rendering','pixelated','important');pan();}
-else{P.on=false;var k2=Math.min(w/1280,h/720),cw2=Math.round(1280*k2),ch2=Math.round(720*k2);
-s.setProperty('inset','auto','important');s.setProperty('width',cw2+'px','important');s.setProperty('height',ch2+'px','important');
-s.setProperty('left',Math.round((w-cw2)/2)+'px','important');s.setProperty('top',Math.round((h-ch2)/2)+'px','important');
-s.setProperty('image-rendering',k2>=1?'pixelated':'auto','important');}
+s.setProperty('left',Math.round((w-cw)/2)+'px','important');s.setProperty('top',Math.round((h-chh)/2)+'px','important');
+s.setProperty('image-rendering',k>=1?'pixelated':'auto','important');
 document.documentElement.classList.toggle('ch-portrait',h>w);}
-function pan(){if(!P.on)return;var g=G(),cx=(g&&g.camera)?g.camera.x:640,l=Math.min(0,Math.max(P.w-P.cw,Math.round(P.w/2-cx*P.k)));
-document.getElementById('game').style.setProperty('left',l+'px','important');}
-(function loop(){pan();requestAnimationFrame(loop);})();
 var hint=document.createElement('div');hint.id='chRotateHint';hint.textContent='↻ Xoay ngang điện thoại để chơi rõ hơn';
-
+hint.addEventListener('click',function(){hint.classList.add('off');});document.body.appendChild(hint);
 window.addEventListener('resize',fit,{passive:true});window.addEventListener('orientationchange',function(){setTimeout(fit,250);});
 if(window.visualViewport)window.visualViewport.addEventListener('resize',fit,{passive:true});
 fit();setTimeout(fit,300);
@@ -5563,5 +5569,1522 @@ drawVegetation=function(){
  }catch(e){}
 };
 })();
-</script></body>
+</script><style id="cityHeartsHighlightPalette">
+ /* Color-only highlight pass: date/time board, location readout, and NPC name labels. */
+ #topbar{
+   background:linear-gradient(180deg,rgba(255,111,145,.74),rgba(217,67,104,.66))!important;
+   border-color:rgba(139,41,72,.92)!important;
+   box-shadow:0 4px 0 rgba(110,31,56,.78),0 0 0 1px rgba(255,255,255,.22) inset!important;
+   backdrop-filter:blur(6px);
+   -webkit-backdrop-filter:blur(6px);
+ }
+ #topbar .time-label{color:#fffafc!important;text-shadow:0 1px 0 rgba(92,24,43,.35)}
+ #topbar .clock-icon{color:#ffe38b!important}
+ #topbar .location-label{color:#ffe7ef!important}
+ </style>
+<!-- CITY HEARTS · FINAL PRIVATE NPC / PHONE / NEWS / GOALS PATCH -->
+<script id="cityHeartsFinalPrivateNpcFixes">
+(function(){
+'use strict';
+/* Targeted patch only: private NPC questions, longer chats, contacts, news, goals. */
+const PRIVATE_QUESTIONS={"linh":["Bn có hay để ý mấy chi tiết rất nhỏ ở một người mới gặp k, hay nhìn tổng vibe là đủ?","Nếu tự làm một brand cho quán café nhỏ, bn muốn nó trông chill kiểu nào?","Mưa rơi một phát là bn nghĩ tới màu sắc, mùi hay âm thanh đầu tiên?","Có một brief sáng tạo bị khách đổi phút 89, bn sẽ cứu idea kiểu gì?","Trong team mà có người quá im lặng nhưng lại có insight xịn, bn sẽ kéo họ vào cuộc ra sao?","Một góc trong thành phố mà bn thấy “đúng chất mình” là góc nào?","Khi ai đó góp ý thẳng về thứ bn rất thích, bn muốn họ nói kiểu nào?","Nếu vài năm nữa nhìn lại thời gian này, bn muốn người ta nhớ gì về mình?"],"minh":["Bug nào làm bn cay nhất: bug ngớ ngẩn hay bug chỉ xuất hiện đúng lúc demo?","Nếu phải chọn một board game để ngồi tới 2h sáng, bn pick game kiểu chiến thuật hay troll nhau?","Bn nghĩ small talk có thực sự vô dụng, hay đôi lúc nó là màn loading của tình bạn?","Một app đang dùng mà được sửa đúng một thứ, bn sẽ sửa flow nào trước?","Khi đầu óc full task, bn thường debug chính mình bằng cách nào?","Có món café nào bn gọi gần như theo phản xạ không cần nhìn menu?","Nếu tự build một app chỉ cho vui, feature đầu tiên bn sẽ code là gì?","Điều gì khiến bn thấy một người “nói chuyện có substance” chứ không chỉ nói nhiều?"],"hana":["Nếu một event đang yên mà có sự cố to đùng, phản xạ đầu tiên của bn là cứu timeline hay cứu mood?","Kèo đi chơi phút chót kiểu nào là đủ khiến bn bỏ plan cũ để đi luôn?","Concert nào có thể kéo bn ra khỏi nhà ngay cả khi hôm đó cực mệt?","Bn thích cảm giác thắng một thử thách hay cảm giác thử cái mới dù chưa biết kết quả hơn?","Trong một đám đông, kiểu người nào thường làm bn chú ý đầu tiên?","Một buổi tối lý tưởng của bn phải có bao nhiêu % random mới vui?","Nếu được book một chuyến đi chỉ trong 24 giờ, bn sẽ chọn biển, thành phố hay chỗ hoàn toàn lạ?","Có lúc nào bn cố tỏ ra ổn trong khi bên trong đang hơi loạn không?"],"an":["Một công trình khiến bn đứng trước nó lâu hơn bình thường là vì hình khối, ánh sáng hay khoảng trống?","Bn thích quán café có nhiều cửa kính hay góc khuất yên yên hơn?","Nếu phải chọn một loại ánh sáng cho một căn phòng để ở thật lâu, bn chọn nắng sáng hay đèn vàng tối?","Khi ngân sách ép phải bỏ một chi tiết thiết kế, bn sẽ giữ lại thứ nào?","Một công viên đẹp theo bn là nhiều cây hay có những khoảng trống để thở?","Nếu được chỉnh một thứ trong quy hoạch thành phố này, bn sẽ chỉnh điều gì trước?","Căn nhà nhỏ lý tưởng của bn có một góc nào nhất định phải có?","Bn nghĩ kiên nhẫn là tính cách có sẵn hay luyện lâu mới thành?"],"mai":["Bn có phân biệt được người uống café vì caffeine với người uống vì cái vibe không?","Nếu tự blend một hũ cà phê mang tên riêng, bn muốn mùi đầu tiên người ta cảm được là gì?","Khách nào làm bn nhớ lâu hơn: người nói chuyện rất nhiều hay người ngồi im mà để ý mọi thứ?","Có món dessert nào bn bán mãi vẫn thấy vui mỗi lần mang ra không?","Làm chủ quán có khoảnh khắc nào khiến bn nghĩ “ok, hôm nay đáng” không?","Buổi sáng ở quán trước giờ đông khách thường có mood như nào trong mắt bn?","Một ngày mưa ế khách, bn sẽ bật playlist gì và làm gì để cứu mood?","Nếu được mở thêm một concept quán mới, bn muốn thử kiểu ấm áp, tối giản hay hơi điên một tí?"],"kai":["Trong một ca làm, thứ khiến bn khó chịu hơn: người đi trễ hay người làm chậm nhưng không nói?","Bn có một routine nào trước khi bắt đầu việc mà gần như không bao giờ bỏ?","Nếu dây chuyền bị nghẽn và ai cũng cuống, bn sẽ xử lý người trước hay xử lý máy trước?","Món street food nào là phần thưởng xứng đáng sau một ngày ca căng?","Bn nghĩ kỷ luật tốt nhất đến từ lịch rõ ràng hay từ thói quen giữ lời?","Một người đồng đội đáng tin theo bn phải có đúng một phẩm chất nào?","Ca tối ở văn phòng khác gì ca ở nhà máy trong cảm nhận của bn?","Khi đã hứa mà lịch đột nhiên vỡ kế hoạch, bn thường làm gì đầu tiên?"],"vy":["Nếu chỉ được chụp một khoảnh khắc trong một ngày mưa, bn sẽ săn ánh đèn, gương nước hay người đi đường?","Bn có món đồ vintage nào nhìn hơi cũ nhưng bỏ không nỡ không?","Một bức ảnh khiến bn muốn giữ lại lâu thường có người trong frame hay chỉ có không gian?","Có kiểu lời khen về ảnh khiến bn vui thật, không phải kiểu “đẹp quá” cho có?","Lúc creative block, bn thường đi tìm một góc mới hay tự ép mình ngồi im?","Bn thích chụp người không biết mình đang được chụp hay thích set up rõ ràng hơn?","Một buổi photo walk lý tưởng nên đi một mình, đi hai người hay kéo cả hội?","Có điều gì ở chính mình bn thấy camera bắt được mà đời thường hay giấu đi không?"],"quan":["Bn có nhớ lần nào uống một ly café mà nhớ luôn cả buổi sáng hôm đó không?","Một đĩa vinyl nghe lúc sáng sớm sẽ khác gì so với nghe sau 10h đêm?","Bn thích quán vắng đến mức nghe tiếng đá trong ly hay thích kiểu có background chatter?","Có kiểu khách nào bước vào là bn đoán ngay họ sẽ gọi gì không?","Nếu được chọn một món ăn đi cùng café để ăn hoài không chán, bn pick gì?","Một playlist “chậm mà không buồn” của bn sẽ có vibe thế nào?","Bn thấy một cuộc trò chuyện hay cần nhiều câu hỏi hay chỉ cần đúng người ngồi đối diện?","Ritual nhỏ nào làm một buổi sáng bình thường của bn tự nhiên đáng nhớ hơn?"],"thao":["Trong công việc HR, điều gì khiến bn nhận ra một người hợp team chỉ sau vài câu?","Bn thích kế hoạch rõ từ đầu hay để một ít khoảng trống cho phát sinh?","Office drama kiểu nào là bn nhìn thấy từ xa đã muốn né?","Nếu một đồng nghiệp đang khó xử, bn sẽ hỏi thẳng hay chờ họ mở lời?","Một ranh giới ở nơi làm việc mà bn luôn thấy nên được tôn trọng là gì?","Bn có loại trà nào uống vào là thấy mood ổn lại không?","Theo bn, “fit” trong một team đến từ kỹ năng hay cách người ta đối xử với nhau?","Có một lời hứa trong công việc mà bn nghĩ cực dễ nói nhưng rất khó làm đúng không?"],"duy":["Nếu phải review một app dở tệ mà chỉ được sửa ba điểm UX, bn sẽ bắn vào đâu trước?","Bn từng chơi game nào mà UI/UX làm bn nể hơn cả gameplay không?","Dark pattern nào khiến bn thấy “không, cái này lộ quá rồi” ngay lập tức?","Một cuộc chat awkward theo mắt bn thường hỏng ở UX của câu hỏi hay ở timing?","Nếu client nói “làm cho nó đẹp hơn” nhưng không biết đẹp kiểu gì, bn sẽ hỏi ngược ra sao?","Late-night noodles ngon hơn vì món ngon thật hay vì combo mệt + đói + giờ khuya?","Một feedback người dùng thế nào làm bn thấy đáng giá hơn cả một lời khen?","Nếu thiết kế một trải nghiệm để người ta muốn quay lại mỗi ngày, bn sẽ giữ yếu tố nào nhất?"],"nora":["Có bài hát nào chỉ cần intro 3 giây là mood của bn đổi hẳn không?","Bn thích playlist tự rơi vào mood hay thích ngồi xếp từng bài thật kỹ?","Trước khi lên sân khấu, suy nghĩ nào thường chạy trong đầu bn nhiều nhất?","Một đêm đi bộ một mình có playlist là “đúng bài” với bn sẽ trông như nào?","Bn thích kế hoạch tự phát vì tự do hay vì nó cho cảm giác đang sống thật hơn?","Khi một bài hát mới ra đời từ một mood rất lạ, bn thường giữ lại hay bỏ đó?","Cuộc sống của một musician theo bn mệt nhất ở việc sáng tạo, biểu diễn hay giữ lịch?","Bn cần khoảng tự do kiểu nào để vẫn thấy mình là mình khi ở cạnh người khác?"],"tung":["Một món ăn khiến bn tự tin kiểu “để tui làm cho” là món gì?","Bn thích street food vì vị mạnh, vì câu chuyện hay vì ăn ngoài đường vui hơn?","Trong một bữa cơm gia đình, điều gì khiến bn thấy ngon hơn cả món ăn?","Có nguyên liệu nào nhìn bình thường nhưng vào tay đúng người lại thành siêu phẩm không?","Bếp đông và loạn mà ticket cứ chạy, bn thường ưu tiên thứ gì trước?","Kiểu người mê ăn theo bn có nhất thiết phải biết nấu không?","Bữa khuya ngon nhất với bn là ăn một mình, với đồng đội hay kéo thêm một người bạn?","Nếu được tạo một món đại diện cho chính mình, bn muốn nó mang vị gì?"],"ivy":["Bn thích vẽ một người có thật hay một nhân vật hoàn toàn tưởng tượng hơn?","Một hiệu sách lý tưởng theo bn nên có góc đọc kiểu nào để người ta ngồi lâu không ngại?","Nếu hôm đó mưa cả ngày, bn sẽ vẽ mood gì trước?","Có kiểu mèo nào nhìn phát là bn muốn đem về vẽ ngay không?","Freelance khó nhất với bn là deadline, tự kỷ luật hay việc phải tự kiếm cảm hứng?","Khi art block tới, bn thích đổi môi trường hay đổi luôn medium?","Một cuốn sách từng làm bn muốn mở sketchbook ngay là cuốn có vibe thế nào?","Bn thích được góp ý vào tác phẩm lúc còn dang dở hay đợi hoàn thiện rồi mới nghe?"],"phuc":["Một route giao hàng mà người ngoài nhìn vào thấy rối nhưng bn thuộc nằm lòng là route nào?","Xe máy với bn là phương tiện, công cụ kiếm sống hay có chút gì đó như bạn đồng hành?","Shortcut nào trong thành phố chỉ người chạy nhiều mới biết?","Khách kiểu nào làm bn cười dù đang rất mệt?","Mưa bất chợt giữa ca giao hàng khiến bn ưu tiên né mưa hay cố chốt đơn trước?","Có món snack đường phố nào bn ăn miết trong lúc chạy đơn không?","Nếu có một ngày không cần giao hàng, bn muốn chạy xe đi đâu nhất?","Bn muốn công việc tương lai vẫn quanh đường phố hay thử một thứ hoàn toàn khác?"],"huyen":["Một câu chuyện thành phố đáng đưa lên mặt báo theo bn cần “đắt” ở chi tiết nào?","Bn kiểm chứng một nguồn tin kiểu gì trước khi tin một câu nghe quá hấp dẫn?","Khi facts và vibe của một câu chuyện không khớp nhau, bn tin bên nào trước?","Một quán café mở muộn có thể cho bn thứ gì mà văn phòng không có?","Có kiểu headline nào nhìn phát là bn biết người viết đang câu view không?","Trong nghề báo, điều gì dễ khiến người ta đi quá ranh giới giữa tò mò và xâm phạm?","Nếu được chọn một người trong thành phố để kể câu chuyện dài, bn sẽ chọn kiểu người nào?","Bn muốn vài năm nữa mình được nhớ đến vì bài viết nào, hơn là vì chức danh nào?"],"son":["Ca đêm yên ắng nhất thường khiến bn để ý tới điều gì đầu tiên?","Một người có vẻ bình thường nhưng vẫn khiến bn thấy “có gì đó”, bn sẽ quan sát tiếp hay bỏ qua?","Old movie nào bn có thể xem lại mà vẫn không chán?","Kỷ luật với bn là giữ đúng giờ, giữ lời hay giữ đầu óc bình tĩnh?","Một tình huống rắc rối ở nơi làm việc nên được giải bằng cứng rắn hay bằng nói chuyện trước?","Có một hành động nhỏ nào khiến bn tin một người hơn hẳn không?","Bn thích những chỗ rất đông hay một không gian yên để tự nghe suy nghĩ?","Khi ai đó đã đặt niềm tin vào bn, bn thường nghĩ trách nhiệm đó nặng hay đáng?"],"bao":["Âm thanh động cơ nào nghe một phát là bn đoán được xe có vấn đề?","Có chiếc xe nào bn từng sửa xong mà tới giờ vẫn nhớ vì quá cực không?","Road trip lý tưởng với bn cần bao nhiêu điểm dừng để ăn cay dọc đường?","Người không rành máy móc mà cứ đoán bệnh xe làm bn buồn cười kiểu nào?","Một người thực tế theo bn khác gì người khô khan?","Sự cẩu thả trong công việc khiến bn khó chịu vì hậu quả hay vì thái độ?","Ở workshop, khoảnh khắc nào khiến bn thấy tay nghề mình thật sự có giá trị?","Nếu được build một chiếc xe/độ một chiếc xe theo ý mình, bn sẽ ưu tiên ngoại hình hay máy móc?"],"chi":["Một cuốn sách khiến bn muốn giới thiệu ngay cho người khác thường có điểm gì?","Hiệu sách lý tưởng với bn cần nhiều kệ cao hay nhiều góc ngồi thấp thấp?","Ngày mưa ở cửa hàng sách có mood đẹp hơn ngày nắng ở điểm nào?","Bn thích đọc nonfiction vì biết thêm thứ mới hay fiction vì được sống một đời khác?","Khách nào bước vào hiệu sách là bn biết họ đang tìm một câu chuyện chứ không chỉ tìm sách?","Một cuộc trò chuyện chậm mà sâu theo bn cần điều kiện gì?","Nếu được làm một kệ “sách cho người đang lạc mood”, bn sẽ xếp những chủ đề nào?","Bn thích được người khác gợi ý sách chuẩn gu hay tự mình đào ra một cuốn bất ngờ hơn?"]};
+const PRIVATE_VOICES={"linh":"chi tiết","minh":"logic","hana":"kèo mới","an":"khoảng thở","mai":"mùi café","kai":"kỷ luật","vy":"một frame","quan":"slow vibe","thao":"rõ ràng","duy":"UX","nora":"mood nhạc","tung":"đồ ăn ngon","ivy":"sketchbook","phuc":"đường phố","huyen":"nguồn tin","son":"sự điềm tĩnh","bao":"độ máy","chi":"một trang sách"};
+const PRIVATE_PHONE_LINES={"linh":["“Tự nhiên tui lại nhớ cái bn nói về mấy chi tiết nhỏ 👀”","“Hồi nay thấy trời mưa, tui nhớ mấy câu chuyện của bn ghê.”","“Có chuyện gì thú vị ở hôm nay thì kể tui nghe nha :))”","“Mai rảnh mình nói tiếp vụ đó nha, tui còn tò mò.”"],"minh":["“Tui vừa gặp một bug vô lý tới mức muốn cười 💀”","“Tự nhiên nghĩ ra một cách giải cho vụ lúc nãy.”","“Có món café mới thử, verdict đang loading =))”","“Mai tui kể tiếp vụ cái app đó cho bn.”"],"hana":["“Có kèo phát sinh nè =))) nghe hơi liều nhưng vui.”","“Tui vừa thấy một poster mà vibe đúng bn luôn.”","“Tối nay mood này mà đi chill chắc cuốn lắm 👀”","“Để tui giữ một slot trong đầu cho bn nha :))”"],"an":["“Tui vừa đi ngang một góc có ánh sáng đẹp, nghĩ tới câu chuyện lúc nãy.”","“Có chỗ yên yên tui nghĩ bn sẽ thích.”","“Tự nhiên thấy một căn nhà có khoảng hiên rất đẹp.”","“Khi nào tiện mình nói tiếp, không cần vội.”"],"mai":["“Hôm nay có khách gọi đúng món tui đoán luôn =))”","“Tui vừa test một mẻ mới, mùi khá cuốn.”","“Có món dessert mới, bn mà tới tui cho verdict trước.”","“Mai quán đông chắc tui chạy hơi xíu, nhưng vẫn rep nha.”"],"kai":["“Hôm nay có một pha xử lý trễ giờ mà tui vẫn còn nhớ =))”","“Ca này xong rồi mới thấy giữ routine đáng giá ghê.”","“Tui vừa tan ca. Cuối cùng cũng có thể thở.”","“Đã hứa là tui nhớ. Có gì tui báo bn.”"],"vy":["“Vừa săn được một frame mưa khá xịn 👀”","“Có một góc vintage nhìn phát muốn lôi máy ra.”","“Tự nhiên thấy ánh đèn hôm nay hợp mood ghê.”","“Khi nào đi photo walk nhớ ping tui nha :))”"],"quan":["“Sáng nay tui pha ra một ly đúng kiểu nghe nhạc là hợp.”","“Có playlist mới, nghe chậm chậm khá chữa lành.”","“Tui vừa nhớ một câu bn nói, hợp với một bài hát ghê.”","“Khi nào ghé quán cứ nhắn trước, tui chừa góc cho.”"],"thao":["“Hôm nay có một case ở công ty nhìn phát là biết cần nói chuyện thẳng.”","“Tui vừa uống trà và nghĩ lại chuyện bn kể.”","“Có những chuyện rõ ràng ngay từ đầu sẽ đỡ drama thật :))”","“Mai bận thì cứ nói thẳng nha, tui hiểu.”"],"duy":["“Tui vừa gặp một UI làm tui nhăn mặt mất 3 giây =)))”","“Có bug UX mới, nhìn thôi đã thấy mùi dark pattern.”","“Tự nhiên muốn hỏi bn một câu về cái vụ hồi nãy.”","“Mai tui kể tiếp một case khá hài.”"],"nora":["“Bài này vừa bật lên là mood đổi luôn 💀”","“Tui vừa ghi được một đoạn melody, khá bất ngờ.”","“Đêm nay đi bộ nghe nhạc chắc đúng bài.”","“Bao giờ cần một playlist thì ping tui nha 👀”"],"tung":["“Tối nay bếp có món mới, mùi đang bay khắp chỗ =))”","“Tui vừa nhớ tới món bn nói, nghe là muốn ăn.”","“Có hôm nào test đồ ăn chung không?”","“Mai kể tui nghe tiếp vụ đó nha, tui tò mò.”"],"ivy":["“Tự nhiên tui muốn sketch cái vibe hôm nay.”","“Có một con mèo đi ngang làm tui bỏ cả flow để nhìn =)))”","“Vừa đọc một đoạn sách mà muốn vẽ ngay.”","“Khi nào bn rảnh, gửi tui một thứ bn đang thích xem.”"],"phuc":["“Hôm nay có một route vòng nhưng cảnh bên đường đẹp bất ngờ.”","“Xe nay chạy ổn, mood cũng ổn theo :))”","“Tui vừa ăn được món snack mới, khá cuốn.”","“Mai có kèo chạy ngang khu bn, biết đâu gặp.”"],"huyen":["“Tui vừa nghe một chuyện khá lạ nhưng còn phải check nguồn đã 👀”","“Có một góc thành phố hôm nay tự nhiên rất có story.”","“Tui vẫn đang nghĩ câu bn nói, có chất để viết thật.”","“Mai có gì thú vị cứ kể, tui thích những chi tiết nhỏ.”"],"son":["“Ca nay yên hơn bình thường. Tự nhiên thấy cũng dễ chịu.”","“Có một chuyện nhỏ hôm nay làm tui nhớ câu bn nói.”","“Old movie tối nay nghe khá đúng mood.”","“Khi nào rảnh nói tiếp. Không cần gấp.”"],"bao":["“Hôm nay có một con xe nhìn thôi là biết máy đang không ổn =))”","“Tui vừa làm xong một ca sửa khá dai.”","“Tự nhiên nhớ vụ road trip bn hỏi.”","“Bao giờ có kèo chạy xa nhớ rủ tui.”"],"chi":["“Vừa có một cuốn mới về, đọc mô tả phát tui nghĩ bn sẽ thích.”","“Mưa ngoài cửa kính làm hiệu sách hôm nay yên hẳn.”","“Có một đoạn trong sách hôm nay khá đáng nhớ.”","“Hôm nào ghé, tui giữ cho bn một cuốn hợp vibe.”"]};
+function chEnsurePrivateState(){
+ if(!game.privateNpcChats||typeof game.privateNpcChats!=='object')game.privateNpcChats={};
+ if(!game.privateNpcQuestionSeen||typeof game.privateNpcQuestionSeen!=='object')game.privateNpcQuestionSeen={};
+ if(!game.newsFeed||!Array.isArray(game.newsFeed))game.newsFeed=[];
+ if(typeof game.newsSeq!=='number')game.newsSeq=0;
+ if(typeof game.lastNewsMinute!=='number')game.lastNewsMinute=-9999;
+ if(!game.contactBook||typeof game.contactBook!=='object')game.contactBook={};
+}
+chEnsurePrivateState();
+function chTeen(v,key){return typeof teenCode==='function'?teenCode(String(v),key):String(v);}
+function chNpc(id){return NPCS&&NPCS[id]?NPCS[id]:null;}
+function chQuestion(id,index){return PRIVATE_QUESTIONS[id]?.[index]||'';}
+const PRIVATE_DIRECT_ANSWERS={"linh":[["Có, tui thường để ý vài chi tiết nhỏ rồi mới ghép thành tổng vibe.","Tui nhìn vibe trước, nhưng vẫn để ý ánh mắt, cách nói chuyện với người khác.","Tùy người; có người phải nói chuyện lâu tui mới để ý chi tiết."],["Tui sẽ chọn brand tối giản, tông ấm, nhìn vào thấy gần gũi ngay.","Tui thích kiểu có chút retro, màu sắc vừa đủ để nổi bật trên phố.","Tui sẽ làm playful hơn, có một chi tiết nhận diện khiến ai đi ngang cũng nhớ."],["Mùi là thứ đập vào tui đầu tiên, nhất là mùi đất và café sau mưa.","Tui hay để ý âm thanh: tiếng mưa, xe chạy, mái hiên.","Tui nghĩ tới màu trước; trời mưa thường kéo palette của tui về tông dịu."],["Tui chốt lại mục tiêu cốt lõi rồi dựng một version gọn để cứu idea.","Tui hỏi khách phần nào bắt buộc đổi, phần nào còn room để giữ chất riêng.","Tui tách idea thành từng mảnh, đổi thứ có thể đổi mà giữ lại cái “linh hồn”."],["Tui sẽ hỏi họ trước xem họ muốn chia sẻ insight ở phần nào, không kéo họ lên giữa spotlight ngay.","Tui cho họ một khoảng nói trong nhóm nhỏ trước để họ thấy an toàn hơn.","Nếu insight thật sự xịn, tui sẽ chủ động nhắc lại và ghi nhận công sức của họ."],["Có lẽ là một góc café trong hẻm, vừa có người qua lại vừa có chỗ ngồi yên.","Tui thích đoạn phố có nhà cũ, biển hiệu nhỏ và nhiều lớp ánh sáng.","Một góc gần sông lúc chiều tối hợp vibe tui hơn: thoáng mà không quá ồn."],["Tui thích góp ý thẳng nhưng chỉ rõ chỗ nào và vì sao, đừng chê chung chung.","Nói riêng sẽ dễ nghe hơn nói giữa đám đông.","Tui ổn với góp ý mạnh, miễn người góp ý vẫn tôn trọng cái tui đã làm."],["Tui muốn được nhớ là người làm việc có ý nghĩa nhưng vẫn sống thật với mình.","Tui muốn người ta nhớ tới sự tử tế và cách tui đối xử với người khác.","Tui muốn được nhớ vì đã tạo ra vài thứ khiến người khác vui hoặc thấy được đồng cảm."]],"minh":[["Bug chỉ xuất hiện lúc demo làm tui cay hơn hẳn.","Bug ngớ ngẩn mới đáng ghét vì nhìn lại không hiểu sao mình bỏ sót.","Tui ghét nhất bug chỉ xảy ra trên đúng một máy hoặc một điều kiện rất khó tái hiện."],["Tui pick chiến thuật, càng tính nhiều bước càng cuốn.","Troll nhau vui hơn, miễn cả bàn chịu được độ toxic =))).","Tui thích game có cả chiến thuật lẫn bluff, vừa nghĩ vừa đọc người."],["Small talk không vô dụng; đôi lúc nó đúng là loading screen của một mối quan hệ.","Tui thích nói chuyện có nội dung hơn, nhưng small talk giúp mở cửa trước đã.","Tui nghĩ nó tùy người: có cuộc nói chuyện bắt đầu rất nhạt rồi mới hay."],["Tui sửa flow khiến người dùng phải bấm đi bấm lại nhiều nhất trước.","Tui ưu tiên flow gây lỗi hoặc làm người dùng dễ hiểu nhầm.","Tui sẽ sửa điểm người dùng gặp thường xuyên nhất, chưa chắc là thứ nhìn xấu nhất."],["Tui tách việc thành task nhỏ rồi xử từng cái một như debug.","Tui rời màn hình một lúc, đi bộ hoặc uống café rồi quay lại.","Tui viết ra thứ đang vướng trong đầu để biết mình đang overload ở đâu."],["Cà phê sữa đá là lựa chọn phản xạ của tui.","Tui hay gọi Americano, nhất là lúc cần tỉnh để code.","Tui thích bạc xỉu hơn khi muốn chill, không cần caffeine quá mạnh."],["Tui build một app ghi lại mấy ý tưởng ngớ ngẩn trong đầu.","Tui làm một app mini để track thói quen hoặc mood mỗi ngày.","Tui sẽ code một thứ useless nhưng vui, kiểu random challenge generator."],["Người đó biết đặt câu hỏi và nói có ví dụ, không chỉ quăng opinion.","Họ chịu nghe lại người khác chứ không biến cuộc nói chuyện thành độc thoại.","Tui thấy có substance khi họ nói ít nhưng ý nào cũng có lý do phía sau."]],"hana":[["Cứu timeline trước, vì trễ cả hệ thống thì mood cũng chẳng cứu được.","Tui gom team xử lý vấn đề lớn nhất rồi mới quay lại trấn an mọi người.","Tùy sự cố; nếu timeline còn cứu được thì tui ưu tiên mood để cả team không hoảng."],["Một tin nhắn rủ đi ngay, điểm đến nghe vui và không phải chuẩn bị quá nhiều là đủ.","Kèo có nhạc, đồ ăn hoặc activity mới lạ là tui dễ đổi plan nhất.","Nếu người rủ là người tui thích đi cùng thì plan cũ cũng dễ bay =)))."],["Concert có năng lượng mạnh là dù mệt tui vẫn đi.","Tui mê concert có crowd vui và setlist khiến mình nhảy từ đầu tới cuối.","Nếu artist tui thích diễn ở gần nhà thì khó có lý do để tui ở nhà."],["Tui nghiêng về thử cái mới; thắng thì vui nhưng thử được thứ chưa biết mới đã.","Tui thích cảm giác vượt qua một challenge khó vì nó tạo adrenaline.","Tui cần cả hai: thử cái mới trước, thắng sau càng vui."],["Người có năng lượng riêng và không cố hòa vào đám đông làm tui chú ý.","Tui để ý người nói chuyện tự tin nhưng vẫn quan tâm người xung quanh.","Người có vibe hơi khác thường hoặc đang làm một thứ thú vị thường lọt mắt tui."],["Khoảng 30–40% random là đẹp; nhiều hơn dễ thành hỗn loạn.","Tui thích để ít nhất một nửa buổi tối cho những kèo phát sinh.","Chỉ cần có một đoạn không plan gì cả là tối đó đã đủ vui."],["Biển, nhất là chuyến đi tự phát có nhiều hoạt động ngoài trời.","Một thành phố lạ sẽ kích thích tui hơn vì có nhiều thứ để khám phá.","Tui chọn chỗ hoàn toàn lạ nếu chuyến đi có cảm giác “đi rồi mới biết”."],["Có, nhất là lúc phải giữ năng lượng cho mọi người xung quanh.","Có lúc tui nói “ổn mà” rồi về nhà mới nhận ra mình quá tải.","Tui có, và thường cần một khoảng riêng trước khi nói thật là mình đang rối."]],"an":[["Hình khối giữ tui lại đầu tiên, nhất là khi tổng thể có một ý tưởng rõ.","Ánh sáng làm tui muốn đứng lâu hơn nếu nó thay đổi cảm giác của công trình.","Khoảng trống khiến tui tò mò nhất vì nó cho thấy công trình đang “thở” thế nào."],["Nhiều cửa kính nếu ánh sáng đẹp và không làm không gian quá ồn.","Góc khuất yên yên hợp tui hơn để ngồi lâu và quan sát.","Tui thích quán có cả hai: sáng ở ngoài, yên ở một góc bên trong."],["Nắng sáng, vì nó thay đổi không gian tự nhiên mà không cần nhiều đồ.","Đèn vàng tối hợp những lúc cần thư giãn lâu.","Tui sẽ kết hợp: ánh sáng tự nhiên ban ngày, đèn vàng khi tối."],["Tui giữ lại thứ ảnh hưởng trực tiếp tới cách người ta sử dụng không gian.","Tui giữ ánh sáng và khoảng lưu thông trước các chi tiết trang trí.","Tui sẽ giữ chi tiết tạo nên bản sắc của công trình, dù nhỏ."],["Nhiều cây, nhưng phải có khoảng trống đủ rộng để không thấy bí.","Tui ưu tiên khoảng trống và chỗ ngồi, rồi mới bổ sung cây theo cấu trúc.","Một công viên đẹp với tui là có cả bóng mát, đường đi và khoảng mở."],["Tui muốn chỉnh giao thông và khả năng đi bộ trước.","Tui ưu tiên thêm cây, vỉa hè dễ đi và không gian công cộng.","Tui sẽ xử lý những điểm khiến các khu dân cư kết nối với nhau khó khăn."],["Phải có một góc đọc hoặc ngồi thật yên.","Tui cần một khoảng ban công/hiên để đón gió và nhìn ra ngoài.","Một góc có ánh sáng đẹp và đủ riêng tư là thứ tui giữ lại."],["Tui nghĩ kiên nhẫn có phần tính cách nhưng phần lớn là luyện.","Có người sẵn kiên nhẫn hơn, nhưng trải nghiệm vẫn rèn nó rất nhiều.","Tui tin đây là kỹ năng: hiểu mình đang chờ cái gì thì dễ kiên nhẫn hơn."]],"mai":[["Có; có người uống để tỉnh, có người đang tận hưởng nghi thức và không khí.","Tui nghĩ hai nhóm đều có, và nhiều người là cả hai luôn.","Nhìn cách họ chọn món và ngồi lại bao lâu thường đoán được khá chuẩn."],["Mùi chocolate hoặc caramel cho cảm giác ấm và dễ nhớ.","Tui muốn mùi hạt rang, hơi nutty, rõ chất café hơn.","Tui chọn citrus nhẹ để blend có cảm giác tươi và khác biệt."],["Người ngồi im nhưng để ý mọi thứ thường làm tui nhớ lâu.","Người nói chuyện nhiều dễ vui ngay, nhưng chưa chắc để lại ấn tượng lâu.","Tui nhớ người có cách gọi món hoặc một câu nói rất riêng."],["Món có texture thú vị, ăn một lần là nhớ, như tiramisu hoặc cheesecake.","Tui thích dessert nhìn đơn giản nhưng vị cân bằng, không quá ngọt.","Món nào khách ăn xong quay lại hỏi “hôm nay còn không?” là tui vui nhất."],["Lúc quán đông mà khách vẫn vui và team phối hợp mượt là tui thấy đáng.","Một khách quay lại vì nhớ món cũ cũng làm tui thấy hôm đó đáng.","Có ngày chỉ cần quán đầy tiếng cười là tui thấy công sức có ý nghĩa."],["Yên, thơm mùi café mới xay và mọi thứ còn đang chuẩn bị.","Buổi sáng có chút vội nhưng ánh sáng đẹp và quán chưa quá ồn.","Tui thích khoảnh khắc trước giờ mở cửa, ai cũng đang vào guồng."],["Tui bật playlist chill và test một món mới để tự cứu mood.","Tui dọn quán, pha một ly cho mình rồi nghĩ lại menu.","Tui rủ người quen ghé ngồi nói chuyện, ế mà vui vẫn đỡ chán."],["Ấm áp, vì hợp với café và dễ khiến người ta muốn ngồi lâu.","Tối giản nếu muốn khách tập trung vào đồ uống và câu chuyện.","Hơi điên một tí thì đáng nhớ hơn, nhất là nếu vẫn giữ chất café."]],"kai":[["Người làm chậm nhưng không nói làm tui khó chịu hơn vì không biết để xử lý thế nào.","Đi trễ khó chịu ở chỗ ảnh hưởng cả ca, nhất là khi không báo trước.","Tui ghét nhất việc im lặng khi biết mình đang trễ hoặc đang gặp vấn đề."],["Tui luôn check lịch, chuẩn bị đồ và xác định việc quan trọng nhất trước.","Tui có routine mở checklist rồi xử lý task theo thứ tự.","Tui dành vài phút nhìn lại hôm nay cần tránh lỗi gì từ ca trước."],["Tui xử lý nguyên nhân làm hệ thống nghẽn trước, đồng thời phân người giữ an toàn.","Máy gây tắc thì phải giải quyết máy trước; người thì phân công để không loạn.","Tui kiểm tra xem nghẽn do máy hay do thao tác rồi mới quyết định ưu tiên."],["Bánh mì hoặc một món nóng gọn nhẹ sau ca là chân ái.","Tui chọn bún/phở nếu có thời gian ngồi ăn hẳn hoi.","Một phần xôi hoặc cơm tấm nhanh gọn cũng đủ hồi pin."],["Lịch rõ giúp tui giữ nhịp, nhất là lúc nhiều việc cùng lúc.","Giữ lời quan trọng hơn; lịch có thể đổi nhưng đã hứa thì phải báo.","Tui nghĩ phải có cả hai: lịch tạo kỷ luật, giữ lời tạo uy tín."],["Biết báo vấn đề sớm.","Đã nhận việc thì theo tới cùng, có vướng cũng chủ động nói.","Không đổ lỗi và luôn để người khác biết tình trạng công việc."],["Ca ở nhà máy thiên về nhịp vận hành và sự an toàn, khá “đã” theo kiểu máy móc.","Ca văn phòng yên hơn và có nhiều việc xử lý qua trao đổi.","Tui thấy nhà máy cần phản ứng nhanh hơn, văn phòng cần kiên nhẫn hơn."],["Tui báo ngay cho người liên quan rồi mới tìm phương án thay.","Tui chỉnh lại lịch và ưu tiên việc ảnh hưởng người khác trước.","Tui nói thẳng là kế hoạch vỡ ở đâu để mọi người cùng đổi kèo."]],"vy":[["Ánh đèn phản chiếu trên đường ướt là thứ tui săn đầu tiên.","Gương nước tạo frame rất đã, nhất là lúc có xe hoặc người đi qua.","Người đi đường trong mưa thường cho ảnh có câu chuyện nhất."],["Một chiếc máy ảnh film cũ hoặc món phụ kiện vintage tui dùng thường xuyên là khó bỏ.","Áo khoác hoặc túi cũ nhưng có form đẹp cũng thuộc nhóm “đừng bắt tui bỏ”.","Món nào gắn với một kỷ niệm cụ thể thì cũ mấy tui vẫn giữ."],["Người trong frame nếu biểu cảm thật và không tạo dáng quá nhiều.","Không gian trống lại giữ được cảm giác lâu hơn nếu ánh sáng đúng.","Tui thích ảnh có người nhưng để họ hòa vào bối cảnh, không chiếm hết frame."],["“Ánh sáng này bn xử lý đẹp” làm tui vui vì cụ thể.","Tui thích lời khen nói đúng một chi tiết mà người xem thật sự nhìn thấy.","Khen cảm giác của bức ảnh hơn là chỉ nói “đẹp” nghe thật hơn với tui."],["Đổi góc, đổi đường đi, kiếm một thứ mới để nhìn thường hiệu quả hơn.","Tui ép mình làm một sketch hoặc chụp vài frame xấu trước để phá block.","Tui nghỉ một lúc rồi quay lại với một môi trường khác."],["Tui thích chụp khoảnh khắc tự nhiên hơn vì phản ứng thật khó diễn.","Set up rõ ràng hợp với những bộ ảnh có concept.","Tui thích cả hai nhưng sẽ nói rõ để người được chụp biết mình đang làm gì."],["Đi hai người là cân bằng nhất: vẫn có người nói chuyện mà không quá đông.","Đi một mình giúp tui quan sát kỹ hơn và dễ đổi route.","Kéo cả hội vui nếu mục tiêu là săn vibe chứ không cần tập trung từng frame."],["Camera thường bắt được vẻ tập trung hoặc cách tui nhìn một thứ rất lâu.","Có lúc nó bắt được cả sự ngại ngùng mà đời thường tui giấu.","Tui nghĩ camera hay lộ cách mình quan sát hơn là ngoại hình."]],"quan":[["Có; thường là ly gắn với một người hoặc một buổi sáng cụ thể.","Tui nhớ nhất những lần uống café trong lúc thành phố vừa thức dậy.","Có, nhất là khi ly đó đi cùng một cuộc trò chuyện đáng nhớ."],["Sáng sớm nghe rộng và nhẹ, có cảm giác từng lớp âm thanh rõ hơn.","Sau 10h đêm, cùng một đĩa lại nghe sâu và tối hơn.","Tui thấy khác ở cách mình cảm nhận: sáng để bắt đầu, đêm để ngồi lại."],["Tui thích quán vắng vừa đủ để nghe tiếng đá trong ly.","Background chatter nhẹ nghe ấm hơn và làm quán có đời sống.","Tùy mood; sáng chọn yên, tối tui thích có tiếng người một chút."],["Khách bước vào với nhịp riêng và không nhìn menu quá lâu thường tui đoán được.","Tui hay đoán theo thói quen gọi món và cách họ hỏi về hạt.","Có người nhìn vibe là tui đoán được, nhưng tui vẫn hỏi lại để khỏi đoán sai."],["Bánh ngọt ít ngọt, nhất là croissant hoặc tiramisu, đi với café rất hợp.","Một món bánh có vị bơ và chút mặn cân bằng sẽ không ngán.","Tui thích đồ ăn đơn giản nhưng làm tốt, không lấn mùi café."],["Chậm, ấm, có vocal nhẹ và không quá nhiều beat.","Một playlist có acoustic, jazz hoặc indie mềm sẽ đúng vibe.","Tui muốn nhạc có nhịp nhưng không kéo mood xuống quá buồn."],["Đúng người quan trọng hơn số câu hỏi.","Một cuộc trò chuyện hay cần cả hỏi đúng lẫn chịu nghe.","Nếu người đối diện thật sự tò mò thì ít câu cũng đủ để nói sâu."],["Một ly café yên tĩnh trước khi thành phố đông lên.","Nghe một bài nhạc quen trong lúc chuẩn bị ngày mới.","Ngồi nhìn phố vài phút mà không mở điện thoại là ritual tui thích."]],"thao":[["Người biết lắng nghe và tôn trọng người khác thường lộ “fit” khá nhanh.","Tui để ý cách họ phản hồi khi có người không đồng ý với họ.","Một người hợp team thường vừa làm được việc vừa khiến người khác thấy an toàn khi nói."],["Tui cần kế hoạch rõ ở phần quan trọng nhưng vẫn chừa room cho phát sinh.","Nếu việc liên quan nhiều người, tui thích chốt mốc trước rồi linh hoạt cách làm.","Tùy việc; việc lặp lại cần plan rõ, việc sáng tạo nên có khoảng trống."],["Drama kiểu nói vòng, kéo người thứ ba vào và không nói thẳng với nhau.","Tui né kiểu chat group bóng gió nhưng không ai chịu xử lý vấn đề.","Tui ngại nhất drama liên quan gossip về đời tư hoặc đổ lỗi công khai."],["Nếu người đó thân, tui hỏi thẳng nhưng chọn lúc riêng tư.","Tui thường mở bằng một câu nhẹ để họ có quyền chọn kể hay không.","Tui không ép; tui cho họ biết tui sẵn sàng nghe khi họ muốn nói."],["Ranh giới về tôn trọng thời gian và đời tư của nhau.","Không mang chuyện cá nhân ra làm công cụ trong công việc.","Tui luôn coi việc nói chuyện có sự đồng thuận là ranh giới rất quan trọng."],["Trà ô long nhẹ giúp tui tỉnh mà không quá nặng.","Tui thích trà hoa cúc vào những lúc muốn hạ nhịp.","Một ly trà nóng đơn giản cũng đủ nếu hôm đó cần reset."],["Cách người ta đối xử với nhau; kỹ năng có thể học nhưng thái độ mới giữ team bền.","Tui nghĩ skill giúp vào team, cách cư xử mới quyết định ở lại được bao lâu.","“Fit” với tui là cả năng lực lẫn sự tôn trọng, không chỉ một bên."],["Hứa phản hồi nhưng rồi im luôn là kiểu cực dễ nói mà khó làm.","Hứa đúng deadline nghe đơn giản nhưng giữ đều mới khó.","Tui thấy câu “để tui xử lý” rất dễ nói, quan trọng là sau đó có cập nhật hay không."]],"duy":[["Tui sửa navigation hoặc flow khiến user bị lạc trước.","Tui ưu tiên lỗi usability nghiêm trọng hơn lỗi nhìn xấu.","Ba điểm đầu: điều hướng, feedback hệ thống và những bước thừa."],["Game có UI khiến tui nể thường là game biết ẩn độ phức tạp mà vẫn cho control.","Tui thích những game có onboarding rất mượt, vào là hiểu ngay.","Có game tui nể UI hơn gameplay vì menu, feedback và animation đều cực sạch."],["Popup ép đồng ý hoặc mặc định đã tick khiến tui cảnh giác ngay.","Ẩn nút từ chối và làm nút mua nổi bật quá là red flag.","Countdown giả và thông báo kiểu “chỉ còn 1 suất” để ép quyết định là dark pattern tui ghét."],["Timing; trả lời đúng nội dung nhưng sai lúc vẫn làm chat awkward.","UX của câu hỏi quan trọng vì hỏi quá rộng hoặc quá dồn dễ khiến người kia bí.","Tui nghĩ cả hai: flow câu hỏi tệ cộng timing lệch là chat fail rất nhanh."],["Tui hỏi “đẹp hơn” nghĩa là tăng chuyển đổi, dễ dùng hay chỉ đổi visual.","Tui đưa 2–3 hướng mẫu để client chọn thay vì đoán.","Tui hỏi target user và mục tiêu trước rồi mới chạm vào màu, layout."],["Món ngon thật vẫn quan trọng, nhưng combo đói + mệt + khuya chắc chắn làm nó ngon hơn.","Tui nghĩ não đang cần phần thưởng nên cùng món sẽ thấy phê hơn.","Một phần là món, một phần là hoàn cảnh; khuya ăn gì nóng cũng dễ thắng."],["Feedback có ví dụ cụ thể về lúc user gặp khó khăn là quý nhất.","Feedback nói rõ họ muốn làm gì nhưng bị chặn ở đâu giúp tui sửa nhanh.","Một bug report có bối cảnh và bước tái hiện còn giá trị hơn lời khen chung chung."],["Tui giữ flow ngắn và rõ vì quay lại dùng mỗi ngày không nên mệt.","Tui ưu tiên feedback nhanh để user luôn biết hệ thống đang làm gì.","Tui giữ một lý do để quay lại, nhưng không dùng notification để ép."]],"nora":[["Intro vài giây là đủ; âm thanh mở đầu có thể đổi mood ngay.","Tui thường bị kéo bởi một bassline hoặc vocal vào đúng thời điểm.","Có bài không cần intro “hay”, chỉ cần đúng texture là mood đổi."],["Tui thích tự xếp playlist nếu đang có một mood rất cụ thể.","Có lúc tui để algorithm chọn để gặp bài ngoài dự đoán.","Tui dùng cả hai: set vài bài đầu rồi để phần còn lại tự chảy."],["Tui thường nghĩ về nhịp mở màn và người nghe sẽ cảm thấy gì.","Tui hay hơi hồi hộp chuyện âm thanh và cue đầu tiên hơn bản thân lời bài hát.","Tui nghĩ xem mình cần giữ năng lượng thế nào để không đốt hết từ phút đầu."],["Đi bộ chậm, tai nghe vừa đủ và playlist không quá dồn.","Một đoạn phố có đèn vàng và nhạc có beat mềm là đúng bài.","Tui thích route không cần điểm đến, chỉ cần đi và nghe nhạc."],["Vì nó cho cảm giác tự do và không phải xin phép lịch trình.","Tui thích plan vừa đủ, nhưng để khoảng trống cho những thứ bất ngờ.","Tự phát vui nhất khi đi với người cũng thích khám phá."],["Tui giữ lại nếu melody hoặc cảm xúc có một thứ thật riêng.","Tui thường lưu voice note trước, chưa quyết định ngay giữ hay bỏ.","Nếu mood lạ mà hook không có gì, tui để đó rồi quay lại sau."],["Giữ lịch và năng lượng cho nhiều việc cùng lúc mệt nhất.","Biểu diễn mệt về thể lực, còn sáng tạo mệt ở đầu.","Tui thấy phần khó là cân bằng sáng tạo với việc vẫn phải sống và giữ deadline."],["Tui cần thời gian một mình và quyền không phải phản hồi ngay.","Một khoảng tự do về lịch giúp tui vẫn giữ được nhịp riêng.","Tui cần người bên cạnh hiểu rằng im lặng đôi lúc chỉ là đang nạp pin."]],"tung":[["Cơm tấm hoặc phở là kiểu tui tự tin nói “để tui làm” =))).","Một món xào hoặc món kho quen tay là tui làm nhanh và chắc nhất.","Tui thích nấu món cần canh vị kỹ vì đó là lúc tay nghề thể hiện rõ."],["Vị mạnh là một phần, nhưng câu chuyện và không khí đường phố mới khiến tui nhớ lâu.","Tui mê street food vì ăn nóng ngoài đường có cảm giác rất thật.","Tui thích cả vị lẫn bối cảnh: món ngon mà ăn đúng chỗ càng đã."],["Có người ngồi ăn chung và nói chuyện vui làm bữa cơm ngon hơn.","Một bữa cơm đủ đầy và không ai phải vội là tui thấy ngon nhất.","Tui để ý cảm giác “được ăn cùng nhau” nhiều hơn món đắt hay rẻ."],["Rau, trứng hoặc đậu phụ đều có thể thành món xịn nếu xử lý đúng.","Nước dùng là thứ nguyên liệu bình thường nhưng tay nghề làm khác hẳn.","Khoai tây hoặc nấm nếu làm đúng texture cũng có thể thành món chính."],["Tui ưu tiên việc ảnh hưởng chất lượng món và an toàn trước.","Tui phân loại ticket theo thời gian và độ phức tạp rồi chạy những món dễ nghẽn trước.","Tui chia người rõ: một người giữ line, người khác xử lý điểm đang nghẽn."],["Không nhất thiết; mê ăn có thể chỉ là khả năng thưởng thức.","Biết nấu giúp hiểu món hơn, nhưng không phải điều kiện để mê ăn.","Tui thích người chịu ăn thử và tò mò về món, biết nấu là bonus."],["Với đồng đội; sau ca ai cũng đói mà ăn cùng vui hơn.","Một mình nếu tui cần xả đầu sau ngày dài.","Kéo thêm một người bạn thì hợp những đêm muốn nói chuyện nhiều."],["Tui muốn vị đậm, có chút cay và một chi tiết bất ngờ.","Một món ấm, dễ ăn nhưng có hậu vị để người ta nhớ.","Tui chọn món đường phố Việt nhưng làm gọn và hiện đại hơn một chút."]],"ivy":[["Tui thích vẽ người thật vì dáng và biểu cảm luôn có thứ không đoán trước.","Nhân vật tưởng tượng vui hơn vì tui được tự quyết mọi chi tiết.","Tui thích xen kẽ: người thật để quan sát, nhân vật để thử nghiệm."],["Một góc đọc sát cửa sổ, có ánh sáng tự nhiên và ghế ngồi lâu không mỏi.","Tui thích ghế thấp, đèn ấm và một khu nhỏ ít người đi qua.","Cả hai đều được, miễn có vài góc khiến người ta quên nhìn đồng hồ."],["Tui sẽ vẽ màu xám xanh của trời mưa và ánh đèn vàng.","Một mood hơi buồn nhưng ấm, kiểu ngồi trong phòng nghe mưa.","Tui thích biến cơn mưa thành một scene có người, cửa kính và ánh sáng phản chiếu."],["Mèo mặt ngơ, tai hơi cụp là tui muốn vẽ ngay.","Mấy con mèo nằm cuộn tròn hoặc có biểu cảm khó ở luôn đáng sketch.","Mèo càng có pattern lông lạ tui càng muốn đem vào sketchbook."],["Tự kỷ luật khó nhất vì không ai đứng cạnh nhắc deadline.","Kiếm cảm hứng khó nhất lúc phải tạo đều chứ không chỉ khi có mood.","Deadline làm áp lực nhất, nhưng khách feedback mơ hồ mới thực sự mệt."],["Đổi môi trường thường giúp tui mở mắt lại.","Đổi medium là cách nhanh để não không lặp một kiểu nữa.","Tui sẽ làm cả hai: đổi chỗ trước, nếu vẫn bí thì đổi medium."],["Vibe nhiều lớp, khiến tui muốn vẽ ngay chứ không chỉ đọc xong rồi quên.","Một cuốn có nhân vật hoặc không gian đủ giàu hình ảnh là tui rất dễ mở sketchbook.","Tui thích sách gợi ra ánh sáng, màu hoặc một scene cụ thể trong đầu."],["Tui thích góp ý khi còn dang dở nếu feedback cụ thể và tôn trọng hướng đi.","Với tác phẩm cá nhân, đôi khi tui muốn hoàn thiện một bản rồi mới nghe.","Tùy dự án: làm client thì nghe sớm, làm riêng thì tui thích có bản nháp trước."]],"phuc":[["Một route qua hẻm nhỏ, phải nhớ từng lối rẽ và khung giờ cấm xe là tui thuộc lòng.","Tui nhớ các shortcut qua ngõ và những đoạn ít kẹt xe hơn đường lớn.","Route khó nhất thường là khu nhiều hẻm và đổi hướng liên tục, nhưng chạy quen thì nhớ như map trong đầu."],["Xe máy với tui trước hết là công cụ kiếm sống, sau đó mới thành bạn đồng hành.","Nó vừa là phương tiện vừa là thứ giúp tui chủ động giờ giấc.","Chạy lâu rồi nên nhiều lúc nghe máy là tui biết xe đang “khó ở”."],["Hẻm thông sang đường lớn hoặc đoạn cắt qua khu dân cư là kiểu shortcut tui hay dùng.","Tui biết mấy đường ven chợ và hẻm nối tắt, nhưng phải nhìn giờ mới đi được.","Shortcut tốt nhất là route ít đèn đỏ và ít điểm giao cắt đông."],["Khách nói chuyện duyên hoặc nhận đồ rồi cảm ơn thật lòng.","Người đang mệt mà vẫn tử tế với shipper thường làm tui vui.","Khách có câu đùa nhẹ đúng lúc là đang mệt cũng bật cười."],["Tui né mưa an toàn trước, nhưng nếu đơn sắp hết thời gian thì tính lại route.","Tui tìm chỗ trú gần nhất rồi báo khách rõ ETA.","An toàn trước, vì cố chốt thêm vài phút mà trượt xe thì không đáng."],["Bánh tráng, xiên nướng hoặc một món cay cay là tui dễ ăn miết.","Bánh mì nóng gọn là tiện nhất lúc đang chạy đơn.","Có món snack nhỏ, cay và mặn là tui cứ mua lại."],["Tui muốn chạy ra biển hoặc một cung đường nhiều cảnh, không cần lịch dày.","Một ngày chạy lên vùng ngoại ô, ghé ăn và về là đủ vui.","Tui thích một route dài có vài điểm dừng hơn là nằm nghỉ cả ngày."],["Tui vẫn thích công việc gắn với đường phố nhưng muốn chủ động hơn về thời gian.","Có lúc tui muốn thử nghề liên quan logistics hoặc vận hành.","Tui cũng tò mò một việc hoàn toàn khác, miễn vẫn có cảm giác được di chuyển và xử lý vấn đề."]],"huyen":[["Chi tiết cụ thể mà người trong cuộc bình thường không để ý thường làm câu chuyện “đắt”.","Một chi tiết nhỏ nhưng kiểm chứng được có giá trị hơn cả tiêu đề giật gân.","Tui thích chi tiết cho thấy con người và bối cảnh, không chỉ con số."],["Tui tìm nguồn gốc đầu tiên rồi đối chiếu ít nhất một nguồn độc lập.","Tui kiểm tra thời gian, ngữ cảnh và xem nguồn có lợi ích liên quan không.","Nếu câu quá hấp dẫn, tui càng chậm lại: kiểm chứng trước, đăng sau."],["Facts trước; vibe chỉ giúp mình đặt câu hỏi chứ không thay thế kiểm chứng.","Nếu facts chưa đủ, tui không kết luận chỉ vì câu chuyện nghe hợp lý.","Tui ghi nhận cả hai nhưng sẽ ưu tiên thứ có bằng chứng rõ."],["Nó cho tui một không gian ít formal hơn để nghe người ta kể chuyện.","Quán mở muộn có những cuộc gặp và nhịp sống mà văn phòng khó thấy.","Tui thích café đêm vì người ta thường nói những chuyện rất đời thường."],["Headline dùng từ tuyệt đối, gây sốc hoặc hứa “bạn sẽ không tin” là tui nghi ngờ ngay.","Câu quá kích thích nhưng không có dữ kiện cụ thể thường là clickbait.","Tui thấy red flag khi tiêu đề kể luôn kết luận mà bài chưa chứng minh."],["Dùng thông tin đời tư không cần thiết chỉ để tăng lượt đọc là vượt ranh giới.","Gặng hỏi chuyện riêng khi người khác chưa đồng ý khiến tò mò thành xâm phạm.","Tui giữ ranh giới ở chỗ thông tin đó có thực sự cần cho câu chuyện hay chỉ để gây chú ý."],["Tui muốn kể câu chuyện của người làm việc bình thường nhưng có trải nghiệm ít ai biết.","Một người sống qua thay đổi lớn trong thành phố cũng rất đáng kể.","Tui thích người có góc nhìn riêng, không nhất thiết phải nổi tiếng."],["Tui muốn được nhớ vì một bài làm người đọc hiểu một vấn đề họ từng bỏ qua.","Một bài về con người cụ thể nhưng chạm tới vấn đề lớn sẽ khiến tui tự hào.","Tui muốn được nhớ vì những bài kỹ, có nguồn và vẫn giữ được chất người."]],"son":[["Tui để ý âm thanh nhỏ và những thứ thay đổi trong không gian.","Tui thường nhìn lối ra, ánh sáng và ai còn ở đó.","Ca yên quá thì tui để ý những chuyển động bất thường trước tiên."],["Tui quan sát thêm một lúc nhưng không tự dựng chuyện trong đầu.","Nếu hành vi vẫn bình thường thì tui bỏ qua, không cố tìm drama.","Tui để ý nếu họ liên tục có dấu hiệu lạ, còn không thì cứ để họ tự nhiên."],["Mấy phim noir hoặc old movie chậm nhịp là tui xem lại được nhiều lần.","Phim có không khí và nhân vật mạnh làm tui xem lại mà vẫn thấy hay.","Tui thích old movie ít ồn, nhìn cách người ta nói chuyện là đủ cuốn."],["Tui coi giữ lời là cốt lõi, đúng giờ là cách thể hiện nó.","Giữ đầu óc bình tĩnh quan trọng nhất khi có chuyện.","Cả ba đều cần, nhưng trong việc chung tui đặt giữ lời lên trước."],["Tui nói chuyện trước nếu tình huống chưa đến mức nguy hiểm.","Nếu có rủi ro ngay lập tức thì tui sẽ cứng rắn trước, rồi giải thích sau.","Tui ưu tiên hạ nhiệt và hiểu nguyên nhân trước khi dùng biện pháp cứng."],["Giữ lời trong một việc nhỏ cũng đủ làm tui tin hơn.","Đối xử tử tế với người không đem lại lợi ích cho mình là dấu hiệu mạnh.","Một người biết nhận lỗi và sửa cũng khiến tui tin họ hơn."],["Tui thích chỗ yên để nghe suy nghĩ của mình rõ hơn.","Đông vui có lúc cũng thích, nhất là khi đi cùng người hợp.","Tui tùy mood, nhưng nói chuyện sâu thường cần không gian yên."],["Nặng nhưng đáng, vì niềm tin kéo theo trách nhiệm.","Tui nghĩ đáng hơn nặng nếu hai bên hiểu rõ mình đang tin nhau ở điều gì.","Nó là trách nhiệm thật, nên tui không thích nhận lời quá dễ."]],"bao":[["Tiếng gõ, rung hoặc tiếng máy hụt bất thường là tui chú ý ngay.","Âm thanh lạch cạch theo vòng tua thường là red flag với tui.","Tiếng máy thay đổi so với bình thường quan trọng hơn một âm thanh “lạ” chung chung."],["Mấy ca sửa lỗi khó tìm và phải tháo gần hết xe thường nhớ rất lâu.","Chiếc xe bị bệnh lắt léo, thay vài món mới tìm ra nguyên nhân là kiểu tui nhớ nhất.","Ca sửa giữa lúc khách cần xe gấp mà vẫn phải làm chuẩn là ca khó quên."],["Khoảng 3–4 điểm dừng là đẹp, vừa chạy vừa ăn.","Tui thích 2 điểm ăn chính và vài điểm ghé cảnh dọc đường.","Đi nhiều thì cứ 1–2 tiếng dừng một lần, chứ ăn dày quá mất route."],["Đoán bệnh xe mà không nghe máy hoặc kiểm tra gì là tui thấy buồn cười.","Tui hay cười khi ai đó nghe một tiếng rồi kết luận chắc nịch.","Đoán vui thì được, nhưng phán như thợ mà chưa kiểm tra mới buồn cười."],["Người thực tế nhìn vào dữ kiện và xử lý việc cần làm, không phải ít cảm xúc.","Khô khan là cách thể hiện; thực tế vẫn có thể rất ấm.","Tui nghĩ khác nhau ở chỗ người thực tế vẫn hiểu cảm xúc nhưng không để nó quyết định hết."],["Cả hậu quả lẫn thái độ đều khó chịu, nhưng thái độ làm tui mất niềm tin nhanh hơn.","Nếu hậu quả nặng thì tui quan tâm xử lý trước, sau đó mới nói về thái độ.","Cẩu thả lặp đi lặp lại vì không chịu sửa mới là thứ làm tui bực nhất."],["Lúc tìm đúng bệnh xe sau nhiều bước kiểm tra và xe nổ lại êm là đã nhất.","Khi mình xử lý được lỗi khó mà khách dùng xe an tâm trở lại.","Tui thấy tay nghề có giá trị nhất khi giải được bệnh mà người khác đã bỏ cuộc."],["Máy móc trước: build đúng hiệu năng rồi mới lo ngoại hình.","Ngoại hình quan trọng nếu build theo gu cá nhân, miễn không hy sinh máy.","Tui sẽ cân bằng nhưng máy và độ ổn định vẫn là ưu tiên một."]],"chi":[["Một cuốn khiến tui muốn giới thiệu thường có một ý tưởng còn ở trong đầu nhiều ngày.","Tui thích sách có câu chữ đẹp nhưng vẫn khiến mình nhìn thế giới khác đi.","Một nhân vật thật hoặc một góc nhìn rất riêng là lý do tui hay giới thiệu sách."],["Nhiều góc ngồi thấp, ánh sáng ấm và kệ không quá dày khiến tui thích hơn.","Kệ cao cho cảm giác như mê cung sách, tui cũng rất thích.","Tui muốn cả hai: kệ cao để khám phá và góc thấp để ngồi đọc."],["Ngày mưa làm tiếng phố dịu đi và người trong tiệm thường ngồi lâu hơn.","Ánh sáng mưa qua cửa kính tạo mood rất riêng cho việc đọc.","Tui thích ngày mưa vì hiệu sách tự nhiên chậm lại."],["Nonfiction cho tui cảm giác học thêm một thứ thật mới.","Fiction hấp dẫn vì mình được sống thử một đời khác.","Tui đọc cả hai: nonfiction để mở đầu óc, fiction để đổi góc nhìn."],["Người đi chậm giữa các kệ và cầm vài cuốn lên đọc kỹ thường đang tìm một câu chuyện.","Khách hỏi “có gì giống cuốn này nhưng sâu hơn không?” thường là đang tìm trải nghiệm chứ không chỉ tên sách.","Có người chỉ im lặng ở một góc rất lâu, nhìn là biết họ đang tìm thứ gì đó cho mình."],["Một không gian đủ yên để cả hai không phải vội.","Cần người biết nghe và không ngắt lời liên tục.","Tui nghĩ điều kiện quan trọng nhất là cả hai đều thật sự muốn ở đó."],["Tui sẽ xếp self-help nhẹ, fiction chữa lành và sách về những giai đoạn chuyển mình.","Tui thêm thơ, tản văn và vài cuốn ngắn để người đang mệt vẫn đọc được.","Tui sẽ làm một kệ có chủ đề “đi chậm lại”: văn học, tâm lý phổ thông và những cuốn ấm áp."],["Được gợi ý chuẩn gu rất vui, nhất là khi người kia hiểu mình thích gì.","Tự đào ra một cuốn bất ngờ có cảm giác săn được treasure.","Tui thích cả hai: để người khác gợi ý vài cuốn, rồi tự chọn một cuốn ngoài danh sách."]]};
+function chChoiceSet(id,q,index){
+ const qi=(PRIVATE_QUESTIONS[id]||[]).indexOf(q);
+ const direct=PRIVATE_DIRECT_ANSWERS[id]?.[qi];
+ const v=PRIVATE_VOICES[id]||'vibe';
+ const key=q.slice(0,48).toLowerCase();
+ const replies=[
+  `“Ừ, tui thích câu trả lời có quan điểm rõ như vậy. Nghe bn kể là thấy hiểu bn hơn á :))”`,
+  `“Kkk, lựa chọn này nghe đúng chất bn ghê. Nói tiếp vụ này chắc còn nhiều chuyện.”`,
+  `“Tui thích chỗ bn có lý do riêng, không cần giống tui đâu. Khác nhau mới dễ nói chuyện.”`,
+  `“Deal. Chủ đề này đủ thú vị để lần sau đào tiếp.”`
+ ];
+ const effects=[
+  {trust:3,curiosity:4,comfort:2},
+  {chemistry:4,comfort:3,interest:2},
+  {respect:4,curiosity:2,trust:2},
+  {consistency:3,interest:3,comfort:2}
+ ];
+ const base=direct||[[`“Tui chưa chốt, nhưng vụ ${v} này nghe cũng cuốn 👀”`,`“Tui muốn nghe bn nói thêm về ${v}.”`,`“Tùy tình huống; để tui nghĩ kỹ rồi trả lời.”`]];
+ return base.map((t,i)=>({text:chTeen(t,id+':private-choice:'+q+':'+qi+':'+i),reply:chTeen(replies[i]||replies[0],id+':private-reply:'+q+':'+qi+':'+i),effects:effects[i%effects.length],note:key}));
+}
+function chAllQuestionIds(id){return (PRIVATE_QUESTIONS[id]||[]).map((_,i)=>i);}
+function chPickQuestion(id){
+ chEnsurePrivateState();
+ const total=PRIVATE_QUESTIONS[id]?.length||0;
+ if(!total)return -1;
+ let seen=Array.isArray(game.privateNpcQuestionSeen[id])?game.privateNpcQuestionSeen[id]:[];
+ if(seen.length>=total){seen=[];game.privateNpcQuestionSeen[id]=seen;}
+ const left=chAllQuestionIds(id).filter(i=>!seen.includes(i));
+ return left.length?left[Math.floor(Math.random()*left.length)]:-1;
+}
+function chRefreshGoalHud(){
+ const box=document.getElementById('goalHud');if(!box)return;
+ const goals=game.dailyGoals||[];const next=goals.filter(g=>!g.done).slice(0,2);
+ box.innerHTML=`<div class="goal-title">HÔM NAY</div>${next.length?next.map(g=>`<div class="goal-line">${g.done?'✓':'○'} ${escapeHtml(g.title)} <span>${Math.round(g.progress)}/${g.target}</span></div>`).join(''):`<div class="goal-line done">✓ Hoàn thành mục tiêu</div>`}`;
+}
+/* Private dialogue replaces the shared QB/arc prompt only when directly talking to an NPC. */
+const __chOldNpcChoice=window.npcChoice||npcChoice;
+function chPrivateNpcChoice(npcId,topic){
+ const n=chNpc(npcId),s=game.npcState?.[npcId];
+ if(!n||!s||!game.started)return __chOldNpcChoice.apply(this,arguments);
+ game.flags.met[npcId]=true;
+ if(!game.dailyStats)game.dailyStats={met:0,talks:0,visits:[],visitOrder:[],events:0,promises:0,social:0,rest:0,worked:0,moneySpent:0,meetLocations:[]};
+ const first=!s.privateSeenInGame;
+ if(first){game.dailyStats.met=(game.dailyStats.met||0)+1;s.privateSeenInGame=true;s.lastSeenDay=game.day;}
+ const idx=chPickQuestion(npcId);
+ if(idx<0)return __chOldNpcChoice.apply(this,arguments);
+ game.privateNpcChats[npcId]=game.privateNpcChats[npcId]||{turns:0,lastIndex:-1,completed:0};
+ const state=game.privateNpcChats[npcId];state.turns=state.turns||0;state.lastIndex=idx;
+ const q=chQuestion(npcId,idx);game.privateNpcQuestionSeen[npcId]=(game.privateNpcQuestionSeen[npcId]||[]).concat(idx);
+ const intro=chTeen(`“${q}”\n\n${n.intro}`,npcId+':private-q:'+idx+':'+state.turns);
+ const choices=chChoiceSet(npcId,q,state.turns).map((c,i)=>({text:c.text,onChoose(){
+   changeRel(npcId,c.effects||{});
+   s.talkCount=(s.talkCount||0)+1;
+   game.dailyStats.talks=(game.dailyStats.talks||0)+1;
+   game.dailyStats.meetLocations=Array.isArray(game.dailyStats.meetLocations)?game.dailyStats.meetLocations:[];
+   game.dailyStats.meetLocations.push(s.location||game.location);
+   if(typeof remember==='function')remember(npcId,c.text,'positive',['private-chat']);
+   state.turns++;
+   const reply=c.reply;
+   addPhone(n.name,'💬 '+reply);
+   if(state.turns%2===0){
+     const lines=PRIVATE_PHONE_LINES[npcId]||[];const msg=lines[(Math.floor(state.turns/2)-1)%Math.max(1,lines.length)];if(msg)addPhone(n.name,msg);
+   }
+   if(state.turns%8===0)state.completed++;
+   if(typeof updateGoals==='function')updateGoals();
+   if(typeof chRefreshGoalHud==='function')chRefreshGoalHud();
+   const next=state.turns%8===0?null:chPickQuestion(npcId);
+   /* Show the player's selected answer as an actual speaker turn before the NPC replies. */
+   closeDialogue();
+   openDialogue(game.name,c.text,[{
+      text:'“Ừm… nghe tiếp nè.”',
+      onChoose(){
+         if(next===null){
+            openDialogue(n.name,chTeen(reply+'\n\n“Bn muốn để dành chủ đề này cho lần sau hay nói tiếp?”',npcId+':private-end:'+state.turns),[
+              {text:'“Để lần sau nói tiếp nha :))”',onChoose(){closeDialogue();toast(`Đã có một cuộc nói chuyện riêng với ${n.name}.`);}},
+              {text:'“Nói tiếp luôn đi, tui còn tò mò 👀”',onChoose(){state.turns=state.turns%8;closeDialogue();setTimeout(()=>chPrivateNpcChoice(npcId,'continue'),40);}}
+            ]);
+         }else{
+            openDialogue(n.name,reply,[{text:'“Kể tiếp đi :))”',onChoose(){closeDialogue();setTimeout(()=>chPrivateNpcChoice(npcId,'continue'),40);}}]);
+         }
+      }
+   }]);
+ }}));
+ openDialogue(n.name,intro,choices);
+}
+window.npcChoice=chPrivateNpcChoice;npcChoice=chPrivateNpcChoice;
+/* Contact persistence: keep both the live contact book and save-file state in sync. */
+function chSyncContactBook(){
+ chEnsurePrivateState();
+ const ps=(typeof ensurePhoneSocial==='function'?ensurePhoneSocial():null);
+ if(!ps)return;
+ for(const [id,c] of Object.entries(game.contactBook||{})){
+   if(!ps.contacts[id])ps.contacts[id]={phone:false,instagram:false,facebook:false,preferred:null,chatCount:0,lastChatDay:0};
+   Object.assign(ps.contacts[id],c);
+ }
+ for(const [id,c] of Object.entries(ps.contacts||{}))game.contactBook[id]={...game.contactBook[id],...c};
+}
+chSyncContactBook();
+const __chOldAddContact=addContact;
+addContact=function(id,channel){
+ chSyncContactBook();
+ __chOldAddContact(id,channel);
+ chSyncContactBook();
+ if(game.contactBook?.[id])game.contactBook[id][channel]=true;
+  const body=document.getElementById('phoneTab');if(body&&game.panel==='phone'&&game._phoneTab==='contacts')body.innerHTML=contactsHtml();
+};
+window.addContact=addContact;
+/* Rebuild contact data after an explicit load. */
+if(typeof loadGame==='function'){
+ const __chOldLoad=loadGame;
+ loadGame=function(){const r=__chOldLoad.apply(this,arguments);chEnsurePrivateState();chEnsurePrivateState();chSyncContactBook();return r;};
+ window.loadGame=loadGame;
+}
+if(typeof saveGame==='function'){
+ const __chOldSave=saveGame;
+ saveGame=function(){chSyncContactBook();return __chOldSave.apply(this,arguments);};
+ window.saveGame=saveGame;
+}
+/* News feed: dynamic, non-static phone Social tab. */
+const NEWS_POOL=[
+ ['🏙 Thành phố','Một quán nhỏ ở Phố cà phê vừa đổi playlist sáng. Khách quen đang tranh luận xem bản mới có “đúng vibe” hơn không.'],
+ ['🌧 Bản tin khu phố','Mưa chiều nay làm đoạn Bờ sông đông người trú hơn thường lệ. Một vài hàng quán tranh thủ kéo mái che ra sớm.'],
+ ['☕ Phố cà phê','Một góc café mới được set lại thành chỗ đọc sách yên. Có người đã giữ bàn từ rất sớm 👀'],
+ ['🎧 Giải trí','Một sân khấu nhỏ ở khu Mall đang test sound cho lịch diễn tối. Người đi ngang bảo bass nghe khá căng.'],
+ ['🏢 Văn phòng','Một vài team đang rủ nhau thử cách họp ngắn hơn. Bản tin nội bộ gọi đây là “giảm họp, tăng làm”.'],
+ ['🌳 Bờ sông','Một nhóm người vừa để lại vài chiếc ghế gỗ sạch bên lối đi. Không ai nhận mình là người đặt, nhưng mọi người dùng ngay.'],
+ ['🛵 Giao thông','Một tuyến đường nhỏ vừa được nhiều người chạy giao hàng truyền tai nhau vì buổi tối ít xe hơn.'],
+ ['📚 Văn hóa','Hiệu sách trong khu Mall vừa nhận một lô sách mới về illustration và design. Một số cuốn đang gần hết.'],
+ ['🍜 Đời sống','Một xe đồ ăn đêm đang được dân khu dân cư nhắc tới vì món cay “ăn xong toát mồ hôi nhưng vẫn gọi thêm”.'],
+ ['🎨 Sáng tạo','Một triển lãm ảnh đường phố mini đang được dựng ở một góc không gian chung. Chủ đề xoay quanh những khoảnh khắc rất bình thường.'],
+ ['⚙️ Công nghiệp','Khu xưởng chiều nay có một ca bảo trì định kỳ. Không có gì bất thường, chỉ là máy móc ồn hơn thường lệ.'],
+ ['🌙 Đêm thành phố','Đèn khu dân cư tối nay bật sớm hơn một chút. Một số người nói nhìn từ xa khá chill.'],
+ ['💬 Mạng xã hội','Một tài khoản ẩn danh vừa đăng: “Có những người gặp vài lần mà đã nhớ tên. Thành phố lạ thật.” 👀'],
+ ['🎬 Rạp phim','Một suất phim tối đang được bàn tán vì trailer trước giờ chiếu khiến nhiều người bất ngờ.'],
+ ['🌦 Thời tiết','Gió tối nay nhẹ hơn, trời cũng đỡ oi. Một số người tranh thủ đi bộ lâu hơn bình thường.'],
+ ['🧋 Khu ăn uống','Một món đồ uống mới đang được thử ở vài quán nhỏ. Vị được mô tả là “lạ nhưng không khó uống”.'],
+ ['📷 Đường phố','Ánh đèn phản trên mặt đường sau mưa đang tạo ra khá nhiều frame đẹp cho những người thích chụp đêm.'],
+ ['🎵 Âm nhạc','Một playlist cộng đồng vừa được chia sẻ rộng hơn. Chủ đề: “Nhạc cho lúc không muốn về nhà quá sớm”.']
+];
+function chPublishNews(force=false){
+ chEnsurePrivateState();
+ const minute=typeof absoluteMinute==='function'?absoluteMinute():((game.day-1)*1440+(game.minutes||0));
+ if(!game.started||(!force&&minute-(game.lastNewsMinute||-9999)<55))return false;
+ const start=(game.newsSeq||0)%NEWS_POOL.length;const [from,text]=NEWS_POOL[start];
+ game.newsSeq=(game.newsSeq||0)+1;game.lastNewsMinute=minute;
+ game.newsFeed.unshift({id:game.newsSeq,from,text,day:game.day,minutes:game.minutes});
+ if(game.newsFeed.length>24)game.newsFeed.length=24;
+ const tab=document.getElementById('phoneTab');if(tab&&game.panel==='phone'&&game._phoneTab==='social')tab.innerHTML=socialHtml();
+ return true;
+}
+function chSocialHtml(){
+ chEnsurePrivateState();
+ if(!game.newsFeed.length)chPublishNews(true);
+ const news=game.newsFeed.slice(0,12).map((x,i)=>`<div class="msg ${i===0?'news-new':''}"><strong>${escapeHtml(x.from)} <span style="float:right;color:#6f7991;font-weight:400">Ngày ${x.day} · ${escapeHtml(typeof worldTime==='function'?worldTime():'')}</span></strong><span>${escapeHtml(x.text)}</span>${i===0?'<em class="news-badge">MỚI</em>':''}</div>`).join('');
+ return `<div class="section"><div class="news-feed-head"><strong>📰 Bản tin mới nhất</strong><small>Được cập nhật theo thời gian trong thành phố</small></div>${news}</div>`+
+ `<div class="section"><div class="msg"><strong>👥 Mọi người quanh bạn</strong><span>${currentNPCs().map(n=>n.name).join(' · ')||'Không có ai ở gần lúc này.'}</span></div></div>`+
+ `<div class="section"><div class="msg"><strong>📍 Thành phố lúc này</strong><span>${escapeHtml(WORLD[game.location]?.name||'')}${game.location==='office'?' · Cuộc họp chiều đã bắt đầu.':' · Nhịp sống vẫn đang tiếp diễn.'}</span></div></div>`;
+}
+socialHtml=chSocialHtml;window.socialHtml=chSocialHtml;
+/* Goals: detect completion immediately and refresh the HUD without changing base goal rules. */
+const __chOldUpdateGoals=updateGoals;
+updateGoals=function(){
+ const before=new Map((game.dailyGoals||[]).map(g=>[g.id,!!g.done]));
+ const r=__chOldUpdateGoals.apply(this,arguments);
+ const completed=[];
+ for(const g of game.dailyGoals||[]){if(!before.get(g.id)&&g.done)completed.push(g.title);}
+ if(completed.length){
+   game._lastCompletedGoals=completed;
+   if(typeof toast==='function')completed.forEach(t=>toast('✓ Hoàn thành nhiệm vụ: '+t));
+   chRefreshGoalHud();
+ }
+ return r;
+};
+window.updateGoals=updateGoals;
+/* Hook time progression for fresh news and goal refresh. */
+const __chOldAdvance=advance;
+advance=function(min){const r=__chOldAdvance.apply(this,arguments);chEnsurePrivateState();chPublishNews(false);updateGoals();return r;};
+window.advance=advance;
+/* Extend phone reply pool with NPC-private topics. */
+if(typeof phoneReplyChoices==='function'){
+ const __chOldPhoneReplies=phoneReplyChoices;
+ phoneReplyChoices=function(npcId,turn){
+  const n=chNpc(npcId),q=PRIVATE_QUESTIONS[npcId]||[];
+  if(!n||!q.length)return __chOldPhoneReplies.apply(this,arguments);
+  const idx=(Number(turn)||0)%q.length;
+  const topic=q[idx];const v=PRIVATE_VOICES[npcId]||'vibe';
+  return [
+   {text:chTeen(`“Vụ ${topic.replace(/[“”?]/g,'').slice(0,55)} nghe cuốn á 👀”`,npcId+':phone-private:'+turn+':a'),reply:chTeen(`“Kkk biết ngay bn sẽ bắt đúng ${v}. Kể tui nghe thêm nha.”`,npcId+':phone-private-reply:'+turn+':a'),effects:{interest:3,curiosity:3},memory:'tiếp tục chủ đề riêng của hai người'},
+   {text:chTeen('“Tui hơi khác bn ở vụ này, nhưng vẫn muốn nghe lý do :))”',npcId+':phone-private:'+turn+':b'),reply:chTeen('“Khác quan điểm mà vẫn nói chuyện được mới vui chứ =))”',npcId+':phone-private-reply:'+turn+':b'),effects:{respect:3,trust:3},memory:'chia sẻ khác biệt nhưng vẫn lắng nghe'},
+   {text:chTeen('“Để gặp nhau rồi nói, chat vụ này dài quá =)))”',npcId+':phone-private:'+turn+':c'),reply:chTeen('“Deal. Gặp rồi nói tiếp, tui nhớ topic này.”',npcId+':phone-private-reply:'+turn+':c'),effects:{consistency:3,chemistry:2},memory:'để dành một chủ đề cho lần gặp sau'}
+  ];
+ };
+ window.phoneReplyChoices=phoneReplyChoices;
+}
+/* Keep the Contacts tab visibly current after opening the phone. */
+const __chOldOpenPanel=window.openPanel||openPanel;
+openPanel=function(kind){const r=__chOldOpenPanel.apply(this,arguments);if(kind==='phone'){chEnsurePrivateState();if(!game.newsFeed.length)chPublishNews(true);if(game._phoneTab==='contacts')chSyncContactBook();}return r;};
+window.openPanel=openPanel;
+/* Verify uniqueness of the private question bank at runtime. */
+const flat=[];Object.values(PRIVATE_QUESTIONS).forEach(a=>a.forEach(q=>flat.push(q)));
+const unique=new Set(flat);
+console.log('[City Hearts] Private NPC bank:',flat.length,'questions /',unique.size,'unique.');
+if(flat.length!==unique.size)console.warn('[City Hearts] Duplicate private questions detected.');
+})();
+</script>
+<style id="cityHeartsFinalPrivateNpcFixesStyle">
+/* Only presentation for the targeted patch. */
+.news-feed-head{display:flex;justify-content:space-between;gap:8px;align-items:end;margin-bottom:7px}.news-feed-head small{font-size:9px;color:#7d6a57}.news-new{position:relative;border-color:#d28aa1!important;box-shadow:0 3px 0 rgba(138,76,94,.22)!important}.news-badge{display:inline-block;margin-left:6px;padding:2px 5px;border-radius:999px;background:#e06b8d;color:#fff;font-size:8px;font-style:normal;font-weight:900;vertical-align:middle}
+</style>
+
+<!-- CITY HEARTS · 16-BIT TOP-DOWN PIXEL ART RENDER PASS -->
+<style id="cityHearts16BitPixelArtStyle">
+#game{image-rendering:pixelated!important;image-rendering:crisp-edges!important;}
+</style>
+<script id="cityHearts16BitPixelArtRenderer">
+(function(){
+'use strict';
+if(typeof ctx==='undefined'||typeof game==='undefined')return;
+try{ctx.imageSmoothingEnabled=false;}catch(_e){}
+
+const P16={
+  ink:'#25242b', ink2:'#35343a',
+  navy:'#263344', navy2:'#344555',
+  stone:'#8b8177', stone2:'#b5a896', cream:'#ead6b2', cream2:'#f3e5c9',
+  brick:'#84565a', brick2:'#a66a62', brick3:'#c38b79',
+  road:'#3e434b', road2:'#4b5057', sidewalk:'#8b8f8d', sidewalk2:'#b2b3a6',
+  grass:'#536f59', grass2:'#6f8c61', water:'#3e7280', water2:'#5b93a0',
+  teal:'#63aaa7', cyan:'#78c8c2', pink:'#e06f93', pink2:'#f08ca7',
+  gold:'#e4bc66', orange:'#db8b5e', leaf:'#7c9b5c', leaf2:'#9fb96d',
+  skin:'#efc5a8', skin2:'#d99f82', hair:'#2e2933', hair2:'#463846',
+  white:'#fff1d1', glass:'#45677c', glass2:'#6f96aa'
+};
+
+function ch16Round(n){return Math.round(n);}
+function ch16Night(){const h=(Number(game.minutes)||0)/60%24;return h>=18||h<6;}
+function ch16Evening(){const h=(Number(game.minutes)||0)/60%24;return h>=16&&h<19;}
+function ch16Z(seed,min,max){const v=Math.sin((seed+1)*12.9898)*43758.5453;return min+(v-Math.floor(v))*(max-min);}
+function ch16Rect(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(ch16Round(x),ch16Round(y),ch16Round(w),ch16Round(h));}
+function ch16Diamond(cx,cy,w,h,c){ctx.fillStyle=c;ctx.beginPath();ctx.moveTo(cx,cy-h/2);ctx.lineTo(cx+w/2,cy);ctx.lineTo(cx,cy+h/2);ctx.lineTo(cx-w/2,cy);ctx.closePath();ctx.fill();}
+function ch16Window(x,y,w,h,lit){
+  ch16Rect(x,y,w,h,P16.ink);
+  ch16Rect(x+2,y+2,w-4,h-4,lit?P16.gold:P16.glass);
+  ch16Rect(x+3,y+3,Math.max(2,w-7),2,lit?'#f4d994':P16.glass2);
+  ch16Rect(x+w/2-1,y+2,2,h-4,P16.ink2);
+  ch16Rect(x+2,y+h/2-1,w-4,2,P16.ink2);
+}
+function ch16Facade(x,y,w,h,kind,label,seed){
+  const brick=kind==='brick';
+  const base=brick?P16.brick:P16.stone;
+  const light=brick?P16.brick3:P16.stone2;
+  const roof=brick?P16.brick2:P16.navy2;
+  /* top cap / depth */
+  ch16Rect(x+7,y+6,w+10,h+10,'rgba(21,23,28,.30)');
+  ch16Rect(x,y,w,h,P16.ink);
+  ch16Rect(x+4,y+4,w-8,h-8,base);
+  ch16Rect(x+7,y+7,w-14,4,light);
+  ch16Rect(x-2,y-5,w+4,10,roof);
+  ch16Rect(x,y-5,w,3,light);
+  /* masonry */
+  for(let yy=y+22,row=0;yy<y+h-48;yy+=15,row++){
+    const offset=(row%2)*7;
+    for(let xx=x+9-offset;xx<x+w-8;xx+=29){
+      ch16Rect(xx,yy,24,10,brick?'rgba(70,47,49,.16)':'rgba(39,45,48,.13)');
+      ch16Rect(xx+2,yy+2,20,2,brick?'rgba(255,223,194,.10)':'rgba(255,255,255,.10)');
+    }
+  }
+  /* windows */
+  const cols=Math.max(2,Math.floor((w-26)/56));
+  const rows=Math.max(2,Math.floor((h-64)/48));
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const wx=x+15+c*((w-30)/(cols-1||1));
+    const wy=y+28+r*47;
+    const lit=(Math.floor(seed+c*5+r*7)%7)<2 || (ch16Night()&&((c+r)%3===0));
+    ch16Window(wx,wy,22,30,lit);
+    if((c+r+Math.floor(seed))%5===0){ch16Rect(wx-4,wy+30,30,3,P16.ink2);ch16Rect(wx-2,wy+33,26,2,'rgba(245,237,210,.38)');}
+  }
+  /* entrance */
+  const dw=Math.min(46,w*.18), dx=x+w/2-dw/2, dy=y+h-62;
+  ch16Rect(dx-4,dy-5,dw+8,58,P16.ink);
+  ch16Rect(dx,dy,dw,53,kind==='brick'?P16.stone2:P16.navy2);
+  ch16Rect(dx+4,dy+4,dw/2-6,45,kind==='brick'?P16.cream:P16.road2);
+  ch16Rect(dx+dw/2+2,dy+4,dw/2-6,45,kind==='brick'?P16.cream:P16.road2);
+  ch16Rect(dx+dw/2-2,dy+4,4,45,P16.ink2);
+  ch16Rect(dx+6,dy+25,4,3,P16.gold);ch16Rect(dx+dw-10,dy+25,4,3,P16.gold);
+  /* awning/sign */
+  if(label){
+    const tw=Math.min(w-20,Math.max(108,label.length*7+18));
+    ch16Rect(x+w/2-tw/2,dy-18,tw,16,P16.ink);
+    ch16Rect(x+w/2-tw/2+2,dy-16,tw-4,12,P16.cream2);
+    ctx.font='900 9px system-ui,Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=P16.ink;ctx.fillText(label,x+w/2,dy-10);ctx.textAlign='left';ctx.textBaseline='alphabetic';
+  }
+  if(w>280){
+    const ax=x+w-30;ch16Rect(ax,y+18,18,10,P16.stone2);ch16Rect(ax+3,y+20,12,4,P16.ink2);ch16Rect(ax+5,y+28,8,3,P16.ink2);
+  }
+}
+function ch16Tree(x,y,s,seed){
+  ctx.save();ctx.translate(ch16Round(x),ch16Round(y));
+  const t=performance.now()/600;const sway=Math.sin(t+seed)*2*s;
+  ch16Rect(-6*s,5*s,12*s,31*s,P16.ink);ch16Rect(-3*s,3*s,6*s,30*s,'#6b4d38');
+  const blobs=[[-18,-30,24,22],[0,-40,28,25],[18,-27,23,20],[-6,-53,26,24],[-23,-48,18,18],[11,-57,17,16]];
+  blobs.forEach((b,i)=>{
+    const [dx,dy,w,h]=b; ch16Rect(dx*s+sway*(i%2?0.45:0.8),dy*s,w*s,h*s,i%3===0?P16.leaf2:P16.leaf);
+  });
+  ch16Rect(-10*s+sway,-35*s,9*s,5*s,'#b4c779');ch16Rect(9*s+sway,-25*s,8*s,4*s,'#b4c779');
+  ctx.restore();
+}
+function ch16Lamp(x,y,night){
+  ch16Rect(x-3,y-1,6,42,P16.ink);ch16Rect(x-9,y-4,18,4,P16.navy2);ch16Rect(x-8,y-15,16,11,P16.ink);
+  ch16Rect(x-5,y-13,10,8,night?P16.gold:P16.cream);
+  if(night){ch16Rect(x-14,y-9,28,2,'rgba(255,218,125,.17)');ch16Rect(x-20,y-3,40,2,'rgba(255,218,125,.09)');}
+}
+function ch16Scooter(x,y,body,accent){
+  ch16Rect(x-12,y+7,24,3,'rgba(18,22,26,.30)');
+  ch16Rect(x-9,y,4,8,P16.ink);ch16Rect(x+6,y,4,8,P16.ink);
+  ch16Rect(x-9,y-5,18,7,body);ch16Rect(x-2,y-9,8,5,body);ch16Rect(x-5,y-4,10,3,accent);ch16Rect(x+7,y-3,4,2,P16.cream);
+}
+function ch16Car(x,y,body,flip,night){
+  ctx.save();ctx.translate(ch16Round(x),ch16Round(y));if(flip)ctx.scale(-1,1);
+  ch16Rect(-33,12,66,6,'rgba(18,20,24,.27)');
+  ch16Rect(-31,-6,62,21,P16.ink);ch16Rect(-24,-15,42,10,P16.ink);
+  ch16Rect(-27,-10,54,15,body);ch16Rect(-21,-15,35,8,body);
+  ch16Rect(-15,-13,14,7,P16.glass);ch16Rect(1,-13,11,7,P16.glass2);
+  ch16Rect(19,-7,9,5,night?P16.cream:'#d9ebe6');ch16Rect(-29,-3,7,5,'#7d3c40');
+  ch16Rect(-23,7,13,9,P16.ink);ch16Rect(10,7,13,9,P16.ink);
+  ch16Rect(-20,9,7,4,P16.road2);ch16Rect(13,9,7,4,P16.road2);
+  ch16Rect(-18,-15,27,2,'rgba(255,255,255,.18)');
+  if(night){ch16Rect(29,-10,30,3,'rgba(255,239,175,.20)');}
+  ctx.restore();
+}
+function ch16Road(y0,y1){
+  ch16Rect(0,y0,1280,y1-y0,P16.road);
+  ch16Rect(0,y0,1280,6,P16.road2);
+  for(let x=18;x<1280;x+=76)ch16Rect(x,y0+34,34,4,'#d0b77a');
+  for(let x=12;x<1280;x+=57){ch16Rect(x,y1-18,26,3,'rgba(236,222,187,.23)');}
+}
+function ch16Sidewalk(y0,y1){
+  ch16Rect(0,y0,1280,y1-y0,P16.sidewalk);
+  ch16Rect(0,y0,1280,6,P16.sidewalk2);
+  for(let y=y0+16;y<y1;y+=20)ch16Rect(0,y,1280,2,'rgba(55,53,55,.16)');
+  for(let x=0;x<1280;x+=42)ch16Rect(x,y0,2,y1-y0,'rgba(255,255,255,.06)');
+}
+function ch16BackSky(loc){
+  const night=ch16Night(),eve=ch16Evening();
+  let sky=night?'#18232f':eve?'#8e7680':'#92bfd0';
+  ch16Rect(0,0,1280,210,sky);
+  if(!night){
+    ch16Rect(0,0,1280,10,sky);
+    for(let i=0;i<7;i++){
+      const x=55+i*185;const h=72+(i%4)*23;
+      ch16Rect(x,160-h,74,h,'rgba(32,47,57,.16)');
+      for(let w=0;w<3;w++)for(let r=0;r<4;r++)if((i+w+r)%4===0)ch16Rect(x+8+w*20,170-h+r*15,8,4,'rgba(244,208,124,.40)');
+    }
+  }
+  const sunX=night?1100:165,sunY=night?72:58;
+  ch16Rect(sunX-10,sunY-10,20,20,night?'#e8d5a7':'#f4db99');
+  if(night){for(let i=0;i<18;i++){const sx=22+(i*71)%1220,sy=22+(i*37)%130;ch16Rect(sx,sy,2,2,i%3===0?'#f6ebce':'#b1c6cf');}}
+  ch16Rect(0,186,1280,38,'rgba(32,40,47,.35)');
+}
+function ch16LocationGround(loc){
+  if(loc==='park'){
+    ch16Rect(0,220,1280,500,P16.grass);ch16Rect(0,568,1280,152,P16.water);ch16Rect(0,568,1280,4,P16.water2);
+    for(let i=0;i<24;i++){const x=(i*59+performance.now()*.02)%1280,y=584+(i%7)*18;ch16Rect(x,y,18+(i%3)*9,2,'rgba(188,224,222,.20)');}
+    ch16Sidewalk(415,505);ch16Road(505,560);ch16Rect(0,560,1280,8,'#7c6b55');ch16Rect(0,568,1280,3,P16.water2);
+  }else if(loc==='factory'){
+    ch16Rect(0,220,1280,500,'#656b69');
+    ch16Rect(0,390,1280,112,'#62686a');ch16Road(520,620);ch16Sidewalk(430,520);
+    for(let x=0;x<1280;x+=150){ch16Rect(x,386,118,8,'#7e6b4a');ch16Rect(x+12,394,6,30,'#3e484c');ch16Rect(x+104,394,6,30,'#3e484c');}
+  }else{
+    const ground=loc==='cafe'?'#6f745f':loc==='mall'?'#555267':loc==='residential'?'#6d6b64':loc==='office'?'#616970':'#666a6b';
+    ch16Rect(0,220,1280,500,ground);
+    ch16Sidewalk(395,505);ch16Road(505,620);ch16Sidewalk(620,708);
+  }
+}
+function ch16ComplexHouse(x,y,w,h,kind,label,seed,accent){
+  const brick=kind==='brick';
+  const base=brick?'#7a5356':'#777b7b';
+  const light=brick?'#b9796f':'#b6aa91';
+  const deep=brick?'#553b40':'#4a565b';
+  ch16Rect(x+7,y+7,w+10,h+10,'rgba(18,20,25,.28)');
+  ch16Rect(x,y,w,h,P16.ink);ch16Rect(x+4,y+4,w-8,h-8,base);
+  ch16Rect(x+7,y+7,w-14,5,light);
+  ch16Rect(x-2,y-5,w+4,9,accent||deep);ch16Rect(x,y-5,w,2,light);
+  const floors=Math.max(2,Math.min(4,Math.floor((h-38)/38)));
+  for(let r=0;r<floors;r++){
+    const yy=y+18+r*38,cols=w>150?3:2;
+    for(let c=0;c<cols;c++){const wx=x+13+c*((w-40)/(cols-1||1));ch16Window(wx,yy,22,28,((seed+r*5+c*3)%7)<2 || (ch16Night()&&((seed+r+c)%3===0)));}
+    if(seed%2===0&&r<2){
+      const bx=x+w-58,by=yy+29;
+      ch16Rect(bx-3,by,w>155?55:48,4,P16.ink);ch16Rect(bx,by+4,w>155?49:42,3,P16.cream2);
+      ch16Rect(bx,by+7,3,10,P16.ink);ch16Rect(bx+(w>155?46:39),by+7,3,10,P16.ink);
+      ch16Rect(bx+12,by+6,3,9,P16.stone2);ch16Rect(bx+27,by+6,3,9,P16.stone2);
+    }
+  }
+  const dw=Math.min(42,w*.23),dx=x+w/2-dw/2,dy=y+h-58;
+  ch16Rect(dx-4,dy-4,dw+8,56,P16.ink);ch16Rect(dx,dy,dw,50,brick?P16.cream:P16.navy2);
+  ch16Rect(dx+dw/2-2,dy+4,4,42,P16.ink2);ch16Rect(dx+6,dy+25,4,3,P16.gold);ch16Rect(dx+dw-10,dy+25,4,3,P16.gold);
+  ch16Rect(x+8,dy-12,w-16,5,P16.ink);ch16Rect(x+12,dy-9,w-24,4,accent||P16.orange);
+  if(w>115){const ax=x+w-27,ay=y+24;ch16Rect(ax,ay,17,11,P16.stone2);ch16Rect(ax+3,ay+3,11,4,P16.ink2);ch16Rect(ax+5,ay+11,7,3,P16.ink2);ch16Rect(ax+1,ay+14,2,15,P16.ink2);}
+  ch16Rect(x+w-36,y-14,24,8,P16.ink);ch16Rect(x+w-32,y-23,16,10,P16.navy2);ch16Rect(x+w-30,y-21,12,4,P16.glass2);
+  ch16Rect(x+9,y+h-18,24,7,P16.ink);ch16Rect(x+12,y+h-15,18,4,P16.leaf);ch16Rect(x+17,y+h-20,3,5,P16.leaf2);
+  ctx.save();ctx.strokeStyle='rgba(30,34,35,.65)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x+12,y+30);ctx.lineTo(x+w-12,y+33);ctx.stroke();
+  const cloth=['#d88f98','#d7bf7a','#83aebe','#c8a16d'];for(let i=0;i<4;i++){const cx=x+22+i*18,cy=y+32+((i+seed)%2)*2;ch16Rect(cx,cy,12,8,cloth[(i+seed)%cloth.length]);}ctx.restore();
+  if(label){const tw=Math.min(w-10,Math.max(64,label.length*6+14));ch16Rect(x+w/2-tw/2,dy-25,tw,12,P16.ink);ch16Rect(x+w/2-tw/2+2,dy-23,tw-4,8,P16.cream2);ctx.save();ctx.fillStyle=P16.ink;ctx.font='900 6px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,x+w/2,dy-19);ctx.restore();}
+}
+function ch16Bike(x,y,body){
+  ch16Rect(x-14,y+8,30,3,'rgba(18,20,25,.22)');ch16Rect(x-11,y,6,6,P16.ink);ch16Rect(x+7,y,6,6,P16.ink);ch16Rect(x-9,y-1,4,9,body);ch16Rect(x+5,y-5,4,10,body);ch16Rect(x-5,y-3,12,3,body);ch16Rect(x+7,y-9,3,6,P16.ink);ch16Rect(x+10,y-10,6,3,P16.ink);ch16Rect(x-12,y-6,6,3,P16.cream2);
+}
+function ch16Boat(x,y,body){
+  const t=performance.now()/700,wig=Math.sin(t+x*.01)*1.2;
+  ch16Rect(x-30,y+12+wig,60,4,'rgba(18,20,25,.20)');ch16Rect(x-28,y+3+wig,56,8,P16.ink);ch16Rect(x-22,y+1+wig,44,7,body);ch16Rect(x-18,y-2+wig,36,4,body);
+  ch16Rect(x-3,y-17+wig,3,16,P16.ink);ch16Rect(x,y-16+wig,18,9,P16.cream2);ch16Rect(x+2,y-15+wig,13,7,body);
+  for(let i=0;i<3;i++)ch16Rect(x-25+i*18,y+15+wig,10,2,'rgba(210,235,230,.32)');
+}
+function ch16BuildingsBase(loc){
+  if(loc==='downtown'){
+    ch16Facade(38,125,316,240,'brick','KHU PHỐ',11);ch16Facade(400,92,324,210,'stone','TRUNG TÂM',17);ch16Facade(786,118,414,247,'brick','TRỤ SỞ',23);
+  }else if(loc==='cafe'){
+    ch16Facade(38,110,366,240,'brick','TRĂNG & BẠC HÀ',13);ch16Facade(846,140,330,206,'stone','HIỆU SÁCH',21);
+    ch16Rect(435,345,310,14,P16.ink);ch16Rect(443,348,294,8,'#c99969');
+    for(let x=454;x<742;x+=42){ch16Rect(x,356,6,13,P16.ink);ch16Rect(x-4,350,14,6,P16.cream);}
+  }else if(loc==='office'){
+    ch16Facade(48,104,394,246,'stone','TRỤ SỞ',29);ch16Facade(792,122,398,228,'stone','VẬN HÀNH',31);
+    for(let i=0;i<5;i++){ch16Rect(140+i*188,365,118,34,P16.navy2);ch16Rect(151+i*188,372,96,18,P16.glass2);}
+  }else if(loc==='park'){
+    for(let i=0;i<12;i++)ch16Tree(65+i*108,325+(i%3)*46,1+(i%2)*.08,30+i);
+    ch16Rect(0,375,1280,8,'rgba(36,52,45,.18)');
+  }else if(loc==='mall'){
+    ch16Facade(54,94,522,260,'stone','CITY MALL',41);ch16Facade(660,118,520,236,'brick','KHU GIẢI TRÍ',47);
+    for(let i=0;i<9;i++){const x=72+i*132;ch16Rect(x,382,78,18,P16.ink);ch16Rect(x+4,386,70,10,[P16.pink,P16.cyan,P16.gold][i%3]);}
+  }else if(loc==='residential'){
+    ch16ComplexHouse(28,148,178,230,'stone','NHÀ PHỐ 01',59,'#7d8d8c');
+    ch16ComplexHouse(222,118,164,260,'brick','NHÀ PHỐ 02',61,'#8d5f5f');
+    ch16ComplexHouse(402,160,178,218,'stone','NHÀ PHỐ 03',67,'#777e83');
+    ch16ComplexHouse(595,126,156,252,'brick','NHÀ PHỐ 04',71,'#875b5d');
+    ch16ComplexHouse(769,150,188,228,'stone','NHÀ PHỐ 05',73,'#7f8988');
+    ch16ComplexHouse(972,106,258,272,'brick','NHÀ PHỐ 06',79,'#915f62');
+    ch16Rect(389,378,16,20,P16.ink);ch16Rect(392,381,10,14,P16.road2);
+    ch16Rect(107,378,78,8,P16.ink);ch16Rect(114,369,64,8,P16.cream2);ch16Rect(126,361,40,8,'#d49b63');
+  }else if(loc==='factory'){
+    ch16Facade(36,92,492,282,'stone','XƯỞNG A',71);ch16Facade(698,88,500,288,'stone','KHO HÀNG',73);
+    for(let i=0;i<5;i++){const x=555+i*66;ch16Rect(x,395,44,36,P16.ink);ch16Rect(x+5,400,34,25,'#7b7f7f');ch16Rect(x+8,405,14,7,P16.orange);}
+  }
+}
+
+/* V8 contextual architecture: additions only, original building pass preserved. */
+function ch16MiniFacade(x,y,w,h,kind,label,seed,accent){
+  const brick=kind==='brick';
+  ch16Rect(x+5,y+5,w+8,h+8,'rgba(18,20,25,.25)');ch16Rect(x,y,w,h,P16.ink);
+  ch16Rect(x+4,y+4,w-8,h-8,brick?'#69484d':'#686a6b');
+  ch16Rect(x+7,y+7,w-14,4,brick?'#b77a73':'#b4a58f');ch16Rect(x-2,y-4,w+4,8,accent||(brick?'#8d5d60':'#88837a'));
+  const cols=Math.max(1,Math.floor((w-20)/42));
+  for(let c=0;c<cols;c++){const wx=x+11+c*42;ch16Window(wx,y+18,16,22,(seed+c*3)%5===0||ch16Night()&&((c+seed)%3===0));}
+  const dw=Math.min(34,w*.28),dx=x+w/2-dw/2,dy=y+h-42;ch16Rect(dx-3,dy-3,dw+6,42,P16.ink);ch16Rect(dx,dy,dw,38,brick?'#74645b':'#46515c');ch16Rect(dx+dw-7,dy+17,3,2,P16.gold);
+  if(label){const tw=Math.min(w-8,Math.max(62,label.length*6+12));ch16Rect(x+w/2-tw/2,dy-13,tw,12,P16.ink);ch16Rect(x+w/2-tw/2+2,dy-11,tw-4,8,P16.cream2);ctx.save();ctx.fillStyle=P16.ink;ctx.font='900 6px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,x+w/2,dy-7);ctx.restore();}
+}
+function ch16ParkingGarage(x,y,w,h,label){
+  ch16Rect(x+6,y+6,w+8,h+8,'rgba(18,20,25,.28)');ch16Rect(x,y,w,h,P16.ink);ch16Rect(x+4,y+4,w-8,h-8,'#555e62');ch16Rect(x+9,y+9,w-18,7,'#939b9c');
+  for(let r=0;r<3;r++)for(let c=0;c<4;c++){ch16Rect(x+16+c*34,y+25+r*34,24,20,'#2b363e');ch16Rect(x+19+c*34,y+28+r*34,18,10,P16.glass);}
+  ch16Rect(x+w/2-22,y+h-16,44,12,P16.ink);ch16Rect(x+w/2-19,y+h-13,38,6,'#b98b52');ctx.save();ctx.fillStyle=P16.white;ctx.font='900 6px system-ui';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h-9);ctx.restore();
+}
+function ch16GuardBooth(x,y,label){
+  ch16Rect(x-3,y-3,62,52,'rgba(18,20,25,.25)');ch16Rect(x,y,56,46,P16.ink);ch16Rect(x+4,y+4,48,38,'#6b777b');ch16Rect(x+9,y+8,38,17,P16.glass);ch16Rect(x+9,y+26,38,3,P16.cream);ch16Rect(x+22,y+29,12,9,'#415057');ctx.save();ctx.fillStyle=P16.gold;ctx.fillRect(x+4,y-7,48,6);ctx.fillStyle=P16.ink;ctx.font='900 6px system-ui';ctx.textAlign='center';ctx.fillText(label,x+28,y+17);ctx.restore();
+}
+function ch16Buildings(loc){
+  ch16BuildingsBase(loc);
+  if(loc==='downtown'){ch16MiniFacade(-2,242,128,126,'stone','NGÂN HÀNG',103,'#778188');ch16MiniFacade(1163,228,117,124,'brick','CỬA HÀNG',107,'#9b665c');ch16ParkingGarage(360,264,130,112,'BÃI XE');}
+  else if(loc==='cafe'){ch16MiniFacade(404,254,136,126,'brick','TIỆM BÁNH',211,'#b87864');ch16MiniFacade(746,264,102,116,'stone','GIẶT ỦI',217,'#8d9991');ch16MiniFacade(1190,244,92,136,'stone','TẠP HÓA',221,'#8a7f72');}
+  else if(loc==='office'){ch16MiniFacade(-2,248,128,130,'stone','CLINIC',301,'#6f8e95');ch16ParkingGarage(470,252,176,126,'PARKING');ch16MiniFacade(650,250,118,128,'stone','SẢNH',307,'#82939a');ch16GuardBooth(1180,298,'BẢO VỆ');}
+  else if(loc==='park'){ch16MiniFacade(24,264,118,102,'stone','WC',401,'#7f8f86');ch16MiniFacade(1110,268,142,100,'brick','NHÀ GỖ',409,'#9a6e56');ch16Rect(488,300,304,7,'#665447');ch16Rect(505,250,7,50,'#4c3d34');ch16Rect(768,250,7,50,'#4c3d34');ch16Rect(500,242,280,9,'#8a674d');for(let x=530;x<760;x+=36)ch16Rect(x,230,5,18,'#5b493b');}
+  else if(loc==='mall'){ch16ParkingGarage(-2,260,182,110,'PARKING');ch16MiniFacade(598,250,176,120,'stone','FOOD COURT',501,'#9a8092');ch16MiniFacade(1004,248,278,124,'brick','CINEMA',509,'#7f5268');}
+  else if(loc==='residential'){ch16Planter(58,458,36);ch16Planter(300,456,42);ch16Planter(620,458,40);ch16Planter(1018,456,44);ch16Mailboxes(190,454,4);ch16Mailboxes(870,456,5);ch16BikeRack(675,472);}
+  else if(loc==='factory'){ch16GuardBooth(-2,294,'BẢO VỆ');ch16MiniFacade(534,248,150,130,'stone','XƯỞNG B',701,'#7c8585');ch16MiniFacade(1200,240,82,138,'stone','KHO C',707,'#777d80');for(let i=0;i<4;i++){const x=700+i*74;ch16Rect(x,302,54,70,P16.ink);ch16Rect(x+6,308,42,54,'#5e6668');ch16Rect(x+12,318,30,34,'#6f7778');}}
+}
+function ch16PropsBase(loc){
+  const night=ch16Night();
+  const scooters=loc!=='park'&&loc!=='factory';
+  if(scooters){for(let i=0;i<6;i++)ch16Scooter(90+i*205,578+(i%2)*18,['#49616b','#7d4c54','#b48b4d','#5f765f'][i%4],[P16.cyan,P16.gold,P16.cream,P16.pink][i%4]);}
+  for(let i=0;i<6;i++)ch16Lamp(90+i*220,392+(i%2)*30,night);
+  if(loc==='park'){ch16Lamp(330,425,night);ch16Lamp(970,425,night);for(let i=0;i<5;i++){ch16Rect(180+i*220,455,64,6,P16.ink);ch16Rect(187+i*220,448,50,7,P16.cream);}}
+  if(loc==='downtown'||loc==='mall')for(let i=0;i<4;i++)ch16Tree(95+i*330,448+(i%2)*24,.72,80+i);
+  if(loc==='cafe')for(let i=0;i<4;i++){ch16Rect(470+i*150,438,62,7,P16.ink);ch16Rect(476+i*150,429,50,9,P16.cream);ch16Rect(490+i*150,422,22,7,'#8c5d45');}
+  if(loc==='factory')for(let i=0;i<7;i++){ch16Rect(75+i*175,438,90,8,P16.ink);ch16Rect(80+i*175,428,80,10,'#858b8b');ch16Rect(95+i*175,420,18,8,P16.orange);}
+}
+
+function ch16Bin(x,y,kind){const body=kind==='recycle'?'#5e7c71':'#596168';ch16Rect(x,y,22,26,P16.ink);ch16Rect(x+3,y+3,16,18,body);ch16Rect(x+6,y-3,10,4,P16.cream);}
+function ch16Planter(x,y,w=34){ch16Rect(x,y,w,7,P16.ink);ch16Rect(x+3,y-3,w-6,6,'#8a5b45');ch16Rect(x+8,y-11,5,10,P16.leaf);ch16Rect(x+14,y-14,5,13,P16.leaf2);ch16Rect(x+20,y-9,5,8,P16.leaf);}
+function ch16BikeRack(x,y){ch16Rect(x,y,48,4,P16.ink);for(let i=0;i<4;i++){ch16Rect(x+6+i*11,y-11,3,12,P16.stone2);ch16Rect(x+3+i*11,y+3,3,8,P16.ink);}}
+function ch16TableSet(x,y){ch16Rect(x,y,28,4,P16.ink);ch16Rect(x+11,y+4,5,16,P16.ink);ch16Rect(x-5,y+7,12,4,P16.cream);ch16Rect(x+21,y+7,12,4,P16.cream);ch16Rect(x+7,y-9,5,7,P16.cream2);ch16Rect(x+18,y-9,5,7,P16.cream2);}
+function ch16FoodCart(x,y,accent){ch16Rect(x-24,y+15,48,5,P16.ink);ch16Rect(x-19,y-7,38,22,P16.ink);ch16Rect(x-15,y-3,30,16,'#8e604e');ch16Rect(x-21,y-13,42,6,accent);ch16Rect(x-11,y-21,22,8,P16.cream2);ch16Rect(x-14,y+20,5,7,P16.ink);ch16Rect(x+9,y+20,5,7,P16.ink);}
+function ch16Mailboxes(x,y,count){for(let i=0;i<count;i++){ch16Rect(x+i*17,y,14,20,P16.ink);ch16Rect(x+2+i*17,y+2,10,10,P16.cream2);ch16Rect(x+5+i*17,y+15,4,2,P16.gold);}}
+function ch16Bollards(x,y,count,accent){for(let i=0;i<count;i++){ch16Rect(x+i*18,y,5,18,P16.ink);ch16Rect(x+1+i*18,y-2,3,5,accent||P16.gold);}}
+function ch16PalletStack(x,y){ch16Rect(x,y,44,30,P16.ink);for(let r=0;r<3;r++){ch16Rect(x+3,y+3+r*8,38,6,r%2?P16.orange:'#9a7649');ch16Rect(x+8,y+5+r*8,2,4,P16.gold);ch16Rect(x+20,y+5+r*8,2,4,P16.gold);ch16Rect(x+32,y+5+r*8,2,4,P16.gold);}}
+function ch16PropsV8(loc){
+ if(loc==='downtown'){ch16Bin(356,452,'trash');ch16Bin(1034,456,'recycle');ch16Planter(210,458,42);ch16Planter(830,456,46);ch16BikeRack(520,470);ch16Bollards(610,464,5,P16.cyan);ch16Rect(300,445,6,32,P16.ink);ch16Rect(306,450,18,4,P16.gold);}
+ else if(loc==='cafe'){ch16TableSet(475,463);ch16TableSet(815,463);ch16BikeRack(915,474);ch16FoodCart(1035,480,P16.pink);ch16Planter(400,470,45);ch16Rect(585,455,5,22,P16.ink);ch16Rect(590,451,28,5,P16.cream2);}
+ else if(loc==='office'){ch16Bollards(475,456,8,P16.cyan);ch16Bollards(835,456,8,P16.gold);ch16Bin(268,458,'recycle');ch16Bin(1080,458,'trash');for(let i=0;i<4;i++){ch16Rect(560+i*64,468,8,4,P16.ink);ch16Rect(562+i*64,460,4,9,P16.gold);}}
+ else if(loc==='park'){ch16FoodCart(155,478,P16.gold);ch16Bin(330,478,'recycle');ch16Bin(930,478,'trash');for(let i=0;i<4;i++)ch16Planter(430+i*98,480,34);ch16Rect(560,430,160,5,'#655245');for(let i=0;i<7;i++)ch16Rect(566+i*23,414,5,18,'#77604e');for(let i=0;i<20;i++){const x=20+i*63;ch16Rect(x,525-(i%2)*3,3,18+(i%3)*5,P16.leaf);}}
+ else if(loc==='mall'){for(let i=0;i<5;i++){ch16Rect(255+i*52,460,22,11,P16.ink);ch16Rect(258+i*52,463,16,5,P16.cream2);ch16Rect(262+i*52,471,8,7,P16.ink);}ch16Planter(420,454,50);ch16Planter(860,454,50);ch16Bin(690,460,'recycle');ch16Rect(1012,446,42,34,P16.ink);ch16Rect(1016,450,34,11,'#7e607d');ch16Rect(1019,464,28,4,P16.gold);}
+ else if(loc==='residential'){ch16Mailboxes(120,454,4);ch16Mailboxes(942,456,4);ch16Bin(360,458,'trash');ch16Bin(1098,458,'recycle');ch16Planter(520,462,40);ch16Planter(790,460,42);ch16BikeRack(655,470);ch16Rect(190,430,4,30,P16.ink);ch16Rect(310,430,4,30,P16.ink);ch16Rect(192,434,118,2,P16.stone2);['#e8a6aa','#d8c77c','#89b7c0','#d8a36f'].forEach((c,i)=>ch16Rect(204+i*26,437,18,12,c));}
+ else if(loc==='factory'){for(let i=0;i<3;i++)ch16PalletStack(120+i*170,454);ch16Bin(594,462,'recycle');ch16Bin(1120,462,'trash');for(let i=0;i<6;i++){ch16Rect(540+i*46,432,6,30,'#4a4f52');ch16Rect(536+i*46,426,14,6,P16.orange);}for(let i=0;i<4;i++)ch16Rect(720+i*64,472,42,4,P16.gold);ch16Rect(1002,438,110,8,P16.ink);for(let i=0;i<5;i++)ch16Rect(1008+i*22,446,12,6,'#7b6d5a');}
+}
+function ch16Props(loc){ch16PropsBase(loc);ch16PropsV8(loc);}
+function ch16VehiclesBase(){
+  if(!Array.isArray(game.vehicles)||game.location==='park')return;
+  game.vehicles.slice(0,6).forEach(v=>ch16Car(v.x,v.lane===0?544:585,v.color,v.vx<0,ch16Night()));
+}
+
+function ch16TruckV8(x,y,body,night){ctx.save();ctx.translate(ch16Round(x),ch16Round(y));ch16Rect(-40,10,80,7,'rgba(18,20,24,.28)');ch16Rect(-38,-10,76,22,P16.ink);ch16Rect(-12,-6,46,17,body);ch16Rect(-36,-6,22,18,'#6b747a');ch16Rect(-4,-12,30,7,body);ch16Rect(-31,-7,15,7,P16.glass);ch16Rect(-10,-7,12,7,P16.glass2);ch16Rect(30,-6,8,5,night?P16.gold:P16.cream2);ch16Rect(-38,6,7,5,'#9d4b4d');ch16Rect(-28,8,15,10,P16.ink);ch16Rect(13,8,15,10,P16.ink);ch16Rect(-25,10,8,4,P16.road2);ch16Rect(16,10,8,4,P16.road2);ctx.restore();}
+function ch16Vehicles(loc=game.location){ch16VehiclesBase();const night=ch16Night();if(loc==='downtown'){ch16Car(220,580,'#7d6d7a',false,night);ch16Car(1070,548,'#5c7987',true,night);ch16Scooter(410,570,'#b06c73',P16.gold);ch16Scooter(915,585,'#4e7680',P16.cyan);}else if(loc==='cafe'){ch16Scooter(185,578,'#6e4c59',P16.pink);ch16Scooter(265,590,'#738b70',P16.gold);ch16Scooter(1040,584,'#4d6477',P16.cream);}else if(loc==='office'){ch16Car(190,585,'#68757d',false,night);ch16Car(1010,548,'#7d6e63',true,night);}else if(loc==='park'){ch16Bike(180,468,'#6b8b83');ch16Bike(930,470,'#8b6a64');ch16Boat(1010,630,'#8b6358');}else if(loc==='mall'){ch16Car(235,585,'#7f5967',false,night);ch16Car(1038,555,'#60788a',true,night);ch16Scooter(830,578,'#b38157',P16.cream);}else if(loc==='residential'){ch16Scooter(240,585,'#65736e',P16.cyan);ch16Scooter(475,592,'#8c5d61',P16.gold);ch16Scooter(980,583,'#6b6875',P16.pink);}else if(loc==='factory'){ch16TruckV8(245,568,'#8d6a4e',night);ch16TruckV8(1035,558,'#67757a',night);ch16Scooter(470,585,'#5a6f62',P16.gold);}}
+function ch16CharacterProfile(color,gender,isPlayer,job){
+  const key=String(color||'').toLowerCase();
+  const profiles={
+    '#ffb8db':{hair:'#3a2931',hair2:'#5a3544',top:'#d76888',top2:'#f0a9b9',pants:'#2f3544',shoes:'#22242b',accent:'#f1cf93',bag:'#9f6b79',style:'linh'},
+    '#8fd2ff':{hair:'#2a2933',hair2:'#4b5361',top:'#4f8fc0',top2:'#79b8dc',pants:'#2c3644',shoes:'#212832',accent:'#7bd0c7',bag:'#4a687c',style:'minh'},
+    '#caa9ff':{hair:'#47314f',hair2:'#73527d',top:'#8a64b6',top2:'#b18fd4',pants:'#303242',shoes:'#24232f',accent:'#e0adcf',bag:'#6b5d8a',style:'hana'},
+    '#9fe3af':{hair:'#2e352c',hair2:'#56684a',top:'#6b9c70',top2:'#96c08f',pants:'#34403a',shoes:'#202825',accent:'#d9c18d',bag:'#66775f',style:'an'},
+    '#ffd48d':{hair:'#5a3926',hair2:'#83533a',top:'#d8934a',top2:'#f2c27a',pants:'#614a39',shoes:'#2a2521',accent:'#fff0cf',bag:'#8f6645',style:'mai'},
+    '#f4a77e':{hair:'#513326',hair2:'#7a4d35',top:'#cf754f',top2:'#efb17a',pants:'#4a4b45',shoes:'#272927',accent:'#e9d7a7',bag:'#7c674c',style:'kai'},
+    '#f5a7bd':{hair:'#382b31',hair2:'#6a3f54',top:'#ad5e7f',top2:'#e4a4ba',pants:'#2f3138',shoes:'#23232a',accent:'#f1d59e',bag:'#45424d',style:'vy'},
+    '#9ed6c2':{hair:'#29312f',hair2:'#49675b',top:'#5e977d',top2:'#8fc3a9',pants:'#39433d',shoes:'#242823',accent:'#f0d49f',bag:'#6e5b45',style:'quan'},
+    '#eeb17e':{hair:'#59382c',hair2:'#7e5040',top:'#c98258',top2:'#ebbd96',pants:'#3e4145',shoes:'#25272a',accent:'#6fb2b2',bag:'#68584d',style:'thao'},
+    '#8cb9ee':{hair:'#272d3b',hair2:'#4b6384',top:'#507bad',top2:'#7da3cf',pants:'#343b48',shoes:'#22262d',accent:'#d7a66e',bag:'#3e4e63',style:'duy'},
+    '#c7a7ff':{hair:'#3f2f4b',hair2:'#6f4f82',top:'#55486c',top2:'#8371a5',pants:'#292a34',shoes:'#1f2127',accent:'#e18ca9',bag:'#3c3850',style:'nora'},
+    '#f2b67e':{hair:'#4b3428',hair2:'#76513a',top:'#d77b43',top2:'#efac72',pants:'#4c463e',shoes:'#26231f',accent:'#f2dfbc',bag:'#72543d',style:'tung'},
+    '#df9edc':{hair:'#4a3047',hair2:'#7c4d74',top:'#b36da8',top2:'#dba5d3',pants:'#3d3741',shoes:'#252229',accent:'#eac67e',bag:'#6e5367',style:'ivy'},
+    '#7fcbd6':{hair:'#382e2b',hair2:'#5d5146',top:'#4f9fae',top2:'#7ac4ca',pants:'#3b474c',shoes:'#252a2d',accent:'#efc56c',bag:'#c77f49',style:'phuc'},
+    '#e6b0ca':{hair:'#482f39',hair2:'#77505e',top:'#b46d82',top2:'#e1a2b5',pants:'#44424a',shoes:'#25252c',accent:'#d2c08e',bag:'#6d5960',style:'huyen'},
+    '#a8b48e':{hair:'#2f302c',hair2:'#555a45',top:'#536257',top2:'#7d8970',pants:'#273339',shoes:'#202429',accent:'#e1bf67',bag:'#445052',style:'son'},
+    '#d59b70':{hair:'#4d362a',hair2:'#76523b',top:'#9a603c',top2:'#d08a59',pants:'#414644',shoes:'#272923',accent:'#e1bd67',bag:'#5f4b3c',style:'bao'},
+    '#d8c08d':{hair:'#4a352c',hair2:'#765243',top:'#d2b187',top2:'#f0d8ae',pants:'#4a4650',shoes:'#28252a',accent:'#8bb7ad',bag:'#8a6b50',style:'chi'}
+  };
+  if(isPlayer){
+    return {hair:gender==='female'?'#2a2230':'#34251f',hair2:gender==='female'?'#5b4059':'#554035',top:gender==='female'?'#b75f86':'#3f89a7',top2:gender==='female'?'#e49ab4':'#6ab0c2',pants:'#303846',shoes:'#23252a',accent:'#f1d08b',bag:'#596876',style:'player'};
+  }
+  return profiles[key] || (gender==='female'
+    ? {hair:'#3e2d39',hair2:'#69495e',top:color,top2:'#e8a5ba',pants:'#323744',shoes:'#22242a',accent:'#e8c97f',bag:'#635260',style:'generic-f'}
+    : {hair:'#332925',hair2:'#5a4137',top:color,top2:'#9fc5d0',pants:'#303842',shoes:'#22242a',accent:'#e8c97f',bag:'#5a5149',style:'generic-m'});
+}
+function ch16PixelCharacterBase(x,y,color,gender,emotion,isPlayer,walkPhase,job){
+  ctx.save();
+  ctx.translate(ch16Round(x),ch16Round(y));
+  const t=performance.now()/120;
+  const profile=ch16CharacterProfile(color,gender,isPlayer,job);
+  const moving=isPlayer&&game.started&&(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'].some(k=>game.keys?.[k]));
+  const frame=moving?Math.floor(t*1.22)%6:Math.floor((walkPhase||0)*2)%6;
+  const sway=[0,1,0,-1,0,1][frame],stepA=[0,2,-2,2,0,-2][frame],stepB=[0,-2,2,-2,0,2][frame];
+  const idleBob=Math.sin(t*.82+x*.01)*.45;
+  const bob=moving?Math.sin(t*2.05)*1.15:idleBob;
+  ctx.translate(0,bob);
+
+  /* Ground shadow: chunky pixel ellipse, inspired by the reference frame. */
+  ch16Rect(-15,24,30,5,'rgba(18,20,25,.32)');
+  ch16Rect(-10,29,20,2,'rgba(18,20,25,.18)');
+
+  /* Back hair / rear silhouette. */
+  ch16Rect(-12,-35,24,13,profile.hair);
+  if(gender==='female' || (isPlayer&&game.gender==='female')){
+    ch16Rect(-15,-31,6,21,profile.hair2);
+    ch16Rect(9,-31,6,21,profile.hair2);
+    ch16Rect(-17+sway,-17,5,12,profile.hair2);
+    ch16Rect(12-sway,-18,5,13,profile.hair2);
+  }
+
+  /* Shoes and legs. */
+  ch16Rect(-10,3+stepA,8,18,profile.pants);
+  ch16Rect(2,3+stepB,8,18,profile.pants);
+  ch16Rect(-11,19+stepA,10,5,profile.shoes);
+  ch16Rect(1,19+stepB,11,5,profile.shoes);
+  ch16Rect(-9,18+stepA,5,2,'rgba(255,255,255,.12)');
+  ch16Rect(4,18+stepB,5,2,'rgba(255,255,255,.12)');
+
+  /* Torso: shirt/jacket with one-pixel selective highlight. */
+  ch16Rect(-15,-14,30,21,profile.top);
+  ch16Rect(-18,-8,5,14,profile.top);
+  ch16Rect(13,-8,5,14,profile.top);
+  ch16Rect(-12,-13,24,4,profile.top2);
+  ch16Rect(-12,-9,5,12,'rgba(0,0,0,.13)');
+  ch16Rect(8,-9,6,12,'rgba(0,0,0,.19)');
+
+  /* Collar / neck. */
+  ch16Rect(-5,-17,10,6,profile.accent);
+  ch16Rect(-3,-13,7,5,P16.skin2);
+  if(profile.style==='linh'||profile.style==='thao'||profile.style==='chi'||profile.style==='ivy'){
+    ch16Rect(-10,-12,8,2,profile.cream||P16.cream);
+    ch16Rect(2,-12,8,2,profile.cream||P16.cream);
+  }
+
+  /* Arms animate subtly with the walk frame. */
+  ch16Rect(-19,-7+Math.max(-1,Math.min(1,stepA)),4,12,profile.top2);
+  ch16Rect(15,-7+Math.max(-1,Math.min(1,stepB)),4,12,profile.top2);
+  ch16Rect(-19,4+Math.max(-1,Math.min(1,stepA)),4,4,P16.skin2);
+  ch16Rect(15,4+Math.max(-1,Math.min(1,stepB)),4,4,P16.skin2);
+
+  /* Head / 3/4-ish face construction. */
+  ch16Rect(-11,-33,22,22,P16.skin);
+  ch16Rect(-13,-27,4,8,P16.skin2);
+  ch16Rect(10,-26,4,7,P16.skin2);
+  ch16Rect(-11,-36,23,10,profile.hair);
+  ch16Rect(-8,-40,17,5,profile.hair);
+  ch16Rect(-13,-33,4,6,profile.hair2);
+  ch16Rect(8,-34,4,7,profile.hair2);
+  ch16Rect(-8,-39,8,2,'rgba(255,255,255,.10)');
+
+  /* Facial detail: asymmetrical highlight so it reads less like a generic icon. */
+  const blink=((Math.floor(t*.75)+Math.round(x))%47===0);
+  if(blink){
+    ch16Rect(-7,-24,4,1,P16.ink);ch16Rect(4,-24,4,1,P16.ink);
+  }else{
+    ch16Rect(-7,-24,3,3,P16.ink);ch16Rect(4,-24,3,3,P16.ink);
+  }
+  ch16Rect(-6,-23,1,1,'#efe8de');
+  if(emotion==='happy'){
+    ch16Rect(-7,-18,4,2,P16.ink);ch16Rect(3,-18,5,2,P16.ink);ch16Rect(-4,-15,8,2,P16.pink);
+  }else if(emotion==='sad'){
+    ch16Rect(-7,-19,4,2,P16.ink);ch16Rect(4,-20,4,2,P16.ink);ch16Rect(-4,-14,8,2,P16.ink);
+  }else if(emotion==='surprised'){
+    ch16Rect(-7,-25,3,3,P16.white);ch16Rect(4,-25,3,3,P16.white);ch16Rect(-2,-16,5,3,P16.ink);
+  }else{
+    ch16Rect(-4,-18,7,2,P16.ink);
+  }
+
+  /* Character-specific clothing + prop animations. */
+  const swing=sway>0?1:0;
+  switch(profile.style){
+    case 'linh':
+      ch16Rect(-13,-5,26,3,profile.top2);ch16Rect(12,2,6,11,profile.bag);ch16Rect(13,1,4,3,profile.accent);break;
+    case 'minh':
+      ch16Rect(-15,-1,4,9,profile.bag);ch16Rect(11,-2,6,10,profile.bag);ch16Rect(13,-7,4,4,profile.accent);break;
+    case 'hana':
+      ch16Rect(-20,-17,4,15,'#242332');ch16Rect(16,-18,4,15,'#242332');ch16Rect(-21,-19,25,3,profile.accent);ch16Rect(-1,-19,22,3,profile.accent);ch16Rect(-6,6,12,3,profile.top2);break;
+    case 'an':
+      ch16Rect(12,-8,7,11,profile.bag);ch16Rect(13,-11,4,4,profile.accent);ch16Rect(-17,-2,5,9,P16.cream);ch16Rect(-16,-1,3,5,profile.bag);break;
+    case 'mai':
+      ch16Rect(-12,-10,24,3,P16.cream);ch16Rect(-13,-7,26,15,P16.cream);ch16Rect(-9,-4,18,10,profile.top);ch16Rect(13,4,4,4,profile.accent);break;
+    case 'kai':
+      ch16Rect(-3,-7,6,2,profile.accent);ch16Rect(10,-2,7,10,profile.bag);ch16Rect(11,0,5,2,profile.accent);break;
+    case 'vy':
+      ch16Rect(13,-2,9,9,profile.bag);ch16Rect(14,-6,8,6,profile.bag);ch16Rect(15,-4,4,3,P16.glass2);ch16Rect(-17,1,4,7,profile.accent);break;
+    case 'quan':
+      ch16Rect(-12,-8,24,4,'#e0c79f');ch16Rect(-3,0,6,9,P16.ink2);ch16Rect(13,3,5,4,profile.accent);break;
+    case 'thao':
+      ch16Rect(12,-4,6,10,P16.cream2);ch16Rect(11,-5,8,2,profile.bag);ch16Rect(13,-2,4,5,profile.accent);break;
+    case 'duy':
+      ch16Rect(12,0,6,9,profile.bag);ch16Rect(13,-3,4,5,P16.glass2);break;
+    case 'nora':
+      ch16Rect(-20,-17,4,14,profile.bag);ch16Rect(16,-17,4,14,profile.bag);ch16Rect(-21,-19,25,3,profile.accent);ch16Rect(-1,-19,22,3,profile.accent);break;
+    case 'tung':
+      ch16Rect(-10,-43,20,5,P16.cream2);ch16Rect(-7,-47,14,4,P16.cream);ch16Rect(-11,-8,22,2,P16.cream);ch16Rect(13,2,5,4,profile.accent);break;
+    case 'ivy':
+      ch16Rect(11,0,8,10,profile.bag);ch16Rect(12,-1,6,4,P16.cream2);ch16Rect(-12,-11,4,4,profile.accent);break;
+    case 'phuc':
+      ch16Rect(12,-8,8,16,profile.bag);ch16Rect(14,-10,6,3,profile.accent);ch16Rect(-17,-5,4,9,profile.accent);break;
+    case 'huyen':
+      ch16Rect(11,-2,8,11,profile.bag);ch16Rect(12,-4,6,3,P16.cream2);ch16Rect(-16,-1,5,8,profile.accent);break;
+    case 'son':
+      ch16Rect(-12,-42,24,5,P16.navy2);ch16Rect(-7,-45,14,4,P16.ink);ch16Rect(9,-2,6,8,profile.bag);ch16Rect(10,-1,4,4,profile.accent);break;
+    case 'bao':
+      ch16Rect(-12,-10,24,3,profile.top2);ch16Rect(12,1,6,8,profile.bag);ch16Rect(13,-1,4,5,profile.accent);break;
+    case 'chi':
+      ch16Rect(-11,-8,22,3,P16.cream2);ch16Rect(11,0,8,10,profile.bag);ch16Rect(12,-1,6,5,P16.cream);break;
+    default:
+      ch16Rect(13,1,5,8,profile.bag);
+  }
+
+  /* Tiny pixel accents give the same “frame asset” richness as the reference. */
+  if(swing){ch16Rect(-16,-4,2,5,'rgba(255,255,255,.15)');}
+  if(frame===2||frame===3){ch16Rect(-1,9,2,2,profile.accent);}
+  if(isPlayer){ch16Rect(-7,28,14,2,P16.cream2);ch16Rect(-9,30,18,1,P16.ink);}
+  ctx.restore();
+}
+
+/* Replace only the rendering layer; gameplay/state functions are untouched. */
+
+/* V8 character profiles: distinct hair, wardrobe and professional accessories. */
+const CH16_CHAR_V8={
+linh:{hair:'#332630',hair2:'#704456',top:'#d96f8f',top2:'#f0a3b6',pants:'#303541',shoes:'#25242a',accent:'#edc46d',bag:'#9a6674',hairStyle:'long',outfit:'cardigan',accessory:'tote'},
+minh:{hair:'#242630',hair2:'#46515d',top:'#3f83b7',top2:'#74b5dc',pants:'#2b3442',shoes:'#20262b',accent:'#63c4bd',bag:'#415d71',hairStyle:'short',outfit:'hoodie',accessory:'backpack'},
+hana:{hair:'#3d2947',hair2:'#7a547b',top:'#8061ad',top2:'#b493d7',pants:'#353346',shoes:'#24232d',accent:'#efb1cf',bag:'#69558a',hairStyle:'longside',outfit:'oversize',accessory:'headphones'},
+an:{hair:'#273027',hair2:'#526748',top:'#6f9d71',top2:'#a2c497',pants:'#343e39',shoes:'#222823',accent:'#d8c18e',bag:'#5b6c59',hairStyle:'neat',outfit:'overshirt',accessory:'tote'},
+mai:{hair:'#553524',hair2:'#865339',top:'#d18a49',top2:'#f2c274',pants:'#5d4737',shoes:'#2a2521',accent:'#fff0cb',bag:'#8b6444',hairStyle:'bun',outfit:'apron',accessory:'tray'},
+kai:{hair:'#4b3025',hair2:'#77503a',top:'#c86f4d',top2:'#edb078',pants:'#464946',shoes:'#262924',accent:'#ebd4a2',bag:'#735e47',hairStyle:'short',outfit:'workjacket',accessory:'clipboard'},
+vy:{hair:'#30252c',hair2:'#633b50',top:'#a95878',top2:'#e8a3ba',pants:'#2e3039',shoes:'#232329',accent:'#f0d39a',bag:'#4a4550',hairStyle:'pony',outfit:'street',accessory:'camera'},
+quan:{hair:'#252e2b',hair2:'#496457',top:'#5b927a',top2:'#91c5ac',pants:'#37413c',shoes:'#252823',accent:'#edd19c',bag:'#6a5744',hairStyle:'neat',outfit:'barista',accessory:'cup'},
+thao:{hair:'#503126',hair2:'#7b4b3c',top:'#c77f58',top2:'#eab891',pants:'#3d4045',shoes:'#24262a',accent:'#69b0b1',bag:'#66564b',hairStyle:'bob',outfit:'blouse',accessory:'clipboard'},
+duy:{hair:'#242a36',hair2:'#465c78',top:'#4e79a8',top2:'#7ba5cf',pants:'#343b48',shoes:'#21252c',accent:'#d4a565',bag:'#3e5063',hairStyle:'undercut',outfit:'tee',accessory:'phone'},
+nora:{hair:'#382945',hair2:'#6b4e7f',top:'#554568',top2:'#836da5',pants:'#292b35',shoes:'#202127',accent:'#dc8ca7',bag:'#3b384d',hairStyle:'long',outfit:'jacket',accessory:'headphones'},
+tung:{hair:'#432e23',hair2:'#6d4936',top:'#d4763f',top2:'#efab70',pants:'#4d463d',shoes:'#27231f',accent:'#f1dcba',bag:'#70513d',hairStyle:'cap',outfit:'chef',accessory:'towel'},
+ivy:{hair:'#422b3f',hair2:'#744c6e',top:'#b066a7',top2:'#d9a1d0',pants:'#3b3640',shoes:'#252129',accent:'#ebc477',bag:'#695065',hairStyle:'bob',outfit:'artist',accessory:'tablet'},
+phuc:{hair:'#352c29',hair2:'#5b5048',top:'#4e9cab',top2:'#76c0c7',pants:'#39454a',shoes:'#24292c',accent:'#edc367',bag:'#b87645',hairStyle:'short',outfit:'courier',accessory:'delivery'},
+huyen:{hair:'#432c35',hair2:'#744c5a',top:'#b36a80',top2:'#df9eae',pants:'#424048',shoes:'#25252b',accent:'#ceb97f',bag:'#6b5660',hairStyle:'pony',outfit:'reporter',accessory:'notebook'},
+son:{hair:'#2c2e2a',hair2:'#505543',top:'#4e5d53',top2:'#788a6d',pants:'#263238',shoes:'#1f2428',accent:'#dbba63',bag:'#435054',hairStyle:'buzz',outfit:'security',accessory:'radio'},
+bao:{hair:'#493328',hair2:'#72503b',top:'#965b3d',top2:'#ca8358',pants:'#414744',shoes:'#272923',accent:'#dfba65',bag:'#5c493b',hairStyle:'short',outfit:'mechanic',accessory:'wrench'},
+chi:{hair:'#463229',hair2:'#755043',top:'#cdb082',top2:'#edd5aa',pants:'#48444f',shoes:'#28252a',accent:'#85b4ac',bag:'#86674f',hairStyle:'bob',outfit:'bookstore',accessory:'book'}
+};
+function ch16NpcKey(color,isPlayer){if(isPlayer)return 'player';const m={'#ffb8db':'linh','#8fd2ff':'minh','#caa9ff':'hana','#9fe3af':'an','#ffd48d':'mai','#f4a77e':'kai','#f5a7bd':'vy','#9ed6c2':'quan','#eeb17e':'thao','#8cb9ee':'duy','#c7a7ff':'nora','#f2b67e':'tung','#df9edc':'ivy','#7fcbd6':'phuc','#e6b0ca':'huyen','#a8b48e':'son','#d59b70':'bao','#d8c08d':'chi'};return m[String(color||'').toLowerCase()]||null;}
+function ch16V8Profile(color,gender,isPlayer,job){const k=ch16NpcKey(color,isPlayer);if(k==='player')return {hair:gender==='female'?'#2a2230':'#33251f',hair2:gender==='female'?'#5c4258':'#5a4032',top:gender==='female'?'#b85f87':'#3f8ba8',top2:gender==='female'?'#e29ab4':'#71b6c7',pants:'#303844',shoes:'#22252b',accent:'#f0cf88',bag:'#566875',hairStyle:gender==='female'?'pony':'short',outfit:gender==='female'?'jacket':'hoodie',accessory:'backpack'};return CH16_CHAR_V8[k]||ch16CharacterProfile(color,gender,isPlayer,job);}
+function ch16HairV8(p,gender,f){const sw=[0,0,1,1,0,-1,-1,0,1,0,-1,0][f],s=p.hairStyle;ch16Rect(-12,-36,24,13,p.hair);if(s==='long'||s==='longside'){ch16Rect(-15,-31,6,23,p.hair2);ch16Rect(9,-31,6,23,p.hair2);ch16Rect(-17+sw,-17,5,13,p.hair2);ch16Rect(12-sw,-18,5,13,p.hair2);}else if(s==='pony'){ch16Rect(-12,-31,24,12,p.hair);ch16Rect(10+sw,-27,7,15,p.hair2);ch16Rect(14+sw,-18,6,7,p.hair2);}else if(s==='bun'){ch16Rect(-12,-33,24,11,p.hair);ch16Rect(7,-41,10,9,p.hair2);ch16Rect(10,-45,6,5,p.hair2);}else if(s==='bob'){ch16Rect(-14,-32,28,11,p.hair);ch16Rect(-15,-24,6,15,p.hair2);ch16Rect(9,-24,6,15,p.hair2);}else if(s==='undercut'){ch16Rect(-12,-36,24,10,p.hair);ch16Rect(-13,-31,4,10,p.hair2);ch16Rect(7,-31,5,9,p.hair2);}else if(s==='buzz'){ch16Rect(-11,-35,22,9,p.hair);ch16Rect(-11,-32,4,7,p.hair2);}else if(s==='cap'){ch16Rect(-13,-36,26,8,p.hair);ch16Rect(-15,-34,30,4,p.hair2);ch16Rect(-5,-41,14,6,p.hair2);}else{ch16Rect(-12,-35,24,10,p.hair);ch16Rect(-12,-31,4,8,p.hair2);ch16Rect(8,-31,4,8,p.hair2);}ch16Rect(-8,-39,9,2,'rgba(255,255,255,.10)');}
+function ch16AccessoryV8(p,f){const sw=[0,1,1,0,-1,-1,0,1,0,-1,-1,0][f],a=p.accent||P16.gold;switch(p.accessory){case 'headphones':ch16Rect(-20,-18,4,15,P16.ink);ch16Rect(16,-18,4,15,P16.ink);ch16Rect(-21,-20,25,3,a);ch16Rect(-1,-20,22,3,a);break;case 'camera':ch16Rect(13,-3,10,10,p.bag);ch16Rect(15,-7,7,5,P16.ink);ch16Rect(16,-6,5,3,P16.glass2);break;case 'phone':ch16Rect(14,-3+sw,5,9,P16.ink);ch16Rect(15,-2+sw,3,6,P16.glass2);break;case 'cup':ch16Rect(13,2,6,9,P16.cream2);ch16Rect(19,4,3,5,P16.cream2);ch16Rect(15,3,2,2,p.top);break;case 'clipboard':ch16Rect(14,-4+sw,8,12,P16.cream2);ch16Rect(16,-6+sw,4,3,P16.gold);ch16Rect(16,-1+sw,4,1,P16.navy2);break;case 'tablet':ch16Rect(13,0,9,11,P16.ink);ch16Rect(14,1,7,8,P16.glass);break;case 'delivery':ch16Rect(11,-3,10,15,p.bag);ch16Rect(13,-6,6,4,a);ch16Rect(20,3,3,5,P16.cream);break;case 'notebook':ch16Rect(12,-2+sw,8,11,P16.cream2);ch16Rect(18,-2+sw,2,11,p.accent);break;case 'radio':ch16Rect(12,-2,6,10,P16.ink);ch16Rect(13,0,4,5,P16.glass2);ch16Rect(18,0,2,6,a);break;case 'wrench':ch16Rect(15,0,3,11,a);ch16Rect(18,-1,4,3,a);ch16Rect(18,2,3,4,P16.ink);break;case 'book':ch16Rect(12,0,9,10,P16.cream2);ch16Rect(15,0,2,10,p.accent);break;case 'tote':ch16Rect(12,0,8,11,p.bag);ch16Rect(13,-3,6,4,p.bag);break;case 'tray':ch16Rect(12,2,10,4,P16.cream2);ch16Rect(13,-1,8,3,P16.gold);break;case 'backpack':ch16Rect(-17,-3,7,14,p.bag);ch16Rect(11,-3,7,14,p.bag);break;case 'towel':ch16Rect(12,4,7,4,P16.cream2);break;}}
+function ch16V8Outfit(p,f){const leg=[0,1,2,1,0,-1,-2,-1,0,1,0,-1][f],leg2=-leg,arm=[0,1,2,1,0,-1,-2,-1,0,1,0,-1][f];ch16Rect(-10,3+leg,8,18,p.pants);ch16Rect(2,3+leg2,8,18,p.pants);ch16Rect(-11,19+leg,10,5,p.shoes);ch16Rect(1,19+leg2,11,5,p.shoes);ch16Rect(-15,-14,30,21,p.top);ch16Rect(-18,-8+arm,5,14,p.top2);ch16Rect(13,-8-arm,5,14,p.top2);ch16Rect(-12,-13,24,4,p.top2);ch16Rect(-5,-17,10,6,p.accent);ch16Rect(-3,-13,7,5,P16.skin2);if(p.outfit==='cardigan'){ch16Rect(-14,-11,5,18,p.top2);ch16Rect(9,-11,5,18,p.top2);}if(p.outfit==='hoodie'){ch16Rect(-13,-16,26,4,p.top2);ch16Rect(-6,-20,12,5,p.top2);}if(p.outfit==='apron'){ch16Rect(-12,-6,24,16,P16.cream2);ch16Rect(-7,-6,14,16,p.accent);}if(p.outfit==='chef'){ch16Rect(-11,-12,22,15,P16.cream2);ch16Rect(-7,-18,14,6,P16.cream2);ch16Rect(-4,-16,8,3,p.top);}if(p.outfit==='security'){ch16Rect(-14,-13,28,20,p.top);ch16Rect(-12,-10,24,5,p.top2);ch16Rect(-3,-8,6,6,p.accent);}if(p.outfit==='mechanic'){ch16Rect(-14,-14,28,21,p.top);ch16Rect(-12,-10,24,4,p.top2);ch16Rect(-4,-6,8,8,p.accent);}if(p.outfit==='reporter'){ch16Rect(-14,-14,28,20,p.top);ch16Rect(-11,-12,22,3,P16.cream2);}if(p.outfit==='bookstore'||p.outfit==='artist'){ch16Rect(-14,-14,28,21,p.top);ch16Rect(-12,-11,24,3,p.top2);}if(p.outfit==='courier'){ch16Rect(-14,-14,28,21,p.top);ch16Rect(-16,-8,4,14,p.top2);ch16Rect(12,-8,5,14,p.top2);}if(p.outfit==='barista'){ch16Rect(-13,-10,26,16,P16.cream2);ch16Rect(-10,-5,20,11,p.top);}ch16Rect(-19,4+Math.max(-1,Math.min(1,arm)),4,4,P16.skin2);ch16Rect(15,4-Math.max(-1,Math.min(1,arm)),4,4,P16.skin2);}
+function ch16PixelCharacter(x,y,color,gender,emotion,isPlayer,walkPhase,job){
+  ctx.save();ctx.translate(ch16Round(x),ch16Round(y));const p=ch16V8Profile(color,gender,isPlayer,job);const key=ch16NpcKey(color,isPlayer);const seed=key?(Object.keys(CH16_CHAR_V8).indexOf(key)+1):19;const moving=isPlayer&&game.started&&(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'].some(k=>game.keys?.[k]));const frame=Math.floor((performance.now()/92)+(moving?0:(walkPhase||0)*3)+seed)%12;const bob=[0,0,1,2,1,0,-1,-2,-1,0,1,0][frame]*(moving?1:.45);ctx.translate(0,bob);
+  ch16Rect(-17,24,34,6,'rgba(18,20,25,.30)');ch16Rect(-10,29,20,2,'rgba(18,20,25,.16)');ch16V8Outfit(p,frame);
+  ch16Rect(-11,-34,22,22,P16.skin);ch16Rect(-13,-28,4,8,P16.skin2);ch16Rect(10,-27,4,7,P16.skin2);ch16HairV8(p,gender,frame);
+  const blink=((Math.floor(performance.now()/1000)+(seed||1))%9===0);if(blink){ch16Rect(-7,-24,4,1,P16.ink);ch16Rect(4,-24,4,1,P16.ink);}else{ch16Rect(-7,-24,3,3,P16.ink);ch16Rect(4,-24,3,3,P16.ink);ch16Rect(-6,-23,1,1,P16.white);}
+  if(emotion==='happy'){ch16Rect(-7,-18,4,2,P16.ink);ch16Rect(3,-18,5,2,P16.ink);ch16Rect(-4,-15,8,2,P16.pink);}else if(emotion==='sad'){ch16Rect(-7,-19,4,2,P16.ink);ch16Rect(4,-20,4,2,P16.ink);ch16Rect(-4,-14,8,2,P16.ink);}else if(emotion==='surprised'){ch16Rect(-7,-25,3,3,P16.white);ch16Rect(4,-25,3,3,P16.white);ch16Rect(-2,-16,5,3,P16.ink);}else ch16Rect(-4,-18,7,2,P16.ink);
+  ch16AccessoryV8(p,frame);if(p.outfit==='street'||p.outfit==='jacket')ch16Rect(-2,5+Math.round(Math.sin(frame/12*Math.PI*2)),4,3,p.accent);if(frame===2||frame===8)ch16Rect(-1,8,2,2,p.accent);if(frame===4||frame===10)ch16Rect(18,7,3,2,'rgba(255,255,255,.16)');if(isPlayer)ch16Rect(-8,28,16,2,P16.cream2);ctx.restore();
+}
+function ch16DrawWorld(){
+  const locKey=game.location||'downtown',night=ch16Night();
+  const loc=WORLD[locKey]||WORLD.downtown;
+  ctx.clearRect(0,0,W,H);
+  ch16BackSky(locKey);ch16LocationGround(locKey);ch16Buildings(locKey);ch16Props(locKey);ch16Vehicles();
+
+  /* World particles */
+  if(Array.isArray(game.particles))for(const p of game.particles){
+    if(p.type===0)ch16Rect(p.x,p.y,3,3,P16.leaf2);
+    else if(p.type===1)ch16Rect(p.x,p.y,2,2,'rgba(255,240,200,.45)');
+    else if(p.type===2)ch16Rect(p.x,p.y,2,2,P16.pink2);
+    else ch16Rect(p.x,p.y,2,2,'rgba(180,215,225,.45)');
+  }
+
+  /* Ambient NPCs */
+  if(Array.isArray(game.ambient))for(const a of game.ambient.filter(a=>a.location===locKey)){
+    ch16PixelCharacter(a.x,a.y,a.color,a.gender,'neutral',false,a.walkFrame||0,a.job||'');
+  }
+
+  /* Named NPCs */
+  if(typeof currentNPCs==='function')for(const n of currentNPCs()){
+    const s=game.npcState?.[n.id];if(!s)continue;
+    const near=Math.hypot(game.x-s.x,game.y-s.y)<95;
+    const mood=s.mood==='warm'?'happy':s.mood==='guarded'?'sad':'neutral';
+    ch16PixelCharacter(s.x,s.y,n.color,n.gender,mood,false,s.walkPhase||0,n.job||'');
+    ctx.save();ctx.textAlign='center';ctx.font='900 13px system-ui,Arial';ctx.lineWidth=4;ctx.strokeStyle='rgba(37,36,43,.92)';ctx.fillStyle=P16.pink2;ctx.shadowColor='rgba(240,117,154,.60)';ctx.shadowBlur=5;ctx.strokeText(n.name,s.x,s.y-50);ctx.fillText(n.name,s.x,s.y-50);ctx.shadowBlur=0;
+    if(near&&!game.dialogue&&!game.panel){ch16Rect(s.x-15,s.y-69,30,15,P16.ink);ch16Rect(s.x-13,s.y-67,26,11,P16.pink);ctx.fillStyle='#fff1ea';ctx.font='900 9px system-ui,Arial';ctx.fillText('E',s.x,s.y-61);}
+    ctx.restore();
+  }
+
+  /* Player */
+  ch16PixelCharacter(game.x,game.y,game.gender==='male'?'#3f89a7':'#b75f86',game.gender,'happy',true,0,'');
+  if(!game.dialogue&&!game.panel){
+    ch16Rect(game.x-18,game.y-77,36,14,P16.ink);ch16Rect(game.x-16,game.y-75,32,10,P16.cream2);ctx.fillStyle=P16.pink;ctx.font='900 9px system-ui,Arial';ctx.textAlign='center';ctx.fillText('BẠN',game.x,game.y-68);ctx.textAlign='left';
+  }
+
+  /* Main interaction marker */
+  if(!game.dialogue&&!game.panel){
+    const ap=(typeof ACTION_POINTS!=='undefined')?ACTION_POINTS[locKey]:null;
+    if(ap){ch16Rect(ap.x-52,ap.y-33,104,18,P16.ink);ch16Rect(ap.x-49,ap.y-30,98,12,P16.cyan);ctx.fillStyle=P16.ink;ctx.font='900 9px system-ui,Arial';ctx.textAlign='center';ctx.fillText('E · '+ap.label,ap.x,ap.y-21);ctx.textAlign='left';}
+  }
+
+  /* Pixel rain */
+  if(game.weather==='rain'&&performance.now()<game.weatherUntil){ctx.save();ctx.globalAlpha=.55;for(let i=0;i<85;i++){const rx=(i*83+performance.now()*.08)%1280,ry=(i*47+performance.now()*.16)%680;ch16Rect(rx,ry,2,8,P16.glass2);}ctx.restore();}
+
+  /* Day/night grade */
+  if(night){ctx.fillStyle='rgba(8,15,24,.20)';ctx.fillRect(0,0,1280,720);}else if(ch16Evening()){ctx.fillStyle='rgba(219,119,109,.07)';ctx.fillRect(0,0,1280,720);}
+  if(locKey==='mall'&&!night){ctx.fillStyle='rgba(224,126,157,.08)';ctx.fillRect(0,220,1280,280);}
+  if(locKey==='park'){ctx.fillStyle='rgba(225,242,229,.05)';ctx.fillRect(0,220,1280,310);}
+
+  /* Location card – translucent pink, matching the new world palette. */
+  ctx.save();ctx.fillStyle='rgba(214,94,124,.22)';ctx.strokeStyle='rgba(255,206,218,.55)';ctx.lineWidth=2;ctx.fillRect(20,132,350,52);ctx.strokeRect(20,132,350,52);
+  ctx.fillStyle='#fff1ea';ctx.font='900 15px system-ui,Arial';ctx.fillText(loc.name,38,153);ctx.fillStyle='#ffdce6';ctx.font='10px system-ui,Arial';ctx.fillText(loc.subtitle,38,170);ctx.restore();
+}
+
+function ch16DrawTitle(){
+  ctx.clearRect(0,0,W,H);ch16BackSky('downtown');
+  ch16Rect(0,430,1280,290,P16.road);ch16Rect(0,430,1280,8,P16.sidewalk2);
+  ch16Facade(60,138,320,240,'brick','CITY HEARTS',101);ch16Facade(454,112,360,246,'stone','THÀNH PHỐ',107);ch16Facade(900,150,290,230,'brick','GẶP GỠ',109);
+  ch16Road(520,680);for(let i=0;i<4;i++)ch16Car(140+i*340,585,i%2?'#8a6878':'#638a8f',false,false);
+  ch16Tree(410,462,1.05,125);ch16Tree(840,455,1.05,129);ch16Lamp(70,445,true);ch16Lamp(1170,440,true);
+}
+
+window.drawCharacter=ch16PixelCharacter;drawCharacter=ch16PixelCharacter;
+window.drawWorld=ch16DrawWorld;drawWorld=ch16DrawWorld;
+window.drawTitleScene=ch16DrawTitle;drawTitleScene=ch16DrawTitle;
+console.log('[City Hearts] 16-bit 3/4 pixel-art renderer enabled. Gameplay layer preserved.');
+})();
+</script>
+
+
+<!-- CITY HEARTS V9 · VIETNAM URBAN SCENE DETAIL LAYER -->
+<script id="cityHeartsVietnamSceneDetailV9">
+(function(){
+'use strict';
+if(typeof ch16Rect!=='function'||typeof ch16PixelCharacter!=='function')return;
+
+/* Rendering-only layer. It augments buildings, props and ambient people;
+   gameplay/state/navigation functions are intentionally untouched. */
+const _vnBuildings=window.ch16Buildings||ch16Buildings;
+const _vnProps=window.ch16Props||ch16Props;
+const _vnVehicles=window.ch16Vehicles||ch16Vehicles;
+
+function vnRect(x,y,w,h,c){ch16Rect(Math.round(x),Math.round(y),Math.round(w),Math.round(h),c);}
+function vnWindow(x,y,w=18,h=24,lit=false,frame='#4d4c4b'){
+  vnRect(x-2,y-2,w+4,h+4,P16.ink);
+  vnRect(x,y,w,h,frame);
+  vnRect(x+3,y+3,w-6,h-6,lit?'#e5c57f':P16.navy2);
+  vnRect(x+4,y+5,w-8,2,lit?'#f3d792':P16.glass2);
+  vnRect(x+w/2-1,y+3,2,h-6,P16.ink2);
+  vnRect(x+3,y+h/2-1,w-6,2,P16.ink2);
+}
+function vnAC(x,y,face='#b4b8b6'){
+  vnRect(x,y,20,11,P16.ink);
+  vnRect(x+2,y+2,16,6,face);
+  vnRect(x+5,y+4,10,2,P16.stone2);
+  vnRect(x+3,y+9,14,3,P16.ink2);
+  vnRect(x+1,y+11,2,17,P16.ink2);
+}
+function vnBalcony(x,y,w,accent){
+  vnRect(x-3,y,w+6,5,P16.ink);
+  vnRect(x,y+5,w,3,accent||P16.cream2);
+  for(let i=0;i<=w-6;i+=10)vnRect(x+3+i,y+8,2,13,P16.stone2);
+  vnRect(x,y+21,w,3,P16.ink);
+  vnRect(x+8,y+11,w-16,2,P16.stone2);
+}
+function vnAwning(x,y,w,c){
+  vnRect(x,y,w,5,P16.ink);
+  vnRect(x+2,y+5,w-4,8,c||P16.red||'#b86767');
+  for(let i=4;i<w-5;i+=14)vnRect(x+i,y+5,7,8,P16.cream2);
+}
+function vnSign(x,y,w,text,bg='#9b5d68'){
+  vnRect(x-2,y-2,w+4,18,P16.ink);vnRect(x,y,w,14,bg);
+  ctx.save();ctx.fillStyle=P16.cream2;ctx.font='900 6px system-ui,Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x+w/2,y+7);ctx.restore();
+}
+function vnWire(y,phase){
+  ctx.save();ctx.strokeStyle='rgba(30,28,29,.55)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,y);
+  for(let x=0;x<=1280;x+=55){ctx.lineTo(x,y+Math.sin((x+phase)*.012)*5);}ctx.stroke();ctx.restore();
+}
+function vnPole(x,y0,y1){
+  vnRect(x,y0,4,y1-y0,P16.ink2);vnRect(x-2,y0,8,3,P16.stone2);
+  vnRect(x-8,y0+12,20,3,P16.ink2);
+  vnRect(x-1,y0+6,2,11,P16.gold);
+}
+function vnRooftopTank(x,y,scale=1){
+  vnRect(x,y,28*scale,18*scale,P16.ink);
+  vnRect(x+3*scale,y+3*scale,22*scale,11*scale,'#596f73');
+  vnRect(x+7*scale,y+6*scale,14*scale,4*scale,'#789197');
+  vnRect(x+9*scale,y-7*scale,10*scale,7*scale,P16.stone2);
+  vnRect(x+13*scale,y-15*scale,3*scale,9*scale,P16.ink2);
+}
+function vnFlag(x,y,s=1){
+  vnRect(x,y,2,30*s,P16.ink2);vnRect(x+2,y,25*s,16*s,'#c94b55');
+  ctx.save();ctx.fillStyle='#f3d36f';ctx.font='900 '+Math.max(5,7*s)+'px system-ui';ctx.textAlign='center';ctx.fillText('★',x+14*s,y+9*s);ctx.restore();
+}
+function vnPlanterRow(x,y,count,step=34){
+  for(let i=0;i<count;i++){
+    vnRect(x+i*step,y,22,7,P16.ink);vnRect(x+3+i*step,y-3,16,7,'#875b49');
+    vnRect(x+9+i*step,y-13,4,12,P16.leaf);vnRect(x+13+i*step,y-10,5,9,P16.leaf2);
+  }
+}
+function vnStreetShophouse(x,y,w,h,kind,label,accent,seed){
+  const brick=kind==='brick';
+  vnRect(x+6,y+7,w+8,h+8,'rgba(18,20,25,.26)');
+  vnRect(x,y,w,h,P16.ink);
+  vnRect(x+4,y+4,w-8,h-8,brick?'#765054':'#777c7c');
+  /* narrow Vietnamese tube-house rhythm */
+  const floors=Math.max(2,Math.min(4,Math.floor(h/54)));
+  for(let r=0;r<floors;r++){
+    const yy=y+14+r*42;
+    vnWindow(x+12,yy,17,24,((seed+r)%5===0));
+    if(w>110)vnWindow(x+w-31,yy,17,24,((seed+r+2)%5===0));
+    if(r===0)vnAwning(x+7,yy-2,w-14,accent);
+    if(r<2 && (seed+r)%2===0)vnBalcony(x+10,yy+27,w-20,accent);
+  }
+  const dx=x+w/2-18,dy=y+h-44;
+  vnRect(dx-3,dy-3,42,47,P16.ink);vnRect(dx,dy,36,42,brick?'#5e4b43':'#48545a');
+  vnRect(dx+16,dy+7,4,27,P16.ink2);vnRect(dx+6,dy+23,4,3,P16.gold);vnRect(dx+26,dy+23,4,3,P16.gold);
+  vnSign(x+w/2-(label.length*2.9+16)/2,dy-17,label.length*2.9+16,label,accent||'#9c6169');
+  if(w>120){vnAC(x+w-30,y+27);vnRooftopTank(x+w-43,y-20,.78);}
+  if(label && (label.includes('PHỞ')||label.includes('CƠM')||label.includes('BÁNH'))){vnPlanterRow(x+10,y+h-12,Math.max(2,Math.floor((w-20)/34)),34);}
+}
+function vnKiosk(x,y,label,accent){
+  vnRect(x+4,y+4,72,42,'rgba(18,20,25,.26)');vnRect(x,y,72,42,P16.ink);
+  vnRect(x+4,y+5,64,29,'#7d634b');
+  vnAwning(x-2,y-4,76,accent||'#a85f68');
+  vnRect(x+10,y+11,28,16,'#4c3a35');vnRect(x+43,y+11,17,16,'#8a7c65');
+  vnSign(x+11,y+2,50,label,accent||'#b97468');
+}
+function vnMotorbikeParking(x,y,count){
+  for(let i=0;i<count;i++){
+    const xx=x+i*29;
+    ch16Scooter(xx,y,['#4d6770','#7d4e55','#a9804c','#5e765f'][i%4],[P16.cyan,P16.gold,P16.cream,P16.pink][i%4]);
+  }
+}
+function vnBenchPair(x,y){
+  ch16Rect(x,y,72,5,P16.ink);ch16Rect(x+6,y-8,60,7,P16.cream2);ch16Rect(x+8,y+5,5,18,P16.ink);ch16Rect(x+59,y+5,5,18,P16.ink);
+}
+function vnPerson(x,y,role,gender,color,phase){
+  /* Ambient residents/workers are decoration only and have no gameplay state. */
+  ch16PixelCharacter(x,y,color||'#8cb9ee',gender||'female','neutral',false,phase||0,role||'');
+}
+function vnCrowdForLocation(loc){
+  if(loc==='downtown'){
+    vnPerson(145,475,'courier','male','#7fcbd6',1);vnPerson(318,470,'reporter','female','#e6b0ca',4);
+    vnPerson(565,484,'office','female','#ffb8db',7);vnPerson(936,476,'phone','male','#8cb9ee',3);
+    vnPerson(1120,484,'tote','female','#9fe3af',9);
+  }else if(loc==='cafe'){
+    vnPerson(455,486,'barista','female','#ffd48d',2);vnPerson(615,487,'artist','female','#df9edc',6);
+    vnPerson(772,488,'book','female','#d8c08d',9);vnPerson(1012,486,'courier','male','#7fcbd6',3);
+  }else if(loc==='office'){
+    vnPerson(210,488,'clipboard','female','#eeb17e',1);vnPerson(388,488,'phone','male','#8fd2ff',5);
+    vnPerson(690,488,'tote','male','#9fe3af',8);vnPerson(1010,488,'security','male','#a8b48e',3);
+  }else if(loc==='park'){
+    vnPerson(182,510,'phone','female','#f5a7bd',1);vnPerson(355,515,'tote','male','#9fe3af',6);
+    vnPerson(706,510,'book','female','#d8c08d',9);vnPerson(886,515,'artist','female','#caa9ff',4);
+    vnPerson(1110,510,'courier','male','#7fcbd6',2);
+  }else if(loc==='mall'){
+    vnPerson(170,485,'tote','female','#e6b0ca',2);vnPerson(376,482,'phone','male','#8cb9ee',5);
+    vnPerson(712,486,'book','female','#d8c08d',7);vnPerson(1000,482,'courier','male','#7fcbd6',1);
+    vnPerson(1138,486,'security','male','#a8b48e',8);
+  }else if(loc==='residential'){
+    vnPerson(150,495,'tote','female','#ffb8db',2);vnPerson(348,500,'courier','male','#7fcbd6',5);
+    vnPerson(540,495,'book','female','#d8c08d',8);vnPerson(836,500,'tote','male','#9fe3af',3);
+    vnPerson(1110,495,'phone','female','#caa9ff',10);
+  }else if(loc==='factory'){
+    vnPerson(170,500,'security','male','#a8b48e',2);vnPerson(345,500,'mechanic','male','#d59b70',6);
+    vnPerson(710,500,'courier','male','#7fcbd6',9);vnPerson(890,500,'mechanic','male','#f4a77e',3);
+    vnPerson(1090,500,'security','male','#a8b48e',7);
+  }
+}
+function vnArchitecture(loc){
+  const phase=Math.floor((performance.now()/30)%1000);
+  if(loc==='downtown'){
+    vnStreetShophouse(372,122,128,236,'stone','PHỞ PHỐ','#b8666e',101);
+    vnStreetShophouse(512,116,118,242,'brick','CƠM NHÀ','#d19a59',103);
+    vnStreetShophouse(642,128,132,230,'stone','HIỆU THUỐC','#74aeb4',107);
+    vnRooftopTank(746,82,.9);vnFlag(811,94,.9);
+    vnPole(364,224,362);vnPole(824,218,366);vnWire(106,phase);
+    vnKiosk(1070,386,'BÁNH MÌ','#c1785e');vnMotorbikeParking(1058,456,5);
+    vnPlanterRow(389,457,5,29);
+  }else if(loc==='cafe'){
+    vnStreetShophouse(410,132,142,205,'brick','BÁNH NGỌT','#d39a69',211);
+    vnStreetShophouse(564,118,132,219,'stone','TRÀ ĐÁ','#78aa9b',217);
+    vnStreetShophouse(708,138,122,199,'brick','TIỆM HOA','#d8839c',221);
+    vnPole(399,232,362);vnPole(836,220,363);vnWire(108,phase);
+    vnKiosk(930,391,'BÁNH MÌ','#c77e68');vnMotorbikeParking(915,455,5);
+    vnPlanterRow(432,452,7,31);
+  }else if(loc==='office'){
+    vnStreetShophouse(58,138,150,210,'stone','NGÂN HÀNG','#7aa3ae',301);
+    vnStreetShophouse(224,130,132,218,'stone','CÔNG TY','#6d94a0',307);
+    vnStreetShophouse(368,148,106,200,'stone','MINIMART','#8f816a',311);
+    vnFlag(500,104,1);vnPole(485,215,365);vnWire(112,phase);
+    vnRect(520,374,190,7,P16.ink);vnRect(536,381,160,3,P16.cream2);
+    vnMotorbikeParking(532,452,7);
+    vnPlanterRow(775,453,6,31);
+  }else if(loc==='park'){
+    vnKiosk(175,382,'CÀ PHÊ','#bd8753');vnKiosk(305,384,'TRÀ ĐÁ','#8e9f7d');
+    vnStreetShophouse(1094,275,138,106,'stone','NHÀ VĂN HÓA','#8b887c',409);
+    vnRect(470,374,340,6,P16.ink);vnRect(484,381,312,4,'#9f7f5c');
+    vnBenchPair(120,486);vnBenchPair(540,490);vnBenchPair(930,488);
+    vnFlag(1070,260,.78);vnPole(149,332,455);vnPole(1080,336,455);
+    /* river-only context: no road vehicles; bikes and boats stay on valid zones */
+    ch16Rect(0,566,1280,4,P16.water2);
+    for(let i=0;i<7;i++){const x=40+i*190;ch16Rect(x,600+(i%3)*22,48,2,'rgba(200,235,229,.18)');}
+  }else if(loc==='mall'){
+    vnStreetShophouse(208,116,154,235,'stone','SIÊU THỊ','#8a91a1',501);
+    vnStreetShophouse(378,138,120,214,'brick','CỬA HÀNG','#c77988',509);
+    vnStreetShophouse(790,130,132,222,'stone','ĐIỆN MÁY','#7898a1',517);
+    vnFlag(616,102,1);vnPole(590,226,366);vnPole(952,225,365);vnWire(115,phase);
+    vnKiosk(1012,394,'ĐỒ ĂN','#cf8b5e');vnMotorbikeParking(990,455,6);
+    vnPlanterRow(225,454,5,33);vnPlanterRow(803,453,5,32);
+  }else if(loc==='residential'){
+    /* Dense Hanoi-like tube-house row: narrow frontages, balconies, AC, roof tanks and laundry. */
+    vnStreetShophouse(34,126,118,246,'brick','TẠP HÓA','#a66b63',601);
+    vnStreetShophouse(162,102,94,270,'stone','NHÀ 2','#84918f',607);
+    vnStreetShophouse(266,132,112,240,'brick','CƠM BÌNH DÂN','#d19a5d',613);
+    vnStreetShophouse(388,114,96,258,'stone','NHÀ 4','#7d8b8c',619);
+    vnStreetShophouse(496,144,104,228,'brick','GIẶT ỦI','#92766a',623);
+    vnStreetShophouse(612,116,94,256,'stone','NHÀ 6','#798687',629);
+    vnStreetShophouse(718,136,116,236,'brick','SỬA XE','#a05f53',631);
+    vnStreetShophouse(848,106,102,266,'stone','NHÀ 8','#7f8988',641);
+    vnStreetShophouse(964,124,116,248,'brick','NHÀ 9','#955f62',647);
+    vnStreetShophouse(1094,96,150,276,'brick','TIỆM NHỎ','#a46f60',653);
+    vnRooftopTank(1180,68,.9);vnFlag(24,82,.8);
+    vnPole(150,206,370);vnPole(602,200,369);vnPole(1078,194,370);vnWire(96,phase);vnWire(126,phase+21);
+    /* laundry line between two facades */
+    ctx.save();ctx.strokeStyle='rgba(55,47,45,.72)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(270,178);ctx.lineTo(386,190);ctx.stroke();ctx.restore();
+    ['#e8a6aa','#d7c77c','#89b7c0','#d8a36f','#f0d9c0'].forEach((c,i)=>vnRect(290+i*19,181+(i%2)*2,15,11,c));
+    vnMotorbikeParking(50,458,8);vnPlanterRow(610,458,5,35);vnKiosk(1060,395,'TRÀ ĐÁ','#8d9c77');
+  }else if(loc==='factory'){
+    vnStreetShophouse(24,118,146,252,'stone','XƯỞNG A','#7c8584',701);
+    vnStreetShophouse(184,126,132,244,'stone','XƯỞNG B','#7f8888',707);
+    vnStreetShophouse(326,112,150,258,'stone','KHO C','#70797a',713);
+    vnStreetShophouse(486,130,132,240,'stone','KHO D','#777f80',719);
+    vnRect(655,112,168,254,P16.ink);vnRect(660,117,158,244,'#626a6b');
+    for(let i=0;i<4;i++){vnRect(678+i*34,145,25,180,'#394347');vnRect(682+i*34,150,17,164,'#6d7779');}
+    vnRect(850,130,180,236,P16.ink);vnRect(855,135,170,226,'#686e70');
+    vnRect(1038,116,210,250,P16.ink);vnRect(1043,121,200,240,'#5d6467');
+    vnFlag(640,80,.9);vnPole(625,216,368);vnPole(1030,210,366);vnWire(104,phase);
+    vnRect(40,458,190,7,P16.ink);vnRect(52,448,166,9,'#8a764f');vnRect(72,437,34,11,P16.orange);
+    vnRect(1040,456,150,7,P16.ink);vnRect(1052,446,126,9,'#8a764f');
+  }
+}
+function vnProps(loc){
+  _vnProps(loc);
+  vnCrowdForLocation(loc);
+  if(loc==='downtown'){
+    vnRect(40,452,4,22,P16.ink2);vnRect(44,452,34,4,P16.gold);
+    ch16Planter(780,470,36);ch16Bin(1160,462,'recycle');
+  }else if(loc==='cafe'){
+    vnRect(585,450,34,5,P16.ink);vnRect(591,442,22,8,P16.cream2);vnRect(596,435,13,7,'#865543');
+    ch16Bin(833,464,'recycle');
+  }else if(loc==='office'){
+    vnBollardsForOffice();
+  }else if(loc==='park'){
+    /* Walking/cycling only near the riverside. */
+    ch16Bike(82,496,'#6b8b83');ch16Bike(1038,494,'#8b6a64');
+    vnPlanterRow(430,496,7,34);
+  }else if(loc==='mall'){
+    ch16Bin(610,462,'recycle');ch16Bin(1180,460,'trash');
+  }else if(loc==='residential'){
+    ch16Mailboxes(12,466,4);ch16Bin(334,464,'trash');ch16Bin(1086,464,'recycle');
+  }else if(loc==='factory'){
+    ch16PalletStack(470,462);ch16PalletStack(1010,462);ch16Bin(620,466,'recycle');
+  }
+}
+function vnBollardsForOffice(){for(let i=0;i<8;i++)ch16Bollards(488+i*15,458,1,i%2?P16.gold:P16.cyan);}
+function vnVehicles(loc){
+  /* Preserve existing traffic logic, but add context-specific small mobility only. */
+  _vnVehicles(loc);
+  if(loc==='park'){
+    /* Never add cars, scooters or trucks to the river/water area. */
+    return;
+  }
+  if(loc==='residential'){
+    ch16Scooter(585,586,'#6d6a72',P16.cream);ch16Scooter(770,585,'#56706a',P16.cyan);
+  }else if(loc==='cafe'){
+    ch16Scooter(355,582,'#8e5c67',P16.gold);ch16Scooter(882,582,'#58747a',P16.cream);
+  }else if(loc==='factory'){
+    ch16TruckV8(570,568,'#7b6a54',ch16Night());ch16TruckV8(930,568,'#657378',ch16Night());
+  }
+}
+
+/* Wrap only the rendering helpers used by the current 16-bit renderer. */
+window.ch16Buildings=function(loc){_vnBuildings(loc);vnArchitecture(loc);};
+ch16Buildings=window.ch16Buildings;
+window.ch16Props=function(loc){vnProps(loc);};
+ch16Props=window.ch16Props;
+window.ch16Vehicles=function(loc){vnVehicles(loc);};
+ch16Vehicles=window.ch16Vehicles;
+
+console.log('[City Hearts] Vietnam urban-detail layer enabled: architecture, street life, realistic scene props.');
+})();
+</script>
+
+
+<!-- CITY HEARTS · V12 VISUAL MOTION + TRAVEL FEEL PATCH -->
+<script id="cityHeartsV12MotionPatch">
+(function(){
+'use strict';
+if(typeof game==='undefined'||typeof ctx==='undefined')return;
+
+/* ================================================================
+   RENDER-ONLY MOTION PASS
+   No gameplay/state rules are changed here.
+   ================================================================ */
+const _motionWorld=window.drawWorld||drawWorld;
+const _motionChar=window.ch16PixelCharacter||ch16PixelCharacter;
+const _motionNight=typeof ch16Night==='function'?ch16Night:()=>false;
+const _motionLoc=()=>game.location||'downtown';
+
+function mrect(x,y,w,h,c){if(typeof ch16Rect==='function')ch16Rect(x,y,w,h,c);else{ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h));}}
+function mLine(points,c,w=1){ctx.save();ctx.strokeStyle=c;ctx.lineWidth=w;ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke();ctx.restore();}
+function mNight(){return _motionNight();}
+function mWave(x,y,len,amp,phase,c){
+  const pts=[];for(let i=0;i<=len;i+=8)pts.push([x+i,y+Math.sin(phase+i*.12)*amp]);mLine(pts,c,1);
+}
+function animateScenery(){
+  const t=performance.now()/1000,loc=_motionLoc(),night=mNight(),dayH=(Number(game.minutes)||0)/60%24;
+  ctx.save();
+
+  /* Trees: leaf clusters move without changing their physical placement. */
+  if(['downtown','cafe','park','mall','residential'].includes(loc)){
+    const bases=loc==='park'?
+      [[90,325,1.0],[198,370,.88],[308,330,1.08],[430,382,.92],[560,340,1.02],[690,372,.95],[820,328,1.05],[950,375,.9],[1080,338,1.0],[1190,372,.86]]:
+      [[100,452,.7],[330,468,.68],[600,452,.72],[900,466,.7],[1130,450,.68]];
+    bases.forEach((b,i)=>{
+      const [x,y,sc]=b,sw=Math.sin(t*1.5+i*.8)*2.2*sc;
+      mrect(x-12+sw,y-18,8,5,'#b3c779');
+      mrect(x+5+sw*.7,y-28,7,5,'#c0cf81');
+      if(i%2===0)mrect(x+17-sw*.6,y-9,6,4,'#9fb96d');
+    });
+  }
+
+  /* Hanging signs / awnings gently move. */
+  if(['downtown','cafe','mall','residential'].includes(loc)){
+    const amp=Math.sin(t*1.8)*1.5;
+    mrect(638+amp,394,4,18,P16.ink);
+    mrect(640+amp,394,44,4,P16.gold);
+    if(loc==='cafe'){mrect(1008+Math.sin(t*1.6)*1.2,405,18,3,P16.pink);}
+    if(loc==='mall'){mrect(598+Math.sin(t*1.4)*1.4,406,30,3,P16.cyan);}
+  }
+
+  /* Vietnamese flags and laundry flutter. */
+  if(loc==='residential'||loc==='factory'||loc==='downtown'){
+    const fx=loc==='factory'?640:loc==='downtown'?78:24;
+    const fy=loc==='factory'?80:loc==='downtown'?92:82;
+    const swing=Math.sin(t*3.2)*2.8;
+    mLine([[fx,fy-8],[fx,fy+22]],P16.ink,2);
+    mrect(fx+1,fy-5,18+Math.round(swing),11,'#c94e55');
+    mrect(fx+7,fy-2,5,5,P16.gold);
+  }
+  if(loc==='residential'){
+    for(let i=0;i<5;i++){
+      const x=290+i*19,baseY=184+(i%2)*2,wind=Math.sin(t*2.7+i)*2;
+      mrect(x,Math.round(baseY+wind),15,11,['#e8a6aa','#d7c77c','#89b7c0','#d8a36f','#f0d9c0'][i]);
+    }
+  }
+
+  /* Utility wires sway subtly. */
+  if(['downtown','residential','factory'].includes(loc)){
+    mWave(90,220,1050,2.3,t*1.7,'rgba(38,35,35,.60)');
+    mWave(110,242,980,1.7,t*1.45+1.2,'rgba(55,47,45,.52)');
+  }
+
+  /* Riverside: layered water shimmer + boat wake; never place road traffic on water. */
+  if(loc==='park'){
+    for(let r=0;r<12;r++){
+      const yy=555+r*13,off=(t*22+r*31)%82;
+      mWave(24+off,yy,150,1.2,t*2+r*.5,'rgba(181,225,221,.24)');
+    }
+    const bx=1010+Math.sin(t*.22)*15,by=630+Math.sin(t*.7)*1.2;
+    for(let i=0;i<4;i++)mWave(bx-42-i*16,by+13+i*4,48,0.8,t*2+i,'rgba(197,228,220,.25)');
+    /* small birds over the park/water */
+    for(let i=0;i<4;i++){
+      const bx2=170+i*260+Math.sin(t*.35+i)*24,by2=278+(i%2)*52+Math.sin(t*1.1+i)*4;
+      mLine([[bx2-5,by2],[bx2,by2-2],[bx2+5,by2]],P16.navy2,1);
+    }
+  }
+
+  /* Café / food stalls: animated steam. */
+  if(loc==='cafe'||loc==='park'){
+    const count=loc==='cafe'?3:2;
+    for(let i=0;i<count;i++){
+      const sx=(loc==='cafe'?600:160)+i*22, sy=(loc==='cafe'?426:466);
+      const rise=(t*18+i*9)%26;
+      const wob=Math.sin(t*2+i)*2;
+      mrect(sx+wob,sy-rise,2,3,'rgba(245,238,214,.62)');
+      if(rise>9)mrect(sx-3+wob,sy-rise+7,2,3,'rgba(245,238,214,.42)');
+    }
+  }
+
+  /* Air-conditioner / exhaust motion on dense urban buildings. */
+  if(['downtown','cafe','office','mall','residential'].includes(loc)){
+    for(let i=0;i<4;i++){
+      const x=110+i*285+(loc==='residential'?20:0),y=245+(i%2)*42;
+      const spin=Math.floor(t*8+i)%2;
+      mrect(x,y,16,9,P16.ink2);mrect(x+2,y+2,12,5,P16.stone2);
+      if(spin===0){mrect(x+5,y+3,6,1,P16.navy2);mrect(x+7,y+2,1,5,P16.navy2);}
+      else{mrect(x+3,y+4,10,1,P16.navy2);mrect(x+7,y+2,1,5,P16.navy2);}
+    }
+  }
+
+  /* Street lamps: warm pixel pulse at night. */
+  if(night){
+    const pulse=.08+.04*(.5+.5*Math.sin(t*2.2));
+    [[90,392],[310,422],[540,398],[780,425],[1030,400],[1200,430]].forEach(([x,y])=>{
+      ctx.globalAlpha=pulse;
+      mrect(x-6,y-6,13,3,'#ffd36e');
+    });
+    ctx.globalAlpha=1;
+  }
+
+  /* Shop/window lights subtly breathe at evening/night. */
+  if(night||dayH>=17){
+    const blink=Math.sin(t*1.6);
+    for(let i=0;i<6;i++){
+      const x=95+i*190,y=352+(i%2)*24;
+      if(blink>0 && i%3===0)mrect(x,y,18,3,'rgba(255,210,115,.55)');
+    }
+  }
+
+  /* Loose leaves crossing the foreground. */
+  if(!night || loc==='park'){
+    for(let i=0;i<7;i++){
+      const x=(t*(15+i*4)+i*177)%1320-20;
+      const y=430+(i*29)%125+Math.sin(t*1.8+i)*9;
+      const rot=Math.sin(t*2+i);
+      mrect(x+rot*2,y,4,2,i%2?P16.leaf:P16.leaf2);
+    }
+  }
+
+  /* Pedestrian micro-motion: small footstep pixels near walking NPCs. */
+  if(typeof currentNPCs==='function'){
+    for(const n of currentNPCs()){
+      const s=game.npcState?.[n.id];if(!s)continue;
+      const moving=(Math.floor(performance.now()/160)+Math.round(s.walkPhase||0))%2===0;
+      if(moving && !game.dialogue && !game.panel){
+        mrect(s.x-7,s.y+24,4,2,'rgba(235,225,200,.28)');
+        mrect(s.x+3,s.y+24,4,2,'rgba(235,225,200,.28)');
+      }
+    }
+  }
+  ctx.restore();
+}
+
+/* ================================================================
+   CHARACTER DETAIL PASS
+   Existing 12-frame renderer remains the source of motion. This only
+   adds role-specific pixel details and frame-reactive accessories.
+   ================================================================ */
+function characterDetail(x,y,color,gender,isPlayer,job){
+  const key=typeof ch16NpcKey==='function'?ch16NpcKey(color,isPlayer):null;
+  const t=performance.now()/92,frame=Math.floor(t)%12;
+  const sway=[0,1,1,0,-1,-1,0,1,0,-1,-1,0][frame];
+  const k=key||'';
+  ctx.save();ctx.translate(ch16Round(x),ch16Round(y));
+  if(k==='linh'){mrect(-18,-2,4,13,'#9f6b79');mrect(-20,-4+sway,5,2,'#f1cf93');}
+  else if(k==='minh'){mrect(-18,-13,4,10,P16.cyan);mrect(14,-1+sway,6,7,P16.navy2);}
+  else if(k==='hana'){mrect(-21,-18,3,13,P16.ink);mrect(18,-17,3,13,P16.ink);}
+  else if(k==='an'){mrect(14,-7+sway,7,9,P16.cream2);mrect(16,-5+sway,3,4,P16.gold);}
+  else if(k==='mai'){mrect(14,1+sway,7,8,P16.cream2);mrect(20,3+sway,3,4,P16.cream2);}
+  else if(k==='kai'){mrect(10,-7+sway,6,7,P16.gold);mrect(13,-5,3,2,P16.navy2);}
+  else if(k==='vy'){mrect(15,-7+sway,8,6,P16.ink);mrect(16,-6+sway,6,4,P16.glass2);}
+  else if(k==='quan'){mrect(14,0+sway,6,8,P16.cream2);mrect(19,2+sway,3,4,P16.cream2);}
+  else if(k==='thao'){mrect(14,-4+sway,8,11,P16.cream2);mrect(16,-6+sway,4,3,P16.gold);}
+  else if(k==='duy'){mrect(13,0+sway,10,9,P16.ink);mrect(14,1+sway,8,6,P16.glass2);}
+  else if(k==='nora'){mrect(-21,-18,3,13,P16.ink);mrect(18,-18,3,13,P16.ink);mrect(-19,-20,10,2,P16.pink);mrect(9,-20,10,2,P16.pink);}
+  else if(k==='tung'){mrect(-9,-43,18,4,P16.cream2);mrect(-5,-46,10,4,P16.cream2);}
+  else if(k==='ivy'){mrect(13,0+sway,9,10,P16.ink);mrect(14,1+sway,7,7,P16.glass2);}
+  else if(k==='phuc'){mrect(11,-5+sway,11,12,P16.bag);mrect(13,-7+sway,7,3,P16.gold);}
+  else if(k==='huyen'){mrect(12,-2+sway,9,11,P16.cream2);mrect(18,-2+sway,2,11,P16.pink);}
+  else if(k==='son'){mrect(11,-2,6,10,P16.ink);mrect(18,-1,2,7,P16.gold);}
+  else if(k==='bao'){mrect(15,-1+sway,3,12,P16.gold);mrect(18,-2+sway,4,3,P16.gold);}
+  else if(k==='chi'){mrect(12,0+sway,9,10,P16.cream2);mrect(15,0+sway,2,10,P16.cyan);}
+  else if(isPlayer){mrect(-17,-3,7,13,P16.navy2);mrect(10,-3,7,13,P16.navy2);}
+  ctx.restore();
+}
+
+function enhancedCharacter(){
+  _motionChar.apply(this,arguments);
+  const x=arguments[0],y=arguments[1],color=arguments[2],gender=arguments[3],isPlayer=arguments[5],job=arguments[7]||'';
+  characterDetail(x,y,color,gender,!!isPlayer,job);
+}
+window.ch16PixelCharacter=enhancedCharacter;
+ch16PixelCharacter=enhancedCharacter;
+
+/* Wrap the final world renderer; no gameplay updates occur here. */
+function enhancedWorld(){
+  _motionWorld.apply(this,arguments);
+  animateScenery();
+}
+window.drawWorld=enhancedWorld;
+drawWorld=enhancedWorld;
+
+/* ================================================================
+   TRAVEL TIMING
+   Walk > bus > taxi. State is changed only through the existing travel
+   pipeline; we replace the single travel-duration advance value.
+   ================================================================ */
+const TRAVEL_MINUTES={walk:24,bus:12,taxi:6};
+function desiredTravelMinutes(){return TRAVEL_MINUTES[game.travelMode||'walk']||24;}
+
+const _motionAdvance=window.advance||advance;
+window.advance=function(min){
+  if(game.travelBusy && game._chTravelMinutesOverride){
+    const v=game._chTravelMinutesOverride;
+    game._chTravelMinutesOverride=null;
+    return _motionAdvance.call(this,v);
+  }
+  return _motionAdvance.apply(this,arguments);
+};
+advance=window.advance;
+
+const _motionTravel=window.travel||travel;
+window.travel=function(to){
+  if(game.travelBusy)return _motionTravel.apply(this,arguments);
+  const mode=game.travelMode||'walk';
+  game._chTravelMinutesOverride=TRAVEL_MINUTES[mode]||24;
+  const r=_motionTravel.apply(this,arguments);
+  if(!game.travelBusy)game._chTravelMinutesOverride=null;
+  return r;
+};
+travel=window.travel;
+
+/* Keep the route UI consistent with the new travel time. */
+const _motionPanel=window.panelHtml||panelHtml;
+window.panelHtml=function(kind){
+  const html=_motionPanel.apply(this,arguments);
+  if(kind!=='map'||typeof html!=='string')return html;
+  return html
+    .replace(/12 phút · miễn phí/g,'24 phút · miễn phí')
+    .replace(/8 phút · 12\.000đ/g,'12 phút · 12.000đ')
+    .replace(/5 phút · 65\.000đ/g,'6 phút · 65.000đ');
+};
+panelHtml=window.panelHtml;
+
+/* Update ETA text during the existing transition, without touching its flow. */
+let etaTimer=0;
+function syncTravelEta(){
+  clearInterval(etaTimer);
+  if(!game.travelBusy)return;
+  const wanted=desiredTravelMinutes();
+  etaTimer=setInterval(()=>{
+    if(!game.travelBusy){clearInterval(etaTimer);return;}
+    const eta=document.getElementById('travelEta');
+    if(eta)eta.textContent=wanted+' phút';
+  },50);
+}
+const __oldTravelForEta=window.travel;
+window.travel=function(to){
+  const r=__oldTravelForEta.apply(this,arguments);
+  syncTravelEta();
+  return r;
+};
+travel=window.travel;
+
+console.log('[City Hearts] V12 motion + character detail + travel timing patch loaded.');
+})();
+</script>
+
+
+<script id="cityHeartsVietnamWorldExpansion">
+(function(){
+'use strict';
+if(typeof ctx==='undefined'||typeof game==='undefined')return;
+const _baseExtras=window.drawWorldExtras||drawWorldExtras;
+function px(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),Math.max(1,Math.round(w)),Math.max(1,Math.round(h)));}
+function outlineRect(x,y,w,h,fill,stroke){ctx.fillStyle=fill;ctx.strokeStyle=stroke;ctx.lineWidth=1;ctx.fillRect(x,y,w,h);ctx.strokeRect(x+.5,y+.5,w-1,h-1);}
+function vnSign(x,y,text,bg,fg,w){
+  const ww=w||86;
+  outlineRect(x,y,ww,18,bg,'rgba(33,24,21,.72)');
+  ctx.fillStyle=fg||'#fff4d5';ctx.font='900 7px system-ui';ctx.textAlign='center';ctx.fillText(text,x+ww/2,y+12);ctx.textAlign='left';
+}
+function drawPowerPole(x,y,h){
+  px(x,y,4,h,'#4b4a47');px(x-2,y+16,8,3,'#6a665f');px(x-15,y+18,30,3,'#57544f');
+  px(x-10,y+14,3,8,'#6d6963');px(x+7,y+14,3,8,'#6d6963');
+}
+function drawWires(y,offset){
+  ctx.strokeStyle='rgba(45,39,36,.56)';ctx.lineWidth=1;
+  for(let i=0;i<3;i++){
+    ctx.beginPath();ctx.moveTo(-20,y+i*5);ctx.quadraticCurveTo(320,y+8+i*7,660,y+i*5+offset);ctx.quadraticCurveTo(980,y-4+i*7,1305,y+i*4);ctx.stroke();
+  }
+}
+function drawAwning(x,y,w,c1,c2){
+  px(x,y,w,5,c1);for(let i=0;i<Math.floor(w/12);i++)px(x+i*12,y+5,8,6,i%2?c2:c1);
+}
+function drawMotorbike(x,y,c,flip){
+  ctx.save();ctx.translate(x,y);if(flip)ctx.scale(-1,1);
+  px(-11,1,20,5,c);px(-5,-4,10,5,c);px(0,-8,7,4,'#22262a');
+  ctx.fillStyle='#12171b';ctx.beginPath();ctx.arc(-7,7,4,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(9,7,4,0,Math.PI*2);ctx.fill();
+  px(5,-10,2,6,'#45484a');px(7,-12,4,2,'#e3c463');ctx.restore();
+}
+function drawStreetVendor(x,y,type){
+  ctx.save();
+  px(x,y,34,5,'#57453c');px(x+3,y-18,28,18,type==='banhmi'?'#d7a46d':'#9b6f4d');
+  px(x+6,y-15,22,9,'#efe2bf');px(x+11,y-5,12,5,'#5f3c2d');
+  px(x-4,y+5,8,8,'#3a312c');px(x+30,y+5,8,8,'#3a312c');
+  drawAwning(x-2,y-24,38,type==='banhmi'?'#d86f73':'#6fa4a1',type==='banhmi'?'#f2c46e':'#f3d8a5');
+  ctx.restore();
+}
+function drawCivicBanner(x,y,text){
+  outlineRect(x,y,120,22,'#b9474e','#702d32');
+  px(x+10,y+5,10,10,'#f1d26e');
+  ctx.fillStyle='#fff2cf';ctx.font='900 7px system-ui';ctx.textAlign='center';ctx.fillText(text,x+71,y+14);ctx.textAlign='left';
+}
+function drawVietnamFlag(x,y,s){
+  s=s||1;outlineRect(x,y,22*s,15*s,'#bd3d43','#6d3032');
+  ctx.fillStyle='#f2d56b';ctx.beginPath();ctx.moveTo(x+11*s,y+3*s);ctx.lineTo(x+13*s,y+8*s);ctx.lineTo(x+18*s,y+8*s);ctx.lineTo(x+14*s,y+11*s);ctx.lineTo(x+16*s,y+14*s);ctx.lineTo(x+11*s,y+12*s);ctx.lineTo(x+6*s,y+14*s);ctx.lineTo(x+8*s,y+10*s);ctx.lineTo(x+4*s,y+8*s);ctx.lineTo(x+9*s,y+8*s);ctx.closePath();ctx.fill();
+}
+function drawPerson(x,y,shirt,skirtOrPants,bag,skin){
+  ctx.save();ctx.translate(x,y);const bob=Math.sin(performance.now()/260+x*.02)*.45;
+  px(-4,2,8,9,skirtOrPants||'#34404b');px(-5,-10,10,12,shirt||'#6d8fb0');px(-4,-17,8,8,skin||'#edbe9c');px(-5,-20,10,4,bag||'#2f3440');
+  px(-7,0,3,4,'#242b31');px(4,0,3,4,'#242b31');px(-8,-11,3,7,shirt||'#6d8fb0');px(5,-11,3,7,shirt||'#6d8fb0');
+  px(-4,-21,2,2,'#2c2321');px(2,-21,2,2,'#2c2321');ctx.restore();
+}
+function drawVietnamSceneDecor(){
+  const loc=game.location;
+  const h=game.minutes/60%24;
+  const night=h>=19||h<6;
+  const t=performance.now()/1000;
+  ctx.save();
+  /* Shared Vietnamese streetscape language */
+  if(['downtown','cafe','office','mall','residential'].includes(loc)){
+    drawPowerPole(36,188,250);drawPowerPole(1230,196,244);drawWires(204,Math.sin(t*.55)*3);
+    for(let i=0;i<5;i++)drawMotorbike(170+i*170,548+(i%2)*12,['#d85e68','#4c86a1','#7f9e78','#d2a64a','#5d5d61'][i],i%2);
+    if(loc!=='mall')drawCivicBanner(500,188,loc==='office'?'THÀNH PHỐ · KHU VĂN PHÒNG':'KHU PHỐ VĂN MINH');
+    drawVietnamFlag(1160,195,.8);
+  }
+  if(loc==='downtown'){
+    /* shophouse row + pedestrian street life */
+    for(let i=0;i<5;i++){
+      const x=70+i*215,y=338-(i%2)*8;
+      outlineRect(x,y,150,76,['#c8916d','#b96e63','#c9ad79','#a9a487','#c57e68'][i],'#58473b');
+      px(x+10,y+12,28,26,'#82a8ac');px(x+46,y+12,28,26,'#9cc0ba');px(x+86,y+12,50,18,'#6e7f82');
+      px(x+8,y+47,134,29,'#d2b08a');
+      drawAwning(x+5,y+40,140,i%2?'#d66e6f':'#6aa3a0',i%2?'#f2c96e':'#f0d8a5');
+      vnSign(x+18,y+3,['PHỞ GIA ĐÌNH','BÁNH MÌ 24H','TẠP HÓA','HIỆU THUỐC','CƠM NHÀ'][i],['#8e3e46','#4e7777','#79563d','#55739a','#9b6545'][i%5]);
+    }
+    drawStreetVendor(820,492,'banhmi');
+    drawStreetVendor(1015,496,'coffee');
+    drawPerson(930,520,'#e76f77','#34404b','#5e4e42');drawPerson(970,518,'#5d8da4','#6c5c53','#4b3a2f');
+  }else if(loc==='cafe'){
+    /* narrow café lane / shophouses */
+    for(let i=0;i<4;i++){
+      const x=65+i*285;
+      outlineRect(x,325,205,95,['#bd8d6c','#a67d61','#c6a57d','#b17861'][i],'#58463b');
+      px(x+15,342,38,36,'#8db6b6');px(x+60,342,38,36,'#9dc6c0');px(x+113,342,72,16,'#6b7778');
+      drawAwning(x+4,379,196,i%2?'#c95f6d':'#5c9693',i%2?'#f0c45c':'#f0dfb4');
+      vnSign(x+28,332,['CÀ PHÊ HẺM','TIỆM BÁNH','TRÀ ĐÁ','NHÀ SÁCH'][i],i===2?'#597c7c':'#8a5a48');
+      for(let j=0;j<2;j++){px(x+12+j*100,406,6,12,'#4f3b2f');px(x+70+j*100,407,5,11,'#4f3b2f');}
+    }
+    drawPerson(360,500,'#7aa7b8','#4b3f4d','#7a5d4b');
+    drawPerson(410,502,'#d77f8c','#6c574a','#6b4d3e');
+    drawStreetVendor(880,498,'coffee');
+  }else if(loc==='office'){
+    /* modern Vietnamese mixed-use offices */
+    vnSign(88,352,'NGÂN HÀNG', '#416f8b');vnSign(280,352,'VĂN PHÒNG', '#576d63');vnSign(1070,352,'MINIMART', '#7b6049');
+    for(let i=0;i<4;i++){
+      const x=120+i*275;outlineRect(x,396,135,78,'#8fa2a0','#46565a');
+      px(x+12,410,48,24,'#a6c2c2');px(x+69,410,54,24,'#89adac');px(x+18,440,100,20,'#4e6568');
+      if(i%2===0)drawAwning(x+5,432,125,'#5e8ea0','#d8c477');
+    }
+    drawPerson(520,506,'#3f7592','#2e3238','#5b4738');drawPerson(560,505,'#d46d77','#3d4147','#4f4138');
+    drawPerson(960,507,'#657f72','#464c53','#6e563f');
+    drawVietnamFlag(1118,347,.75);
+  }else if(loc==='park'){
+    /* Vietnamese riverside / community park */
+    drawCivicBanner(70,232,'CÔNG VIÊN · BỜ SÔNG');
+    outlineRect(1025,386,120,52,'#c39a6d','#634d3d');px(1037,398,28,24,'#9fc1bd');px(1076,398,48,18,'#6b7773');
+    vnSign(1040,377,'NHÀ VĂN HÓA', '#7c554b');
+    /* food cart and joggers on pedestrian side */
+    drawStreetVendor(210,482,'coffee');
+    drawPerson(320,478,'#77a58f','#5a5146','#68513d');drawPerson(365,478,'#d98975','#3f4650','#5b493d');
+    /* bicycles on promenade */
+    for(let i=0;i<3;i++){const x=600+i*120;ctx.strokeStyle='#6f7b78';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,490,8,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(x+28,490,8,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.moveTo(x,490);ctx.lineTo(x+12,478);ctx.lineTo(x+28,490);ctx.lineTo(x+14,490);ctx.closePath();ctx.stroke();}
+    /* lotus and reeds stay on water edge, not on road */
+    for(let i=0;i<8;i++){const x=430+i*74;px(x,545,4,18,'#3e7968');px(x+4,546,12,4,'#6d9f77');}
+    if(!night){for(let i=0;i<4;i++){const x=720+i*80;px(x,250,3,18,'#b49d84');px(x-5,246,13,4,'#d6b76d');}}
+  }else if(loc==='mall'){
+    /* Vietnamese TTTM frontage + dense motorbike parking */
+    vnSign(92,356,'SIÊU THỊ', '#547b8b');vnSign(330,356,'ĐIỆN MÁY', '#8d5f70');vnSign(920,356,'KHU ẨM THỰC', '#9a6d4b');
+    outlineRect(84,390,230,105,'#9eaaa6','#4e5759');outlineRect(345,390,230,105,'#a9aaa5','#4e5759');
+    for(let i=0;i<4;i++){px(105+i*50,410,34,50,['#7eb0bb','#b7c8c3','#8a9dad','#c8b488'][i]);}
+    for(let i=0;i<6;i++)drawMotorbike(680+i*72,494,['#4d5458','#6f8c9c','#a45e67','#a68a5a','#657d6b','#5c5f69'][i],false);
+    drawPerson(780,500,'#5e8599','#3c4148','#5b473a');drawPerson(824,502,'#d17c8d','#655348','#66503e');
+    drawCivicBanner(612,231,'TRUNG TÂM THƯƠNG MẠI');
+  }else if(loc==='residential'){
+    /* Vietnamese tube houses, alleys, balconies, drying racks, altars/plants */
+    const rows=[{x:38,w:170,h:120,c:'#be8b70'},{x:225,w:150,h:142,c:'#d0a67d'},{x:390,w:180,h:132,c:'#9fa69a'},{x:586,w:158,h:120,c:'#c37b6d'},{x:760,w:185,h:145,c:'#a9967e'},{x:960,w:180,h:130,c:'#b98974'}];
+    rows.forEach((b,i)=>{
+      outlineRect(b.x,315-b.h*.18,b.w,b.h,b.c,'#58473b');
+      px(b.x+b.w/2-8,305,16,b.h*.58,'#805a47');
+      const floors=Math.max(2,Math.floor(b.h/42));
+      for(let f=0;f<floors;f++){
+        const yy=302+f*26;px(b.x+10,yy,36,18,'#7e9b98');px(b.x+b.w-48,yy,36,18,'#87a8a5');
+        px(b.x+5,yy+18,b.w-10,3,'#6d5a4e');
+      }
+      if(i%2===0){px(b.x+b.w-24,286,18,10,'#d8d9d1');px(b.x+b.w-21,296,12,3,'#7a817b');}
+      if(i===1||i===4){ctx.strokeStyle='#594d44';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(b.x+b.w-36,305);ctx.lineTo(b.x+b.w-8,337);ctx.stroke();}
+      vnSign(b.x+12,302,['TẠP HÓA','MỸ PHẨM','SỬA XE','GIẶT ỦI','NHÀ TRỌ','BÁNH CUỐN'][i],i%2?'#6b8580':'#8c5d4e');
+    });
+    /* alley and residents */
+    px(440,470,105,3,'#6e5d53');px(455,472,4,16,'#4f463e');px(528,472,4,16,'#4f463e');
+    drawPerson(610,500,'#70a4b1','#4b4c50','#5d4a3c');drawPerson(658,502,'#d47c7d','#685b4b','#6a513d');
+    drawStreetVendor(825,500,'banhmi');
+    drawVietnamFlag(1145,275,.7);
+  }else if(loc==='factory'){
+    /* Vietnamese industrial park: gate, security, worker circulation, warehouse details */
+    vnSign(90,398,'KHU CÔNG NGHIỆP', '#526b70');vnSign(905,398,'CỔNG KHO HÀNG', '#7c6352');
+    outlineRect(90,430,230,92,'#777f7d','#41494b');outlineRect(390,430,210,92,'#6f7776','#41494b');
+    outlineRect(700,430,250,92,'#747b79','#41494b');
+    for(let i=0;i<3;i++){px(110+i*70,448,40,22,'#8caaa8');px(112+i*70,476,58,16,'#525e61');}
+    /* loading dock */
+    for(let i=0;i<4;i++){px(720+i*54,446,38,28,'#8d6e50');px(726+i*54,452,26,14,'#bf9a62');}
+    /* gate + safety office */
+    outlineRect(1020,430,105,70,'#777574','#3d3a39');vnSign(1028,440,'BẢO VỆ','#6a5f54');
+    drawPerson(1065,513,'#e0bb6f','#47535b','#5b493c');
+    for(let i=0;i<4;i++)drawMotorbike(300+i*46,540,'#526574',false);
+    drawCivicBanner(480,236,'KHU CÔNG NGHIỆP · CA SẢN XUẤT');
+  }
+  /* subtle living-city ambient: birds in park, kitchen steam in food streets */
+  if(loc==='park'&&!night){ctx.fillStyle='#3e4b4a';for(let i=0;i<4;i++){const x=180+i*170+(t*18)%60;const y=278+(i%2)*25;ctx.fillRect(x,y,3,1);ctx.fillRect(x+4,y+2,3,1);}}
+  if((loc==='downtown'||loc==='cafe'||loc==='mall')&& !night){
+    for(let i=0;i<3;i++){const x=780+i*110,y=382-Math.sin(t*1.7+i)*4;ctx.fillStyle='rgba(245,238,214,.25)';ctx.fillRect(x,y,3,6);ctx.fillRect(x+4,y-3,2,5);}
+  }
+  if(night){ctx.globalAlpha=.12;ctx.fillStyle='#f5c66b';ctx.fillRect(0,170,1280,6);ctx.globalAlpha=1;}
+  ctx.restore();
+}
+window.drawWorldExtras=function(){_baseExtras.apply(this,arguments);drawVietnamSceneDecor();};
+drawWorldExtras=window.drawWorldExtras;
+console.log('[City Hearts] Vietnam world expansion rendered by district.');
+})();
+</script>
+
+</body>
 </html>
