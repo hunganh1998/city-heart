@@ -5346,7 +5346,6 @@ wrap('addPhone',function(o){return function(){if(ok('phone',700))play('phone');r
 /* ---------- Nhạc nền: file có sẵn trên mạng (OpenGameArt, CC0) ---------- */
 /* Ưu tiên file đặt cạnh game: audio/<tên>.mp3 ; nếu không có sẽ tự tải từ URL gốc */
 var TR={
-love:{u:['audio/gasmask_love_loop.mp3','https://opengameart.org/sites/default/files/gasmask_love_loop.mp3'],v:.5},
 calm:{u:['audio/JRPG%20Piano.mp3','https://opengameart.org/sites/default/files/JRPG%20Piano.mp3'],v:.7}
 };
 var unlocked=false;
@@ -5354,7 +5353,7 @@ function mk(t){var a=new Audio();a.loop=true;a.preload='auto';a.volume=0;t.i=0;a
 a.addEventListener('error',function(){if(t.i<t.u.length-1){t.i++;a.src=t.u[t.i];a.load();if(t.on)a.play().catch(function(){});}else t.dead=true;});
 t.a=a;return a;}
 function tick(){
-var g=G(),tgt=(S.music!==false&&unlocked&&!document.hidden)?((g&&g.started)?'calm':'love'):null;
+var g=G(),tgt=(S.music!==false&&unlocked&&!document.hidden)?'calm':null;
 Object.keys(TR).forEach(function(k){var t=TR[k],goal=(k===tgt)?t.v*S.musicVol:0,a=t.a;
 if(!a){if(goal<=0||t.dead)return;a=mk(t);}
 var d=goal-a.volume;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(d)*Math.min(Math.abs(d),.04)));
@@ -5365,7 +5364,7 @@ document.documentElement.classList.toggle('ch-started',!!(g&&g.started));
 setInterval(tick,100);
 ['pointerdown','keydown','touchend'].forEach(function(ev){window.addEventListener(ev,function(){unlocked=true;tick();},{once:true,passive:true});});
 /* ---------- Cài đặt: công tắc + âm lượng nhạc ---------- */
-function rows(){return '<div class="setting-row"><div><strong>Nhạc nền</strong><span>Nhạc tình yêu nhẹ, tự lặp</span></div><button class="mini switch" data-ch-music>'+(S.music!==false?'Bật':'Tắt')+'</button></div>'+
+function rows(){return '<div class="setting-row"><div><strong>Nhạc nền</strong><span>Piano nhẹ, tự lặp</span></div><button class="mini switch" data-ch-music>'+(S.music!==false?'Bật':'Tắt')+'</button></div>'+
 '<div class="setting-row"><div><strong>Âm lượng nhạc</strong><span>Nhạc: Kenny Chow, Joth (CC0) · OpenGameArt</span></div><input class="range" type="range" min="0" max="1" step="0.05" value="'+S.musicVol+'" data-ch-vol></div>';}
 if(typeof panelHtml==='function'){var _ph=panelHtml;panelHtml=function(k){var h=_ph.apply(this,arguments);
 if(k==='settings'&&typeof h==='string')h=h.replace('<div class="setting-row"><div><strong>Phiên bản',rows()+'<div class="setting-row"><div><strong>Phiên bản');return h;};}
@@ -7359,13 +7358,14 @@ S('“Đôi khi mình tự hỏi làm '+j+' là điều mình thực sự muốn
 S('“Thành phố đông người thế mà vẫn dễ thấy cô đơn nhỉ. Bạn có vậy không?”',[['“Có. Nhất là lúc về nhà tối.”','“Mình cũng thế. Biết là có người hiểu cảm giác đó, mình đỡ lạc hơn.”','trust5 comfort4'],['“Mình thấy ổn khi có người để tám như bạn.”','“Ơ… nghe vậy mình vui thật đấy.”','chemistry4 interest4'],['“Cô đơn cũng không tệ, nếu mình chọn.”','“Câu hay. Nhưng đừng chọn nó quá lâu nhé.”','respect3 curiosity3']])]};
 Object.keys(NPCS).forEach(function(id){var a=NPC_DIALOGUES[id]||(NPC_DIALOGUES[id]=[]);if(U[id])a.push.apply(a,U[id]);a.push.apply(a,G(NPCS[id]))});
 /* ===== 4. CAMERA MOBILE: zoom, bám nhân vật, nhìn trước theo hướng đi, né khung hội thoại ===== */
-var cx=0,cy=0,lx=0,ly=0,vx=0,loc='',lt=performance.now(),rz=0,cA=document.getElementById('app'),cC=document.getElementById('game'),Z=1.38;
+var cx=0,cy=0,lx=0,ly=0,vx=0,loc='',lt=performance.now(),rz=0,cA=document.getElementById('app'),cC=document.getElementById('game'),Z=1.15,dB=document.getElementById('dialogue');
 function tick(now){requestAnimationFrame(tick);try{var dt=Math.min(.05,(now-lt)/1000||.016);lt=now;
 if(!game.started||!document.documentElement.classList.contains('ch-mobile-portrait'))return;
 var aw=cA.clientWidth,ah=cA.clientHeight,H=ah*Z,W=H*16/9,dlg=!!game.dialogue,rate=1-Math.pow(.0009,dt),
 v=dt?(game.x-lx)/dt:0;lx=game.x;ly=game.y;vx+=(Math.max(-1,Math.min(1,v/150))-vx)*Math.min(1,dt*5);
-var px=(game.x+vx*55)/1280*W,py=game.y/720*H,tx=aw/2-px,ty=ah*(dlg?.24:.46)-py;
-tx=Math.max(aw-W,Math.min(0,tx));ty=Math.max(ah-H,Math.min(0,ty));
+var gx=game.x,gy=game.y,dh=0;if(dlg){dh=Math.min(ah*.6,dB?dB.offsetHeight+10:ah*.45);for(var q in NPCS){var o=game.npcState[q];if(o&&NPCS[q].name===game.dialogue.speaker&&o.location===game.location){gx=(gx+o.x)/2;gy=(gy+o.y)/2;break}}}
+var px=(gx+(dlg?0:vx*55))/1280*W,py=gy/720*H,vh=ah-dh,tx=aw/2-px,ty=vh*(dlg?.55:.46)-py;
+tx=Math.max(aw-W,Math.min(0,tx));ty=Math.max(vh-H,Math.min(0,ty));
 if(loc!==game.location){loc=game.location;cx=tx;cy=ty}
 var ox=cx,oy=cy;cx+=(tx-cx)*rate;cy+=(ty-cy)*rate;
 var s=cC.style;s.setProperty('width',W+'px','important');s.setProperty('height',H+'px','important');s.setProperty('left',cx+'px','important');s.setProperty('top',cy+'px','important');
@@ -7390,7 +7390,7 @@ tu:V('#8a8a88','#c4c2bc','#d9a8a0','#f0cfc8','#5a4a52','#3a2f30','#a84a4a','#7a5
 var CM=window.CH16_CM={'#ff9fb0':'lan','#e8c35a':'hung','#9fd9e8':'trang','#b9b3a0':'long','#e0a15a':'dung','#f7c6a0':'yen','#9a8cf0':'khoa','#d9a8a0':'tu'};
 })();
 </script>
-<style id="chV6css">@media (orientation:portrait) and (max-width:900px){#dialogue .dialogue-box{max-height:46dvh!important;overflow-y:auto!important;overscroll-behavior:contain}#dialogue .choice small{display:none!important}#dialogue .dialogue-body{overflow-wrap:anywhere;word-break:break-word}#dialogue .choices{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}#dialogue .choice{box-sizing:border-box!important;width:100%!important;max-width:100%!important;height:auto!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word;text-align:left!important;line-height:1.3!important;padding:10px 12px!important;min-height:44px!important;touch-action:manipulation}html,body,#app{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;touch-action:manipulation}}</style>
+<style id="chV6css">@media (orientation:portrait) and (max-width:900px){#dialogue .dialogue-box{max-height:42dvh!important;overflow-y:auto!important;overscroll-behavior:contain}#dialogue .dialogue-body{font-size:13px!important;line-height:1.35!important;padding:8px 10px!important;max-height:18dvh;overflow-y:auto}#dialogue .speaker{padding:5px 10px!important}#dialogue .choice{font-size:12.5px!important}#dialogue .choice small{display:none!important}#dialogue .dialogue-body{overflow-wrap:anywhere;word-break:break-word}#dialogue .choices{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}#dialogue .choice{box-sizing:border-box!important;width:100%!important;max-width:100%!important;height:auto!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word;text-align:left!important;line-height:1.3!important;padding:7px 10px!important;min-height:38px!important;touch-action:manipulation}html,body,#app{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;touch-action:manipulation}}</style>
 <script id="chPatchV6">
 (function(){'use strict';
 var X=CH16_CHAR_V8,TN=['#f3cfae','#e9b98f','#dba57a','#c98f65','#d4a077','#f6d9c0'],KEYS=['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'],
