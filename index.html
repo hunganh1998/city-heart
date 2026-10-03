@@ -1,15 +1,6 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KKYB8WGRFQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KKYB8WGRFQ');
-</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
 <meta name="author" content="Hung Anh"><meta name="copyright" content="Made by Hung Anh"><title>City Hearts — Thành phố và những mối quan hệ</title>
@@ -7095,5 +7086,230 @@ console.log('[City Hearts] Vietnam world expansion rendered by district.');
 })();
 </script>
 
+
+<!-- CITY HEARTS · PORTRAIT MOBILE OPTIMIZATION PATCH
+     Additive only: preserves existing gameplay/state/render logic. -->
+<style id="cityHeartsPortraitMobileStyle">
+html.ch-mobile-portrait,html.ch-mobile-portrait body{width:100%;height:100%;overflow:hidden}
+@media (orientation:portrait) and (max-width:900px){
+  :root{--ch-mobile-safe-top:max(8px,env(safe-area-inset-top));--ch-mobile-safe-right:max(8px,env(safe-area-inset-right));--ch-mobile-safe-bottom:max(10px,env(safe-area-inset-bottom));--ch-mobile-safe-left:max(8px,env(safe-area-inset-left))}
+  #app{width:100vw!important;height:100dvh!important;min-height:100dvh!important;overflow:hidden!important}
+  #game{position:absolute!important;height:100dvh!important;width:auto!important;max-width:none!important;left:50%!important;top:0!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important;inset:auto!important;border-radius:0!important}
+  #chRotateHint{display:none!important}
+
+  /* Compact top HUD: readable in portrait without covering the play field. */
+  #hud{transform:none!important;width:100%!important;height:100%!important}
+  #hud .hud-left{left:var(--ch-mobile-safe-left)!important;right:var(--ch-mobile-safe-right)!important;top:calc(var(--ch-mobile-safe-top) + 54px)!important;width:auto!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important;align-items:stretch!important}
+  #hud .hud-left .metric{display:flex!important;min-width:0!important;width:auto!important;height:42px!important;padding:5px 6px!important;border-radius:10px!important;box-shadow:0 3px 0 rgba(0,0,0,.35)!important}
+  #hud .hud-left .metric-icon{font-size:14px!important;flex:0 0 auto}
+  #hud .hud-left .metric b{font-size:8px!important;letter-spacing:.04em!important;white-space:nowrap!important}
+  #hud .hud-left .metric strong{font-size:11px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  #hud .hud-left .metric:nth-of-type(1){grid-column:span 1}
+  #hud .hud-left .metric:nth-of-type(2){grid-column:span 1}
+  #hud .hud-left .metric:nth-of-type(3){grid-column:span 1}
+  #hud .hud-left .metric:nth-of-type(4){grid-column:span 1}
+  #hud .hud-left .metric:nth-of-type(5){display:none!important}
+  #hud .hud-left .hud-btn{display:none!important}
+  #hud .hud-right{display:none!important}
+
+  #topbar{top:var(--ch-mobile-safe-top)!important;left:50%!important;min-width:0!important;width:min(76vw,310px)!important;max-width:310px!important;padding:6px 10px!important;border-width:2px!important;border-radius:12px!important;box-shadow:0 3px 0 rgba(0,0,0,.35)!important;z-index:20!important}
+  #topbar .clock-face{gap:5px!important}
+  #topbar .clock-icon{font-size:15px!important}
+  #topbar .time-label{font-size:12px!important;line-height:1.15!important;white-space:nowrap!important}
+  #topbar .location-label{font-size:8px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+
+  #goalHud{top:calc(var(--ch-mobile-safe-top) + 101px)!important;left:var(--ch-mobile-safe-left)!important;right:var(--ch-mobile-safe-right)!important;transform:none!important;min-width:0!important;max-width:none!important;width:auto!important;font-size:9px!important;padding:6px 8px!important;border-radius:9px!important;z-index:17!important}
+  #goalHud .goal-line{white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  #goalHud .goal-line:nth-child(n+3){display:none!important}
+
+  /* Thumb controls: separated, large enough, and safe-area aware. */
+  #mobileControls{display:block!important;z-index:22!important;pointer-events:none!important}
+  #mobileStick{left:var(--ch-mobile-safe-left)!important;bottom:var(--ch-mobile-safe-bottom)!important;width:118px!important;height:118px!important;border-radius:50%!important;pointer-events:auto!important;touch-action:none!important;background:rgba(18,31,41,.30)!important;border:2px solid rgba(255,221,235,.48)!important}
+  #mobileKnob{left:36px!important;top:36px!important;width:42px!important;height:42px!important;border-radius:50%!important}
+  #mobileControls .mobile-actions{right:var(--ch-mobile-safe-right)!important;bottom:var(--ch-mobile-safe-bottom)!important;width:136px!important;display:grid!important;grid-template-columns:64px 64px!important;gap:8px!important;pointer-events:auto!important}
+  #mobileControls .mobile-action{width:64px!important;height:50px!important;min-height:50px!important;padding:0 4px!important;font-size:10px!important;line-height:1.05!important;border-radius:12px!important;touch-action:manipulation!important}
+  #mobileControls .mobile-action.big{grid-column:1 / -1!important;width:136px!important;height:52px!important;min-height:52px!important;font-size:11px!important}
+  #hint{left:50%!important;bottom:calc(var(--ch-mobile-safe-bottom) + 132px)!important;width:min(54vw,210px)!important;max-width:54vw!important;white-space:normal!important;text-align:center!important;font-size:10px!important;line-height:1.25!important;padding:6px 8px!important;border-radius:9px!important;z-index:21!important}
+
+  /* Full-height sheets for phone/map/relations/shop/jobs. */
+  #panel{left:6px!important;right:6px!important;top:calc(var(--ch-mobile-safe-top) + 6px)!important;bottom:calc(var(--ch-mobile-safe-bottom) + 6px)!important;width:auto!important;max-width:none!important;max-height:none!important;height:auto!important;padding:13px!important;border-radius:16px!important;z-index:45!important;overflow:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important}
+  #panel h3{font-size:18px!important;line-height:1.2!important}
+  #panel p{font-size:13px!important;line-height:1.5!important}
+  #panel .panel-tabs{position:sticky!important;top:-13px!important;padding-top:13px!important;padding-bottom:6px!important;background:linear-gradient(180deg,rgba(30,45,57,.99),rgba(30,45,57,.96),rgba(30,45,57,0))!important;z-index:2!important}
+  #panel button{min-height:44px!important;padding:9px 11px!important}
+  #panel .menu-row{gap:6px!important}
+  #panel .menu-row button{flex:1 1 42%!important}
+  #panel .shop-grid,#panel .contact-grid{grid-template-columns:1fr!important}
+
+  /* Dialogue becomes a comfortable bottom sheet. */
+  #dialogue{left:6px!important;right:6px!important;bottom:calc(var(--ch-mobile-safe-bottom) + 4px)!important;width:auto!important;transform:none!important;z-index:50!important}
+  #dialogue .dialogue-box{width:100%!important;max-height:68dvh!important;border-radius:16px!important;border-width:2px!important;box-shadow:0 6px 0 rgba(0,0,0,.32),0 18px 44px rgba(0,0,0,.25)!important}
+  #dialogue .speaker{padding:10px 12px!important;min-height:46px!important}
+  #dialogue .speaker-name{font-size:16px!important}
+  #dialogue .speaker-meta{font-size:9px!important}
+  #dialogue .dialogue-body{font-size:16px!important;line-height:1.5!important;min-height:0!important;max-height:22dvh!important;padding:11px 12px!important;overflow:auto!important;-webkit-overflow-scrolling:touch!important}
+  #dialogue .choices{grid-template-columns:1fr!important;gap:7px!important;padding:0 9px 10px!important;max-height:40dvh!important;overflow:auto!important}
+  #dialogue .choice{font-size:15px!important;line-height:1.32!important;min-height:52px!important;padding:10px 11px!important;border-radius:11px!important}
+
+  /* Opening / onboarding: use the complete portrait viewport and allow scrolling. */
+  #startOverlayCinematic{overflow:auto!important;align-items:flex-start!important;padding:10px!important;-webkit-overflow-scrolling:touch!important}
+  #startOverlayCinematic .opening-card{width:100%!important;min-height:calc(100dvh - 20px)!important;height:auto!important;padding:34px 14px 68px!important;border-radius:20px!important;justify-content:flex-start!important;overflow:visible!important}
+  #startOverlayCinematic .brand-kicker{font-size:8px!important;letter-spacing:.17em!important;margin-bottom:12px!important}
+  #startOverlayCinematic .brand-title{font-size:clamp(42px,15vw,66px)!important;line-height:.9!important}
+  #startOverlayCinematic .slogan{font-size:14px!important;line-height:1.35!important;margin-top:14px!important}
+  #startOverlayCinematic .slogan-sub{font-size:11px!important;line-height:1.45!important;margin-bottom:15px!important;max-width:340px!important}
+  #startOverlayCinematic .character-row{gap:6px!important}
+  #startOverlayCinematic .character-chip{width:40px!important;height:40px!important;font-size:18px!important}
+  #startOverlayCinematic .start-primary{width:100%!important;max-width:320px!important;min-height:52px!important;font-size:13px!important}
+  #startOverlayCinematic .cinematic-form{width:100%!important;max-width:360px!important}
+  #startOverlayCinematic.form-open .brand-title{font-size:clamp(40px,13vw,58px)!important}
+  #startOverlayCinematic .gender-grid{gap:7px!important}
+  #startOverlayCinematic .gender-btn{min-height:64px!important;padding:9px!important}
+  #startOverlayCinematic .name-row{gap:7px!important}
+  #startOverlayCinematic .marketing-points{position:static!important;transform:none!important;display:grid!important;grid-template-columns:1fr!important;gap:5px!important;margin-top:16px!important;font-size:8px!important}
+
+  #onboardingOverlay{padding:7px!important;z-index:70!important}
+  #onboardingOverlay .onboard-shell{width:100%!important;max-height:calc(100dvh - 14px)!important;border-radius:14px!important}
+  #onboardingOverlay .onboard-content{padding:3px 10px 5px!important}
+  #onboardingOverlay .onboard-title{font-size:20px!important}
+  #onboardingOverlay .onboard-copy{font-size:12px!important}
+  #onboardingOverlay .onboard-grid,#onboardingOverlay .onboard-controls{grid-template-columns:1fr!important}
+  #onboardingOverlay .onboard-flow{grid-template-columns:repeat(2,1fr)!important}
+  #onboardingOverlay .onboard-flow .step:last-child{grid-column:auto!important}
+  #onboardingOverlay .onboard-actions button{min-height:44px!important}
+
+  /* Notifications/toasts stay on-screen above the sheets. */
+  .phone-notification-stack{left:6px!important;right:6px!important;top:calc(var(--ch-mobile-safe-top) + 106px)!important;width:auto!important;z-index:80!important}
+  .toast{left:50%!important;top:calc(var(--ch-mobile-safe-top) + 108px)!important;width:min(90vw,340px)!important;text-align:center!important;font-size:11px!important;z-index:90!important}
+
+  /* Reduce non-essential decoration on touch phones; keep gameplay data and logic unchanged. */
+  .game-love-fx{display:none!important}
+  #cityLifeBadge{display:none!important}
+}
+@media (orientation:portrait) and (max-width:380px){
+  #hud .hud-left{top:calc(var(--ch-mobile-safe-top) + 51px)!important;gap:3px!important}
+  #hud .hud-left .metric{height:38px!important;padding:4px 5px!important}
+  #hud .hud-left .metric b{font-size:7px!important}
+  #hud .hud-left .metric strong{font-size:10px!important}
+  #mobileStick{width:108px!important;height:108px!important}
+  #mobileKnob{left:33px!important;top:33px!important;width:40px!important;height:40px!important}
+  #mobileControls .mobile-actions{width:126px!important;grid-template-columns:59px 59px!important;gap:6px!important}
+  #mobileControls .mobile-action{width:59px!important;height:47px!important;min-height:47px!important}
+  #mobileControls .mobile-action.big{width:126px!important}
+  #dialogue .dialogue-body{font-size:15px!important}
+  #dialogue .choice{font-size:14px!important;min-height:50px!important}
+}
+</style>
+<script id="cityHeartsPortraitMobileJS">
+(function(){
+'use strict';
+var root=document.documentElement,app=document.getElementById('app'),canvas=document.getElementById('game');
+if(!root||!app||!canvas)return;
+var portrait=false;
+function isPortrait(){return window.innerHeight>window.innerWidth && window.innerWidth<=900;}
+function applyPortrait(){
+  portrait=isPortrait();
+  root.classList.toggle('ch-mobile-portrait',portrait);
+  if(!portrait)return;
+  var h=app.clientHeight||window.innerHeight||720;
+  var cssH=Math.max(1,Math.round(h));
+  var cssW=Math.max(1,Math.round(cssH*(1280/720)));
+  var s=canvas.style;
+  s.setProperty('inset','auto','important');
+  s.setProperty('height',cssH+'px','important');
+  s.setProperty('width',cssW+'px','important');
+  s.setProperty('left',Math.round((app.clientWidth-cssW)/2)+'px','important');
+  s.setProperty('top','0px','important');
+  s.setProperty('transform','translateX(0)','important');
+  s.setProperty('image-rendering','pixelated','important');
+}
+function defer(){requestAnimationFrame(function(){requestAnimationFrame(applyPortrait);});}
+window.addEventListener('resize',defer,{passive:true});
+window.addEventListener('orientationchange',function(){setTimeout(defer,180);setTimeout(defer,500);},{passive:true});
+if(window.visualViewport)window.visualViewport.addEventListener('resize',defer,{passive:true});
+var lastW=innerWidth,lastH=innerHeight;
+setInterval(function(){
+  if(lastW!==innerWidth||lastH!==innerHeight){lastW=innerWidth;lastH=innerHeight;defer();}
+},500);
+/* Prevent accidental page gestures while still allowing panel/dialog scrolling. */
+app.addEventListener('touchmove',function(e){
+  var t=e.target;
+  if(t&&t.closest&&t.closest('#panel,#dialogue .dialogue-body,#dialogue .choices,#onboardingOverlay .onboard-content,#startOverlayCinematic'))return;
+  if(portrait)e.preventDefault();
+},{passive:false});
+/* Wake audio after a real touch without altering the existing audio logic. */
+app.addEventListener('pointerdown',function(){try{if(window.CHAudio)window.CHAudio.sfx('click');}catch(_e){}},{once:true,passive:true});
+applyPortrait();
+setTimeout(applyPortrait,250);
+})();
+</script>
+
+<script id="chLovePatch">
+(function(){'use strict';
+var N=NPCS,R=function(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(x|0,y|0,w|0,h|0)};
+/* ===== 1. NHÂN VẬT: má hồng, nơ/khăn, mắt sáng, nhẫn ===== */
+var _dc=drawCharacter;
+drawCharacter=window.drawCharacter=function(x,y,col,g,e,p){_dc.apply(this,arguments);
+try{var f=g==='female'||(p&&game.gender==='female'),t=performance.now()/300;ctx.save();ctx.translate(Math.round(x),Math.round(y)+Math.round(Math.sin(t/2+x)*.5));
+R(-11,-22,4,2,'rgba(255,120,150,.5)');R(7,-22,4,2,'rgba(255,120,150,.5)');R(-6,-31,1,1,'#fff');R(5,-31,1,1,'#fff');
+if(f){R(-9,-42,4,4,'#ff8fb1');R(-4,-41,3,3,'#ffd0e0');R(-14,-40,3,3,'#ff8fb1')}else{R(-9,-13,18,3,'#e07a6a');R(4,-11,3,6,'#e07a6a')}
+if(p&&game.flags.partner){ctx.fillStyle='#ff4f86';ctx.font='10px sans-serif';ctx.fillText('♥',-4,-50-Math.abs(Math.sin(t))*3)}
+if(p&&game.flags.married)R(12,-1,3,3,'#ffd24d');
+ctx.restore()}catch(_){}};
+/* ===== 2. NHÀ + CẢNH QUAN ===== */
+var H={residential:[[200,176,100,90],[460,170,100,92],[720,176,104,90],[990,172,100,92]],downtown:[[360,196,96,92],[752,206,112,86],[1214,214,64,80]],cafe:[[300,200,100,86],[780,206,110,84],[1170,204,90,86]],park:[[30,196,92,84],[1150,200,100,84]],mall:[[20,206,86,80],[1180,206,86,80]],office:[[20,214,80,76],[1180,214,88,76]],factory:[[20,214,80,76],[1180,214,88,76]]},
+night=function(){var h=game.minutes/60%24;return h>=18||h<6},
+glow=function(x,y,r,a){var g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba(255,214,120,'+a+')');g.addColorStop(1,'rgba(255,200,100,0)');ctx.fillStyle=g;ctx.fillRect(x-r,y-r,2*r,2*r)},
+CL=['#ff8fb1','#ffd36e','#8fe3ff','#c58bff','#fff'];
+function deco(x,y,w,h,i,loc){var t=performance.now()/1000,n=night();
+for(var r=0;r<5;r++)R(x-6+r*3,y+4+r*3,w+12-r*6,1,'rgba(0,0,0,.14)');
+R(x+w-16,y-8,12,6,'#6b4a3a');
+for(var s=0;s<3;s++)R(x+w-12+Math.sin(t+s)*3+s*3,y-14-((t*8+s*9)%26),4+s,4+s,'rgba(255,255,255,'+(.5-s*.12)+')');
+[x+8,x+w-24].forEach(function(wx){R(wx-2,y+44,20,5,'#7b5337');for(var k=0;k<4;k++){R(wx+k*5,y+41+k%2,4,4,CL[(k+i)%5])}R(wx-2,y+27,2,19,'#fff8');R(wx+16,y+27,2,19,'#fff8');if(n){glow(wx+8,y+37,34,.55);R(wx+6,y+34,4,8,'rgba(255,170,90,.55)')}});
+var dx=x+w/2;for(var a=0;a<6;a++)R(dx-12+a*4,y+h-32,4,5,a%2?'#fff':'#e0657f');R(dx-1,y+h-17,3,3,'#ffd24d');
+R(dx-4,y+h-22,3,3,'#ff6b9a');R(dx+1,y+h-22,3,3,'#ff6b9a');R(dx-3,y+h-19,6,3,'#ff6b9a');R(dx-1,y+h-16,2,2,'#ff6b9a');
+R(x-14,y+h-18,3,18,'#6b4a36');R(x-17,y+h-24,10,7,'#d9504a');
+for(var m=0;m<9;m++){var lx=x-8+m*(w+16)/8,ly=y+20+Math.sin(m*1.5)*3;R(lx,ly,3,3,n&&(m+(t|0))%2?'#fff3c4':CL[m%5]);if(n)glow(lx,ly,9,.5)}
+for(var f=0;f<5;f++){R(x+4+f*20,y+h-3+(f%2)*3,2,6,'#4f7d45');R(x+2+f*20,y+h-6+(f%2)*3,6,4,CL[(f+i)%5])}
+if(game.flags.married&&loc==='residential'&&i===0){for(var b=0;b<3;b++){ctx.fillStyle=CL[b];ctx.beginPath();ctx.arc(x-26+b*10,y+10-Math.sin(t+b)*4,7,0,7);ctx.fill();R(x-26+b*10,y+17,1,38,'#fff9')}ctx.fillStyle='#ff4f86';ctx.font='bold 22px sans-serif';ctx.fillText('♥',x+w/2-8,y+8)}}
+var _v=drawVegetation;
+drawVegetation=function(){_v();try{var loc=game.location,t=performance.now()/1000,n=night();ctx.save();
+(H[loc]||[]).forEach(function(h,i){deco(h[0],h[1],h[2],h[3],i,loc)});
+if(typeof drawTree==='function'&&(loc==='park'||loc==='residential'||loc==='cafe')){drawTree(130,330,1);drawTree(1130,326,1.1)}
+if(n){for(var i=0;i<26;i++){var lx=60+i*47,ly=150+Math.sin(i*.8)*12;R(lx,ly,4,5,CL[i%5]);glow(lx+2,ly+2,14,.55+.3*Math.sin(t*3+i));R(lx,ly-2,47,1,'rgba(0,0,0,.25)')}}
+else{for(var j=0;j<8;j++){var bx=(t*30+j*170)%1380-50,by=90+j*28+Math.sin(t+j)*10;R(bx,by,6,2,'#fff');R(bx+6,by-2,4,2,'#fff')}}
+ctx.restore()}catch(_){}};
+/* ===== 3. TUYẾN TÌNH YÊU: Làm quen → Kết bạn → Tìm hiểu → Yêu đương → Kết hôn ===== */
+var NS=['Làm quen','Kết bạn','Tìm hiểu','Yêu đương','Kết hôn'];
+function P(id,k){var m=game.gender==='male',d=N[id].gender!==(m?'male':'female'),a=k>=2&&d,me=a?(m?'anh':'em'):'mik',u=a?(m?'em':'anh'):'bn';return{p:N[id].name,me:me,u:u,tm:a?u:'tui',tu:a?me:'bn',vc:m?'vợ':'chồng'}}
+function F(s,d){return s.replace(/\{(\w+)\}/g,function(_,k){var v=d[k.toLowerCase()];return k[0]<'a'?v[0].toUpperCase()+v.slice(1):v})}
+var ST=[
+[["“Hôm nay {tm} mới nhận ra: nói chuyện với {u} lúc nào cũng thấy nhẹ đầu. Ở thành phố này đâu dễ có người như vậy.”",[["“{Me} cũng thế. Ngồi với {u} là hết mệt.”","“Vậy mình giữ cảm giác này nhé, không cần gọi tên vội.”",{comfort:5,trust:3}],["“Vì {u} biết lắng nghe chứ đâu phải do {me}.”","“Lâu rồi mới có người khen đúng chỗ {tm} tự hào nhất.”",{respect:4,chemistry:2}]]],["“Nếu quay lại hồi nhỏ, {u} muốn nói gì với bản thân lúc đó?”",[["“Cứ sai đi, không sao đâu.”","“Đúng câu {tm} cần nghe dạo này. Cảm ơn nha.”",{trust:5,comfort:3}],["“Đừng vội lớn.”","“Ừ... {tm} lớn nhanh quá, quên mất mình từng được phép chậm.”",{trust:4,curiosity:4}]]]],
+[["“Có chuyện {tm} chưa kể ai: {tm} từng suýt bỏ hết để chạy khỏi thành phố này, vì thấy mình nhỏ bé quá.”",[["“Cảm ơn {u} đã kể. {Me} nghe tới khi nào {u} muốn.”","“Chưa ai bảo {tm} được phép yếu đuối... {u} là người đầu tiên.”",{trust:6,comfort:4}],["“Nhưng {u} vẫn ở lại. Điều đó đáng nể lắm.”","“Ở lại khó hơn bỏ đi. Hôm nay {tm} mới thấy mình giỏi hơn mình nghĩ.”",{respect:6,consistency:3}]]],["“Còn {u}? Điều gì khiến {u} sợ nhất mà chưa dám nói?”",[["“Sợ cả đời chỉ đứng cạnh hạnh phúc của người khác.”","“Vậy để {tm} đứng cạnh {u}, rồi tụi mình tự làm hạnh phúc riêng.”",{chemistry:5,trust:4}],["“Sợ mình không đủ tốt để ai đó ở lại.”","“Nếu {u} không đủ tốt thì {tm} đã đi từ lâu rồi.”",{trust:6,comfort:4}],["“Để {me} nghĩ đã, sẵn sàng sẽ kể.”","“Được. {Tm} giỏi chờ lắm.”",{respect:5,consistency:4}]]]],
+[["“Hôm nay lúc {u} cười, tim {tm} lỡ một nhịp. {Tm} không muốn giả vờ đó là chuyện bình thường nữa.”",[["“{Me} thích {u}. Không phải kiểu bạn bè.”","“...{Tm} cũng vậy. Sợ nói ra sẽ mất cả tình bạn đẹp này, nhưng nếu là {u}, {tm} muốn thử.”",{chemistry:8,trust:5,interest:6}],["“Cho {me} nắm tay {u} được không?”","“Tay {tm} hơi lạnh... {u} nắm đi cho ấm.”",{chemistry:7,comfort:6,interest:5}]]],["“Hứa với {tm} một điều nhỏ thôi: mệt thì nói, giận thì nói, đừng im lặng bỏ đi.”",[["“{Me} hứa. {U} cũng hứa lại nhé?”","“Hứa. Cả hai cùng giữ.”",{trust:7,consistency:6}],["“Hứa. Vì {u} đáng để {me} kiên nhẫn.”","“Câu này {tm} sẽ nhớ cả đời.”",{trust:6,respect:5,chemistry:4}]]]],
+[["Chiều muộn bên bờ sông, {p} nhìn {u} lâu hơn mọi khi. “Từ ngày có {u}, nhà không còn là chỗ ngủ nữa mà là nơi {tm} muốn về. Sao hôm nay {u} nghiêm túc vậy?”",[["“{Me} muốn mỗi tối đều có {u} ở cạnh.”","“Mỗi tối... nghe dài hơn cả thành phố này.”",{trust:6,chemistry:6}],["“{Me} có một câu hỏi và không muốn đợi nữa.”","“...{Tm} đang nghe đây.”",{trust:5,interest:6}]]],["{p} lặng đi khi thấy chiếc nhẫn nhỏ trong lòng bàn tay bạn, ánh đèn phố phản lên mặt nước như cả thành phố đang nín thở.",[["“{P}, làm {vc} của {me} nhé?”","“Đồng ý! Hàng nghìn lần đồng ý. Cuối cùng {tm} cũng có một nơi để về.”",{trust:8,chemistry:8}],["“Cùng {me} xây một ngôi nhà đèn vàng nhé?”","“Có. {Tm} muốn. Từ nay không phải đi đâu nữa, nhà là {u}.”",{trust:8,comfort:8}]]]]];
+var NT=['Hai người đã là bạn. ','Hiểu nhau thêm một tầng nữa. ','Tình yêu bắt đầu. ',''];
+function run(id,k){var d=P(id,k),nm=N[id].name,B=ST[k-1];d.P=nm;game.flags.lv[id]=k;game.flags.lvDay=game.day;
+function beat(i){if(i>=B.length)return done();var b=B[i];openDialogue(nm,F(b[0],d),b[1].map(function(c){return{text:F(c[0],d),onChoose:function(){try{game._conversationNoFail=1;changeRel(id,c[2]);game._conversationNoFail=0}catch(_){};
+openDialogue(nm,F(c[1],d),[{text:'▶ Tiếp',onChoose:function(){beat(i+1)}}])}}}))}
+function done(){try{remember(id,'giai đoạn '+NS[k]+' cùng '+nm+'.','promise',['love-story'])}catch(_){}
+if(k===2){game.flags.partner=id;game.flags.dateCount=(game.flags.dateCount||0)+1;var s=game.socialPaths&&game.socialPaths[id];if(s)s.intent='romance'}
+if(k===4)return wed(id,d);
+closeDialogue();toast('💞 '+NS[k]+' · '+nm);try{addPhone(nm,F(k===2?'Về tới nhà nhắn {tm} nhé. {Tm} sẽ chờ.':k===1?'Mai {tm} lại rủ {u} cà phê nhé?':'Hôm nay {tm} thấy gần {u} hơn rồi.',d))}catch(_){}hud()}
+beat(0)}
+function wed(id,d){var nm=N[id].name;game.flags.married=id;game.ending='marriage';hud();
+openDialogue('💍 Hôn lễ giữa mùa hoa',F('Từ cái va chạm tình cờ ở góc phố, {P} và bạn đã đi qua làm quen, kết bạn, tìm hiểu và yêu thương — để rồi cùng về một mái nhà đèn vàng. Ngôi nhà đầu phố giờ treo đầy bóng bay, dây đèn và những bức ảnh cưới.',Object.assign(d,{P:nm})),
+[{text:'💞 Tiếp tục sống cùng nhau',onChoose:function(){game.ending=null;closeDialogue();toast('Ngôi nhà đèn vàng đã sáng đèn ♥')}},{text:'↺ Chơi lại',onChoose:function(){game.ending=null;document.getElementById('startOverlay').classList.remove('hidden');closeDialogue()}}])}
+function ok(id,k){var r=game.npcState[id].relationship,sc=relationshipScore(id),sp=(game.socialPaths||{})[id]||{},L=game.flags.lv;
+if(k===1)return sc>=36;if(k===2)return sc>=46;
+if(game.flags.partner&&game.flags.partner!==id)return false;
+if(k===3)return sc>=58&&(sp.intent==='romance'||(sp.romance||0)>=4||r.chemistry>=45);
+return sc>=76&&game.flags.partner===id&&game.day-(game.flags.lvDay||0)>=2}
+var hd=document.createElement('div');hd.style.cssText='position:absolute;left:50%;top:48px;transform:translateX(-50%);z-index:9;background:rgba(61,44,31,.9);color:#ffd6e5;border:2px solid #3b2a1f;border-radius:5px;padding:3px 9px;font:11px system-ui;pointer-events:none;white-space:nowrap';document.getElementById('app').appendChild(hd);
+function hud(){var L=game.flags.lv||{},b=-1,bid='';for(var id in L)if(L[id]>b){b=L[id];bid=id}hd.style.display=b<0?'none':'block';if(b>=0)hd.textContent='💞 '+N[bid].name+' · '+NS[b]}
+setInterval(function(){try{if(!game.started||game.ending||game.dialogue||game.panel)return;var L=game.flags.lv||(game.flags.lv={});hud();if(game.flags.lvDay===game.day)return;
+for(var id in N){if(!game.flags.met[id]||game.npcState[id].location!==game.location)continue;var k=(L[id]||0)+1;if(k>4||!ok(id,k))continue;run(id,k);return}}catch(_){}},1500);
+})();
+</script>
 </body>
 </html>
