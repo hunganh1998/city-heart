@@ -11,6 +11,7 @@
 </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="City Heart"><meta name="theme-color" content="#1b0f1f">
 <meta name="author" content="Hung Anh"><meta name="copyright" content="Made by Hung Anh"><title>City Hearts — Thành phố và những mối quan hệ</title>
 <style>
 :root{
@@ -6304,7 +6305,7 @@ son:{hair:'#2c2e2a',hair2:'#505543',top:'#4e5d53',top2:'#788a6d',pants:'#263238'
 bao:{hair:'#493328',hair2:'#72503b',top:'#965b3d',top2:'#ca8358',pants:'#414744',shoes:'#272923',accent:'#dfba65',bag:'#5c493b',hairStyle:'short',outfit:'mechanic',accessory:'wrench'},
 chi:{hair:'#463229',hair2:'#755043',top:'#cdb082',top2:'#edd5aa',pants:'#48444f',shoes:'#28252a',accent:'#85b4ac',bag:'#86674f',hairStyle:'bob',outfit:'bookstore',accessory:'book'}
 };
-window.CH16_CHAR_V8=CH16_CHAR_V8;window.ch16NpcKey=ch16NpcKey;window.ch16V8Profile=ch16V8Profile;window.ch16AccessoryV8=ch16AccessoryV8;
+window.CH16_CHAR_V8=CH16_CHAR_V8;window.ch16PixelCharacter=ch16PixelCharacter;window.P16=P16;window.ch16NpcKey=ch16NpcKey;window.ch16V8Profile=ch16V8Profile;window.ch16AccessoryV8=ch16AccessoryV8;
 function ch16NpcKey(color,isPlayer){if(isPlayer)return 'player';const m={'#ffb8db':'linh','#8fd2ff':'minh','#caa9ff':'hana','#9fe3af':'an','#ffd48d':'mai','#f4a77e':'kai','#f5a7bd':'vy','#9ed6c2':'quan','#eeb17e':'thao','#8cb9ee':'duy','#c7a7ff':'nora','#f2b67e':'tung','#df9edc':'ivy','#7fcbd6':'phuc','#e6b0ca':'huyen','#a8b48e':'son','#d59b70':'bao','#d8c08d':'chi'};var c=String(color||'').toLowerCase();return m[c]||(window.CH16_CM||{})[c]||null;}
 function ch16V8Profile(color,gender,isPlayer,job){const k=ch16NpcKey(color,isPlayer);if(k==='player')return {hair:gender==='female'?'#2a2230':'#33251f',hair2:gender==='female'?'#5c4258':'#5a4032',top:gender==='female'?'#b85f87':'#3f8ba8',top2:gender==='female'?'#e29ab4':'#71b6c7',pants:'#303844',shoes:'#22252b',accent:'#f0cf88',bag:'#566875',hairStyle:gender==='female'?'pony':'short',outfit:gender==='female'?'jacket':'hoodie',accessory:'backpack'};return CH16_CHAR_V8[k]||ch16CharacterProfile(color,gender,isPlayer,job);}
 function ch16HairV8(p,gender,f){const sw=[0,0,1,1,0,-1,-1,0,1,0,-1,0][f],s=p.hairStyle;ch16Rect(-12,-36,24,13,p.hair);if(s==='long'||s==='longside'){ch16Rect(-15,-31,6,23,p.hair2);ch16Rect(9,-31,6,23,p.hair2);ch16Rect(-17+sw,-17,5,13,p.hair2);ch16Rect(12-sw,-18,5,13,p.hair2);}else if(s==='pony'){ch16Rect(-12,-31,24,12,p.hair);ch16Rect(10+sw,-27,7,15,p.hair2);ch16Rect(14+sw,-18,6,7,p.hair2);}else if(s==='bun'){ch16Rect(-12,-33,24,11,p.hair);ch16Rect(7,-41,10,9,p.hair2);ch16Rect(10,-45,6,5,p.hair2);}else if(s==='bob'){ch16Rect(-14,-32,28,11,p.hair);ch16Rect(-15,-24,6,15,p.hair2);ch16Rect(9,-24,6,15,p.hair2);}else if(s==='undercut'){ch16Rect(-12,-36,24,10,p.hair);ch16Rect(-13,-31,4,10,p.hair2);ch16Rect(7,-31,5,9,p.hair2);}else if(s==='buzz'){ch16Rect(-11,-35,22,9,p.hair);ch16Rect(-11,-32,4,7,p.hair2);}else if(s==='cap'){ch16Rect(-13,-36,26,8,p.hair);ch16Rect(-15,-34,30,4,p.hair2);ch16Rect(-5,-41,14,6,p.hair2);}else{ch16Rect(-12,-35,24,10,p.hair);ch16Rect(-12,-31,4,8,p.hair2);ch16Rect(8,-31,4,8,p.hair2);}ch16Rect(-8,-39,9,2,'rgba(255,255,255,.10)');}
@@ -7336,7 +7337,7 @@ var NEW=[
 ];
 var FULL=window.CH_FULL={linh:'Nguyễn Thùy Linh',minh:'Trần Đức Minh',hana:'Lê Hana',an:'Phạm Gia An',mai:'Võ Ngọc Mai',kai:'Đỗ Hoàng Kai',vy:'Hoàng Tường Vy',quan:'Bùi Minh Quân',thao:'Đặng Phương Thảo',duy:'Lý Khánh Duy',nora:'Trịnh Nora',tung:'Ngô Thanh Tùng',ivy:'Phan Bảo Ivy',phuc:'Lương Hoàng Phúc',huyen:'Vũ Thanh Huyền',son:'Dương Hải Sơn',bao:'Mai Quốc Bảo',chi:'Cao Diệp Chi'};
 var ph={lan:'“Sáng nay hoa mới về, thơm lắm. Ghé công viên lấy một bó nhỏ nhé?”',hung:'“Ê nhóc, hôm nay anh nướng ổ bánh mì đặc biệt. Ghé lấy không tính tiền ổ đầu.”',trang:'“Nhớ uống đủ nước và ngủ sớm nhé. Mình nhắc thật đấy.”',long:'“Hôm nào rảnh ra bờ sông đánh với ông một ván cờ.”',dung:'“Mai xưởng nghỉ sớm. Có gì cần anh phụ không?”',yen:'“Ê, tòa nhà có tin mới nè. Tới đây kể cho nghe.”',khoa:'“Tối nay mình đàn ở trung tâm. Ghé nghe một bài nhé?”',tu:'“Con ơi, chè đậu bà nấu dư, ghé ăn cho ấm bụng.”'};
-NEW.forEach(function(a){FULL[a[0]]=a[12];NPCS[a[0]]={id:a[0],name:a[1],job:a[2],gender:a[3],color:a[4],home:a[5],base:B(a[13]),likes:a[6],dislikes:a[7],traits:a[8],schedule:a[9],intro:a[10],phone:ph[a[0]]};
+NEW.forEach(function(a){FULL[a[0]]=a[12];NPCS[a[0]]={id:a[0],name:a[1],job:a[2],gender:a[3],color:a[4],home:a[5],base:B(a[11]),likes:a[6],dislikes:a[7],traits:a[8],schedule:a[9],intro:a[10],phone:ph[a[0]]};
 var p=randomWalkPoint(a[5]);game.npcState[a[0]]={x:p.x,y:p.y,location:a[5],mood:'neutral',schedule:a[9],relationship:Object.assign({},NPCS[a[0]].base),memory:[],talkCount:0,chatIndex:0,targetX:p.x,targetY:p.y,vx:0,vy:0,walkPhase:Math.random()*6.28}});
 /* ===== 2. HỘI THOẠI: riêng cho NPC mới + 4 chương "chiều sâu" cho tất cả ===== */
 var E=function(s){var o={},m;(s||'').replace(/([a-z]+)(-?\d+)/g,function(_,k,v){o[k]=+v});return o};
@@ -7358,19 +7359,23 @@ S('“Đôi khi mình tự hỏi làm '+j+' là điều mình thực sự muốn
 S('“Thành phố đông người thế mà vẫn dễ thấy cô đơn nhỉ. Bạn có vậy không?”',[['“Có. Nhất là lúc về nhà tối.”','“Mình cũng thế. Biết là có người hiểu cảm giác đó, mình đỡ lạc hơn.”','trust5 comfort4'],['“Mình thấy ổn khi có người để tám như bạn.”','“Ơ… nghe vậy mình vui thật đấy.”','chemistry4 interest4'],['“Cô đơn cũng không tệ, nếu mình chọn.”','“Câu hay. Nhưng đừng chọn nó quá lâu nhé.”','respect3 curiosity3']])]};
 Object.keys(NPCS).forEach(function(id){var a=NPC_DIALOGUES[id]||(NPC_DIALOGUES[id]=[]);if(U[id])a.push.apply(a,U[id]);a.push.apply(a,G(NPCS[id]))});
 /* ===== 4. CAMERA MOBILE: zoom, bám nhân vật, nhìn trước theo hướng đi, né khung hội thoại ===== */
-var cx=0,cy=0,lx=0,ly=0,vx=0,loc='',lt=performance.now(),rz=0,cA=document.getElementById('app'),cC=document.getElementById('game'),Z=1.15,dB=document.getElementById('dialogue');
+var cx=0,cy=0,lx=0,vx=0,loc='',lt=performance.now(),rz=0,Z=1.15,dirty=0,cA=document.getElementById('app'),cC=document.getElementById('game'),dB=document.getElementById('dialogue'),R=document.documentElement;
 function tick(now){requestAnimationFrame(tick);try{var dt=Math.min(.05,(now-lt)/1000||.016);lt=now;
-if(!game.started||!document.documentElement.classList.contains('ch-mobile-portrait'))return;
-var aw=cA.clientWidth,ah=cA.clientHeight,H=ah*Z,W=H*16/9,dlg=!!game.dialogue,rate=1-Math.pow(.0009,dt),
-v=dt?(game.x-lx)/dt:0;lx=game.x;ly=game.y;vx+=(Math.max(-1,Math.min(1,v/150))-vx)*Math.min(1,dt*5);
+if(!R.classList.contains('ch-mobile-portrait')){if(dirty){dirty=0;['width','height','left','top','transform','inset'].forEach(function(k){cC.style.removeProperty(k)});window.dispatchEvent(new Event('resize'))}return}
+if(!game.started)return;dirty=1;
+var aw=cA.clientWidth,ah=cA.clientHeight,H=ah*Z,W=H*16/9,dlg=!!game.dialogue,rate=1-Math.pow(.0009,dt),v=dt?(game.x-lx)/dt:0;lx=game.x;vx+=(Math.max(-1,Math.min(1,v/150))-vx)*Math.min(1,dt*5);
 var gx=game.x,gy=game.y,dh=0;if(dlg){dh=Math.min(ah*.6,dB?dB.offsetHeight+10:ah*.45);for(var q in NPCS){var o=game.npcState[q];if(o&&NPCS[q].name===game.dialogue.speaker&&o.location===game.location){gx=(gx+o.x)/2;gy=(gy+o.y)/2;break}}}
-var px=(gx+(dlg?0:vx*55))/1280*W,py=gy/720*H,vh=ah-dh,tx=aw/2-px,ty=vh*(dlg?.55:.46)-py;
+var vh=ah-dh,px=(gx+(dlg?0:vx*55))/1280*W,py=gy/720*H,tx=aw/2-px,ty=vh*(dlg?.55:.46)-py;
 tx=Math.max(aw-W,Math.min(0,tx));ty=Math.max(vh-H,Math.min(0,ty));
-if(loc!==game.location){loc=game.location;cx=tx;cy=ty}
-var ox=cx,oy=cy;cx+=(tx-cx)*rate;cy+=(ty-cy)*rate;
-var s=cC.style;s.setProperty('width',W+'px','important');s.setProperty('height',H+'px','important');s.setProperty('left',cx+'px','important');s.setProperty('top',cy+'px','important');
+if(loc!==game.location){loc=game.location;cx=tx;cy=ty}var ox=cx,oy=cy;cx+=(tx-cx)*rate;cy+=(ty-cy)*rate;
+var st=cC.style;st.setProperty('width',W+'px','important');st.setProperty('height',H+'px','important');st.setProperty('left',cx+'px','important');st.setProperty('top',cy+'px','important');
 if(dlg&&Math.hypot(cx-ox,cy-oy)>.4&&now-rz>140){rz=now;window.dispatchEvent(new Event('resize'))}
 }catch(_){}}
+/* Nút full màn hình: bật rồi xoay ngang điện thoại để chơi */
+var fb=document.createElement('button'),FE=function(){return document.fullscreenElement||document.webkitFullscreenElement};
+fb.id='chFsBtn';fb.textContent='⛶';fb.setAttribute('aria-label','Toàn màn hình');cA.appendChild(fb);
+fb.onclick=function(e){e.stopPropagation();var d=document,h=d.documentElement;try{if(FE()){(d.exitFullscreen||d.webkitExitFullscreen).call(d)}else if(h.requestFullscreen||h.webkitRequestFullscreen){var r=(h.requestFullscreen||h.webkitRequestFullscreen).call(h);if(r&&r.catch)r.catch(function(){})}else if(typeof toast==='function')toast('Trình duyệt này không hỗ trợ full màn hình. Hãy dùng Chia sẻ → Thêm vào Màn hình chính rồi xoay ngang.')}catch(_){}};
+['fullscreenchange','webkitfullscreenchange'].forEach(function(ev){document.addEventListener(ev,function(){fb.textContent=FE()?'🡼':'⛶';setTimeout(function(){window.dispatchEvent(new Event('resize'))},250)})});
 requestAnimationFrame(tick);
 })();
 </script>
@@ -7390,7 +7395,48 @@ tu:V('#8a8a88','#c4c2bc','#d9a8a0','#f0cfc8','#5a4a52','#3a2f30','#a84a4a','#7a5
 var CM=window.CH16_CM={'#ff9fb0':'lan','#e8c35a':'hung','#9fd9e8':'trang','#b9b3a0':'long','#e0a15a':'dung','#f7c6a0':'yen','#9a8cf0':'khoa','#d9a8a0':'tu'};
 })();
 </script>
-<style id="chV6css">@media (orientation:portrait) and (max-width:900px){#dialogue .dialogue-box{max-height:42dvh!important;overflow-y:auto!important;overscroll-behavior:contain}#dialogue .dialogue-body{font-size:13px!important;line-height:1.35!important;padding:8px 10px!important;max-height:18dvh;overflow-y:auto}#dialogue .speaker{padding:5px 10px!important}#dialogue .choice{font-size:12.5px!important}#dialogue .choice small{display:none!important}#dialogue .dialogue-body{overflow-wrap:anywhere;word-break:break-word}#dialogue .choices{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}#dialogue .choice{box-sizing:border-box!important;width:100%!important;max-width:100%!important;height:auto!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word;text-align:left!important;line-height:1.3!important;padding:7px 10px!important;min-height:38px!important;touch-action:manipulation}html,body,#app{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;touch-action:manipulation}}</style>
+<style id="chV6css">@media (orientation:portrait) and (max-width:900px){#dialogue .dialogue-box{max-height:42dvh!important;overflow-y:auto!important;overscroll-behavior:contain}#dialogue .dialogue-body{font-size:13px!important;line-height:1.35!important;padding:8px 10px!important;max-height:18dvh;overflow-y:auto}#dialogue .speaker{padding:5px 10px!important}#dialogue .choice{font-size:12.5px!important}#dialogue .choice small{display:none!important}#worldSpeechBubble{display:none!important}#dialogue .speaker-name{color:#fff7df!important}#dialogue .dialogue-body{overflow-wrap:anywhere;word-break:break-word}#dialogue .choices{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}#dialogue .choice{box-sizing:border-box!important;width:100%!important;max-width:100%!important;height:auto!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word;text-align:left!important;line-height:1.3!important;padding:7px 10px!important;min-height:38px!important;touch-action:manipulation}html,body,#app{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;touch-action:manipulation}}</style>
+<style id="chFsCss">#chFsBtn{position:absolute;right:6px;top:max(6px,env(safe-area-inset-top));z-index:30;width:34px;height:34px;border-radius:9px;border:2px solid #f0cf88;background:rgba(18,31,41,.78);color:#f0cf88;font-size:18px;line-height:1;padding:0;touch-action:manipulation}</style>
+<style id="chA2css">#chToast9{position:absolute;left:8px;right:8px;top:calc(max(8px,env(safe-area-inset-top)) + 150px);z-index:60;background:rgba(18,31,41,.94);color:#fff7df;border:2px solid #f0cf88;border-radius:12px;padding:10px 12px;font:600 12.5px/1.4 system-ui,sans-serif;display:none;box-shadow:0 6px 18px rgba(0,0,0,.4)}#chToast9 button{margin:8px 6px 0 0;padding:7px 12px;border-radius:9px;border:2px solid #f0cf88;background:#f0cf88;color:#2a1d12;font:700 12px system-ui}#chToast9 button.g{background:transparent;color:#f0cf88}</style>
+<script id="chPatchV8">
+(function(){'use strict';
+var T=document.createElement('div'),A=document.getElementById('app'),K='chA2hs9',dp=null,sa=0,rs=0,L=function(k){try{return localStorage.getItem(k)}catch(_){return null}},W=function(k){try{localStorage.setItem(k,'1')}catch(_){}};
+T.id='chToast9';A.appendChild(T);
+var ua=navigator.userAgent,ios=/iphone|ipad|ipod/i.test(ua)||(/Mac/.test(ua)&&navigator.maxTouchPoints>1),std=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e});
+function busy(){var o=document.getElementById('onboardingOverlay'),st=document.getElementById('startOverlayCinematic');return !game.started||game.dialogue||game.panel||(o&&o.offsetParent)||(st&&st.offsetParent)}
+function show(h,b){T.innerHTML=h;var d=document.createElement('div');b.forEach(function(x){var e=document.createElement('button');e.textContent=x[0];if(x[2])e.className='g';e.onclick=function(){T.style.display='none';x[1]&&x[1]()};d.appendChild(e)});T.appendChild(d);T.style.display='block'}
+function rot(){rs=1;show('📱 <b>Muốn màn hình rộng hơn?</b><br>Bấm nút <b>⛶</b> (góc trên phải) để full màn hình, rồi <b>xoay ngang điện thoại</b> để chơi.',[['Đã hiểu']]);setTimeout(function(){if(T.innerHTML.indexOf('xoay ngang')>0)T.style.display='none'},9000)}
+function a2h(){sa=1;W(K);if(dp)return show('📲 <b>Cài City Heart lên màn hình chính</b><br>Chơi toàn màn hình, mở nhanh như một ứng dụng.',[['Cài đặt',function(){dp.prompt()}],['Để sau',0,1]]);
+show(ios?'📲 <b>Thêm vào Màn hình chính</b><br>Bấm nút <b>Chia sẻ</b> (ô vuông có mũi tên ↑ ở thanh Safari) → chọn <b>“Thêm vào Màn hình chính”</b>. Mở game từ biểu tượng để chơi toàn màn hình.':'📲 <b>Thêm vào màn hình chính</b><br>Bấm menu <b>⋮</b> của trình duyệt → chọn <b>“Thêm vào màn hình chính”</b> (hoặc “Cài đặt ứng dụng”) để chơi toàn màn hình.',[['Đã hiểu'],['Không nhắc nữa',0,1]])}
+var t0=0;setInterval(function(){if(busy()){t0=0;if(game.dialogue)T.style.display='none';return}if(!t0)t0=Date.now();var d=Date.now()-t0;
+if(!sa&&!std&&!L(K)&&d>4000&&T.style.display!=='block')a2h();else if(!rs&&(sa||std||L(K))&&d>4000&&T.style.display!=='block'&&document.documentElement.classList.contains('ch-mobile-portrait'))rot()},1000);
+})();
+</script>
+<style id="chLandCss">@media (orientation:landscape) and (max-height:520px){
+.hud-btn{height:28px!important;min-height:0!important;padding:0 8px!important;font-size:11px!important;border-radius:8px!important;box-shadow:0 2px 0 rgba(0,0,0,.35)!important}
+#hud .hud-left,#hud .hud-right{top:6px!important;gap:5px!important}#hud .hud-left{left:6px!important}#hud .hud-right{right:46px!important}
+#topbar{top:4px!important;min-width:0!important;width:auto!important;max-width:300px!important;padding:3px 10px!important;border-width:2px!important;border-radius:10px!important}
+#topbar .time-label{font-size:12px!important}#topbar .clock-icon{font-size:14px!important}#topbar .location-label{font-size:8px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:270px}
+#goalHud{top:44px!important;font-size:9px!important;padding:4px 8px!important;max-width:210px!important}#goalHud .goal-line:nth-child(n+3){display:none!important}
+#hint{font-size:9px!important;padding:3px 8px!important;bottom:6px!important}
+#mobileStick{width:84px!important;height:84px!important;left:8px!important;bottom:8px!important}#mobileKnob{left:21px!important;top:21px!important;width:42px!important;height:42px!important}
+#mobileControls .mobile-actions{right:8px!important;bottom:8px!important;gap:4px!important;width:auto!important}
+#mobileControls .mobile-action{width:48px!important;height:32px!important;min-height:32px!important;font-size:8px!important;padding:0 2px!important;border-radius:8px!important}#mobileControls .mobile-action.big{width:100px!important;height:34px!important;min-height:34px!important;font-size:10px!important}
+#dialogue{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(560px,calc(100% - 200px))!important;bottom:6px!important}
+#dialogue .dialogue-box{max-height:46dvh!important;border-width:2px!important;border-radius:9px!important}
+#dialogue .speaker{padding:3px 10px!important;min-height:0!important}#dialogue .speaker-name{font-size:11px!important}#dialogue .speaker-meta{font-size:8px!important}
+#dialogue .dialogue-body{font-size:11px!important;line-height:1.3!important;padding:6px 10px!important;min-height:0!important;max-height:15dvh!important}
+#dialogue .choices{display:grid!important;grid-template-columns:1fr 1fr!important;gap:4px!important;padding:4px 8px 6px!important;max-height:22dvh!important;overflow-y:auto!important}
+#dialogue .choice{font-size:10px!important;line-height:1.25!important;padding:4px 8px!important;min-height:0!important;border-width:2px!important;border-radius:8px!important;box-shadow:0 2px 0 rgba(0,0,0,.18)!important}
+#panel{top:6px!important;bottom:6px!important;right:6px!important;left:auto!important;width:min(460px,60vw)!important;max-height:calc(100dvh - 12px)!important;padding:8px 10px!important;font-size:11px!important;overflow:auto!important}
+#panel h1,#panel h2,#panel h3{font-size:14px!important;margin:2px 0 6px!important}#panel button{min-height:28px!important;padding:4px 8px!important;font-size:11px!important}#panel p,#panel span,#panel div{line-height:1.3}
+#worldSpeechBubble{display:none!important}#chFsBtn{width:28px!important;height:28px!important;font-size:14px!important;top:6px!important;right:6px!important}
+#chToast9{top:46px!important;left:auto!important;right:44px!important;width:300px!important;font-size:10px!important;padding:6px 8px!important}#chToast9 button{padding:4px 9px!important;font-size:10px!important;margin-top:5px!important}
+#onboardingOverlay .onboard-content{max-height:92dvh!important;overflow:auto!important;padding:10px 14px!important;font-size:11px!important}#onboardingOverlay h1,#onboardingOverlay h2{font-size:15px!important}#onboardingOverlay button{min-height:30px!important;padding:4px 10px!important;font-size:11px!important}
+.toast,#toast{font-size:10px!important;padding:5px 10px!important;top:40px!important}
+.phone-notification-stack{top:40px!important;width:250px!important;transform-origin:top right;transform:scale(.8)}
+}</style>
 <script id="chPatchV6">
 (function(){'use strict';
 var X=CH16_CHAR_V8,TN=['#f3cfae','#e9b98f','#dba57a','#c98f65','#d4a077','#f6d9c0'],KEYS=['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'],
@@ -7460,13 +7506,13 @@ c.restore()};
 /* ===== 2. LỜI CHÀO + LÀM QUEN + GIỚI THIỆU: bắt ở mọi cuộc thoại với NPC ===== */
 var FULL=window.CH_FULL||{},_od=openDialogue,last={},busy=0,PL={morning:'sáng',afternoon:'chiều',evening:'tối',night:'khuya'};
 openDialogue=window.openDialogue=function(sp,tx,ch){
-(ch||[]).forEach(function(c){delete c.note});
+(ch||[]).forEach(function(c){delete c.note;if(c.text)c.text=c.text.replace(/“{2,}/g,'“').replace(/”{2,}/g,'”')});if(tx)tx=tx.replace(/“{2,}/g,'“').replace(/”{2,}/g,'”');
 for(var z in NPCS){var iv=NPCS[z].intro;if(iv&&tx&&tx.indexOf(iv)>=0)tx=tx.split(iv).join('').replace(/\s+$/,'')}
 var id=null;if(!busy&&game.started&&game.npcState)for(var q in NPCS)if(NPCS[q].name===sp){id=q;break}
 if(!id)return _od.apply(this,arguments);
 var F=game.flags,hi=F.hi||(F.hi={}),now=performance.now(),old=now-(last[id]||0)>120000,first=!hi[id]&&!(game.npcState[id].talkCount>0);last[id]=now;
 if(!first&&!old)return _od.apply(this,arguments);
-var n=NPCS[id],me=game.name||'bạn',P=PL[period()],J=window.jobVi?jobVi(n.job):n.job,sc=relationshipScore(id),
+var n=NPCS[id],me=game.name||'bạn',P=PL[period()],J=({Florist:'bán hoa','Bánh Mì Vendor':'bán bánh mì',Pharmacist:'dược sĩ','Retired Teacher':'giáo viên đã nghỉ hưu','Forklift Driver':'lái xe nâng',Receptionist:'lễ tân','Street Musician':'nghệ sĩ đường phố','Grocery Owner':'chủ tạp hóa'})[n.job]||(window.jobVi?jobVi(n.job):n.job),sc=relationshipScore(id),
 fn=window.CH_FULL&&CH_FULL[id]||n.name,go=function(){busy=1;try{_od(sp,tx,ch)}finally{busy=0}},
 O=function(s,c){busy=1;try{_od(sp,s,c)}finally{busy=0}},
 end=function(){hi[id]=1;F.met[id]=true;last[id]=performance.now();go()};
