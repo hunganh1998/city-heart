@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV9MTHQ637"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DV9MTHQ637');
-</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
 <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="City Heart"><meta name="theme-color" content="#1b0f1f">
@@ -5974,7 +5966,7 @@ var NEW=[
 ['tu','Ngọc','Grocery Owner','female','#d9a8a0','residential',['chuyện xóm','cải canh','người biết chào hỏi'],['vô lễ','lãng phí'],['bao dung','thẳng thắn','tinh mắt'],{morning:'residential',afternoon:'residential',evening:'cafe',night:'residential'},'“Tạp hóa đầu hẻm mở từ lúc trời chưa sáng. Ngọc nhớ mặt hàng xóm hơn cả nhớ giá hàng.”',[14,32,34,36,8,46,24,35],'Ngô Thị Ngọc']
 ];
 var FULL=window.CH_FULL={linh:'Nguyễn Thùy Linh',minh:'Trần Đức Minh',hana:'Lê Hana',an:'Phạm Gia An',mai:'Võ Ngọc Mai',kai:'Đỗ Hoàng Kai',vy:'Hoàng Tường Vy',quan:'Bùi Minh Quân',thao:'Đặng Phương Thảo',duy:'Lý Khánh Duy',nora:'Trịnh Nora',tung:'Ngô Thanh Tùng',ivy:'Phan Bảo Ivy',phuc:'Lương Hoàng Phúc',huyen:'Vũ Thanh Huyền',son:'Dương Hải Sơn',bao:'Mai Quốc Bảo',chi:'Cao Diệp Chi'};
-var ph={lan:'“Sáng nay hoa mới về, thơm lắm. Ghé công viên lấy một bó nhỏ nhé?”',hung:'“Ê nhóc, hôm nay anh nướng ổ bánh mì đặc biệt. Ghé lấy không tính tiền ổ đầu.”',trang:'“Nhớ uống đủ nước và ngủ sớm nhé. Mình nhắc thật đấy.”',long:'“Hôm nào rảnh ra bờ sông đánh với ông một ván cờ.”',dung:'“Mai xưởng nghỉ sớm. Có gì cần anh phụ không?”',yen:'“Ê, tòa nhà có tin mới nè. Tới đây kể cho nghe.”',khoa:'“Tối nay mình đàn ở trung tâm. Ghé nghe một bài nhé?”',tu:'“Con ơi, chè đậu bà nấu dư, ghé ăn cho ấm bụng.”'};
+var ph={lan:'“Sáng nay hoa mới về, thơm lắm. Ghé công viên lấy một bó nhỏ nhé?”',hung:'“Ê nhóc, hôm nay anh nướng ổ bánh mì đặc biệt. Ghé lấy không tính tiền ổ đầu.”',trang:'“Nhớ uống đủ nước và ngủ sớm nhé. Mình nhắc thật đấy.”',long:'“Hôm nào rảnh ra bờ sông đánh với ông một ván cờ.”',dung:'“Mai xưởng nghỉ sớm. Có gì cần anh phụ không?”',yen:'“Ê, tòa nhà có tin mới nè. Tới đây kể cho nghe.”',khoa:'“Tối nay mình đàn ở trung tâm. Ghé nghe một bài nhé?”',tu:'“Ê, chè đậu mình nấu dư nè, ghé ăn cho ấm bụng nha.”'};
 NEW.forEach(function(a){FULL[a[0]]=a[12];NPCS[a[0]]={id:a[0],name:a[1],job:a[2],gender:a[3],color:a[4],home:a[5],base:B(a[11]),likes:a[6],dislikes:a[7],traits:a[8],schedule:a[9],intro:a[10],phone:ph[a[0]]};
 var p=randomWalkPoint(a[5]);game.npcState[a[0]]={x:p.x,y:p.y,location:a[5],mood:'neutral',schedule:a[9],relationship:Object.assign({},NPCS[a[0]].base),memory:[],talkCount:0,chatIndex:0,targetX:p.x,targetY:p.y,vx:0,vy:0,walkPhase:Math.random()*6.28}});
 var E=function(s){var o={},m;(s||'').replace(/([a-z]+)(-?\d+)/g,function(_,k,v){o[k]=+v});return o};
@@ -5987,7 +5979,7 @@ long:[S('“Dạy học 35 năm, học trò quên ông cả rồi. Nhưng có đ
 dung:[S('“Ca đêm vắng lắm. Anh hay nhìn cái xe nâng chạy qua dãy kho rồi nghĩ: không biết nhà mình sau này ra sao.”',[['“Anh đang lo cho gia đình à?”','“Ừ. Em gái đang học đại học. Anh gồng thêm vài năm nữa là xong.”','trust5 respect3'],['“Anh không cần gồng một mình đâu.”','“...Nghe lạ tai. Nhưng cảm ơn.”','comfort4 trust3'],['“Anh mua mì gói cho em nhé?”','“Mì gói thôi à? Anh đãi hẳn bát phở. Nói là làm.”','chemistry3 comfort3']])],
 yen:[S('“Làm lễ tân thì ai cũng cười chào mình, nhưng cười chào đâu có nghĩa là quen biết. Mình thích người nhớ tên mình hơn.”',[['“Yến. Mình nhớ rồi, và sẽ không quên.”','“Ôi… câu đơn giản vậy mà ấm ghê. Cảm ơn bạn.”','chemistry4 comfort3'],['“Chắc mệt khi phải cười cả ngày nhỉ?”','“Có hôm mệt. Mà có người hỏi như bạn là mình tươi lại liền.”','trust4 respect2'],['“Vậy trưa nay Yến thích ăn gì?”','“Cơm tấm! Nói trước là mình ăn khỏe nha.”','chemistry3 interest3']])],
 khoa:[S('“Bài đầu tiên mình đàn ngoài phố, không ai dừng lại. Mình đàn tiếp, vì nếu bỏ ngay thì chẳng bao giờ biết có người nghe không.”',[['“Rồi có ai dừng lại không?”','“Một bà cụ. Bà ngồi nghe hết bài rồi để lại hai cái bánh. Đó là khoản thu đầu tiên của mình.”','trust4 curiosity3'],['“Khoa không sợ nghèo à?”','“Sợ. Nhưng sợ sống dối còn hơn.”','respect4 chemistry3'],['“Đàn một bài cho mình nghe đi.”','“Bài này chưa đặt tên. Nghe xong bạn đặt giúp mình nhé.”','chemistry5 interest3']])],
-tu:[S('“Cả đời bà ở cái hẻm này. Người đến người đi, ai cũng từng mượn chịu một gói mì lúc túng. Bà không đòi, vì rồi họ cũng quay lại.”',[['“Bà không tiếc sao?”','“Tiếc gì. Một gói mì đổi được một người nhớ ơn cả đời, lời chán.”','respect5 trust3'],['“Con muốn phụ bà dọn hàng một buổi.”','“Cha, thằng nhỏ này biết điều. Vào đây, bà pha trà đá.”','comfort5 trust3'],['“Bà có bí quyết nào để sống lâu không?”','“Ăn cơm nóng, đừng thù ai quá một đêm.”','curiosity4 chemistry2']])]
+tu:[S('“Mình trông tiệm này từ hồi mẹ còn khỏe, giờ thành quen tay luôn. Người trong hẻm ai cũng từng ghi nợ một gói mì lúc túng. Mình không đòi đâu, vì rồi họ cũng quay lại.”',[['“Ngọc không tiếc sao?”','“Tiếc gì. Một gói mì đổi được một người nhớ mình, lời chán luôn đó.”','respect5 trust3'],['“Mình muốn phụ Ngọc dọn hàng một buổi.”','“Ơ, bạn này biết điều ghê. Vào đây, mình pha trà đá cho.”','comfort5 trust3'],['“Ngọc có bí quyết nào để lúc nào cũng vui vẻ không?”','“Ăn cơm nóng, đừng giận ai quá một đêm là được.”','curiosity4 chemistry2']])]
 };
 var G=function(n){var l=n.likes[0],d=n.dislikes[0],j=(window.jobVi?jobVi(n.job):n.job);return[
 S('“Bạn có tin '+l+' từng kéo mình ra khỏi một giai đoạn rất tệ không? Hồi đó mình chẳng muốn nói chuyện với ai.”',[['“Kể mình nghe giai đoạn đó được không?”','“Không phải hôm nay. Nhưng mình thấy yên tâm khi bạn hỏi như vậy.”','trust4 comfort3'],['“Mình cũng từng có lúc như thế.”','“Cảm ơn vì không nói ‘rồi sẽ ổn’. Nghe thật hơn nhiều.”','comfort4 chemistry3 trust2'],['“May là bạn đã vượt qua.”','“Ừ, vượt qua rồi. Giờ mình ngồi kể lại mà không đau nữa.”','respect3 comfort2']]),
@@ -6023,7 +6015,7 @@ long:V('#bdb8aa','#e6e2d6','#7d8a6b','#a9b596','#4a4a45','#2f2a25','#c9a45c','#6
 dung:V('#1f1c1a','#3a3430','#e0a15a','#f2c46f','#364050','#1d1d20','#f2c200','#5a5048','buzz','workjacket','radio'),
 yen:V('#2d1f24','#6b3f4d','#f7c6a0','#fff0e0','#3d3a4d','#3a2a2a','#e0527a','#a8707a','pony','blouse','phone'),
 khoa:V('#251d30','#4d3f6b','#9a8cf0','#c9bfff','#2d2f42','#1f1f28','#f0c36a','#5a4a8a','undercut','street','tote'),
-tu:V('#8a8a88','#c4c2bc','#d9a8a0','#f0cfc8','#5a4a52','#3a2f30','#a84a4a','#7a5a4a','bun','apron','tray')});
+tu:V('#3a2a26','#6b4a40','#d9a8a0','#f0cfc8','#5a4a52','#3a2f30','#a84a4a','#7a5a4a','bun','apron','tray')});
 var CM=window.CH16_CM={'#ff9fb0':'lan','#e8c35a':'hung','#9fd9e8':'trang','#b9b3a0':'long','#e0a15a':'dung','#f7c6a0':'yen','#9a8cf0':'khoa','#d9a8a0':'tu'};
 })();</script>
 <style id="chV6css">@media (orientation:portrait) and (max-width:900px){#dialogue .dialogue-box{max-height:42dvh!important;overflow-y:auto!important;overscroll-behavior:contain}#dialogue .dialogue-body{font-size:13px!important;line-height:1.35!important;padding:8px 10px!important;max-height:18dvh;overflow-y:auto}#dialogue .speaker{padding:5px 10px!important}#dialogue .choice{font-size:12.5px!important}#dialogue .choice small{display:none!important}#worldSpeechBubble{display:none!important}#dialogue .speaker-name{color:#fff7df!important}#dialogue .dialogue-body{overflow-wrap:anywhere;word-break:break-word}#dialogue .choices{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}#dialogue .choice{box-sizing:border-box!important;width:100%!important;max-width:100%!important;height:auto!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word;text-align:left!important;line-height:1.3!important;padding:7px 10px!important;min-height:38px!important;touch-action:manipulation}html,body,#app{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;touch-action:manipulation}}</style>
@@ -6046,79 +6038,154 @@ if(!sa&&!std&&!L(K)&&d>4000&&T.style.display!=='block')a2h();else if(!rs&&(sa||s
 <script id="chPatchV6">(function(){'use strict';
 var X=CH16_CHAR_V8,TN=['#f3cfae','#e9b98f','#dba57a','#c98f65','#d4a077','#f6d9c0'],KEYS=['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'],
 CR='#f4efe2',INK='#1d1a22';
+/* ===== Chibi pixel-art characters (grid 18x24, cell 3px, auto outline) ===== */
+var SPR={},SPRN=0,CU=3,CW=18,CH=24,OL='#221a2c';
+var hx=function(h){h=String(h||'#888888').replace('#','');if(h.length===3)h=h.split('').map(function(q){return q+q}).join('');return[parseInt(h.substr(0,2),16)||0,parseInt(h.substr(2,2),16)||0,parseInt(h.substr(4,2),16)||0]};
+var sh=function(h,f){var r=hx(h);return'#'+r.map(function(v){v=f<0?v*(1+f):v+(255-v)*f;return('0'+Math.max(0,Math.min(255,Math.round(v))).toString(16)).slice(-2)}).join('')};
+var LOOK={linh:['wavy','#8b3a2f','#c8624a'],minh:['spiky','#1e2a4a','#4a68a8'],hana:['twin','#b04a8f','#ec8fc8'],an:['sidepart','#5a3d2a','#8f6a48'],mai:['bun','#a8672f','#dca45e'],kai:['messy','#c4552b','#f48c4c'],vy:['pony','#d9ad4a','#f7de88'],quan:['neat','#1a1a22','#4a4e62'],thao:['bob','#7a3b25','#b8683f'],duy:['undercut','#6f86a8','#aec2dc'],nora:['long','#4b2a7a','#8f62c8'],tung:['cap','#432e23','#6d4936'],ivy:['braid','#1f7a78','#52c4bc'],phuc:['curly','#3a2418','#6e4a32'],huyen:['hime','#5a1f3f','#a24e7e'],son:['buzz','#1c1c20','#3c3c46'],bao:['spiky','#e0b840','#f8e080'],chi:['bob','#d98a6a','#f6bc9c'],lan:['long','#e08aa8','#f8b8cc'],hung:['cap','#2a2420','#4a3f36'],trang:['bob','#1e1e26','#4a4a5c'],long:['neat','#d8d4c8','#f2efe6'],dung:['buzz','#1f1c1a','#3a3430'],yen:['pony','#8a3a3a','#c26868'],khoa:['undercut','#6a3fb0','#a884f0'],tu:['bun','#4a2c22','#7a5040']};
+var HSM=['short','sidepart','spiky','curly','neat','undercut','messy'],HSF=['long','wavy','bob','pony','twin','bun','braid','hime','longside'],HCS=[['#1d1a22','#4a4a62'],['#3a2418','#6e4a32'],['#5a3a24','#8f6440'],['#7a3b25','#b8683f'],['#d9ad4a','#f7de88'],['#c4552b','#f48c4c'],['#8a8a92','#cacad2'],['#1f2a4a','#4a68a8'],['#6a1f3a','#a84a6a'],['#2a6a5a','#58b09a']];
+function chLook(k,F,sd,isP){if(isP)return F?['wavy','#4a2a22','#8a5a44']:['sidepart','#3a2a22','#6a4a38'];if(k&&LOOK[k])return LOOK[k];var a=F?HSF:HSM,c=HCS[(sd*7+3)%HCS.length];return[a[sd%a.length],c[0],c[1]]}
+function chibiBuild(k,p,gender,emo,isP,s,bl,sk,sd){
+var F=gender==='female',g=[],i,j,lk=chLook(k,F,sd,isP);for(i=0;i<CH;i++){g.push([]);for(j=0;j<CW;j++)g[i].push(null)}
+var P=function(a,b,w,h,col){for(var yy=b+1;yy<b+1+h;yy++)for(var xx=a+1;xx<a+1+w;xx++)if(xx>=0&&xx<CW&&yy>=0&&yy<CH)g[yy][xx]=col},Q=function(a,b,col){P(a,b,1,1,col)};
+var hs=lk[0],hair=lk[1],hl=lk[2],hd=sh(hair,-.35),skS=sh(sk,-.1),skD=sh(sk,-.2),of=p.outfit,top=p.top,top2=p.top2,topD=sh(top,-.18),pants=p.pants,pantsD=sh(pants,-.2),shoes=p.shoes,acc=p.accent||'#f0cf88',bag=p.bag||'#6b5a4a',CRm='#f4efe2',CRd='#d9d2c0',mc=F?'#e0506a':'#a8605a',pk='#ff4f86',
+dress=F&&(k?/^(cardigan|blouse|apron|bookstore|artist|street|reporter|jacket|barista|oversize|tee)$/.test(of):(sd%3!==0)),
+sl=/^(tee|street|artist|barista|apron|chef)$/.test(of),al=Math.abs(s)>=2?(s>0?1:-1):0,lift=Math.abs(s)>=2?(s>0?-1:1):0;
+var tx=F?5:4,tw=F?6:8,T=function(a,b,w,h,col){for(var xx=a;xx<a+w;xx++)if(xx>=tx&&xx<tx+tw)P(xx,b,1,h,col)};
+/* back hair */
+if(hs==='long'){P(1,3,14,13,hair);P(1,12,2,4,hl);P(13,12,2,4,hl);Q(0,13,hair);Q(14,14,hair)}
+if(hs==='wavy'){P(1,3,14,12,hair);P(0,11,1,4,hair);P(14,12,1,5,hair);Q(2,15,hair);Q(11,16,hair);P(1,12,1,3,hl);P(13,13,1,3,hl)}
+if(hs==='hime'){P(1,3,14,12,hair);P(1,12,2,3,hl);P(13,12,2,3,hl)}
+if(hs==='longside'){P(1,3,14,8,hair)}
+if(hs==='bob'){P(1,3,14,9,hair);P(1,9,2,3,hl);P(13,9,2,3,hl)}
+if(hs==='braid'){P(1,3,14,7,hair)}
+if(hs==='pony'){P(13,4,3,3,hair);P(14,7,3,6,hl);Q(14,13,hair);Q(13,4,acc)}
+if(hs==='twin'){P(0,5,2,9,hair);P(14,5,2,9,hair);P(0,5,2,1,acc);P(14,5,2,1,acc);P(0,9,1,3,hl);P(15,9,1,3,hl)}
+if(p.accessory==='backpack'){P(2,13,2,6,bag);P(12,13,2,6,bag);P(1,14,1,4,topD);P(14,14,1,4,topD)}
+/* legs */
+var lh=3+(lift===-1?-1:0),rh=3+(lift===1?-1:0);
+if(dress){P(5,19,2,lh-1,sk);P(9,19,2,rh-1,sk);P(5,19,2,1,skS);P(9,19,2,1,skS);P(4,19+lh-1,3,1,CRm);P(8,19+rh-1,3,1,CRm)}
+else{P(4,18,3,lh,pants);P(9,18,3,rh,pants);P(4,18,1,lh,sh(pants,.12));P(9,18,1,rh,sh(pants,.12));P(6,18,1,lh,pantsD);P(11,18,1,rh,pantsD)}
+P(3,18+lh,4,1,shoes);P(9,18+rh,4,1,shoes);Q(3,18+lh,sh(shoes,.25));Q(9,18+rh,sh(shoes,.25));
+/* torso */
+P(4,13,8,5,top);T(4,13,8,1,top2);T(11,14,1,4,topD);P(4,17,8,1,topD);
+if(F){P(4,13,1,5,null);P(11,13,1,5,null);P(5,13,6,5,top);P(5,13,6,1,top2);P(10,14,1,4,topD);P(5,17,6,1,topD)}
+if(dress){P(3,17,10,1,top);P(2,18,12,1,top);P(2,18,12,1,topD);P(3,17,10,1,top);Q(3,17,top2);Q(12,17,topD);for(i=2;i<14;i+=2)Q(i,18,top2)}
+var ay=14,ah=sl?2:3;
+if(F){P(4,ay+al,1,ah,top);P(11,ay-al,1,ah,top);P(4,ay+al,1,1,top2);P(11,ay-al,1,1,top2);P(4,ay+al+ah,1,sl?2:1,sk);P(11,ay-al+ah,1,sl?2:1,sk)}
+else{P(2,ay+al,2,ah,top);P(12,ay-al,2,ah,top);P(2,ay+al,2,1,top2);P(12,ay-al,2,1,top2);P(2,ay+al+ah,2,sl?2:1,sk);P(12,ay-al+ah,2,sl?2:1,sk)}
+switch(of){
+case'hoodie':T(5,12,6,2,top2);T(7,14,2,2,CRm);T(5,16,6,1,topD);break;
+case'cardigan':T(7,13,2,5,CRm);T(6,13,1,1,top2);T(9,13,1,1,top2);break;
+case'blouse':T(5,13,2,2,'#fff');T(9,13,2,2,'#fff');T(7,13,2,1,'#fff');Q(8,15,'#8a8a92');Q(8,17,'#8a8a92');break;
+case'apron':T(5,14,6,4,CRm);T(5,17,6,1,CRd);T(7,15,2,1,CRd);break;
+case'chef':T(4,13,8,5,CRm);Q(8,14,CRd);Q(8,16,CRd);T(4,17,8,1,CRd);T(5,13,6,1,top);break;
+case'barista':T(5,15,6,3,CRm);T(5,15,6,1,CRd);T(6,13,4,2,top2);break;
+case'overshirt':T(7,13,2,5,CRm);T(6,17,1,1,topD);T(9,17,1,1,topD);break;
+case'security':case'mechanic':case'courier':case'reporter':case'jacket':case'workjacket':T(7,13,2,5,topD);Q(7,13,top2);T(5,15,2,2,sh(top,-.1));T(10,15,1,2,acc);if(of==='workjacket'||of==='mechanic')T(4,17,8,1,acc);break;
+case'street':case'tee':case'artist':T(6,15,4,2,acc);Q(7,15,sh(acc,.3));break;
+case'oversize':T(5,15,6,1,top2);break;
+default:T(7,13,2,1,sk);T(6,15,4,1,top2)}
+if(k==='yen'){P(9,15,2,2,'#fff');Q(10,16,'#e0527a')}
+/* head: male square jaw, female round chin */
+if(F){P(2,3,12,2,sk);P(2,5,12,6,sk);P(3,11,10,1,sk);P(4,12,8,1,skS)}
+else{P(2,3,12,2,sk);P(2,5,12,7,sk);P(2,12,12,1,sk);P(4,12,8,1,skS)}
+P(4,6,8,1,skS);
+if(k==='long'){P(4,10,8,2,'#e6e2d6');P(6,12,4,1,'#e6e2d6')}
+if(!F&&(k==='hung'||k==='bao'||k==='dung'))P(4,11,8,1,skD);
+/* front hair */
+var cap=hs==='cap',dark=(k==='dung');
+if(dark){P(3,1,10,2,'#f2c200');P(2,3,12,2,'#f2c200');P(1,5,14,1,'#c99d00');P(6,1,4,4,'#ffe14d');P(5,1,1,2,'#ffe14d')}
+else if(cap){P(3,1,10,2,top2);P(2,3,12,2,top2);P(5,1,3,2,sh(top2,.25));P(2,5,12,1,acc);P(1,6,14,1,sh(acc,-.2))}
+else{
+if(hs!=='bun')P(4,1,8,1,hair);P(3,2,10,1,hair);P(2,3,12,2,hair);
+if(hs==='bun'){P(6,0,4,2,hair);P(6,0,2,1,hl);P(10,1,1,1,hd)}
+P(5,1,3,1,hl);P(4,2,4,1,hl);P(3,3,3,1,hl);P(9,2,2,1,sh(hl,-.15));
+if(hs==='spiky'){Q(4,0,hair);Q(7,0,hair);Q(10,0,hair);Q(7,-1,hair);Q(1,3,hair);Q(14,3,hair);Q(4,0,hl);P(2,5,3,1,hair);P(10,5,4,1,hair);Q(5,6,hair);Q(8,6,hair);Q(11,6,hair)}
+else if(hs==='curly'){P(3,0,2,1,hair);P(6,0,2,1,hair);P(9,0,2,1,hair);P(1,3,1,4,hair);P(14,3,1,4,hair);Q(5,2,hd);Q(9,2,hd);Q(3,4,hd);Q(11,4,hd);P(2,5,12,1,hair);Q(5,6,hair);Q(9,6,hair)}
+else if(hs==='sidepart'){P(2,5,9,1,hair);Q(10,6,hair);Q(3,6,hair);Q(2,6,hair);P(13,6,1,2,hair);P(2,6,1,2,hair);Q(4,2,hd);Q(4,3,hd)}
+else if(hs==='messy'){P(2,5,3,1,hair);P(6,5,2,1,hair);P(9,5,4,1,hair);Q(4,6,hair);Q(8,6,hair);Q(11,6,hair);P(1,3,1,3,hair);P(14,3,1,3,hair);Q(7,0,hair);Q(11,1,hair)}
+else if(hs==='buzz'){P(2,3,12,1,hair);P(2,4,2,1,hair);P(12,4,2,1,hair);P(4,4,8,1,hd)}
+else if(hs==='neat'){P(2,5,5,1,hair);P(9,5,5,1,hair);P(2,6,1,2,hair);P(13,6,1,2,hair);Q(8,5,hd);Q(6,6,hair)}
+else if(hs==='undercut'){P(2,5,12,1,hair);P(2,5,2,3,hl);P(12,5,2,3,hl);P(4,0,8,1,hair);P(5,0,3,1,hl)}
+else if(hs==='short'){P(2,5,5,1,hair);P(9,5,5,1,hair);P(2,6,1,2,hair);P(13,6,1,2,hair);Q(7,6,hair)}
+else if(hs==='long'||hs==='wavy'||hs==='braid'||hs==='twin'||hs==='bun'||hs==='pony'){P(2,5,5,1,hair);P(9,5,5,1,hair);Q(7,5,hair);Q(6,6,hair);Q(10,6,hair);P(2,6,1,3,hair);P(13,6,1,3,hair);Q(3,6,hl);Q(12,6,hl);
+ if(hs==='long'||hs==='wavy'){P(2,8,2,4,hair);P(12,8,2,4,hair)}}
+else if(hs==='hime'){P(2,5,12,2,hair);P(2,7,2,6,hair);P(12,7,2,6,hair);Q(5,7,hair);Q(10,7,hair);Q(3,7,hl);Q(12,7,hl)}
+else if(hs==='bob'){P(2,5,12,2,hair);Q(5,7,hair);Q(6,7,hair);Q(9,7,hair);Q(10,7,hair);P(2,7,2,4,hair);P(12,7,2,4,hair);Q(4,11,hair);Q(11,11,hair)}
+else if(hs==='longside'){P(2,5,5,1,hair);P(9,5,5,1,hair);Q(7,5,hair);Q(6,6,hair);P(2,6,1,4,hair);P(13,6,1,4,hair);P(1,9,3,7,hair);P(12,9,3,7,hair);P(1,13,2,3,hl);P(13,13,2,3,hl)}
+if(hs==='braid'){P(2,8,2,3,hair);for(i=0;i<9;i++)P(11,9+i,2,1,i%2?hl:hair);P(11,18,2,1,acc)}
+}
+if(k==='tu'){P(2,4,12,1,'#c0504d');P(3,5,2,1,'#c0504d');Q(12,3,'#c0504d');P(13,4,2,2,'#c0504d')}
+if(k==='lan'){Q(4,1,'#ff7fa0');Q(8,0,'#fff3a0');Q(11,1,'#ff7fa0')}
+if(F&&!cap&&p.accessory!=='headphones'&&k!=='tu'&&k!=='lan'&&(isP||!k||sd%3!==1)){P(10,3,3,1,acc);Q(11,3,sh(acc,-.25));Q(10,2,sh(acc,.2));Q(12,2,sh(acc,.2))}
+if(k==='long'||k==='trang'){var gc='#2b2b35';P(4,7,4,1,gc);P(4,10,4,1,gc);P(4,8,1,2,gc);P(7,8,1,2,gc);P(8,7,4,1,gc);P(8,10,4,1,gc);P(8,8,1,2,gc);P(11,8,1,2,gc)}
+/* face */
+var ex=emo,ink='#2a1f35',eye=function(){P(5,8,1,2,ink);P(10,8,1,2,ink);Q(6,8,'#fff');Q(9,8,'#fff')};
+function eye2(){P(10,8,1,2,ink);Q(9,8,'#fff')}
+if(ex==='laugh'){Q(5,9,ink);Q(6,8,ink);Q(7,9,ink);Q(9,9,ink);Q(10,8,ink);Q(11,9,ink)}
+else if(ex==='wink'){P(5,9,2,1,ink);eye2()}
+else if(ex==='love'){Q(5,8,pk);Q(7,8,pk);Q(6,9,pk);Q(9,8,pk);Q(11,8,pk);Q(10,9,pk)}
+else if(ex==='shy'){P(5,9,1,1,ink);Q(6,9,'#fff');P(10,9,1,1,ink);Q(9,9,'#fff')}
+else if(ex==='surprised'){P(5,7,2,3,'#fff');Q(5,8,ink);Q(5,9,ink);P(9,7,2,3,'#fff');Q(10,8,ink);Q(10,9,ink)}
+else if(ex==='think'){P(5,8,1,2,ink);Q(5,7,'#fff');Q(6,8,'#fff');P(10,8,1,2,ink);Q(10,7,'#fff');Q(9,8,'#fff')}
+else if(bl||ex==='sleepy'){P(5,9,2,1,ink);P(9,9,2,1,ink)}
+else eye();
+if(F&&ex!=='surprised'){Q(4,8,ink);Q(11,8,ink);if(!(bl||ex==='sleepy'||ex==='laugh'||ex==='love'||ex==='shy'||ex==='wink')){Q(4,7,ink);Q(11,7,ink)}}
+if(ex==='angry'){Q(5,6,hd);Q(6,7,hd);Q(10,6,hd);Q(9,7,hd);if(!F){Q(4,6,hd);Q(11,6,hd)}}
+else if(ex==='sad'||ex==='cry'||ex==='touched'){Q(5,7,hd);Q(6,6,hd);Q(10,7,hd);Q(9,6,hd)}
+else if(ex==='surprised'||ex==='think'){P(5,6,2,1,hd);P(9,6,2,1,hd)}
+else if(!F){P(5,6,2,1,hd);P(9,6,2,1,hd)}
+if(ex==='cry'||ex==='touched'){Q(5,10,'#8fd4ff');Q(10,10,'#8fd4ff');Q(5,11,'#bfe6ff');Q(10,11,'#bfe6ff')}
+Q(7,10,skS);Q(8,10,skS);
+if(ex==='happy'||ex==='love'||ex==='touched'||ex==='wink'){P(6,11,4,1,mc);Q(5,10,mc);Q(10,10,mc)}
+else if(ex==='laugh'){P(6,11,4,2,'#7a2b3a');P(6,11,4,1,'#fff')}
+else if(ex==='sad'||ex==='cry'||ex==='angry'){P(7,11,2,1,mc);Q(6,12,mc);Q(9,12,mc)}
+else if(ex==='surprised'){P(7,11,2,2,'#4a1f2a')}
+else if(ex==='think'){P(8,11,3,1,mc);Q(10,10,mc)}
+else if(F)P(6,11,4,1,mc);
+else P(7,11,2,1,mc);
+if(F||ex==='love'||ex==='shy'){var ba=(ex==='love'||ex==='shy')?'#ff7f9a':'#f6a8a0';Q(3,10,ba);Q(4,10,ba);Q(11,10,ba);Q(12,10,ba)}
+/* accessories */
+switch(p.accessory){
+case'headphones':P(3,1,10,1,acc);P(2,2,1,3,acc);P(13,2,1,3,acc);P(1,5,2,5,OL);P(13,5,2,5,OL);P(1,6,1,3,acc);P(14,6,1,3,acc);break;
+case'camera':P(13,15,3,3,bag);P(14,14,2,1,OL);Q(14,16,'#9ec9e8');break;
+case'phone':P(13,16,2,2,'#2a2a33');Q(14,16,'#9ec9e8');break;
+case'cup':P(13,15,2,3,CRm);Q(15,16,CRm);Q(13,15,acc);break;
+case'clipboard':P(13,14,3,4,CRm);P(14,14,1,1,acc);P(14,16,1,1,'#6c8aa8');break;
+case'tablet':P(13,14,3,4,'#2a2a33');P(14,15,1,2,'#9ec9e8');break;
+case'delivery':P(12,15,4,4,bag);P(12,15,4,1,acc);Q(15,17,CRm);break;
+case'notebook':P(13,14,2,4,CRm);P(13,14,1,4,acc);break;
+case'radio':P(13,14,2,3,'#2a2a33');Q(14,14,acc);Q(14,15,'#9ec9e8');Q(15,13,'#2a2a33');break;
+case'wrench':P(14,13,1,5,acc);P(13,12,3,2,acc);break;
+case'book':P(13,14,3,4,CRm);P(13,14,1,4,acc);break;
+case'tote':P(13,16,3,4,bag);P(13,15,2,1,sh(bag,.2));break;
+case'tray':P(11,17,5,1,CRm);P(12,16,3,1,acc);Q(13,15,'#e8a05a');break;
+case'towel':P(11,13,3,3,CRm);Q(12,14,CRd);break}
+if(k==='khoa'){P(11,15,5,5,'#b8742f');P(12,17,2,2,'#3a2210');P(14,6,2,9,'#5b3a1d');P(14,5,2,2,'#3a2210')}
+var o=g.map(function(r){return r.slice()});
+for(i=0;i<CH;i++)for(j=0;j<CW;j++)if(!g[i][j]&&((i>0&&g[i-1][j])||(i<CH-1&&g[i+1][j])||(j>0&&g[i][j-1])||(j<CW-1&&g[i][j+1])))o[i][j]=OL;
+var cv=document.createElement('canvas');cv.width=CW*CU;cv.height=CH*CU;var x=cv.getContext('2d');
+for(i=0;i<CH;i++)for(j=0;j<CW;j++)if(o[i][j]){x.fillStyle=o[i][j];x.fillRect(j*CU,i*CU,CU,CU)}
+return cv}
 window.CHDRAW=function(x,y,color,gender,emo,isP,wp,job){
-var c=ctx,F=gender==='female',k=ch16NpcKey(color,isP),p=ch16V8Profile(color,gender,isP,job),seed=k&&k!=='player'?Object.keys(X).indexOf(k)+1:19,
+var c=ctx,F=gender==='female',k=ch16NpcKey(color,isP),seed=k&&k!=='player'?Object.keys(X).indexOf(k)+1:19,
 mv=isP&&game.started&&KEYS.some(function(q){return game.keys&&game.keys[q]}),t=performance.now(),
 f=Math.floor(t/92+(mv?0:(wp||0)*3)+seed)%12,s=[0,1,2,1,0,-1,-2,-1,0,1,0,-1][f],bob=[0,0,1,2,1,0,-1,-2,-1,0,1,0][f]*(mv?1:.45),
-sk=isP?TN[F?0:1]:(k==='long'||k==='tu'?'#cf9a72':TN[seed%5]),hs=p.hairStyle,of=p.outfit,A=[],
-B=function(a,b,w,h,col){A.push([a,b,w,h,col])},R=function(a,b,w,h,col){c.fillStyle=col;c.fillRect(a,b,w,h)},D=function(a,b,w,h,al){R(a,b,w,h,'rgba(20,10,25,'+al+')')},
-sw=F?9:(of==='oversize'?12:11),wh=F?6:8,sl=/^(tee|street|artist|barista|apron|chef)$/.test(of),ls=Math.max(0,s),rs=Math.max(0,-s),hair=k==='tu'?p.hair:p.hair,cap=hs==='cap',
-dark=k==='dung',scarf=k==='tu';
+bl=(Math.floor(t/1000)+seed)%9===0,ss=Math.abs(s)>=2?s/Math.abs(s)*2:0,
+key=[k||color,gender,isP?1:0,job||'',emo,ss,bl?1:0].join('|'),spr=SPR[key];
+if(!spr){var p=ch16V8Profile(color,gender,isP,job),sd=seed;if(!k){sd=0;String(color+(job||'')).split('').forEach(function(q){sd=(sd*31+q.charCodeAt(0))%997})}
+var sk=isP?TN[F?0:1]:(k==='long'||k==='tu'?'#cf9a72':TN[sd%5]);
+if(SPRN>500){SPR={};SPRN=0}spr=SPR[key]=chibiBuild(k,p,gender,emo,isP,ss,bl,sk,sd);SPRN++}
 c.save();c.translate(Math.round(x),Math.round(y+bob));
-R(-14,22-bob,28,5,'rgba(18,20,25,.3)');
-if(hs==='long'||hs==='longside')B(-8,-45,16,F?37:30,p.hair);if(hs==='bob')B(-8,-45,16,17,p.hair);if(hs==='pony')B(6+(s>0?1:0),-42,4,15,p.hair2);if(hs==='bun')B(-3,-53,7,6,p.hair2);
-if(of==='hoodie')B(-7,-31,14,6,p.top2);
-B(-7+(s>1?1:0),-5,6,24-ls,p.pants);B(1-(s<-1?1:0),-5,6,24-rs,p.pants);B(-8,18-ls,8,5,p.shoes);B(0,18-rs,8,5,p.shoes);
-B(-sw,-28,sw*2,9,p.top);B(-wh,-20,wh*2,15,p.top);if(!/^(apron|chef|barista)$/.test(of))B(-wh-1,-7,wh*2+2,3,p.top2);
-var al=Math.round(s/2),ar=-al,al2=sl?9:17;
-B(-sw-3,-27+al,4,al2,p.top);B(sw-1,-27+ar,4,al2,p.top);if(sl){B(-sw-3,-18+al,4,8,sk);B(sw-1,-18+ar,4,8,sk)}else{B(-sw-3,-10+al,4,4,sk);B(sw-1,-10+ar,4,4,sk)}
-B(-2,-31,4,4,sk);B(-6,-46,12,13,sk);B(-5,-33,10,3,sk);B(-7,-41,1,4,sk);B(6,-41,1,4,sk);
-if(cap){B(-8,-49,16,6,p.accent);B(-9,-44,18,2,p.accent);B(-4,-43,12,2,p.accent)}
-else if(dark)B(-8,-49,16,7,'#f2c200');else if(scarf){B(-8,-48,16,7,'#c0504d');B(-8,-42,3,9,'#c0504d')}
-else{B(-7,-48,14,6,hair);if(hs!=='buzz'){B(-7,-42,2,5,hair);B(5,-42,2,5,hair);if(F||hs==='bob'||hs==='long'||hs==='longside'||hs==='pony')B(-6,-43,8,2,hair)}if(hs==='undercut')B(-3,-50,10,3,p.hair2)}
-c.fillStyle='rgba(25,20,30,.85)';A.forEach(function(q){c.fillRect(q[0]-1,q[1]-1,q[2]+2,q[3]+2)});
-A.forEach(function(q){R(q[0],q[1],q[2],q[3],q[4]);if(q[2]>=3&&q[3]>=4){var w=Math.max(1,Math.round(q[2]/4));D(q[0]+q[2]-w,q[1],w,q[3],.16);R(q[0],q[1],1,q[3],'rgba(255,255,255,.08)')}});
-var gz=function(){R(0,-27,1,22,'rgba(20,10,25,.35)')};
-switch(of){case'hoodie':R(-4,-28,8,3,p.top2);R(-2,-24,1,5,CR);R(1,-24,1,5,CR);D(-5,-12,10,5,.15);break;
-case'cardigan':R(-4,-27,8,19,p.top2);R(-4,-27,1,19,'rgba(20,10,25,.3)');R(3,-27,1,19,'rgba(20,10,25,.3)');break;
-case'blouse':R(-5,-28,4,3,'#fff');R(1,-28,4,3,'#fff');R(0,-24,1,1,'#888');R(0,-20,1,1,'#888');R(0,-16,1,1,'#888');break;
-case'apron':R(-6,-24,12,19,CR);R(-6,-28,1,5,CR);R(5,-28,1,5,CR);D(-4,-14,8,4,.12);R(-4,-28,8,2,p.top2);break;
-case'chef':R(-8,-25,16,18,CR);R(-1,-24,1,14,'#aaa');R(-4,-28,8,2,p.top);break;
-case'barista':R(-7,-16,14,11,CR);R(-5,-20,10,4,p.top2);break;
-case'overshirt':R(-3,-27,6,19,'#e8e4da');R(-3,-27,1,19,'rgba(20,10,25,.3)');R(2,-27,1,19,'rgba(20,10,25,.3)');R(-4,-28,3,3,p.top2);R(1,-28,3,3,p.top2);break;
-case'security':case'mechanic':case'courier':case'reporter':case'jacket':case'workjacket':gz();D(-7,-12,5,4,.2);D(2,-12,5,4,.2);R(-sw,-28,4,2,p.top2);R(sw-4,-28,4,2,p.top2);if(of==='security')R(3,-22,4,4,p.accent);if(of==='workjacket'||of==='mechanic')R(-sw,-10,sw*2,2,p.accent);break;
-case'street':case'tee':case'artist':R(-3,-20,6,4,p.accent);R(-4,-28,8,2,p.top2);break;
-default:R(-4,-28,8,2,p.top2);R(-2,-26,4,2,sk)}
-if(!/^(apron|chef|barista|cardigan|overshirt)$/.test(of)&&!F)R(-wh,-6,wh*2,2,'#2a2a30');
-var bl=(Math.floor(t/1000)+seed)%9===0;
-var exX=emo,pkX='#ff4f86',twX=t/1000,OP=function(a){R(a,-39,2,2,INK);R(a,-39,1,1,'#fff')},CL=function(a){R(a,-38,1,1,INK);R(a+1,-39,1,1,INK);R(a+2,-38,1,1,INK)};
-if(exX==='angry'){R(-5,-42,2,1,hair);R(-3,-41,2,1,hair);R(1,-41,2,1,hair);R(3,-42,2,1,hair)}
-else if(exX==='sad'||exX==='cry'||exX==='touched'){R(-5,-41,2,1,hair);R(-3,-42,2,1,hair);R(1,-42,2,1,hair);R(3,-41,2,1,hair)}
-else if(exX==='surprised'||exX==='think'){R(-5,-43,3,1,hair);R(2,-43,3,1,hair)}
-else{R(-5,-41,3,1,hair);R(2,-41,3,1,hair)}
-if(exX==='laugh'){CL(-5);CL(2)}
-else if(exX==='wink'){OP(-4);CL(2)}
-else if(exX==='love'){R(-5,-39,1,1,pkX);R(-3,-39,1,1,pkX);R(-5,-38,3,1,pkX);R(-4,-37,1,1,pkX);R(1,-39,1,1,pkX);R(3,-39,1,1,pkX);R(1,-38,3,1,pkX);R(2,-37,1,1,pkX)}
-else if(exX==='shy'){R(-4,-39,2,1,'#fff');R(-4,-38,2,1,INK);R(2,-39,2,1,'#fff');R(2,-38,2,1,INK)}
-else if(exX==='surprised'){R(-5,-40,3,3,'#fff');R(-4,-39,1,2,INK);R(2,-40,3,3,'#fff');R(3,-39,1,2,INK)}
-else if(exX==='think'){R(-3,-40,2,2,INK);R(-3,-40,1,1,'#fff');R(3,-40,2,2,INK);R(3,-40,1,1,'#fff')}
-else if(bl||exX==='sleepy'){R(-4,-38,2,1,INK);R(2,-38,2,1,INK)}
-else{R(-4,-39,2,2,INK);R(2,-39,2,2,INK);R(-4,-39,1,1,'#fff');R(2,-39,1,1,'#fff')}
-if(exX==='cry'||exX==='touched'){var tl=2+(Math.floor(twX*3)%2);R(-4,-37,1,tl,'#8fd4ff');R(3,-37,1,tl,'#8fd4ff')}
-D(0,-37,1,2,.25);var lp=F?'#c4585f':'#b0655a';
-if(exX==='happy'||exX==='love'||exX==='touched'||exX==='wink'){R(-2,-35,4,1,lp);R(-3,-36,1,1,lp);R(2,-36,1,1,lp)}
-else if(exX==='laugh'){R(-2,-36,4,2,'#7a2b3a');R(-2,-36,4,1,'#fff')}
-else if(exX==='sad'||exX==='cry'||exX==='angry'){R(-2,-35,4,1,lp);R(-3,-34,1,1,lp);R(2,-34,1,1,lp)}
-else if(exX==='surprised'){R(-1,-36,2,3,INK)}
-else if(exX==='shy'||exX==='sleepy'){R(-1,-35,2,1,lp)}
-else if(exX==='think'){R(0,-35,3,1,lp);R(2,-36,1,1,lp)}
-else R(-2,-35,4,1,lp);
-if(F||exX==='happy'||exX==='love'||exX==='shy'||exX==='laugh'||exX==='touched'){var ba=(exX==='love'||exX==='shy')?'rgba(255,90,115,.6)':'rgba(255,110,125,.35)';R(-5,-36,2,1,ba);R(3,-36,2,1,ba)}
-var IC={love:['♥','#ff4f86'],shy:['♥','#ff8fb1'],laugh:['♪','#ffd36e'],surprised:['!','#fff'],angry:['💢','#ff4040'],cry:['💧','#8fd4ff'],touched:['✨','#ffe08a'],wink:['★','#ffd36e'],sleepy:['z','#cfd8ff'],think:['…','#fff']}[exX];
-if(IC){c.save();c.textAlign='left';c.font='bold 9px sans-serif';c.strokeStyle='rgba(30,20,30,.7)';c.lineWidth=2;c.fillStyle=IC[1];var iy=-40-Math.abs(Math.sin(twX*3))*3;c.strokeText(IC[0],8,iy);c.fillText(IC[0],8,iy);c.restore()}
-R(-5,-43,10,1,'rgba(255,255,255,.12)');
-var G=function(){c.strokeStyle='#222';c.lineWidth=1;c.strokeRect(-5.5,-39.5,4,3);c.strokeRect(1.5,-39.5,4,3);R(-1,-39,2,1,'#222')};
-if(k==='long'){G();R(-6,-36,2,4,'#e6e2d6');R(4,-36,2,4,'#e6e2d6');R(-4,-33,8,3,'#e6e2d6')}
-if(k==='trang')G();if(k==='hung')D(-5,-35,10,3,.18);
-if(k==='lan'){R(-6,-48,3,3,'#ff7fa0');R(-1,-50,3,3,'#fff3a0');R(4,-48,3,3,'#ff7fa0')}
-if(k==='yen'){R(3,-21,5,3,'#fff');R(4,-20,3,1,'#e0527a')}
-if(k==='khoa'){R(sw,-18,7,10,'#b8742f');R(sw+1,-15,3,3,'#3a2210');R(sw+3,-34,2,17,'#5b3a1d');R(sw+2,-36,4,3,'#3a2210');R(-sw,-28,2,1,'#3a2210')}
-if(p.accessory==='headphones'){R(-8,-48,16,2,p.accent);R(-8,-42,3,6,INK);R(5,-42,3,6,INK)}
-else{try{ch16AccessoryV8(p,f)}catch(_){}}
-if(isP)R(-8,28-bob,16,2,CR);
+c.fillStyle='rgba(18,20,25,.3)';c.fillRect(-15,21-bob,30,5);
+c.drawImage(spr,-27,-48);
+if(isP){c.fillStyle=CR;c.fillRect(-9,28-bob,18,2)}
+var IC={love:['♥','#ff4f86'],shy:['♥','#ff8fb1'],laugh:['♪','#ffd36e'],surprised:['!','#fff'],angry:['💢','#ff4040'],cry:['💧','#8fd4ff'],touched:['✨','#ffe08a'],wink:['★','#ffd36e'],sleepy:['z','#cfd8ff'],think:['…','#fff']}[emo];
+if(IC){var twX=t/1000;c.textAlign='left';c.font='bold 10px sans-serif';c.strokeStyle='rgba(30,20,30,.7)';c.lineWidth=2;c.fillStyle=IC[1];var iy=-42-Math.abs(Math.sin(twX*3))*3;c.strokeText(IC[0],14,iy);c.fillText(IC[0],14,iy)}
 c.restore()};
 var FULL=window.CH_FULL||{},_od=openDialogue,last={},busy=0,PL={morning:'sáng',afternoon:'chiều',evening:'tối',night:'khuya'};
-var GR=window.CH_GR={"lan": {"w": ["park", "downtown"], "a": "Chào buổi {P}! Bạn cứ xem hoa thoải mái nhé, hoa sáng nay mới về, thơm lắm.", "o": "Chào bạn! Mình đang đi lấy hoa, đi ngang {pl} thấy bạn nên chào một tiếng.", "r": "bán hoa quanh khu này", "b": "Hoa hôm nay mới về, bạn xem thử không?"}, "hung": {"s": "anh", "t": "anh", "w": ["downtown", "mall"], "a": "Ê, chào bạn! Ăn {P} chưa? Bánh mì nóng đây, lấy một ổ cho ấm bụng!", "o": "Chào bạn! Anh đang đẩy xe đi ngang {pl}, thấy mặt lạ nên chào cái cho vui.", "r": "bán bánh mì ở đầu phố này", "b": "Bánh mì mới ra lò đó, lấy một ổ không?"}, "trang": {"w": ["mall"], "a": "Chào bạn, bạn cần mua gì không? Cứ hỏi mình nhé, và đừng tự ý dùng thuốc nha.", "o": "Chào bạn, mình vừa hết ca, ra {pl} nghỉ một chút.", "r": "dược sĩ ở nhà thuốc trong trung tâm", "b": "Bạn ngủ đủ chưa? Mình hỏi theo thói quen nghề thôi."}, "long": {"s": "ông", "u": "cháu", "t": "ông", "w": ["park"], "a": "Chào cháu, ra bờ sông hóng gió à? Ông ngồi đánh cờ ở đây từ đầu buổi {P} rồi.", "o": "Chào cháu, ông đi dạo {pl} một chút, thấy cháu lạ mặt nên hỏi thăm.", "r": "thầy giáo đã nghỉ hưu, hay ngồi ghế đá bờ sông", "b": "Cháu ngồi xuống chơi với ông một ván cờ nhé."}, "dung": {"s": "anh", "t": "anh", "w": ["factory"], "a": "Ê, chào bạn. Khu này xe nâng chạy nhiều, bạn đứng sát vào bên này cho an toàn.", "o": "Chào bạn, anh vừa hết ca, đang đi {pl} kiếm gì ăn.", "r": "lái xe nâng ở khu công nghiệp này", "b": "Hôm nay xưởng bận, nhưng bạn cần gì cứ nói."}, "yen": {"w": ["office"], "a": "Chào bạn! Bạn có hẹn với ai trong tòa nhà không? Để mình báo giúp nhé.", "o": "Chào bạn, mình tan ca rồi mà gặp người mới vẫn phải chào, thói quen lễ tân mà.", "r": "lễ tân ở tòa nhà này", "b": "Hôm nay tòa nhà có tin mới, bạn muốn nghe không?"}, "khoa": {"w": ["downtown"], "a": "Chào bạn! Bạn dừng lại nghe mình đàn à? Cảm ơn nhé, bài này mình mới tập.", "o": "Chào bạn, mình đang đi tìm góc đàn mới ở {pl}.", "r": "đàn hát ở góc phố này", "b": "Bài mới mình vừa tập xong, bạn nghe thử nhé."}, "tu": {"s": "bà", "u": "con", "t": "bà", "w": ["residential"], "a": "Chào con, con mới tới khu này hả? Tạp hóa của bà ngay đầu hẻm, cần gì cứ ghé.", "o": "Chào con, bà đang đi dạo ở {pl} một chút, thấy mặt lạ nên hỏi thăm.", "r": "chủ tạp hóa đầu hẻm", "b": "Con ăn cơm chưa? Tạp hóa mới về cải canh tươi đó."}, "linh": {"w": ["office"], "a": "Chào bạn, buổi {P} ở khu văn phòng này lúc nào cũng vội. Bạn đang tìm ai hay tìm đường à?", "o": "Chào bạn, mình vừa tan làm, đang đi dạo ở {pl} cho đỡ ngộp deadline.", "r": "làm chiến lược thương hiệu cho một công ty gần đây", "b": "Mình vừa xong buổi họp, bạn đến đúng lúc."}, "minh": {"w": ["office"], "a": "Chào buổi {P}! Bạn là người mới ở khu văn phòng này à? Chưa thấy mặt bao giờ.", "o": "Chào bạn, mình đang nghỉ giải lao ở {pl}, gặp người lạ thì chào cho lịch sự.", "r": "kỹ sư sản phẩm ở một công ty gần đây", "b": "Mình vừa gỡ xong một cái bug, tâm trạng đang tốt."}, "hana": {"w": ["mall", "office"], "a": "Chào bạn! Bạn tới xem sự kiện hay đang đi dạo? Chỗ này hay có hoạt động lắm.", "o": "Chào bạn, mình vừa chạy qua {pl} khảo sát địa điểm, may gặp được người mới.", "r": "sản xuất sự kiện quanh khu này", "b": "Tuần này có sự kiện mới, bạn nhớ ghé nhé."}, "an": {"w": ["office", "park"], "a": "À… chào bạn. Bạn cũng đến ngắm tòa nhà này à? Mình hay ngồi phác thảo ở đây.", "o": "Chào bạn, mình đang đi chụp vài góc phố ở {pl} để làm đồ án.", "r": "sinh viên kiến trúc, hay ra đây vẽ phác thảo", "b": "Mình đang vẽ dở một bản phác, bạn xem thử không?"}, "mai": {"w": ["cafe"], "a": "Chào mừng bạn đến quán! Bạn là khách mới à? Ngồi chỗ nào cũng được nhé.", "o": "Chào bạn! Mình vừa rời quán, ra {pl} hít thở một chút. Bạn là người mới à?", "r": "chủ quán cà phê trên con phố này", "b": "Hôm nay quán có món mới, bạn thử nhé?"}, "kai": {"w": ["factory", "office"], "a": "Chào bạn, bạn tìm ai ở đây à? Mình đang chạy việc cho startup nên hơi vội một chút.", "o": "Chào bạn, mình vừa xong ca chạy việc, ra {pl} cho đỡ mệt.", "r": "thực tập vận hành ở một startup gần đây", "b": "Hôm nay deadline dày, nhưng mình vẫn rảnh vài phút."}, "vy": {"w": ["downtown", "mall", "cafe"], "a": "Chào bạn! Mình đang tìm góc sáng đẹp ở đây, chỗ bạn đứng ánh sáng đẹp lắm đó.", "o": "Chào bạn, mình đang đi tìm bối cảnh chụp ở {pl}, nãy giờ chưa thấy gì hay thì gặp bạn.", "r": "chụp ảnh thời trang, hay đi săn góc phố", "b": "Mình đang tìm cảnh chụp mới, bạn có gợi ý nào không?"}, "quan": {"w": ["cafe"], "a": "Chào buổi {P}! Bạn muốn thử gì không? Mình pha cho bạn ly đang được gọi nhiều nhất hôm nay nhé.", "o": "Chào bạn, mình đang đi mua hạt cà phê ở {pl}, thấy bạn lạ mặt nên chào.", "r": "pha chế ở quán cà phê gần đây", "b": "Hôm nay quán có hạt mới, bạn thử nhé?"}, "thao": {"w": ["office"], "a": "Chào bạn! Bạn đến phỏng vấn hay chỉ đi ngang qua? Khu này giờ này hay đông ứng viên lắm.", "o": "Chào bạn, mình hết giờ làm rồi nên ra {pl} thư giãn một chút.", "r": "làm nhân sự ở một công ty gần đây", "b": "Hôm nay mình vừa xong mấy buổi phỏng vấn, đầu hơi nặng."}, "duy": {"w": ["office", "mall"], "a": "Chào bạn. Bạn có thấy lối đi này hơi khó hiểu không? Mình đang để ý bảng chỉ dẫn ở đây.", "o": "Chào bạn, mình đang dạo ở {pl} xem người ta dùng mọi thứ ngoài đời thế nào.", "r": "thiết kế UX, hay để ý mấy thứ dùng chưa tiện", "b": "Mình đang bắt lỗi giao diện, bạn có thấy gì phiền không?"}, "nora": {"w": ["mall", "park"], "a": "Chào bạn! Bạn có nghe thấy tiếng đàn không? Mình đang thử vài giai điệu ở đây.", "o": "Chào bạn, mình đang dạo ở {pl} tìm giai điệu mới.", "r": "chơi nhạc, hay đi tìm cảm hứng quanh đây", "b": "Mình vừa nghĩ ra một đoạn nhạc mới, bạn nghe thử không?"}, "tung": {"w": ["cafe"], "a": "Chào bạn! Bánh vừa ra lò, bạn thử không? Mình còn đang tập sự nên cần người góp ý.", "o": "Chào bạn, mình đang đi mua bơ trứng ở {pl}, thấy bạn nên chào.", "r": "bếp phụ tập sự ở tiệm bánh gần đây", "b": "Bánh mới ra lò, bạn thử rồi cho mình ý kiến nhé."}, "ivy": {"w": ["cafe", "park"], "a": "À, chào bạn… Mình đang vẽ dở một bức, hy vọng không làm phiền bạn.", "o": "Chào bạn, mình ra {pl} tìm cảm hứng vẽ một chút.", "r": "họa sĩ minh họa tự do, hay vẽ ở những chỗ yên tĩnh", "b": "Mình đang vẽ dở một bức, bạn xem cùng được không?"}, "phuc": {"w": ["downtown"], "a": "Chào bạn! Bạn cần hỏi đường tắt không? Mình chạy khu này quen từng ngõ.", "o": "Chào bạn, mình đang tranh thủ giao đơn qua {pl}, dừng một phút chào bạn nhé.", "r": "giao hàng quanh khu này", "b": "Mình đang chạy đơn gấp, bạn cần gì cứ nói nhanh nhé."}, "huyen": {"w": ["downtown", "office", "cafe"], "a": "Chào bạn! Mình đang viết bài về đời sống khu này, bạn cho mình hỏi vài câu được không?", "o": "Chào bạn, mình vừa phỏng vấn xong, ra {pl} nghỉ một chút.", "r": "sinh viên báo chí, đang viết bài về khu này", "b": "Mình đang viết bài, bạn kể mình nghe chuyện khu này nhé."}, "son": {"w": ["factory", "downtown"], "a": "Chào bạn. Mình đang quay cảnh ở đây, bạn đừng bước vào khung hình nhé.", "o": "Chào bạn, mình đang đi tìm bối cảnh quay ở {pl}.", "r": "sinh viên điện ảnh, đang quay phim ở khu này", "b": "Mình đang xem lại cảnh quay, bạn đến đúng lúc."}, "bao": {"w": ["factory"], "a": "Chào bạn! Xe nào cần độ thì cứ nói, còn chỉ ghé xem thì cũng được.", "o": "Chào bạn, mình ghé {pl} mua đồ nghề, bạn có đi xe máy không?", "r": "độ xe ở xưởng gần đây", "b": "Xưởng hôm nay có xe mới về, bạn ghé xem nhé."}, "chi": {"w": ["mall"], "a": "Chào bạn, bạn tìm sách gì không? Quầy mình gợi ý được vài cuốn hay đó.", "o": "Chào bạn, mình vừa tan ca ra {pl} nghỉ chút, nhìn bạn có vẻ hay đọc sách.", "r": "làm thêm ở hiệu sách trong trung tâm", "b": "Có mấy cuốn mới về, bạn ghé quầy xem nhé."}},PHL={"downtown": "trung tâm thành phố", "cafe": "phố cà phê", "office": "khu văn phòng", "park": "công viên bờ sông", "mall": "trung tâm thương mại", "residential": "khu dân cư", "factory": "khu công nghiệp"};
+var GR=window.CH_GR={"lan": {"w": ["park", "downtown"], "a": "Chào buổi {P}! Bạn cứ xem hoa thoải mái nhé, hoa sáng nay mới về, thơm lắm.", "o": "Chào bạn! Mình đang đi lấy hoa, đi ngang {pl} thấy bạn nên chào một tiếng.", "r": "bán hoa quanh khu này", "b": "Hoa hôm nay mới về, bạn xem thử không?"}, "hung": {"s": "anh", "t": "anh", "w": ["downtown", "mall"], "a": "Ê, chào bạn! Ăn {P} chưa? Bánh mì nóng đây, lấy một ổ cho ấm bụng!", "o": "Chào bạn! Anh đang đẩy xe đi ngang {pl}, thấy mặt lạ nên chào cái cho vui.", "r": "bán bánh mì ở đầu phố này", "b": "Bánh mì mới ra lò đó, lấy một ổ không?"}, "trang": {"w": ["mall"], "a": "Chào bạn, bạn cần mua gì không? Cứ hỏi mình nhé, và đừng tự ý dùng thuốc nha.", "o": "Chào bạn, mình vừa hết ca, ra {pl} nghỉ một chút.", "r": "dược sĩ ở nhà thuốc trong trung tâm", "b": "Bạn ngủ đủ chưa? Mình hỏi theo thói quen nghề thôi."}, "long": {"s": "ông", "u": "cháu", "t": "ông", "w": ["park"], "a": "Chào cháu, ra bờ sông hóng gió à? Ông ngồi đánh cờ ở đây từ đầu buổi {P} rồi.", "o": "Chào cháu, ông đi dạo {pl} một chút, thấy cháu lạ mặt nên hỏi thăm.", "r": "thầy giáo đã nghỉ hưu, hay ngồi ghế đá bờ sông", "b": "Cháu ngồi xuống chơi với ông một ván cờ nhé."}, "dung": {"s": "anh", "t": "anh", "w": ["factory"], "a": "Ê, chào bạn. Khu này xe nâng chạy nhiều, bạn đứng sát vào bên này cho an toàn.", "o": "Chào bạn, anh vừa hết ca, đang đi {pl} kiếm gì ăn.", "r": "lái xe nâng ở khu công nghiệp này", "b": "Hôm nay xưởng bận, nhưng bạn cần gì cứ nói."}, "yen": {"w": ["office"], "a": "Chào bạn! Bạn có hẹn với ai trong tòa nhà không? Để mình báo giúp nhé.", "o": "Chào bạn, mình tan ca rồi mà gặp người mới vẫn phải chào, thói quen lễ tân mà.", "r": "lễ tân ở tòa nhà này", "b": "Hôm nay tòa nhà có tin mới, bạn muốn nghe không?"}, "khoa": {"w": ["downtown"], "a": "Chào bạn! Bạn dừng lại nghe mình đàn à? Cảm ơn nhé, bài này mình mới tập.", "o": "Chào bạn, mình đang đi tìm góc đàn mới ở {pl}.", "r": "đàn hát ở góc phố này", "b": "Bài mới mình vừa tập xong, bạn nghe thử nhé."}, "tu": {"w": ["residential"], "a": "Chào bạn, bạn mới tới khu này hả? Tạp hóa của mình ngay đầu hẻm, cần gì cứ ghé nhé.", "o": "Chào bạn! Mình đang đi dạo ở {pl} một chút, thấy bạn lạ mặt nên chào.", "r": "chủ tạp hóa đầu hẻm", "b": "Bạn ăn cơm chưa? Tạp hóa mới về cải canh tươi đó."}, "linh": {"w": ["office"], "a": "Chào bạn, buổi {P} ở khu văn phòng này lúc nào cũng vội. Bạn đang tìm ai hay tìm đường à?", "o": "Chào bạn, mình vừa tan làm, đang đi dạo ở {pl} cho đỡ ngộp deadline.", "r": "làm chiến lược thương hiệu cho một công ty gần đây", "b": "Mình vừa xong buổi họp, bạn đến đúng lúc."}, "minh": {"w": ["office"], "a": "Chào buổi {P}! Bạn là người mới ở khu văn phòng này à? Chưa thấy mặt bao giờ.", "o": "Chào bạn, mình đang nghỉ giải lao ở {pl}, gặp người lạ thì chào cho lịch sự.", "r": "kỹ sư sản phẩm ở một công ty gần đây", "b": "Mình vừa gỡ xong một cái bug, tâm trạng đang tốt."}, "hana": {"w": ["mall", "office"], "a": "Chào bạn! Bạn tới xem sự kiện hay đang đi dạo? Chỗ này hay có hoạt động lắm.", "o": "Chào bạn, mình vừa chạy qua {pl} khảo sát địa điểm, may gặp được người mới.", "r": "sản xuất sự kiện quanh khu này", "b": "Tuần này có sự kiện mới, bạn nhớ ghé nhé."}, "an": {"w": ["office", "park"], "a": "À… chào bạn. Bạn cũng đến ngắm tòa nhà này à? Mình hay ngồi phác thảo ở đây.", "o": "Chào bạn, mình đang đi chụp vài góc phố ở {pl} để làm đồ án.", "r": "sinh viên kiến trúc, hay ra đây vẽ phác thảo", "b": "Mình đang vẽ dở một bản phác, bạn xem thử không?"}, "mai": {"w": ["cafe"], "a": "Chào mừng bạn đến quán! Bạn là khách mới à? Ngồi chỗ nào cũng được nhé.", "o": "Chào bạn! Mình vừa rời quán, ra {pl} hít thở một chút. Bạn là người mới à?", "r": "chủ quán cà phê trên con phố này", "b": "Hôm nay quán có món mới, bạn thử nhé?"}, "kai": {"w": ["factory", "office"], "a": "Chào bạn, bạn tìm ai ở đây à? Mình đang chạy việc cho startup nên hơi vội một chút.", "o": "Chào bạn, mình vừa xong ca chạy việc, ra {pl} cho đỡ mệt.", "r": "thực tập vận hành ở một startup gần đây", "b": "Hôm nay deadline dày, nhưng mình vẫn rảnh vài phút."}, "vy": {"w": ["downtown", "mall", "cafe"], "a": "Chào bạn! Mình đang tìm góc sáng đẹp ở đây, chỗ bạn đứng ánh sáng đẹp lắm đó.", "o": "Chào bạn, mình đang đi tìm bối cảnh chụp ở {pl}, nãy giờ chưa thấy gì hay thì gặp bạn.", "r": "chụp ảnh thời trang, hay đi săn góc phố", "b": "Mình đang tìm cảnh chụp mới, bạn có gợi ý nào không?"}, "quan": {"w": ["cafe"], "a": "Chào buổi {P}! Bạn muốn thử gì không? Mình pha cho bạn ly đang được gọi nhiều nhất hôm nay nhé.", "o": "Chào bạn, mình đang đi mua hạt cà phê ở {pl}, thấy bạn lạ mặt nên chào.", "r": "pha chế ở quán cà phê gần đây", "b": "Hôm nay quán có hạt mới, bạn thử nhé?"}, "thao": {"w": ["office"], "a": "Chào bạn! Bạn đến phỏng vấn hay chỉ đi ngang qua? Khu này giờ này hay đông ứng viên lắm.", "o": "Chào bạn, mình hết giờ làm rồi nên ra {pl} thư giãn một chút.", "r": "làm nhân sự ở một công ty gần đây", "b": "Hôm nay mình vừa xong mấy buổi phỏng vấn, đầu hơi nặng."}, "duy": {"w": ["office", "mall"], "a": "Chào bạn. Bạn có thấy lối đi này hơi khó hiểu không? Mình đang để ý bảng chỉ dẫn ở đây.", "o": "Chào bạn, mình đang dạo ở {pl} xem người ta dùng mọi thứ ngoài đời thế nào.", "r": "thiết kế UX, hay để ý mấy thứ dùng chưa tiện", "b": "Mình đang bắt lỗi giao diện, bạn có thấy gì phiền không?"}, "nora": {"w": ["mall", "park"], "a": "Chào bạn! Bạn có nghe thấy tiếng đàn không? Mình đang thử vài giai điệu ở đây.", "o": "Chào bạn, mình đang dạo ở {pl} tìm giai điệu mới.", "r": "chơi nhạc, hay đi tìm cảm hứng quanh đây", "b": "Mình vừa nghĩ ra một đoạn nhạc mới, bạn nghe thử không?"}, "tung": {"w": ["cafe"], "a": "Chào bạn! Bánh vừa ra lò, bạn thử không? Mình còn đang tập sự nên cần người góp ý.", "o": "Chào bạn, mình đang đi mua bơ trứng ở {pl}, thấy bạn nên chào.", "r": "bếp phụ tập sự ở tiệm bánh gần đây", "b": "Bánh mới ra lò, bạn thử rồi cho mình ý kiến nhé."}, "ivy": {"w": ["cafe", "park"], "a": "À, chào bạn… Mình đang vẽ dở một bức, hy vọng không làm phiền bạn.", "o": "Chào bạn, mình ra {pl} tìm cảm hứng vẽ một chút.", "r": "họa sĩ minh họa tự do, hay vẽ ở những chỗ yên tĩnh", "b": "Mình đang vẽ dở một bức, bạn xem cùng được không?"}, "phuc": {"w": ["downtown"], "a": "Chào bạn! Bạn cần hỏi đường tắt không? Mình chạy khu này quen từng ngõ.", "o": "Chào bạn, mình đang tranh thủ giao đơn qua {pl}, dừng một phút chào bạn nhé.", "r": "giao hàng quanh khu này", "b": "Mình đang chạy đơn gấp, bạn cần gì cứ nói nhanh nhé."}, "huyen": {"w": ["downtown", "office", "cafe"], "a": "Chào bạn! Mình đang viết bài về đời sống khu này, bạn cho mình hỏi vài câu được không?", "o": "Chào bạn, mình vừa phỏng vấn xong, ra {pl} nghỉ một chút.", "r": "sinh viên báo chí, đang viết bài về khu này", "b": "Mình đang viết bài, bạn kể mình nghe chuyện khu này nhé."}, "son": {"w": ["factory", "downtown"], "a": "Chào bạn. Mình đang quay cảnh ở đây, bạn đừng bước vào khung hình nhé.", "o": "Chào bạn, mình đang đi tìm bối cảnh quay ở {pl}.", "r": "sinh viên điện ảnh, đang quay phim ở khu này", "b": "Mình đang xem lại cảnh quay, bạn đến đúng lúc."}, "bao": {"w": ["factory"], "a": "Chào bạn! Xe nào cần độ thì cứ nói, còn chỉ ghé xem thì cũng được.", "o": "Chào bạn, mình ghé {pl} mua đồ nghề, bạn có đi xe máy không?", "r": "độ xe ở xưởng gần đây", "b": "Xưởng hôm nay có xe mới về, bạn ghé xem nhé."}, "chi": {"w": ["mall"], "a": "Chào bạn, bạn tìm sách gì không? Quầy mình gợi ý được vài cuốn hay đó.", "o": "Chào bạn, mình vừa tan ca ra {pl} nghỉ chút, nhìn bạn có vẻ hay đọc sách.", "r": "làm thêm ở hiệu sách trong trung tâm", "b": "Có mấy cuốn mới về, bạn ghé quầy xem nhé."}},PHL={"downtown": "trung tâm thành phố", "cafe": "phố cà phê", "office": "khu văn phòng", "park": "công viên bờ sông", "mall": "trung tâm thương mại", "residential": "khu dân cư", "factory": "khu công nghiệp"};
 openDialogue=window.openDialogue=function(sp,tx,ch){
 (ch||[]).forEach(function(c){delete c.note;if(c.text)c.text=c.text.replace(/“{2,}/g,'“').replace(/”{2,}/g,'”')});if(tx)tx=tx.replace(/“{2,}/g,'“').replace(/”{2,}/g,'”');
 for(var z in NPCS){var iv=NPCS[z].intro;if(iv&&tx&&tx.indexOf(iv)>=0)tx=tx.split(iv).join('').replace(/\s+$/,'')}
@@ -6515,9 +6582,11 @@ var box=document.createElement('div');box.id='chMini';box.innerHTML='<b>🗺 B�
 var LC=[['downtown','Phố trung tâm'],['cafe','Café'],['office','Văn phòng'],['park','Công viên'],['mall','TTTM'],['residential','Khu dân cư'],['factory','Nhà máy']],m=box.querySelector('.m');
 LC.forEach(function(l){var i=document.createElement('i');i.dataset.l=l[0];i.textContent=l[1];m.appendChild(i)});
 box.querySelector('b').onclick=function(){box.classList.toggle('c')};
+(function(){try{var mq=window.matchMedia('(orientation:landscape) and (max-height:520px)'),f=function(){if(mq.matches)box.classList.add('c')};f();if(mq.addEventListener)mq.addEventListener('change',f);else if(mq.addListener)mq.addListener(f)}catch(e){}})();
 setInterval(function(){try{var h=game.minutes/60%24;m.childNodes.forEach(function(i){i.className=i.dataset.l===game.location?'on':''});}catch(e){}},600);
 })();</script>
 
+<style id="chLandMiniFix">body.dialogue-active #chMini{display:none!important}@media (orientation:landscape) and (max-height:520px){#chMini{top:40px!important;right:max(8px,env(safe-area-inset-right))!important;z-index:17!important;max-width:104px!important;padding:3px 6px!important;font-size:10px!important;border-width:1.5px!important;box-shadow:0 2px 0 rgba(110,31,56,.6)!important}#chMini .m{margin-top:3px!important;gap:2px!important}#chMini i{padding:1px 4px!important}#mobileControls{z-index:40!important}#mobileControls .mobile-actions{z-index:41}}</style>
 <script id="chPlayPlus">(function(){'use strict';
 var ev=[
 {id:'busker',chance:.4,when:s=>['park','downtown'].includes(s.loc)&&s.hour>=16&&s.hour<=21,run(){openDialogue('Nghệ sĩ đường phố','Một bạn trẻ ôm đàn hát bên lề đường, vài người dừng lại nghe.',[
