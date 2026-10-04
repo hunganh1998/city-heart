@@ -33,7 +33,7 @@
       <button class="hud-btn" id="btnMap">🗺 Bản đồ</button>
       <button class="hud-btn" id="btnRel">♡ Mọi người</button>
     </div>
-    <div id="topbar"><div class="clock-face"><span class="clock-icon">◷</span><span class="time-label" id="timeLabel"></span></div><div class="location-label" id="locationLabel"></div></div>
+    <div id="topbar"><div class="clock-face"><canvas id="chClk" width="40" height="40" style="width:34px;height:34px;vertical-align:middle;margin-right:6px"></canvas><span class="time-label" id="timeLabel"></span></div><div class="location-label" id="locationLabel"></div></div>
     <div id="quickbar">
       <button class="quick" id="quickInteract"><span class="qicon">✦</span><span>Tương tác</span></button>
       <button class="quick" id="quickPhone"><span class="qicon">✉</span><span>Tin nhắn</span></button>
@@ -4839,6 +4839,7 @@ for(let y=y0+16;y<y1;y+=20)ch16Rect(0,y,1280,2,'rgba(55,53,55,.16)');
 for(let x=0;x<1280;x+=42)ch16Rect(x,y0,2,y1-y0,'rgba(255,255,255,.06)');
 }
 function ch16BackSky(loc){
+if(window.chSkyX){window.chSkyX(loc);return;}
 const night=ch16Night(),eve=ch16Evening();
 let sky=night?'#18232f':eve?'#8e7680':'#92bfd0';
 ch16Rect(0,0,1280,210,sky);
@@ -4912,31 +4913,31 @@ for(let i=0;i<3;i++)ch16Rect(x-25+i*18,y+15+wig,10,2,'rgba(210,235,230,.32)');
 }
 function ch16BuildingsBase(loc){
 if(loc==='downtown'){
-ch16Facade(38,125,316,240,'brick','KHU PHỐ',11);ch16Facade(400,92,324,210,'stone','TRUNG TÂM',17);ch16Facade(786,118,414,247,'brick','TRỤ SỞ',23);
+ch16Facade(38,125,316,240,'brick','KHU DÂN CƯ',11);ch16Facade(400,92,324,210,'stone','TRUNG TÂM THƯƠNG MẠI',17);ch16Facade(786,118,414,247,'brick','KHU VĂN PHÒNG',23);
 }else if(loc==='cafe'){
 ch16Facade(38,110,366,240,'brick','TRĂNG & BẠC HÀ',13);ch16Facade(846,140,330,206,'stone','HIỆU SÁCH',21);
 ch16Rect(435,345,310,14,P16.ink);ch16Rect(443,348,294,8,'#c99969');
 for(let x=454;x<742;x+=42){ch16Rect(x,356,6,13,P16.ink);ch16Rect(x-4,350,14,6,P16.cream);}
 }else if(loc==='office'){
-ch16Facade(48,104,394,246,'stone','TRỤ SỞ',29);ch16Facade(792,122,398,228,'stone','VẬN HÀNH',31);
+ch16Facade(48,104,394,246,'stone','TÒA VĂN PHÒNG',29);ch16Facade(792,122,398,228,'stone','KHỐI VĂN PHÒNG B',31);
 for(let i=0;i<5;i++){ch16Rect(140+i*188,365,118,34,P16.navy2);ch16Rect(151+i*188,372,96,18,P16.glass2);}
 }else if(loc==='park'){
 for(let i=0;i<12;i++)ch16Tree(65+i*108,325+(i%3)*46,1+(i%2)*.08,30+i);
 ch16Rect(0,375,1280,8,'rgba(36,52,45,.18)');
 }else if(loc==='mall'){
-ch16Facade(54,94,522,260,'stone','CITY MALL',41);ch16Facade(660,118,520,236,'brick','KHU GIẢI TRÍ',47);
+ch16Facade(54,94,522,260,'stone','TRUNG TÂM THƯƠNG MẠI',41);ch16Facade(660,118,520,236,'brick','KHU GIẢI TRÍ',47);
 for(let i=0;i<9;i++){const x=72+i*132;ch16Rect(x,382,78,18,P16.ink);ch16Rect(x+4,386,70,10,[P16.pink,P16.cyan,P16.gold][i%3]);}
 }else if(loc==='residential'){
 ch16ComplexHouse(28,148,178,230,'stone','NHÀ PHỐ 01',59,'#7d8d8c');
-ch16ComplexHouse(222,118,164,260,'brick','NHÀ PHỐ 02',61,'#8d5f5f');
+ch16ComplexHouse(222,118,164,260,'brick','CHUNG CƯ A',61,'#8d5f5f');
 ch16ComplexHouse(402,160,178,218,'stone','NHÀ PHỐ 03',67,'#777e83');
 ch16ComplexHouse(595,126,156,252,'brick','NHÀ PHỐ 04',71,'#875b5d');
 ch16ComplexHouse(769,150,188,228,'stone','NHÀ PHỐ 05',73,'#7f8988');
-ch16ComplexHouse(972,106,258,272,'brick','NHÀ PHỐ 06',79,'#915f62');
+ch16ComplexHouse(972,106,258,272,'brick','CHUNG CƯ B',79,'#915f62');
 ch16Rect(389,378,16,20,P16.ink);ch16Rect(392,381,10,14,P16.road2);
 ch16Rect(107,378,78,8,P16.ink);ch16Rect(114,369,64,8,P16.cream2);ch16Rect(126,361,40,8,'#d49b63');
 }else if(loc==='factory'){
-ch16Facade(36,92,492,282,'stone','XƯỞNG A',71);ch16Facade(698,88,500,288,'stone','KHO HÀNG',73);
+ch16Facade(36,92,492,282,'stone','NHÀ MÁY A',71);ch16Facade(698,88,500,288,'stone','KHO HÀNG',73);
 for(let i=0;i<5;i++){const x=555+i*66;ch16Rect(x,395,44,36,P16.ink);ch16Rect(x+5,400,34,25,'#7b7f7f');ch16Rect(x+8,405,14,7,P16.orange);}
 }
 }
@@ -4958,13 +4959,182 @@ ch16Rect(x+w/2-22,y+h-16,44,12,P16.ink);ch16Rect(x+w/2-19,y+h-13,38,6,'#b98b52')
 function ch16GuardBooth(x,y,label){
 ch16Rect(x-3,y-3,62,52,'rgba(18,20,25,.25)');ch16Rect(x,y,56,46,P16.ink);ch16Rect(x+4,y+4,48,38,'#6b777b');ch16Rect(x+9,y+8,38,17,P16.glass);ch16Rect(x+9,y+26,38,3,P16.cream);ch16Rect(x+22,y+29,12,9,'#415057');ctx.save();ctx.fillStyle=P16.gold;ctx.fillRect(x+4,y-7,48,6);ctx.fillStyle=P16.ink;ctx.font='900 6px system-ui';ctx.textAlign='center';ctx.fillText(label,x+28,y+17);ctx.restore();
 }
+/* ===== BX: nhà cửa vẽ lại chi tiết, đặt tên khớp khu vực trên bản đồ ===== */
+function bxNight(){const h=(Number(game.minutes)||0)/60%24;return h>=18||h<6;}
+function bxR(f,a,b,w,h){ctx.fillStyle=f;ctx.fillRect(Math.round(a),Math.round(b),Math.max(1,Math.round(w)),Math.max(1,Math.round(h)));}
+function bxP(f,p){ctx.fillStyle=f;ctx.beginPath();ctx.moveTo(p[0],p[1]);for(let i=2;i<p.length;i+=2)ctx.lineTo(p[i],p[i+1]);ctx.closePath();ctx.fill();}
+function bxSign(txt,cx,cy,mw,bg,fg,fs){const c=ctx,nt=bxNight();c.save();let f=fs||12;c.font='900 '+f+'px system-ui,Arial';while(f>6&&c.measureText(txt).width>mw-12){f--;c.font='900 '+f+'px system-ui,Arial';}const tw=Math.round(c.measureText(txt).width+12),th=f+8;bxR('rgba(0,0,0,.28)',cx-tw/2+2,cy-th/2+3,tw,th);bxR('#25242b',cx-tw/2-2,cy-th/2-2,tw+4,th+4);bxR(bg,cx-tw/2,cy-th/2,tw,th);bxR('rgba(255,255,255,.22)',cx-tw/2,cy-th/2,tw,2);c.textAlign='center';c.textBaseline='middle';c.fillStyle=fg;if(nt){c.shadowColor=fg;c.shadowBlur=6;}c.fillText(txt,cx,cy+1);c.restore();}
+function bxAW(a,b,w,c1,c2,hh){hh=hh||9;for(let i=0;i<w;i+=8){const col=(i/8|0)%2?c1:c2;bxR(col,a+i,b,Math.min(8,w-i),hh);bxR(col,a+i+1,b+hh,6,3);}bxR('rgba(0,0,0,.22)',a,b+hh+3,w,3);bxR('rgba(255,255,255,.2)',a,b,w,2);}
+function bxMB(a,b,col){bxR('rgba(0,0,0,.3)',a-2,b+15,28,4);bxR('#25242b',a,b+8,8,8);bxR('#25242b',a+18,b+8,8,8);bxR('#777',a+2,b+10,4,4);bxR('#777',a+20,b+10,4,4);bxR(col,a+6,b+1,14,8);bxR('#35333a',a+3,b-1,10,3);bxR(col,a+18,b-3,4,8);bxR('#f2e6b0',a+22,b,3,3);}
+function bxKind(l){l=String(l||'').toUpperCase();
+if(/CHUNG CƯ|DÂN CƯ|NHÀ TRỌ/.test(l))return'apt';if(/NHÀ PHỐ/.test(l))return'nhao';
+if(/THƯƠNG MẠI|MALL|SIÊU THỊ|ĐIỆN MÁY|FOOD/.test(l))return'mall';if(/GIẢI TRÍ|CINEMA|RẠP/.test(l))return'cine';
+if(/CÀ PHÊ|TRĂNG|BÁNH|BỜ SÔNG/.test(l))return'cafe';if(/SÁCH/.test(l))return'book';
+if(/XƯỞNG|NHÀ MÁY/.test(l))return'fac';if(/KHO/.test(l))return'wh';
+if(/VĂN PHÒNG|TRỤ SỞ|NGÂN HÀNG|CLINIC|SẢNH|CÔNG TY/.test(l))return'office';return'shop';}
+function bxDraw(x,y,w,h,label,seed,accent){
+const c=ctx,t=performance.now()/1000,nt=bxNight(),k=bxKind(label),S=seed||1,INK='#25242b',R=bxR,P=bxP,SG=bxSign,AW=bxAW,MB=bxMB;
+const rnd=n=>{const v=Math.sin((n+S)*12.9898+x*.013+y*.007)*43758.5453;return v-Math.floor(v);};
+const pick=a=>a[Math.floor(rnd(1)*a.length)%a.length];
+const gf=Math.round(y+h-Math.min(46,h*.28)),gh=y+h-gf;
+const body=bs=>{R(INK,x,y,w,h);R(bs,x+3,y+3,w-6,h-6);R('rgba(255,255,255,.12)',x+3,y+3,4,h-6);R('rgba(0,0,0,.16)',x+w-8,y+3,5,h-6);};
+const W=(a,b,ww,hh,n,tint)=>{const lit=nt?rnd(n)<.6:rnd(n)<.12;R(INK,a-2,b-2,ww+4,hh+4);R(lit?'#f4cf86':(tint||'#6b9bbd'),a,b,ww,hh);
+if(lit){R('#fbe6ae',a,b,ww,2);if(rnd(n+4)<.5)R('rgba(214,120,92,.7)',a,b+2,ww*.5,hh-2);R('rgba(255,225,140,.16)',a-4,b-3,ww+8,hh+8);}
+else{R('rgba(255,255,255,.28)',a,b,ww,2);R('rgba(255,255,255,.14)',a+2,b+3,Math.max(2,ww*.35),Math.max(2,hh-6));R('rgba(10,20,40,.25)',a+ww*.6,b+2,Math.max(1,ww*.4-1),Math.max(1,hh-3));}
+R(INK,a+ww/2,b,1,hh);R('#9a9c9e',a-2,b+hh+2,ww+4,2);};
+R('rgba(14,16,22,.34)',x+10,y+h-6,w+6,12);
+if(k==='apt'){body(pick(['#d8c6a8','#c9d0c2','#d9b9a6','#bfc8d0']));
+R('#8a6f58',x-4,y-7,w+8,12);R('rgba(255,255,255,.22)',x-4,y-7,w+8,2);R('rgba(0,0,0,.25)',x-4,y+3,w+8,2);
+const tx=x+w*.14;R('#58646c',tx+3,y-9,3,5);R('#58646c',tx+19,y-9,3,5);R('#8b99a2',tx,y-27,25,19);R('#b5c2ca',tx,y-27,25,4);R('#6b7882',tx+11,y-27,2,19);
+for(let i=0;i<3;i++){const px=x+w*.55+i*21;R('#27426e',px,y-17,18,10);R('#7fa4dc',px+1,y-16,16,2);R('#9db7e6',px+8,y-16,1,8);}
+R('#8d99a6',x+w*.86,y-36,2,29);if(Math.sin(t*3+S)>0)R('#ff4c4c',x+w*.86-1,y-39,4,4);
+const fh=44,n=Math.max(2,Math.floor((gf-y-12)/fh)),cols=Math.max(2,Math.floor((w-20)/64)),st=(w-20)/cols;
+for(let f=0;f<n;f++){const fy=y+12+f*fh;R('rgba(0,0,0,.16)',x+3,fy+fh-3,w-6,3);
+for(let q=0;q<cols;q++){const ux=x+10+q*st,id=f*9+q;W(ux+9,fy+6,st-32,fh-22,id);R('#7c7a74',ux+3,fy+fh-9,st-8,5);
+for(let j=0;j<st-10;j+=5)R('#3a3c42',ux+4+j,fy+fh-22,1,13);R('#3a3c42',ux+3,fy+fh-23,st-8,2);
+if(rnd(id+2)<.45){R('#5a9a56',ux+6,fy+fh-18,7,7);R('#a5623f',ux+6,fy+fh-11,7,3);}
+if(rnd(id+3)<.3){R('#555',ux+4,fy+8,st-10,1);for(let j=0;j<3;j++)R(['#eaa0b2','#9fcbea','#f3e18f','#fff'][(id+j)%4],ux+7+j*10+Math.sin(t*2+id+j),fy+9,6,10);}
+if(rnd(id+5)<.4){R('#dfe3e3',ux+st-18,fy+fh-16,12,8);R('#8d9696',ux+st-16,fy+fh-14,8,3);}}}
+R('#1f232c',x+4,gf,w-8,gh-3);const lw=Math.min(w*.3,64);AW(x+10,gf+2,lw,'#d4584a','#f1e3c4');R('#f0d9a2',x+12,gf+14,lw-4,Math.max(4,gh-18));
+for(let i=0;i<5;i++)R(['#d96a5a','#5aa0d9','#e0c04f','#6fbf73'][i%4],x+15+i*(lw/5.4),gf+20+(i%2)*9,6,6);
+const cx=x+w/2;R('#9ccfe0',cx-15,gf+8,30,gh-12);R(INK,cx,gf+8,1,gh-12);R('#8a6f58',cx-22,gf+3,44,6);
+MB(x+w-84,y+h-24,'#b8392f');MB(x+w-52,y+h-24,'#2f6ea6');SG(label,cx,gf-12,w-16,'#f3e1b3','#3a2819',12);return;}
+if(k==='nhao'){body(pick(['#e3c2a8','#d8d2a6','#a9c9be','#c9b8d6','#e2a9a0']));
+if(rnd(3)<.5){P('#a4452e',[x-6,y+6,x+w/2,y-26,x+w+6,y+6]);for(let i=0;i<4;i++){const yy=y-18+i*6,hf=(w/2+6)*((yy-(y-26))/32);R('rgba(0,0,0,.2)',x+w/2-hf,yy,hf*2,1);}}
+else{R('#8a6f58',x-3,y-6,w+6,11);R('rgba(255,255,255,.2)',x-3,y-6,w+6,2);R('#6c7f8c',x+10,y-24,22,17);R('#9bb0bc',x+10,y-24,22,4);R('#4f8a52',x+w-34,y-14,10,8);R('#4f8a52',x+w-22,y-18,8,12);R('#a5623f',x+w-36,y-6,24,4);}
+const n=Math.max(2,Math.floor((gf-y-14)/46));
+for(let f=0;f<n;f++){const fy=y+14+f*46;W(x+16,fy+6,Math.max(14,w-36),22,f*5+1);R('#7b7068',x+6,fy+34,w-12,5);for(let j=0;j<w-16;j+=5)R('#2c2c30',x+8+j,fy+26,1,9);R('#2c2c30',x+7,fy+25,w-14,2);
+if(rnd(f+4)<.6){R('#58a05a',x+10,fy+20,7,6);R('#a5623f',x+10,fy+26,7,2);}
+if(f===1&&rnd(9)<.7){R('#c0392b',x+w-14,fy-2,11,40);R('#f4e9c6',x+w-12,fy+2,7,5);R('#f4e9c6',x+w-12,fy+10,7,5);}}
+R('#1f232c',x+4,gf,w-8,gh-3);if(rnd(6)<.5){R('#f3dba2',x+10,gf+8,w-20,Math.max(4,gh-14));for(let i=0;i<4;i++)R(['#d96a5a','#5aa0d9','#e0c04f','#6fbf73'][i],x+14+i*((w-30)/4),gf+14+(i%2)*8,8,8);}
+else{R('#8a9298',x+10,gf+8,w-20,Math.max(4,gh-14));for(let yy=gf+8;yy<y+h-6;yy+=4)R('rgba(0,0,0,.28)',x+10,yy,w-20,1);}
+AW(x+8,gf+1,w-16,'#4a8a6a','#f1e3c4',7);SG(label,x+w/2,gf-12,w-10,'#f3e1b3','#3a2819',10);return;}
+if(k==='office'){const g=[['#9fc7e0','#4f82a6','#2b4863'],['#a6cfc4','#4f8c86','#2b5552'],['#b8c6e4','#6a7fb4','#36446e']][Math.floor(rnd(2)*3)%3];
+R('#59656c',x+w*.22,y-18,w*.56,20);R('#7c8a92',x+w*.22,y-18,w*.56,3);R('#38444a',x+w*.3,y-26,w*.1,10);R('#38444a',x+w*.6,y-24,w*.12,8);R('#8d99a6',x+w*.5,y-52,2,36);if(Math.sin(t*3)>0)R('#ff3d3d',x+w*.5-1,y-55,4,4);
+R(INK,x,y,w,h);const gr=c.createLinearGradient(x,y,x+w,y+h);gr.addColorStop(0,g[0]);gr.addColorStop(.5,g[1]);gr.addColorStop(1,g[2]);c.fillStyle=gr;c.fillRect(x+3,y+3,w-6,h-6);
+const top=y+3,bot=gf-6;for(let yy=top+6;yy<bot;yy+=17)R('rgba(14,24,38,.55)',x+3,yy+11,w-6,5);
+for(let xx=x+3,qi=0;xx<x+w-6;xx+=22,qi++){R('rgba(14,24,38,.7)',xx,top,2,bot-top);for(let yy=top+6,r=0;yy<bot-14;yy+=17,r++)if(rnd(qi*13+r)<(nt?.55:.12))R(nt?'#f6df9c':'rgba(255,255,255,.35)',xx+4,yy+1,16,8);}
+c.save();c.beginPath();c.rect(x+3,y+3,w-6,bot-y-3);c.clip();P('rgba(255,255,255,.10)',[x+w*.15,y,x+w*.3,y,x+w*.1,y+h,x-w*.05,y+h]);P('rgba(255,255,255,.07)',[x+w*.5,y,x+w*.58,y,x+w*.38,y+h,x+w*.3,y+h]);c.restore();
+R('#7f8b92',x-8,gf-8,w+16,gh+8);R('#a2aeb4',x-8,gf-8,w+16,3);R('#1e2a33',x-4,gf+2,w+8,gh-2);
+const cx=x+w/2,lw=Math.min(90,w*.4);R('#aee3ee',cx-lw/2,gf+6,lw,gh-8);for(let i=1;i<6;i++)R('#3a5864',cx-lw/2+i*lw/6,gf+6,1,gh-8);R('#e8eef0',cx-lw/2-6,gf-1,lw+12,6);
+c.fillStyle='#d8f3f8';c.beginPath();c.arc(cx,y+h-14,10,0,Math.PI*2);c.fill();R(INK,cx-10,y+h-14,20,1);R(INK,cx,y+h-24,1,20);
+for(let i=0;i<4;i++)R('#d9e0e2',x+8+i*(w-24)/3.2,gf-6,5,gh+4);R('#4e8452',x+4,y+h-8,26,7);R('#4e8452',x+w-30,y+h-8,26,7);
+SG(label,cx,gf-20,w-16,'#e8eef0','#2b4863',12);return;}
+if(k==='mall'){body(pick(['#c8b2d0','#d2bfa8','#b8c8d6']));R('#6d5578',x-4,y-7,w+8,13);R('rgba(255,255,255,.22)',x-4,y-7,w+8,2);
+for(let i=0;i<4;i++){const px=x+20+i*(w-40)/3;R('#777',px,y-30,2,24);R(['#d94f7b','#4fa3d9','#e0b84f','#7fd89a'][i],px+2,y-30,12+Math.sin(t*4+i)*2,7);}
+const ly=y+14,lh=Math.max(14,Math.min(30,(gf-y)*.2));R('#0d0d16',x+12,ly,w-24,lh);c.save();c.beginPath();c.rect(x+12,ly,w-24,lh);c.clip();
+for(let i=0,n=Math.floor((w-24)/9);i<n;i++){const hh=3+(Math.sin(t*3+i*.6)*.5+.5)*(lh-6);c.fillStyle='hsl('+((i*14+t*70)%360|0)+',75%,60%)';c.fillRect(x+13+i*9,ly+lh-2-hh,7,hh);}c.restore();
+const rows=Math.max(1,Math.floor((gf-ly-lh-22)/36));
+for(let r=0;r<rows;r++){const ry=ly+lh+10+r*36;R('#56477a',x+8,ry-4,w-16,4);const cnt=Math.max(2,Math.floor((w-24)/54)),st=(w-24)/cnt;
+for(let q=0;q<cnt;q++){const sx=x+12+q*st,id=r*8+q;R(INK,sx-1,ry,st-6,30);R(nt?'#ffe9b0':'#8fc0dc',sx,ry+1,st-8,28);R(['#d86f93','#6fb0d8','#d8bf6f','#8fd89a'][id%4],sx+3,ry+14,st-14,13);R('#e8d8c8',sx+st*.35,ry+6,5,10);R('#2a2a30',sx+st*.35,ry+4,5,3);R('rgba(255,255,255,.3)',sx,ry+1,st-8,2);}}
+R('#241c2c',x+4,gf,w-8,gh-3);const cx=x+w/2,ew=Math.min(120,w*.3);R('#bfe6f0',cx-ew/2,gf+6,ew,gh-9);for(let i=1;i<5;i++)R('#46606c',cx-ew/2+i*ew/5,gf+6,1,gh-9);R('#ece6f0',cx-ew/2-8,gf-1,ew+16,6);
+const sw=(w-ew-40)/2;if(sw>20)for(const sx of [x+10,cx+ew/2+10]){const cn=Math.max(1,Math.floor(sw/46));R('#ffeab8',sx,gf+12,sw,Math.max(4,gh-16));for(let i=0;i<cn;i++)AW(sx+i*(sw/cn),gf+2,sw/cn-3,['#d94f7b','#4fa3d9','#e0b84f'][(i+(sx>cx?1:0))%3],'#f4eee0');}
+SG(label,cx,gf-12,Math.min(w-20,300),'#3b2e4d','#ffd9ec',13);return;}
+if(k==='cine'){const fx=x+w*.78,fy=y-6,fr=Math.min(50,h*.32);c.save();c.strokeStyle='#7b6a8d';c.lineWidth=3;c.beginPath();c.arc(fx,fy,fr,0,Math.PI*2);c.stroke();c.lineWidth=1;
+for(let i=0;i<8;i++){const a=t*.3+i*Math.PI/4;c.beginPath();c.moveTo(fx,fy);c.lineTo(fx+Math.cos(a)*fr,fy+Math.sin(a)*fr);c.stroke();R(['#e86f93','#6fc0e8','#e8c86f','#8fe89a'][i%4],fx+Math.cos(a)*fr-4,fy+Math.sin(a)*fr-3,8,8);}c.restore();R('#6b5a7c',fx-2,fy,4,fr+14);
+body(pick(['#7d5a78','#5a6a8a']));R('#3d2a4a',x-4,y-7,w+8,13);R('rgba(255,255,255,.2)',x-4,y-7,w+8,2);
+const pn=Math.max(2,Math.floor((w-30)/70)),ps=(w-30)/pn,ph=Math.max(20,Math.min(84,gf-y-56));
+for(let i=0;i<pn;i++){const px=x+18+i*ps,hue=(rnd(i+7)*360)|0;R(INK,px-2,y+20,ps-12,ph+4);const g=c.createLinearGradient(px,y+22,px,y+22+ph);g.addColorStop(0,'hsl('+hue+',70%,55%)');g.addColorStop(1,'hsl('+((hue+60)%360)+',65%,28%)');c.fillStyle=g;c.fillRect(px,y+22,ps-16,ph);R('rgba(255,255,255,.85)',px+4,y+22+ph-10,ps-24,3);c.fillStyle='rgba(255,255,255,.7)';c.beginPath();c.arc(px+(ps-16)/2,y+22+ph*.35,7,0,Math.PI*2);c.fill();R('rgba(0,0,0,.35)',px+(ps-16)/2-7,y+22+ph*.35+7,14,12);}
+const my=gf-26;R(INK,x+8,my,w-16,28);R('#3a1d3f',x+10,my+2,w-20,24);for(let i=0,n=Math.floor((w-24)/12);i<n;i++){const on=(Math.floor(t*3)+i)%2===0;R(on?'#ffe27a':'#80703c',x+14+i*12,my+1,4,4);R(on?'#80703c':'#ffe27a',x+14+i*12,my+23,4,4);}
+SG(label,x+w/2,my+14,w-30,'#2a1530','#ff7ad1',12);R('#1c1220',x+4,gf+4,w-8,gh-7);const cx=x+w/2;for(let i=0;i<3;i++){R('#ffd9a0',cx-40+i*28,gf+8,22,gh-12);R(INK,cx-29+i*28,gf+8,1,gh-12);}R('#a8283a',cx-44,y+h-6,88,5);R('#4b3a5c',x+10,gf+10,36,gh-14);R('#ffeaa8',x+14,gf+14,28,9);
+if(nt){c.save();c.globalAlpha=.1;for(let i=0;i<2;i++){const bx=x+30+i*(w-60),sx=Math.sin(t*.8+i*2)*120;P('#fff',[bx,y-4,bx+sx-14,y-170,bx+sx+14,y-170]);}c.restore();}return;}
+if(k==='cafe'||k==='book'){const bk=k==='book';body(bk?pick(['#b8b09a','#a9b49c']):pick(['#b06d4f','#a65f48','#c07f5a']));
+c.fillStyle='rgba(0,0,0,.13)';for(let yy=y+6,r=0;yy<gf-2;yy+=7,r++){c.fillRect(x+3,yy,w-6,1);for(let xx=x+4+(r%2)*9;xx<x+w-4;xx+=18)c.fillRect(xx,yy,1,7);}
+P(bk?'#4b6b57':'#7a3f2e',[x-8,y+9,x+w*.1,y-16,x+w*.9,y-16,x+w+8,y+9]);for(let i=0;i<3;i++)R('rgba(0,0,0,.2)',x+w*.05,y-9+i*6,w*.9,1);
+if(!bk){const cm=x+w*.76;R('#6b3f31',cm,y-34,13,20);R('#8d5a49',cm-2,y-36,17,4);for(let j=0;j<4;j++){c.fillStyle='rgba(220,220,225,'+(.4-j*.08)+')';c.beginPath();c.arc(cm+6+Math.sin(t+j)*5+j*3,y-42-j*9-((t*8)%9),4+j,0,Math.PI*2);c.fill();}
+const cu=x+w*.3;R('#f3e6c8',cu,y-36,18,15);R('#d9c8a0',cu+18,y-32,5,7);R('#5a3a2a',cu+2,y-36,14,3);for(let j=0;j<2;j++)R('rgba(255,255,255,.5)',cu+5+j*6+Math.sin(t*2+j)*1.5,y-46-((t*10+j*5)%8),2,5);}
+else{const bx=x+w*.3;R('#e8d9a8',bx,y-32,26,14);R('#3b6b57',bx+12,y-32,2,14);R('#c0392b',bx+3,y-29,7,2);R('#2f5d8a',bx+16,y-29,7,2);}
+const wh=Math.max(26,Math.min(64,gf-y-50)),wy=gf-wh-14,cn=Math.max(1,Math.floor((w-40)/88)),st=(w-24)/cn;
+if(gf-y>170)for(let q=0;q<cn;q++){W(x+22+q*st,y+20,st-40,18,q+70);R('#8a5a3a',x+20+q*st,y+42,st-36,5);R(['#e86f93','#e8c86f','#fff'][q%3],x+24+q*st,y+38,5,5);R('#5a9a56',x+34+q*st,y+38,5,5);}
+for(let q=0;q<cn;q++){const ax=x+14+q*st,ww=st-14;R(INK,ax-3,wy-6,ww+6,wh+9);R('#7a5a44',ax-1,wy-4,ww+2,wh+5);const g=c.createLinearGradient(ax,wy,ax,wy+wh);g.addColorStop(0,'#ffe7a8');g.addColorStop(1,'#e9a85e');c.fillStyle=nt?g:'#cfe6ee';c.fillRect(ax,wy,ww,wh);if(!nt){R('rgba(255,255,255,.35)',ax,wy,ww,3);R('rgba(255,255,255,.18)',ax+3,wy+5,ww*.3,Math.max(2,wh-8));}
+if(bk){for(let r=0;r<3;r++){const sy=wy+4+r*((wh-8)/3);R('#5b3d29',ax+2,sy+Math.max(8,(wh-8)/3-2),ww-4,2);for(let j=0;j<(ww-8)/5;j++)R(['#c0392b','#2f6ea6','#e0b84f','#4f9a62','#8a5aa0','#d98a4f'][(j+r*2+q)%6],ax+4+j*5,sy+1+(j%3),4,Math.max(4,(wh-8)/3-5-(j%3)));}}
+else{R('#5a3b2a',ax+6,wy+wh-12,ww-12,3);R('#5a3b2a',ax+ww/2-1,wy+wh-9,3,9);R('#f1ddb4',ax+10,wy+wh-18,6,6);R('#f1ddb4',ax+ww-18,wy+wh-18,6,6);R('#ffcf6e',ax+ww/2-4,wy+8,9,5);}
+R(INK,ax+ww/2,wy,1,wh);}
+AW(x+8,gf-12,w-16,bk?'#2f6b4f':'#b5392f','#f3e6c8',9);for(let i=0;i<Math.floor((w-24)/26);i++){R('#4f8a52',x+14+i*26,gf+10,10,7);R('#a5623f',x+15+i*26,gf+9,8,3);}
+const cx=x+w/2;R('#1f1812',x+4,gf+4,w-8,gh-7);R('#7a4a2e',cx-13,gf+8,26,gh-11);R('#e8c98e',cx-9,gf+12,18,12);R('#2a7a4a',cx-8,gf+28,16,7);
+for(let i=0,n=Math.floor((w-10)/12);i<n;i++){const bx=x+6+i*12,by=y+(bk?32:36)+Math.sin(i*.9)*3;R('#222',bx,by-2,12,1);R(nt&&(i+Math.floor(t*2))%3?'#ffe9a0':'#bda66a',bx+4,by,3,4);}
+SG(label,cx,Math.max(y+16,wy-18),w-12,'#2b1d14','#f6dca0',12);
+if(w>120){R(INK,x+w-52,y+h-34,22,30);R('#2e3b34',x+w-50,y+h-32,18,24);R('#eee',x+w-47,y+h-28,12,1);R('#eee',x+w-47,y+h-24,9,1);R('#eee',x+w-47,y+h-20,11,1);P('#d4584a',[x+12,y+h-36,x+52,y+h-36,x+32,y+h-50]);R('#555',x+31,y+h-36,2,22);R('#6b4a33',x+22,y+h-14,22,3);}return;}
+if(k==='fac'){body(pick(['#9aa0a0','#a79a8c','#8f9a9c']));
+for(const f of [.18,.82]){const cx=x+w*f;R('#7a4a3c',cx-9,y-60,18,64);R('#d8d0c0',cx-9,y-60,18,4);R('#d8d0c0',cx-9,y-44,18,3);R('#2f2a2a',cx-10,y-62,20,4);for(let j=0;j<6;j++){c.fillStyle='rgba(205,205,210,'+(.42-j*.06)+')';c.beginPath();c.arc(cx+Math.sin(t*.8+j+f*9)*7+j*6,y-70-j*14-((t*9)%14),6+j*2,0,Math.PI*2);c.fill();}}
+const sn=Math.max(2,Math.floor(w/80)),sw=w/sn;for(let i=0;i<sn;i++){const sx=x+i*sw;P('#59636a',[sx,y+8,sx+sw,y-18,sx+sw,y+8]);R('#a4d2e4',sx+sw-4,y-18,4,26);R('rgba(255,255,255,.3)',sx+sw-4,y-18,2,26);}R('#434c52',x-3,y+6,w+6,6);
+c.fillStyle='rgba(0,0,0,.11)';for(let xx=x+6;xx<x+w-4;xx+=7)c.fillRect(xx,y+14,1,gf-y-12);
+for(let xx=x+16,i=0;xx<x+w-34;xx+=40,i++)W(xx,y+24,30,14,i+30,'#7aa8b8');
+R('#79858a',x+10,y+54,w-20,5);R('#a4b0b5',x+10,y+54,w-20,2);for(const f of [.2,.5,.8]){R('#79858a',x+w*f,y+54,5,Math.max(4,gf-y-58));R('#c0392b',x+w*f-3,y+74,11,5);}
+if(w>260){c.save();c.translate(x+w*.12+10,y+110);c.rotate(t*.8);c.fillStyle='#e3ae2a';for(let i=0;i<8;i++){c.rotate(Math.PI/4);c.fillRect(-3,-18,6,6);}c.beginPath();c.arc(0,0,13,0,7);c.fill();c.fillStyle='#4a3a1a';c.beginPath();c.arc(0,0,5,0,7);c.fill();c.restore();}
+SG(label,x+w/2,y+Math.min(92,gf-y-40),w-24,'#e3ae69','#2a2a2a',13);
+const cx=x+w/2,dw=Math.min(112,w*.5);R('#1d2226',x+4,gf,w-8,gh-3);R('#e3ae2a',cx-dw/2-4,gf-26,dw+8,gh+24);for(let i=0;i<dw/8+1;i++)R(i%2?'#2a2a2a':'#e3ae2a',cx-dw/2-4+i*8,gf-30,8,4);R('#8d959a',cx-dw/2,gf-22,dw,gh+18);for(let yy=gf-22;yy<y+h-4;yy+=5)R('rgba(0,0,0,.28)',cx-dw/2,yy,dw,1);
+R('#3b4248',x+12,gf+8,24,Math.max(4,gh-11));R('#f0c070',x+16,gf+12,16,7);for(let i=0;i<3;i++){const bh=16+(i%2)*10;R('#b88a4c',x+w-64+i*20,y+h-6-bh,18,bh);R('#e8c88a',x+w-64+i*20+7,y+h-6-bh,3,bh);}return;}
+if(k==='wh'){body(pick(['#9aa3a8','#a6a08f','#8fa0a8']));R('#4d575d',x-4,y-6,w+8,12);R('rgba(255,255,255,.2)',x-4,y-6,w+8,2);
+c.fillStyle='rgba(0,0,0,.12)';for(let xx=x+6;xx<x+w-4;xx+=6)c.fillRect(xx,y+8,1,h-12);
+for(let i=0;i<Math.max(1,Math.floor(w/110));i++){const vx=x+30+i*110;R('#6b777d',vx,y-20,16,14);c.save();c.translate(vx+8,y-13);c.rotate(t*3);R('#cbd3d6',-7,-1,14,2);c.restore();}
+for(let xx=x+14,i=0;xx<x+w-30;xx+=36,i++)W(xx,y+22,26,12,i+50,'#86aab8');
+const dn=Math.max(1,Math.floor((w-24)/110)),ds=(w-24)/dn;
+for(let i=0;i<dn;i++){const dx=x+12+i*ds+ds*.1,dw=ds*.8;R(INK,dx-3,gf-26,dw+6,gh+24);R('#7e868b',dx,gf-23,dw,gh+18);for(let yy=gf-23;yy<y+h-6;yy+=5)R('rgba(0,0,0,.3)',dx,yy,dw,1);R('#e3ae2a',dx+dw/2-8,gf-43,16,13);R(INK,dx+dw/2-2,gf-40,4,7);R('#111',dx-2,y+h-8,5,6);R('#111',dx+dw-3,y+h-8,5,6);}
+for(let i=0;i<(w-8)/12;i++)R(i%2?'#2a2a2a':'#e3ae2a',x+4+i*12,y+h-5,12,4);SG(label,x+w/2,y+Math.min(56,gf-y-50),w-24,'#e3ae69','#2a2a2a',13);return;}
+body(pick(['#d9b98f','#b9c8b0','#d8a79a','#b8b8cc','#e0cf9a']));R(accent||pick(['#a4452e','#4f6b8a','#6b4a7a']),x-3,y-7,w+6,12);R('rgba(255,255,255,.2)',x-3,y-7,w+6,2);
+if(gf-y>70){const cn=Math.max(1,Math.floor((w-16)/42));for(let q=0;q<cn;q++)W(x+12+q*((w-24)/cn),y+30,Math.max(10,(w-24)/cn-14),16,q+90);}
+R('#1f232c',x+4,gf,w-8,gh-3);R('#f3dba2',x+10,gf+10,w-20,Math.max(4,gh-14));for(let i=0;i<Math.floor((w-24)/14);i++)R(['#d96a5a','#5aa0d9','#e0c04f','#6fbf73'][i%4],x+12+i*14,gf+16+(i%2)*7,8,8);
+AW(x+6,gf+1,w-12,pick(['#d4584a','#3f8a6a','#4a6fa6']),'#f1e3c4',8);SG(label,x+w/2,Math.max(y+14,gf-14),w-8,'#f3e1b3','#3a2819',11);}
+function ch16Facade(x,y,w,h,kind,label,seed){bxDraw(x,y,w,h,label,seed);}
+function ch16ComplexHouse(x,y,w,h,kind,label,seed,accent){bxDraw(x,y,w,h,label,seed,accent);}
+function ch16MiniFacade(x,y,w,h,kind,label,seed,accent){bxDraw(x,y,w,h,label,seed,accent);}
+function bxRiver(loc){if(loc!=='park')return;const c=ctx,R=bxR,t=performance.now()/1000,nt=bxNight(),INK='#25242b';
+/* lotus + vịt + sóng */
+for(let i=0;i<9;i++){const x=60+i*34+(i%3)*8,y=604+(i%4)*14+Math.sin(t+i)*1.5;R('#3f7f4a',x,y,16,5);R('#5aa05e',x+2,y-1,12,3);if(i%2===0){R('#f2a6c0',x+5,y-5,5,5);R('#fff0f5',x+6,y-6,3,3);}}
+for(let i=0;i<3;i++){const x=(300+i*140+t*(8+i*3))%1280,y=630+i*26+Math.sin(t*2+i)*1.5;R('rgba(0,0,0,.2)',x-8,y+7,18,3);R('#f4f0e0',x-8,y,16,8);R('#f4f0e0',x+4,y-6,7,8);R('#e8923a',x+11,y-3,5,3);R('#25242b',x+8,y-4,2,2);}
+/* kè đá + lan can */
+R('#6f6a60',0,556,1280,14);for(let x=0;x<1280;x+=22){R('rgba(0,0,0,.2)',x,556,1,14);R('rgba(255,255,255,.1)',x+2,558,18,2);}
+R(INK,0,540,1280,4);for(let x=10;x<1280;x+=44){R(INK,x,530,5,28);R('#b8b3a6',x+1,531,3,26);R('#d8d2c0',x-1,528,7,3);}
+R('rgba(255,255,255,.5)',0,543,1280,1);
+/* bậc thang xuống sông */
+for(let i=0;i<5;i++){R('#8d877a',300+i*5,570+i*8,76-i*10,8);R('rgba(0,0,0,.2)',300+i*5,577+i*8,76-i*10,1);}R(INK,296,556,4,50);R(INK,376,556,4,30);
+/* bến thuyền: cầu tàu */
+R('rgba(10,20,30,.3)',930,574,190,10);for(let y=572;y<650;y+=6){R(y%12?'#8a6a4a':'#7a5c40',950,y,140,5);R('rgba(0,0,0,.25)',950,y+5,140,1);}
+R('#7a5c40',950,572,140,2);for(let y=574;y<650;y+=26){R(INK,946,y,6,12);R(INK,1088,y,6,12);R('#d8c070',947,y-2,4,3);R('#d8c070',1089,y-2,4,3);}
+ch16Boat(905,620,'#d96f6f');ch16Boat(1135,640,'#6fa0d9');
+/* người câu cá */
+const fx=1070,fy=598;R('rgba(0,0,0,.25)',fx-8,fy+22,22,4);R('#3d5a7a',fx-5,fy+6,10,15);R('#2c2c34',fx-5,fy+20,4,5);R('#2c2c34',fx+2,fy+20,4,5);R('#efc5a8',fx-4,fy-6,9,9);R('#d8c070',fx-7,fy-9,15,4);R('#d8c070',fx-4,fy-12,9,4);
+R(INK,fx+4,fy+4,34,1);c.strokeStyle='rgba(255,255,255,.7)';c.lineWidth=1;c.beginPath();c.moveTo(fx+38,fy+3);c.lineTo(fx+40,fy+34+Math.sin(t*2)*2);c.stroke();R('#e0443a',fx+38,fy+34+Math.sin(t*2)*2,4,4);R('#8a6a4a',fx+14,fy+20,9,8);
+/* vé + chòi bán vé */
+R('rgba(0,0,0,.25)',982,498,92,8);R(INK,984,440,88,58);R('#c9a46a',987,443,82,52);R('#e8d6a8',987,443,82,8);R('#3a8fa0',987,451,82,10);R(INK,994,466,30,20);R('#bfe6f0',996,468,26,16);R('#7a5a3a',1030,466,32,28);R('#f4e8c8',1033,470,26,10);
+bxSign('BẾN THUYỀN',1028,433,92,'#2b6f8a','#f4fbff',10);R(INK,1040,420,28,10);R('#f4e8c8',1041,421,26,8);
+/* ghế đá + cột đèn + cầu thang */
+for(const bx of [450,780,1140]){R('rgba(0,0,0,.2)',bx-20,524,44,4);R('#4a3023',bx-20,512,40,5);R('#9c633f',bx-20,504,40,6);R(INK,bx-18,517,4,9);R(INK,bx+14,517,4,9);}
+/* xe đẩy: bắp nướng, kem, bán hoa, ca sĩ đường phố */
+const cart=(x,y,tc,lab)=>{R('rgba(0,0,0,.25)',x-30,y+22,60,6);R(INK,x-26,y-2,52,24);R('#a8563a',x-24,y,48,18);R('#f2e0b0',x-20,y+3,16,8);R('#c8b078',x+2,y+3,18,8);R('#222',x-22,y+18,8,8);R('#222',x+14,y+18,8,8);R(INK,x-1,y-30,3,30);for(let i=0;i<7;i++)R(i%2?tc:'#f4ecd8',x-30+i*9,y-34+Math.abs(i-3)*2,9,6);R(INK,x-30,y-30,60,2);bxSign(lab,x,y-42,60,'#f6e8c0','#3a2819',8);};
+cart(560,462,'#e0b030','BẮP NƯỚNG 25K');cart(700,462,'#e87fa8','KEM 20K');cart(870,462,'#5fb072','HOA 50K');
+for(let i=0;i<4;i++)R('rgba(255,150,40,'+(.5+Math.sin(t*8+i)*.3)+')',548+i*5,478+(i%2),3,3);
+const mx=640,my=478;R('rgba(0,0,0,.25)',mx-12,my+22,34,4);R('#6a4a8a',mx-5,my-8,12,20);R('#2c2c34',mx-5,my+10,5,12);R('#2c2c34',mx+2,my+10,5,12);R('#efc5a8',mx-4,my-18,10,10);R('#2c2430',mx-5,my-20,12,5);R('#c9954a',mx+6,my-2,16,6);R('#8a5a2a',mx+18,my-5,14,2);R('#222',mx-26,my+18,16,4);R('#e8c070',mx-23,my+19,4,2);R('#d8c070',mx+10,my-24+Math.sin(t*3)*2,3,3);
+/* đèn lồng/đèn nước ban đêm + phản chiếu */
+if(nt){for(let i=0;i<10;i++){const x=(60+i*128+t*6)%1280,y=590+(i%4)*24+Math.sin(t*1.5+i)*2;R('rgba(255,160,70,.25)',x-8,y-6,22,16);R('#ff9a4a',x,y,8,6);R('#ffd88a',x+2,y+1,4,3);}
+for(let i=0;i<6;i++){const x=90+i*220;R('rgba(255,220,140,.14)',x-6,572,12,90);R('rgba(255,220,140,.1)',x-3,600,6,40);}}
+/* phà du lịch + thuyền đạp vịt */
+{const fx2=1500-((t*12)%1800),fy2=688;R('rgba(0,0,0,.22)',fx2-62,fy2+16,130,6);R(INK,fx2-62,fy2,126,18);R('#f0eee4',fx2-60,fy2+2,122,12);R('#2e6fa8',fx2-60,fy2+12,122,5);R(INK,fx2-44,fy2-26,88,26);R('#e8d8b0',fx2-42,fy2-24,84,22);for(let i=0;i<7;i++){R(nt?'#ffe9a0':'#8fc0dc',fx2-38+i*12,fy2-19,9,9);R('#2c2c34',fx2-35+i*12,fy2-14,3,3);}
+R(INK,fx2+16,fy2-42,12,18);R('#c0392b',fx2+17,fy2-41,10,6);R('#d8d8d8',fx2-6,fy2-34,2,10);R('#f2b04a',fx2-4,fy2-34,12,5);for(let i=0;i<4;i++)R(['#e86f93','#6fc0e8','#e8c86f','#8fe89a'][i],fx2-50+i*26,fy2-30,5,6);for(let i=1;i<5;i++)R('rgba(255,255,255,'+(.4-i*.07)+')',fx2+66+i*14,fy2+12+(i%2)*3,16,2);}
+{const sx=((t*20)%1500)-120,sy=662+Math.sin(t*2)*1.5;R('rgba(0,0,0,.2)',sx-18,sy+11,38,4);R('#f8f6ec',sx-16,sy+2,34,10);R('#e8d8c0',sx-14,sy-2,28,5);R('#f8f6ec',sx+10,sy-12,8,14);R('#e8923a',sx+17,sy-9,6,3);R('#25242b',sx+14,sy-9,2,2);R('#f4b8c8',sx-6,sy-10,8,8);R('#7fb0e0',sx-4,sy-18,5,5);}
+/* cột neo + phao + biển */
+for(let i=0;i<6;i++){const x=50+i*190;R(INK,x,566,6,10);R('#d8c070',x-1,564,8,3);}
+bxSign('BỜ SÔNG',150,424,70,'#2f6b4f','#f6ffe8',10);R(INK,148,432,4,40);}
+
+function bxScene(loc){const t=performance.now()/1000,nt=bxNight(),R=bxR;
+if(loc==='downtown'){const gx=210,gy=478;R('rgba(0,0,0,.25)',gx-62,gy+6,124,8);
+for(const sx of [gx-118,gx+60]){R('#3f6e45',sx,gy-16,58,22);R('#5c9158',sx,gy-16,58,5);for(let i=0;i<5;i++)R(['#e9a7aa','#f2d16e','#fff'][i%3],sx+6+i*11,gy-8+(i%2)*5,4,4);}
+for(const px of [gx-54,gx+40]){R('#25242b',px,gy-56,16,64);R('#b0a48e',px+2,gy-54,12,60);R('rgba(0,0,0,.15)',px+9,gy-54,5,60);R(nt?'#ffe9a0':'#e8dcb8',px+3,gy-64,10,9);}
+R('#25242b',gx-54,gy-76,110,20);R('#2f6b4f',gx-52,gy-74,106,16);bxSign('CÔNG VIÊN',gx,gy-66,100,'#2f6b4f','#f6ffe8',10);}
+else if(loc==='park'){const fx=640,fy=396;R('rgba(0,0,0,.25)',fx-44,fy+12,88,10);R('#25242b',fx-42,fy-2,84,18);R('#b8b3a6',fx-40,fy,80,10);R('#4f93a8',fx-36,fy+1,72,8);R('#25242b',fx-6,fy-26,12,26);R('#b8b3a6',fx-4,fy-24,8,24);R('#25242b',fx-18,fy-30,36,6);R('#b8b3a6',fx-16,fy-28,32,3);
+for(let i=0;i<9;i++){const a=(i-4)/4,ph=(t*1.2+i*.37)%1,jx=fx+a*ph*34,jy=fy-30+Math.sin(ph*Math.PI)*-22+ph*ph*52;R('rgba(190,230,245,.85)',jx,jy,2,2);}
+R('rgba(190,230,245,.6)',fx-2,fy-40,4,14);
+const sx=330,sy=392;R('#25242b',sx-34,sy-44,6,52);R('#25242b',sx+30,sy-44,6,52);R('#c0392b',sx-36,sy-48,76,6);for(const o of [-14,14]){const sw=Math.sin(t*1.6+o)*8;R('#3a3a3a',sx+o+sw/3,sy-42,1,34);R('#e0b84f',sx+o+sw-6,sy-9,12,4);}}
+}
+
 function ch16Buildings(loc){
-ch16BuildingsBase(loc);
-if(loc==='downtown'){ch16MiniFacade(-2,242,128,126,'stone','NGÂN HÀNG',103,'#778188');ch16MiniFacade(1163,228,117,124,'brick','CỬA HÀNG',107,'#9b665c');ch16ParkingGarage(360,264,130,112,'BÃI XE');}
+ch16BuildingsBase(loc);bxScene(loc);bxRiver(loc);
+if(loc==='downtown'){ch16MiniFacade(-2,242,128,126,'stone','NGÂN HÀNG',103,'#778188');ch16MiniFacade(1163,228,117,124,'brick','CỬA HÀNG',107,'#9b665c');ch16MiniFacade(360,264,130,112,'brick','QUÁN CÀ PHÊ',113,'#b87864');}
 else if(loc==='cafe'){ch16MiniFacade(404,254,136,126,'brick','TIỆM BÁNH',211,'#b87864');ch16MiniFacade(746,264,102,116,'stone','GIẶT ỦI',217,'#8d9991');ch16MiniFacade(1190,244,92,136,'stone','TẠP HÓA',221,'#8a7f72');}
 else if(loc==='office'){ch16MiniFacade(-2,248,128,130,'stone','CLINIC',301,'#6f8e95');ch16ParkingGarage(470,252,176,126,'PARKING');ch16MiniFacade(650,250,118,128,'stone','SẢNH',307,'#82939a');ch16GuardBooth(1180,298,'BẢO VỆ');}
-else if(loc==='park'){ch16MiniFacade(24,264,118,102,'stone','WC',401,'#7f8f86');ch16MiniFacade(1110,268,142,100,'brick','NHÀ GỖ',409,'#9a6e56');ch16Rect(488,300,304,7,'#665447');ch16Rect(505,250,7,50,'#4c3d34');ch16Rect(768,250,7,50,'#4c3d34');ch16Rect(500,242,280,9,'#8a674d');for(let x=530;x<760;x+=36)ch16Rect(x,230,5,18,'#5b493b');}
-else if(loc==='mall'){ch16ParkingGarage(-2,260,182,110,'PARKING');ch16MiniFacade(598,250,176,120,'stone','FOOD COURT',501,'#9a8092');ch16MiniFacade(1004,248,278,124,'brick','CINEMA',509,'#7f5268');}
+else if(loc==='park'){ch16MiniFacade(24,264,118,102,'stone','NHÀ VỆ SINH',401,'#7f8f86');ch16MiniFacade(1110,268,142,100,'brick','QUÁN BỜ SÔNG',409,'#9a6e56');ch16Rect(488,300,304,7,'#665447');ch16Rect(505,250,7,50,'#4c3d34');ch16Rect(768,250,7,50,'#4c3d34');ch16Rect(500,242,280,9,'#8a674d');for(let x=530;x<760;x+=36)ch16Rect(x,230,5,18,'#5b493b');}
+else if(loc==='mall'){ch16ParkingGarage(-2,260,182,110,'PARKING');ch16MiniFacade(598,250,176,120,'stone','FOOD COURT',501,'#9a8092');ch16MiniFacade(1004,248,278,124,'brick','RẠP CHIẾU PHIM',509,'#7f5268');}
 else if(loc==='residential'){ch16Planter(58,458,36);ch16Planter(300,456,42);ch16Planter(620,458,40);ch16Planter(1018,456,44);ch16Mailboxes(190,454,4);ch16Mailboxes(870,456,5);ch16BikeRack(675,472);}
 else if(loc==='factory'){ch16GuardBooth(-2,294,'BẢO VỆ');ch16MiniFacade(534,248,150,130,'stone','XƯỞNG B',701,'#7c8585');ch16MiniFacade(1200,240,82,138,'stone','KHO C',707,'#777d80');for(let i=0;i<4;i++){const x=700+i*74;ch16Rect(x,302,54,70,P16.ink);ch16Rect(x+6,308,42,54,'#5e6668');ch16Rect(x+12,318,30,34,'#6f7778');}}
 }
@@ -6672,5 +6842,83 @@ openDialogue(n.name,'“Nè, tui thấy '+it.icon+' '+it.name.toLowerCase()+' n�
 {text:'“Cảm ơn nhưng mik chưa thể nhận quà đâu.”',onChoose:function(){changeRel(n.id,{respect:2,comfort:-1});remember(n.id,'bạn lịch sự từ chối một món quà','general',['gift-declined']);openDialogue(n.name,'“À… ok. Tui hiểu. Không sao đâu.”',[{text:'“Xin lỗi nha.”',onChoose:function(){closeDialogue()}}]);setExpr(n.id,'sad',8000)}}]);setExpr(n.id,'shy',8000)}}];
 try{EV.forEach(function(e){if(!CITY_EVENTS.some(function(x){return x.id===e.id}))CITY_EVENTS.push(e)})}catch(e){console.warn('[gift events]',e)}
 })();</script>
+<script id="chMoneyEventsV1">(function(){if(typeof CITY_EVENTS==='undefined')return;
+const M=(id,loc,hr,ch,who,txt,opts)=>({id:'mny-'+id,chance:ch,when:s=>loc.includes(s.loc)&&s.hour>=hr[0]&&s.hour<=hr[1],run(){openDialogue(who,txt,opts.map(o=>({text:o.t,onChoose(){
+if(o.c&&!spendMoney(o.c)){closeDialogue();return;}
+let g=o.g||0;if(o.lot){if(Math.random()<o.lot[0])g=o.lot[1];else toast('Không trúng. Lần sau may hơn!');}
+if(g)earnMoney(g);if(o.e)game.energy=clamp(game.energy+o.e,0,100);if(o.r)game.reputation=clamp(game.reputation+o.r,0,100);
+advance(o.m||10);if(o.n&&typeof rememberForAnyNearby==='function')rememberForAnyNearby(o.n,o.nt||'positive');
+const f=v=>v.toLocaleString('vi-VN')+'đ';toast((o.c?'-'+f(o.c)+' ':'')+(g?'+'+f(g)+' ':'')+(o.msg||''));closeDialogue();}})));}});
+const P=['park'],D=['downtown'],C=['cafe'],O=['office'],ML=['mall'],RS=['residential'],F=['factory'];
+const L=[
+M('thuyen',P,[9,19],.8,'Chú lái thuyền','Bến thuyền hôm nay vắng khách. Đạp vịt một vòng sông chứ?',[{t:'Thuê thuyền đạp vịt (80.000đ)',c:80000,e:-6,r:1,m:45,msg:'Gió sông mát rượi.',n:'Bạn thuê thuyền ngắm sông chiều.'},{t:'Vé phà du lịch (150.000đ)',c:150000,e:4,r:2,m:75,msg:'Ngắm thành phố từ mặt sông.',n:'Bạn đi phà ngắm sông.'},{t:'Thôi, để lần sau',m:2}]),
+M('bap',P,[10,21],.7,'Bác bán bắp','Bắp nướng thơm quá. Mua một bắp 25.000đ nhé?',[{t:'Mua 1 bắp (25.000đ)',c:25000,e:8,m:8,msg:'Năng lượng +8'},{t:'Mua 2 bắp chia nhau (50.000đ)',c:50000,e:8,r:1,m:15,n:'Bạn mua bắp nướng chia sẻ bên sông.'},{t:'Đi tiếp',m:2}]),
+M('cau',P,[6,17],.6,'Bác câu cá','Bác cho thuê cần câu: 60.000đ một buổi. Câu được cá thì bán lại được tiền.',[{t:'Thuê cần câu (60.000đ)',c:60000,e:-8,lot:[.55,140000],m:60,msg:'Buổi câu kết thúc.'},{t:'Đứng xem thôi',m:10}]),
+M('hoa',P,[8,20],.6,'Bé bán hoa','Anh/chị ơi, mua hoa giúp em với, hoa còn tươi lắm ạ!',[{t:'Mua 1 bó hoa (50.000đ)',c:50000,r:2,m:5,msg:'Bó hoa đẹp quá.'},{t:'Mua hết giỏ (120.000đ)',c:120000,r:4,m:8,n:'Bạn mua hết hoa giúp em bé.'},{t:'Xin lỗi, hôm nay không mua',m:2}]),
+M('hoadang',P,[18,23],.75,'Cô bán hoa đăng','Thả hoa đăng cầu một điều ước nhé? 30.000đ một chiếc.',[{t:'Thả 1 chiếc (30.000đ)',c:30000,e:5,m:12,msg:'Điều ước trôi theo dòng sông.'},{t:'Thả 3 chiếc (80.000đ)',c:80000,e:8,r:1,m:20,n:'Bạn thả hoa đăng bên sông.'},{t:'Chỉ ngắm',m:5}]),
+M('anh',P,[8,18],.6,'Thợ chụp ảnh dạo','Chụp ảnh lấy liền bên sông không? 70.000đ một tấm.',[{t:'Chụp 1 tấm (70.000đ)',c:70000,r:1,m:10,msg:'Tấm ảnh đẹp.'},{t:'Không, cảm ơn',m:2}]),
+M('hatrong',P,[16,22],.6,'Anh hát rong','Anh hát rong đang ngân nga bên sông, chiếc mũ đặt trước mặt.',[{t:'Bỏ 20.000đ vào mũ',c:20000,r:2,e:3,m:8,msg:'Anh gật đầu cảm ơn.'},{t:'Bỏ 100.000đ ủng hộ',c:100000,r:5,m:10,n:'Bạn ủng hộ nghệ sĩ đường phố.'},{t:'Nghe một lát rồi đi',m:6}]),
+M('xedap',P,[7,18],.55,'Quầy thuê xe','Thuê xe đạp đôi đạp dọc bờ sông? 60.000đ một giờ.',[{t:'Thuê 1 giờ (60.000đ)',c:60000,e:-10,r:1,m:60,msg:'Một vòng bờ sông.'},{t:'Không thuê',m:2}]),
+M('kem',P,[12,20],.6,'Chú bán kem','Trời nóng, kem dừa 20.000đ nè!',[{t:'Mua kem (20.000đ)',c:20000,e:5,m:6,msg:'Mát lạnh.'},{t:'Không, cảm ơn',m:2}]),
+M('lop',D,[8,19],.6,'Bác sửa xe','Xe bạn bị xẹp lốp. Bác sửa nhanh được ngay.',[{t:'Vá lốp (40.000đ)',c:40000,m:20,msg:'Xe chạy lại êm.'},{t:'Thay ruột mới (120.000đ)',c:120000,r:1,m:25,msg:'Bền hơn nhiều.'},{t:'Dắt bộ',e:-10,m:40}]),
+M('grab',D,[17,23],.55,'Tài xế','Trời sắp tối. Bạn gọi xe về hay đi bộ?',[{t:'Gọi xe (55.000đ)',c:55000,e:4,m:15},{t:'Đi bộ về',e:-8,m:35}]),
+M('phat',D,[9,18],.4,'Chú CSGT','Bạn đỗ xe sai chỗ. Mức phạt 100.000đ.',[{t:'Nộp phạt (100.000đ)',c:100000,r:1,m:15,msg:'Đã nộp phạt.'},{t:'Xin lỗi, dời xe',r:-1,m:10}]),
+M('veso',D,[9,20],.5,'Cô bán vé số','Mua giúp cô tờ vé số đi con. 10.000đ thôi.',[{t:'Mua 1 tờ (10.000đ)',c:10000,lot:[.1,200000],r:1,m:3},{t:'Mua 5 tờ (50.000đ)',c:50000,lot:[.3,200000],r:2,m:5},{t:'Xin lỗi cô',m:1}]),
+M('quyen',D,[9,18],.45,'Tình nguyện viên','Chiến dịch quyên góp giúp trẻ em khó khăn. Bạn muốn góp bao nhiêu?',[{t:'Góp 50.000đ',c:50000,r:3,m:5},{t:'Góp 200.000đ',c:200000,r:8,m:8,n:'Bạn quyên góp giúp trẻ em.'},{t:'Lần sau nhé',m:2}]),
+M('toc',D,[9,19],.4,'Thợ cắt tóc','Tiệm cắt tóc nhà bên đang rảnh. 90.000đ cho kiểu mới?',[{t:'Cắt tóc (90.000đ)',c:90000,r:2,e:5,m:40,msg:'Trông gọn gàng hẳn.'},{t:'Để dịp khác',m:2}]),
+M('banh',C,[7,20],.7,'Mai','Hôm nay quán có bánh mới. Bạn thử không? 45.000đ.',[{t:'Một phần bánh (45.000đ)',c:45000,e:6,m:20,n:'Bạn thử bánh mới của quán.'},{t:'Mua hộp mang về (150.000đ)',c:150000,r:2,m:12,msg:'Quà cho người thân.'},{t:'Chỉ uống nước',m:5}]),
+M('hat',C,[8,19],.5,'Quân','Hạt cà phê rang mới về. Mua một gói 85.000đ?',[{t:'Mua 1 gói (85.000đ)',c:85000,r:1,m:8,n:'Bạn mua hạt cà phê từ quán.'},{t:'Thôi, cảm ơn',m:2}]),
+M('com',O,[11,14],.8,'Đồng nghiệp','Đến giờ ăn trưa rồi. Ăn cơm văn phòng hay đặt món ngon hơn?',[{t:'Cơm văn phòng (45.000đ)',c:45000,e:10,m:30},{t:'Đặt cơm gà (95.000đ)',c:95000,e:15,r:1,m:35},{t:'Nhịn',e:-8,m:5}]),
+M('quy',O,[9,17],.5,'Trưởng nhóm','Cả nhóm góp quỹ tổ chức sinh nhật đồng nghiệp: 100.000đ/người.',[{t:'Góp quỹ (100.000đ)',c:100000,r:3,m:5,n:'Bạn góp quỹ nhóm.'},{t:'Xin lỗi, tháng này eo hẹp',r:-1,m:3}]),
+M('tangca',O,[17,21],.5,'Quản lý','Dự án gấp. Bạn có muốn ở lại tăng ca không?',[{t:'Tăng ca (+200.000đ)',g:200000,e:-15,r:2,m:90},{t:'Về đúng giờ',m:5}]),
+M('phim',ML,[10,22],.7,'Quầy vé','Phim mới ra rạp. Vé 90.000đ, thêm bắp nước 70.000đ.',[{t:'Chỉ vé (90.000đ)',c:90000,e:5,r:1,m:120},{t:'Vé + bắp nước (160.000đ)',c:160000,e:8,r:2,m:120,n:'Bạn đi xem phim.'},{t:'Không xem',m:3}]),
+M('gap',ML,[10,22],.6,'Khu game','Máy gắp thú 30.000đ một lượt. Gắp được quà có thể bán lại.',[{t:'Chơi 1 lượt (30.000đ)',c:30000,lot:[.25,100000],m:8},{t:'Chơi 5 lượt (120.000đ)',c:120000,lot:[.6,150000],m:20},{t:'Đứng xem',m:3}]),
+M('sale',ML,[10,21],.55,'Nhân viên','Đang giảm 50% áo khoác. Giá còn 200.000đ.',[{t:'Mua áo (200.000đ)',c:200000,r:3,m:25,msg:'Mặc lên hợp ghê.'},{t:'Không cần',m:3}]),
+M('food',ML,[11,21],.6,'Khu ăn uống','Đói bụng rồi. Chọn món nào?',[{t:'Mì cay (65.000đ)',c:65000,e:10,m:25},{t:'Trà sữa (45.000đ)',c:45000,e:6,m:10},{t:'Nhịn đói',e:-5,m:3}]),
+M('dien',RS,[8,20],.6,'Chủ nhà','Đến kỳ đóng tiền điện nước tháng này rồi: 150.000đ.',[{t:'Đóng ngay (150.000đ)',c:150000,r:1,m:10,msg:'Đã đóng tiền.'},{t:'Hẹn tuần sau',r:-2,m:3}]),
+M('ong',RS,[8,19],.45,'Thợ sửa ống nước','Vòi nước nhà bạn rò rỉ. Thợ có sẵn đây.',[{t:'Sửa ngay (180.000đ)',c:180000,m:40,msg:'Hết rò rỉ.'},{t:'Tự xoay xở',e:-6,m:30}]),
+M('hang',RS,[16,21],.55,'Bà bán hàng rong','Mua giúp bà ít trái cây nhé, 40.000đ một túi.',[{t:'Mua 1 túi (40.000đ)',c:40000,e:6,r:1,m:6},{t:'Mua 3 túi (110.000đ)',c:110000,e:8,r:3,m:10,n:'Bạn mua trái cây giúp bà.'},{t:'Thôi, cảm ơn',m:2}]),
+M('bhld',F,[7,17],.6,'Tổ trưởng','Ca hôm nay cần đủ đồ bảo hộ. Bạn mua bộ mới 70.000đ không?',[{t:'Mua đồ bảo hộ (70.000đ)',c:70000,r:2,m:10},{t:'Dùng đồ cũ',r:-1,m:5}]),
+M('an',F,[11,13],.7,'Căng tin','Suất ăn ca hôm nay 30.000đ.',[{t:'Ăn ca (30.000đ)',c:30000,e:12,m:25},{t:'Ăn gói mì mang theo',e:5,m:20}]),
+M('ot',F,[17,21],.5,'Quản đốc','Có đơn hàng gấp, tăng ca được 250.000đ.',[{t:'Nhận tăng ca (+250.000đ)',g:250000,e:-20,r:2,m:120},{t:'Từ chối',m:3}])
+];
+L.forEach(e=>{if(!CITY_EVENTS.some(x=>x.id===e.id))CITY_EVENTS.push(e)});})();
+</script>
+<script id="chDayNightV1">(function(){
+const cur=()=>{const h=game.minutes/60%24;return h>=21||h<5;};window.chCurfew=cur;
+const K=[[0,1],[5,1],[7,0],[17,0],[19,.55],[21,1],[24,1]];
+const dk=h=>{for(let i=1;i<K.length;i++)if(h<=K[i][0]){const a=K[i-1],b=K[i];return a[1]+(b[1]-a[1])*(h-a[0])/(b[0]-a[0]);}return 1;};
+const wm=h=>Math.max(0,1-Math.abs(h-6)/1.4,1-Math.abs(h-18.3)/1.7);
+const mx=(a,b,t)=>a.map((v,i)=>Math.round(v+(b[i]-v)*t));const rg=(a,al)=>al==null?`rgb(${a})`:`rgba(${a},${al})`;
+const R=(c,x,y,w,h)=>{ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h));};
+window.chSkyX=function(){const h=game.minutes/60%24,d=dk(h),w=wm(h),t=performance.now()/1000,c=ctx;
+const top=mx(mx([112,176,218],[8,14,32],d),[92,88,138],w*.75),bot=mx(mx([205,230,238],[30,48,76],d),[248,166,120],w*.85);
+const g=c.createLinearGradient(0,0,0,215);g.addColorStop(0,rg(top));g.addColorStop(1,rg(bot));c.fillStyle=g;c.fillRect(0,0,1280,215);
+if(d>.15)for(let i=0;i<40;i++){const sx=(i*97)%1260+10,sy=(i*53)%140+8;R('rgba(255,248,220,'+(d*(.35+.45*Math.abs(Math.sin(t*1.3+i))))+')',sx,sy,i%5?2:3,i%5?2:3);}
+const su=(h-6)/12;if(su>-.08&&su<1.08){const sx=90+su*1100,sy=190-Math.sin(Math.PI*Math.max(0,Math.min(1,su)))*150,sc=mx([255,226,140],[255,150,90],w);R(rg(sc,.18),sx-26,sy-26,52,52);R(rg(sc,.35),sx-18,sy-18,36,36);R(rg(sc),sx-11,sy-11,22,22);R('rgba(255,255,255,.5)',sx-7,sy-7,6,4);}
+const mu=((h-18+24)%24)/11;if(mu>=0&&mu<=1.02){const mxp=90+mu*1100,myp=185-Math.sin(Math.PI*Math.min(1,mu))*140;R('rgba(210,225,255,.14)',mxp-24,myp-24,48,48);R('#f2ecd0',mxp-11,myp-11,22,22);R('#d8d0aa',mxp-5,myp-3,6,6);R('#d8d0aa',mxp+2,myp+4,4,4);R('#d8d0aa',mxp-8,myp+3,3,3);R(rg(mx(top,[0,0,0],0),0),0,0,0,0);}
+const cc=mx(mx([255,255,255],[70,86,118],d),[255,200,170],w*.6);for(let i=0;i<6;i++){const x=((i*260+t*(6+i*2))%1500)-120,y=36+(i%3)*38+Math.sin(t*.3+i)*3,al=.5-d*.2;R(rg(cc,al),x,y,86,10);R(rg(cc,al),x+14,y-8,50,10);R(rg(cc,al),x+34,y+8,60,7);}
+const sil=mx([112,140,158],[12,20,34],d);for(let i=0;i<11;i++){const x=i*118-10,hh=58+(i*37%56);R(rg(sil),x,172-hh,78,hh+14);R(rg(mx(sil,[0,0,0],.2)),x+60,172-hh,18,hh+14);if(i%3===0){R(rg(sil),x+30,172-hh-16,3,16);}
+if(d>.2)for(let r=0;r<hh/14|0;r++)for(let q=0;q<3;q++)if((i*7+r*5+q*3)%4<2)R('rgba(255,214,120,'+(.75*d)+')',x+8+q*22,176-hh+r*14,8,5);}
+R('rgba(32,40,47,.28)',0,186,1280,30);};
+const _od=openDialogue;openDialogue=window.openDialogue=function(sp){if(cur()&&Object.values(NPCS).some(n=>n.name===sp)){toast('Đêm khuya, phố vắng. Chỉ có thể nhắn tin 📱');return;}return _od.apply(this,arguments);};
+const _cn=currentNPCs;currentNPCs=window.currentNPCs=function(){return cur()?[]:_cn.apply(this,arguments);};
+const _dw=drawWorld;drawWorld=window.drawWorld=function(){const a=game.ambient,n=cur();if(n&&a)game.ambient=[];try{_dw.apply(this,arguments);}finally{if(n)game.ambient=a;}
+if(!game.started&&game.started!==undefined&&false)return;const h=game.minutes/60%24,d=dk(h),w=wm(h),c=ctx;c.save();c.setTransform(1,0,0,1,0,0);
+R('rgba(8,14,40,'+(d*.5)+')',0,215,1280,505);if(w>0)R('rgba(255,140,80,'+(w*.13)+')',0,215,1280,505);
+if(d>.25&&game.location){c.globalCompositeOperation='lighter';for(let i=0;i<6;i++){const lx=90+i*220,ly=392+(i%2)*30-34,gr=c.createRadialGradient(lx,ly,2,lx,ly,86);gr.addColorStop(0,'rgba(255,205,120,'+(.34*d)+')');gr.addColorStop(1,'rgba(255,205,120,0)');c.fillStyle=gr;c.fillRect(lx-90,ly-90,180,180);}}
+c.restore();};
+/* đồng hồ trong ô ngày giờ */
+const cv=document.getElementById('chClk');
+if(cv){const k=cv.getContext('2d');(function loop(){try{const m=(game.minutes||0),h=m/60%24,d=dk(h),w=wm(h),cx=20,cy=20;k.clearRect(0,0,40,40);
+k.strokeStyle='rgba(120,100,80,.35)';k.lineWidth=3;k.beginPath();k.arc(cx,cy,18,0,7);k.stroke();k.strokeStyle=d>.5?'#8fa8ff':'#f2b84a';k.beginPath();k.arc(cx,cy,18,-Math.PI/2,-Math.PI/2+h/24*Math.PI*2);k.stroke();
+k.fillStyle=rg(mx([255,244,214],[26,36,64],d));k.beginPath();k.arc(cx,cy,14.5,0,7);k.fill();
+if(d>.5){k.fillStyle='#fff';[[12,12],[27,10],[29,25],[10,27]].forEach(p=>k.fillRect(p[0],p[1],1.5,1.5));}else{k.fillStyle='rgba(240,170,60,.35)';k.beginPath();k.arc(cx,cy,5,0,7);k.fill();}
+k.strokeStyle=d>.5?'#d8e2ff':'#4a3626';k.lineWidth=1;for(let i=0;i<12;i++){const a=i*Math.PI/6;k.beginPath();k.moveTo(cx+Math.sin(a)*11.5,cy-Math.cos(a)*11.5);k.lineTo(cx+Math.sin(a)*13.5,cy-Math.cos(a)*13.5);k.stroke();}
+const ha=(h%12)/12*Math.PI*2,ma=(m%60)/60*Math.PI*2;k.lineWidth=2;k.beginPath();k.moveTo(cx,cy);k.lineTo(cx+Math.sin(ha)*7,cy-Math.cos(ha)*7);k.stroke();k.lineWidth=1.2;k.strokeStyle=d>.5?'#ffd98a':'#c0392b';k.beginPath();k.moveTo(cx,cy);k.lineTo(cx+Math.sin(ma)*11,cy-Math.cos(ma)*11);k.stroke();
+k.fillStyle='#e8a33a';k.fillRect(cx-1.5,cy-1.5,3,3);}catch(e){}requestAnimationFrame(loop);})();}
+let was=false;setInterval(()=>{try{const n=cur();if(n&&!was&&game.started!==false)toast('🌙 Đêm khuya, phố vắng người. Hãy nhắn tin cho mọi người.');was=n;}catch(e){}},1500);
+})();
+</script>
 </body>
 </html>
