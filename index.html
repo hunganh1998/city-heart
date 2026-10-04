@@ -6920,5 +6920,53 @@ k.fillStyle='#e8a33a';k.fillRect(cx-1.5,cy-1.5,3,3);}catch(e){}requestAnimationF
 let was=false;setInterval(()=>{try{const n=cur();if(n&&!was&&game.started!==false)toast('🌙 Đêm khuya, phố vắng người. Hãy nhắn tin cho mọi người.');was=n;}catch(e){}},1500);
 })();
 </script>
+<script id="chPoorSnubV1">(function(){
+const LIMIT=50000;
+const now=()=>game.day*1440+game.minutes;
+const pick=(a,id)=>a[[...String(id)].reduce((x,c)=>x+c.charCodeAt(0),0)%a.length];
+const STRANGER=[
+'“Cậu định bắt chuyện với tôi à? Nhìn lại cái ví của mình đi đã.”',
+'“Xin lỗi, tôi không có thời gian làm quen với người còn chưa có nổi 50.000đ trong túi.”',
+'“Ví lép kẹp mà đòi làm quen? Thôi khỏi, đi chỗ khác đi.”',
+'“Ai cũng có giá của mình. Còn cậu thì… chưa đủ để tôi dừng lại.”'];
+const COLD=[
+'“Dạo này trông cậu thảm thật đấy. Tôi đang bận, để hôm khác.”',
+'“Cậu khó khăn thì tự lo đi, đừng kéo tôi vào.”'];
+function snubs(){return game.snubs=game.snubs||{};}
+function leaveChoices(n,id,full){
+return [
+{text:'Lặng lẽ rời đi',onChoose(){advance(3);toast('Bạn cúi đầu bước đi. Ánh mắt đó vẫn ám bạn một lúc.');closeDialogue();}},
+{text:'“Tiền không quyết định giá trị con người đâu.”',onChoose(){
+game.energy=clamp(game.energy-3,0,100);advance(4);
+openDialogue(n.name,'“Nói hay lắm. Khi nào có tiền hãy quay lại nói tiếp.” '+n.name+' quay lưng đi.',[{text:'Im lặng bỏ đi',onChoose(){closeDialogue();}}]);}},
+{text:'Mình cần kiếm tiền ngay 💼',onChoose(){closeDialogue();setTimeout(()=>openPanel('jobs'),60);}}];}
+const prev=window.npcChoice||npcChoice;
+function wrapped(npcId,topic){
+const n=NPCS[npcId],s=game.npcState&&game.npcState[npcId];
+if(!n||!s||(topic!==undefined&&topic!=='greet'))return prev.apply(this,arguments);
+const met=!!(game.flags&&game.flags.met&&game.flags.met[npcId]),sn=snubs();
+if(game.money>=LIMIT){
+const r=sn[npcId];
+if(r&&!r.forgiven&&!met){
+openDialogue(n.name,'“Ơ… cậu là người lúc trước đúng không? Giờ có tiền rồi mới muốn làm quen à?”',[
+{text:'“Xin lỗi, lúc đó mình đang khó khăn.”',onChoose(){r.forgiven=true;changeRel(npcId,{respect:-2});closeDialogue();setTimeout(()=>prev(npcId),50);}},
+{text:'“Không sao, mình đi chỗ khác.”',onChoose(){advance(2);closeDialogue();}}]);return;}
+return prev.apply(this,arguments);}
+const score=relationshipScore(npcId);
+if(met&&score>=35){toast('💛 Họ vẫn nói chuyện với bạn vì đã thân, dù ví bạn đang mỏng.');changeRel(npcId,{trust:2});return prev.apply(this,arguments);}
+const r=sn[npcId]=sn[npcId]||{count:0,t:-9999,forgiven:false};
+if(now()-r.t<120){toast(n.name+' làm lơ, không buồn nhìn bạn.');return;}
+r.t=now();r.count++;r.forgiven=false;
+changeRel(npcId,{respect:-3,comfort:-4,interest:-3});
+game.reputation=clamp(game.reputation-2,0,100);
+const line=met?pick(COLD,npcId):pick(STRANGER,npcId);
+try{remember(npcId,'đã từ chối bạn vì ví quá mỏng','negative',['money','snub']);}catch(e){}
+try{addPhone('Thành phố','Có người vừa coi thường bạn vì ví dưới 50.000đ. Hãy kiếm thêm tiền.');}catch(e){}
+openDialogue(n.name,'Ánh mắt '+n.name+' lướt qua đôi giày cũ và chiếc ví xẹp lép của bạn.\n\n'+line+'\n\n(Danh tiếng -2)',leaveChoices(n,npcId,true));}
+window.npcChoice=wrapped;npcChoice=wrapped;
+const m=document.getElementById('moneyMetric');
+setInterval(()=>{try{if(m){m.style.color=game.money<LIMIT?'#ff5a5a':'';m.title=game.money<LIMIT?'Dưới 50.000đ: người lạ sẽ không muốn làm quen':'';}}catch(e){}},700);
+})();
+</script>
 </body>
 </html>
