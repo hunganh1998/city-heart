@@ -1579,16 +1579,133 @@ if(!game.socialRippleFlags)game.socialRippleFlags={};
 if(!game.firstDayBanner)game.firstDayBanner=true;
 if(!game.unlocked)game.unlocked={nightMarket:false,photoSpot:false,regular:false};
 }
+/* ===== Nhiệm vụ theo diễn biến câu chuyện (story-aware quests) ===== */
+const QD_JOB={Florist:'bán hoa','Bánh Mì Vendor':'bán bánh mì',Pharmacist:'dược sĩ','Retired Teacher':'thầy giáo về hưu','Forklift Driver':'lái xe nâng',Receptionist:'lễ tân','Street Musician':'nghệ sĩ đường phố','Grocery Owner':'chủ tạp hóa'};
+function qdJob(n){return QD_JOB[n.job]||(typeof jobVi==='function'?jobVi(n.job):n.job);}
+function qdQ(){if(!game.questDir||typeof game.questDir!=='object')game.questDir={sig:''};return game.questDir;}
+function qdMet(){const m=(game.flags&&game.flags.met)||{};return Object.keys(m).filter(id=>m[id]&&NPCS[id]&&game.npcState&&game.npcState[id]);}
+function qdContact(id){return (game.phoneSocial&&game.phoneSocial.contacts&&game.phoneSocial.contacts[id])||(game.contactBook&&game.contactBook[id])||null;}
+function qdConn(id){const c=qdContact(id);return !!(c&&(c.phone||c.instagram||c.facebook));}
+function qdTalk(id){return (game.npcState&&game.npcState[id]&&game.npcState[id].talkCount)||0;}
+function qdScore(id){return relationshipScore(id);}
+function qdTier(id){const x=qdScore(id);return x>=68?3:x>=48?2:x>=32?1:0;}
+function qdThreadOpen(id){return !!(game.phoneSocial&&Array.isArray(game.phoneSocial.threads)&&game.phoneSocial.threads.some(t=>t.npcId===id&&!t.completedAt));}
+function qdChatCount(id){const c=qdContact(id);return (c&&c.chatCount)||0;}
+function qdGiftCount(id){return ((game.npcState[id]&&game.npcState[id].memory)||[]).filter(m=>(m.tags||[]).includes('gift')).length;}
+function qdRecentNeg(id){const m=(game.npcState[id]&&game.npcState[id].memory)||[];for(let i=m.length-1;i>=0&&i>=m.length-6;i--){const x=m[i];if(x&&x.type==='negative'&&game.day-x.day<=1)return x;}return null;}
+function qdEarlyAsk(id){const x=qdRecentNeg(id);return !!(x&&/xin contact quá sớm/.test(String(x.text)));}
+function qdLifeDone(id){const d=game.lifeDirector;return !!(d&&Array.isArray(d.history)&&d.history.some(x=>x.npcId===id&&x.status==='done'&&x.createdDay===game.day));}
+function qdKey(g){return g.type==='visitAt'?'visitAt:'+g.loc:g.type+':'+(g.npc||g.loc||'');}
+function qdBase(g){
+if(g.type==='npcTalk')return qdTalk(g.npc);
+if(g.type==='relUp')return qdScore(g.npc);
+if(g.type==='phoneReply')return qdChatCount(g.npc);
+if(g.type==='gift')return qdGiftCount(g.npc);
+if(g.type==='date')return (game.flags&&game.flags.dateCount)||0;
+if(g.type==='visitAt')return ((game.dailyStats&&game.dailyStats.visitOrder)||[]).length;
+return 0;
+}
+function qdSig(){
+const met=qdMet(),f=game.flags||{},d=game.lifeDirector,a=d&&d.active&&d.active.status==='active'?d.active.id:'';
+return [game.storyStep||0,met.length,met.filter(qdConn).length,met.map(id=>id+qdTier(id)+(qdThreadOpen(id)?'t':'')+(qdRecentNeg(id)?'n':'')).join(','),f.dateCount||0,f.datePending?1:0,f.linhInvite?1:0,a,Object.entries(game.routeState||{}).filter(e=>e[1]&&e[1].pending).map(e=>e[0]).join('+')].join('|');
+}
+function qdCandidates(){
+const ds=game.dailyStats,met=qdMet(),f=game.flags||{},day=game.day,per=typeof period==='function'?period():'morning',cands=[];
+const add=(cat,pri,g)=>cands.push({cat,pri,g});
+const nm=id=>NPCS[id].name,all=Object.keys(NPCS).length;
+const byScore=met.slice().sort((a,b)=>qdScore(b)-qdScore(a));
+/* 1) Mạch chính với Linh */
+if(NPCS.linh){
+if(f.datePending)add('story',98,{type:'date',target:1,npc:'linh',title:'Gặp Linh bên bờ sông',desc:'Linh đang chờ ở gần bờ sông tối nay. Đây là lúc hai người nói chuyện riêng.'});
+else if(f.linhInvite&&!f.linhDateDone&&game.location!=='park')add('story',94,{type:'visitAt',loc:'park',npc:'linh',target:1,title:'Ra Bờ sông gặp Linh',desc:'Linh đã rủ bạn tối nay. Đến hay không là tùy bạn, nhưng cô ấy sẽ nhớ.'});
+else if((game.storyStep||0)<=1&&f.introDone&&!f.firstCoffee&&game.location!=='cafe')add('story',92,{type:'visitAt',loc:'cafe',npc:'linh',target:1,title:'Ghé Phố cà phê',desc:'Linh hay ngồi ở đó. Một cuộc trò chuyện nhỏ có thể mở ra cả câu chuyện.'});
+}
+/* 2) Lời rủ trong ngày */
+for(const[id,st]of Object.entries(game.routeState||{})){
+if(st&&st.pending&&st.day===day&&NPCS[id]&&WORLD[st.place]&&game.location!==st.place)add('story',90,{type:'visitAt',loc:st.place,npc:id,target:1,title:'Đáp lại lời rủ của '+nm(id),desc:nm(id)+' vừa rủ bạn tối nay ở '+WORLD[st.place].name+'.'});
+}
+const la=game.lifeDirector&&game.lifeDirector.active;
+if(la&&la.status==='active'&&la.createdDay===day&&NPCS[la.npcId])add('story',91,{type:'lifeInvite',npc:la.npcId,target:1,title:'Đáp lại lời mời của '+nm(la.npcId),desc:String(la.title||'').replace(/^[^A-Za-zÀ-ỹ]+/,'')+' — một cơ hội để hai người hiểu nhau hơn.'});
+/* 3) Quen chưa lâu: nói chuyện thêm trước khi xin liên lạc */
+const early=met.filter(id=>!qdConn(id)&&qdTalk(id)<4&&!qdEarlyAsk(id)).sort((a,b)=>qdTalk(b)-qdTalk(a)||qdScore(b)-qdScore(a));
+if(early.length){const id=early[0],t=qdTalk(id);add('story',t>=2?82:76,{type:'npcTalk',npc:id,target:1,title:'Nói chuyện thêm với '+nm(id)+' ('+qdJob(NPCS[id])+')',desc:t<=1?'Mới quen thôi — hỏi han thêm để hiểu người ấy hơn.':'Hai người đã trò chuyện '+t+' lần. Thêm vài lần nữa là đủ thân để xin liên lạc.'});}
+/* 4) Vừa xin contact quá sớm */
+for(const id of met)if(qdEarlyAsk(id))add('story',86,{type:'npcTalk',npc:id,target:2,title:'Cho '+nm(id)+' thêm thời gian',desc:'Bạn vừa xin contact hơi sớm. Đừng xin lại ngay, hãy trò chuyện thêm cho tự nhiên.'});
+/* 5) Đủ thân để giữ liên lạc */
+const ready=met.filter(id=>!qdConn(id)&&qdTalk(id)>=4&&!qdEarlyAsk(id)).sort((a,b)=>qdScore(b)-qdScore(a));
+if(ready.length){const id=ready[0];add('story',88,{type:'contact',npc:id,target:1,title:'Giữ liên lạc với '+nm(id),desc:'Hai người đã nói chuyện khá nhiều. Thử xin IG hoặc Facebook; số điện thoại để khi thân hơn.'});}
+/* 6) Đã có contact: trả lời tin nhắn */
+const rep=byScore.filter(id=>qdConn(id)&&qdThreadOpen(id));
+if(rep.length)add('story',79,{type:'phoneReply',npc:rep[0],target:1,title:'Trả lời tin nhắn của '+nm(rep[0]),desc:'Có một đoạn chat đang chờ bạn trong Điện thoại.'});
+/* 7) Theo độ thân */
+for(const id of byScore.slice(0,3)){
+const t=qdTier(id);
+if(t>=2)add('story',t>=3?70:62,{type:'npcTalk',npc:id,target:2,title:'Dành thời gian cho '+nm(id),desc:t>=3?'Hai người đã khá gần. Hãy kể cho nhau một điều thật lòng.':'Quan hệ đang ấm lên. Một buổi trò chuyện sâu hơn sẽ có ích.'});
+if(qdScore(id)>=32&&game.inventory&&game.inventory.giftCount>0)add('story',52,{type:'gift',npc:id,target:1,title:'Tặng '+nm(id)+' một món quà nhỏ',desc:'Một món quà đúng gu sẽ khiến người ấy nhớ bạn lâu hơn.'});
+}
+if(met.some(id=>qdTier(id)>=3))add('story',48,{type:'promise',target:1,title:'Giữ một lời đã nói',desc:'Với người đã thân, giữ lời quan trọng hơn mọi lời hứa lớn.'});
+/* 8) Lâu chưa gặp / có rạn nứt */
+for(const id of met){
+const s=game.npcState[id],gone=s.lastSeenDay>0?day-s.lastSeenDay:0;
+if(qdScore(id)>=32&&gone>=3)add('story',64,{type:'npcTalk',npc:id,target:1,title:'Hỏi thăm '+nm(id),desc:'Đã '+gone+' ngày chưa gặp. Một lời hỏi thăm nhỏ cũng đủ giữ mối quan hệ.'});
+const neg=qdRecentNeg(id);
+if((neg&&!qdEarlyAsk(id))||s.mood==='guarded')add('story',89,{type:'relUp',npc:id,target:3,title:'Làm lành với '+nm(id),desc:'Gần đây có chút khoảng cách. Hãy nói chuyện chân thành để mọi thứ dịu lại.'});
+}
+/* 9) Khám phá */
+const unmet=Object.keys(NPCS).filter(id=>!met.includes(id));
+if(unmet.length)add('explore',met.length===0?100:met.length<3?72:met.length<8?58:44,{type:'meet',target:1,title:met.length===0?'Làm quen với một người':'Làm quen thêm một người mới',desc:met.length===0?'Gặp ít nhất 1 người trong thành phố.':'Thành phố còn nhiều gương mặt bạn chưa gặp.'});
+const lc={};for(const id of unmet){const l=NPCS[id].schedule&&NPCS[id].schedule[per];if(l&&l!==game.location)lc[l]=(lc[l]||0)+1;}
+const bl=Object.keys(lc).sort((a,b)=>lc[b]-lc[a])[0];
+if(bl&&WORLD[bl])add('explore',met.length===0?55:50,{type:'visitAt',loc:bl,target:1,title:'Ghé '+WORLD[bl].name,desc:'Có vài gương mặt bạn chưa gặp thường xuất hiện ở đây vào buổi này.'});
+/* 10) Chăm sóc bản thân */
+if(game.energy<40)add('self',80,{type:'rest',target:1,title:'Nạp lại năng lượng',desc:'Bạn đang khá mệt. Nghỉ ngơi hoặc đi dạo một lúc.'});
+if(game.money<150000)add('self',72,{type:'work',target:1,title:'Kiếm thêm một ca làm',desc:'Ví đang mỏng. Một ca làm giúp bạn thoải mái đi gặp mọi người.'});
+if(game.energy>=40&&game.energy<75)add('self',26,{type:'energy',target:60,title:'Đừng kiệt sức',desc:'Kết thúc ngày với ít nhất 60% năng lượng.'});
+for(const g of DAILY_TEMPLATES[(day-1)%DAILY_TEMPLATES.length])add(['rest','work','money','energy'].includes(g.type)?'self':'explore',10,{...g});
+return cands;
+}
+function qdPick(cands,n,exclude){
+const out=[],cnt={},seen=new Set(exclude||[]);
+cands.sort((a,b)=>b.pri-a.pri);
+for(const c of cands){
+if(out.length>=n)break;
+const key=qdKey(c.g);
+if(seen.has(key)||(cnt[c.cat]||0)>=2)continue;
+if(c.g.npc&&out.some(o=>o.g.npc===c.g.npc))continue;
+out.push(c);seen.add(key);cnt[c.cat]=(cnt[c.cat]||0)+1;
+}
+return out;
+}
+function qdMake(c){const g={...c.g};g.id=g.id||qdKey(g);g.base=qdBase(g);g.progress=0;g.done=false;return g;}
 function generateGoals(){
 ensureDirectorState();
-const pack=DAILY_TEMPLATES[(game.day-1)%DAILY_TEMPLATES.length];
-game.dailyGoals=pack.map(g=>({...g,progress:0,done:false}));
-if(game.day===1){
-game.dailyGoals[0].target=1;game.dailyGoals[0].title='Làm quen với một người';game.dailyGoals[0].desc='Gặp ít nhất 1 người trong thành phố.';
+let pick=[];
+try{pick=qdPick(qdCandidates(),3,[]).map(qdMake);}catch(e){console.warn('[quests]',e);}
+if(!pick.length)pick=DAILY_TEMPLATES[(game.day-1)%DAILY_TEMPLATES.length].map(g=>({...g,progress:0,done:false}));
+game.dailyGoals=pick;
+try{qdQ().sig=qdSig();}catch(e){}
 }
+function qdRevise(){
+if(!game.started||!game.npcState||!Array.isArray(game.dailyGoals)||!game.dailyGoals.length)return;
+const q=qdQ(),sig=qdSig();
+if(!q.sig){q.sig=sig;return;}
+if(q.sig===sig)return;
+q.sig=sig;
+const goals=game.dailyGoals,have=goals.map(qdKey);
+const c=qdPick(qdCandidates().filter(x=>x.cat==='story'&&x.pri>=60),1,have)[0];
+if(!c)return;
+const g=qdMake(c);
+if(goals.length>=5){
+const i=goals.findIndex(x=>!x.done&&!x.progress&&x.type!=='contact');
+if(i<0)return;
+goals.splice(i,1);
+}
+goals.push(g);
+if(typeof toast==='function')toast('📌 Nhiệm vụ mới: '+g.title);
 }
 function updateGoals(){
 ensureDirectorState();
+try{qdRevise();}catch(e){console.warn('[quests]',e);}
 const ds=game.dailyStats;
 for(const g of game.dailyGoals){
 let p=g.progress;
@@ -1603,6 +1720,14 @@ else if(g.type==='meetSpread')p=Math.min(2,new Set(ds.meetLocations).size);
 else if(g.type==='energy')p=game.energy;
 else if(g.type==='promise')p=ds.promises;
 else if(g.type==='social')p=ds.social;
+else if(g.type==='npcTalk')p=Math.max(0,qdTalk(g.npc)-(g.base||0));
+else if(g.type==='contact')p=qdConn(g.npc)?1:0;
+else if(g.type==='phoneReply')p=Math.max(0,qdChatCount(g.npc)-(g.base||0));
+else if(g.type==='gift')p=Math.max(0,qdGiftCount(g.npc)-(g.base||0));
+else if(g.type==='visitAt')p=(ds.visitOrder||[]).slice(g.base||0).includes(g.loc)?1:0;
+else if(g.type==='relUp')p=Math.max(0,qdScore(g.npc)-(g.base||0));
+else if(g.type==='lifeInvite')p=qdLifeDone(g.npc)?1:0;
+else if(g.type==='date')p=Math.max(0,((game.flags&&game.flags.dateCount)||0)-(g.base||0));
 g.progress=Math.min(g.target,p);
 if(p>=g.target&&!g.done){
 g.done=true;
@@ -2927,13 +3052,20 @@ toast(`${n.name} đã cho bạn ${CHANNEL_META[channel].label.toLowerCase()}`);
 }
 function contactChoice(npcId){
 const n=NPCS[npcId],s=game.npcState[npcId];
-if(!n||!s||!game.flags.met[npcId]||connected(npcId)||(s.talkCount||0)<1||((s.talkCount-1)%3)!==0)return null;
+if(!n||!s||!game.flags.met[npcId]||connected(npcId)||(s.talkCount||0)<1||(((s.talkCount-1)%3)!==0&&!((s.talkCount||0)>=4&&(game.dailyGoals||[]).some(g=>g.type==='contact'&&g.npc===npcId&&!g.done))))return null;
 const score=relationshipScore(npcId);
 return{
 text:'“Ê, cho mik xin contact để khi nào nói chuyện tiếp nha?”',
 note:'Có thể chọn SĐT · Instagram · Facebook',
 phoneSocialRequest:true,
 onChoose(){
+if((s.talkCount||0)<4){
+const vv=(window.CH_GR&&window.CH_GR[npcId])||{},pn=vv.s||'mình',pu=vv.u||'bạn',pc=pn.charAt(0).toUpperCase()+pn.slice(1);
+game._phoneContactFlow=true;
+changeRel(npcId,{comfort:-2});
+remember(npcId,'bị từ chối vì xin contact quá sớm','general',['contact','boundary']);
+openDialogue(n.name,'“Ơ… '+pc+' với '+pu+' mới quen chưa được bao lâu mà. Chưa tiện cho contact đâu, nói chuyện thêm vài lần nữa rồi tính nhé.”',[{text:'“Xin lỗi, mình hơi vội. Hẹn nói chuyện thêm nhé.”',onChoose(){changeRel(npcId,{respect:2,trust:1});remember(npcId,'đã xin lỗi và chờ khi xin contact quá sớm','positive',['boundary']);closeDialogue();}},{text:'“Ừ, không sao. Mình hiểu.”',onChoose(){changeRel(npcId,{comfort:1});closeDialogue();}}]);
+game._phoneContactFlow=false;return;}
 game._phoneContactFlow=true;
 openDialogue(n.name,score>=45?'“Được chứ. Bn muốn lấy chỗ nào?”':'“Được. Mà lấy IG trước nha, số để thân hơn rồi tính :))”',[
 {text:'📸 “Instagram đi, dễ nói chuyện hơn.”',onChoose(){addContact(npcId,'instagram');changeRel(npcId,{interest:2,comfort:2});remember(npcId,'đã kết nối Instagram với bạn','positive',['contact','instagram']);closeDialogue();}},
@@ -5839,7 +5971,7 @@ var NEW=[
 ['dung','Dũng','Forklift Driver','male','#e0a15a','factory',['ca đêm','mì gói','đá bóng'],['đi muộn','hứa suông'],['trầm','chịu khó','nghĩa khí'],{morning:'factory',afternoon:'factory',evening:'downtown',night:'residential'},'“Ít nói, tay lái cực chắc. Ai nhờ gì cũng ‘để đó anh’, và thật sự làm.”',[13,30,21,34,14,41,19,36],'Võ Tiến Dũng'],
 ['yen','Yến','Receptionist','female','#f7c6a0','office',['gossip lành','mỹ phẩm','nhớ tên mọi người'],['bị phớt lờ','giấu giếm'],['hoạt bát','tinh ý','thương người'],{morning:'office',afternoon:'office',evening:'mall',night:'residential'},'“Quầy lễ tân là radar của cả tòa nhà. Ai vui, ai buồn, Yến nhìn một lần là biết.”',[17,22,26,24,25,36,32,22],'Đặng Hải Yến'],
 ['khoa','Khoa','Street Musician','male','#9a8cf0','downtown',['guitar cũ','mưa phùn','người dừng lại nghe'],['bị áp đặt','sống dối'],['tự do','đa cảm','chân thành'],{morning:'residential',afternoon:'park',evening:'downtown',night:'downtown'},'“Đàn ở góc phố, hộp đàn mở sẵn. Có người cho tiền, có người cho một nụ cười, Khoa nhớ cả hai.”',[18,20,22,22,30,34,36,18],'Hoàng Anh Khoa'],
-['tu','Bà Tư','Grocery Owner','female','#d9a8a0','residential',['chuyện xóm','cải canh','người biết chào hỏi'],['vô lễ','lãng phí'],['bao dung','thẳng thắn','tinh mắt'],{morning:'residential',afternoon:'residential',evening:'cafe',night:'residential'},'“Tạp hóa đầu hẻm mở từ lúc trời chưa sáng. Bà Tư nhớ mặt hàng xóm hơn cả nhớ giá hàng.”',[14,32,34,36,8,46,24,35],'Ngô Thị Tư']
+['tu','Ngọc','Grocery Owner','female','#d9a8a0','residential',['chuyện xóm','cải canh','người biết chào hỏi'],['vô lễ','lãng phí'],['bao dung','thẳng thắn','tinh mắt'],{morning:'residential',afternoon:'residential',evening:'cafe',night:'residential'},'“Tạp hóa đầu hẻm mở từ lúc trời chưa sáng. Ngọc nhớ mặt hàng xóm hơn cả nhớ giá hàng.”',[14,32,34,36,8,46,24,35],'Ngô Thị Ngọc']
 ];
 var FULL=window.CH_FULL={linh:'Nguyễn Thùy Linh',minh:'Trần Đức Minh',hana:'Lê Hana',an:'Phạm Gia An',mai:'Võ Ngọc Mai',kai:'Đỗ Hoàng Kai',vy:'Hoàng Tường Vy',quan:'Bùi Minh Quân',thao:'Đặng Phương Thảo',duy:'Lý Khánh Duy',nora:'Trịnh Nora',tung:'Ngô Thanh Tùng',ivy:'Phan Bảo Ivy',phuc:'Lương Hoàng Phúc',huyen:'Vũ Thanh Huyền',son:'Dương Hải Sơn',bao:'Mai Quốc Bảo',chi:'Cao Diệp Chi'};
 var ph={lan:'“Sáng nay hoa mới về, thơm lắm. Ghé công viên lấy một bó nhỏ nhé?”',hung:'“Ê nhóc, hôm nay anh nướng ổ bánh mì đặc biệt. Ghé lấy không tính tiền ổ đầu.”',trang:'“Nhớ uống đủ nước và ngủ sớm nhé. Mình nhắc thật đấy.”',long:'“Hôm nào rảnh ra bờ sông đánh với ông một ván cờ.”',dung:'“Mai xưởng nghỉ sớm. Có gì cần anh phụ không?”',yen:'“Ê, tòa nhà có tin mới nè. Tới đây kể cho nghe.”',khoa:'“Tối nay mình đàn ở trung tâm. Ghé nghe một bài nhé?”',tu:'“Con ơi, chè đậu bà nấu dư, ghé ăn cho ấm bụng.”'};
@@ -5986,6 +6118,7 @@ else{try{ch16AccessoryV8(p,f)}catch(_){}}
 if(isP)R(-8,28-bob,16,2,CR);
 c.restore()};
 var FULL=window.CH_FULL||{},_od=openDialogue,last={},busy=0,PL={morning:'sáng',afternoon:'chiều',evening:'tối',night:'khuya'};
+var GR=window.CH_GR={"lan": {"w": ["park", "downtown"], "a": "Chào buổi {P}! Bạn cứ xem hoa thoải mái nhé, hoa sáng nay mới về, thơm lắm.", "o": "Chào bạn! Mình đang đi lấy hoa, đi ngang {pl} thấy bạn nên chào một tiếng.", "r": "bán hoa quanh khu này", "b": "Hoa hôm nay mới về, bạn xem thử không?"}, "hung": {"s": "anh", "t": "anh", "w": ["downtown", "mall"], "a": "Ê, chào bạn! Ăn {P} chưa? Bánh mì nóng đây, lấy một ổ cho ấm bụng!", "o": "Chào bạn! Anh đang đẩy xe đi ngang {pl}, thấy mặt lạ nên chào cái cho vui.", "r": "bán bánh mì ở đầu phố này", "b": "Bánh mì mới ra lò đó, lấy một ổ không?"}, "trang": {"w": ["mall"], "a": "Chào bạn, bạn cần mua gì không? Cứ hỏi mình nhé, và đừng tự ý dùng thuốc nha.", "o": "Chào bạn, mình vừa hết ca, ra {pl} nghỉ một chút.", "r": "dược sĩ ở nhà thuốc trong trung tâm", "b": "Bạn ngủ đủ chưa? Mình hỏi theo thói quen nghề thôi."}, "long": {"s": "ông", "u": "cháu", "t": "ông", "w": ["park"], "a": "Chào cháu, ra bờ sông hóng gió à? Ông ngồi đánh cờ ở đây từ đầu buổi {P} rồi.", "o": "Chào cháu, ông đi dạo {pl} một chút, thấy cháu lạ mặt nên hỏi thăm.", "r": "thầy giáo đã nghỉ hưu, hay ngồi ghế đá bờ sông", "b": "Cháu ngồi xuống chơi với ông một ván cờ nhé."}, "dung": {"s": "anh", "t": "anh", "w": ["factory"], "a": "Ê, chào bạn. Khu này xe nâng chạy nhiều, bạn đứng sát vào bên này cho an toàn.", "o": "Chào bạn, anh vừa hết ca, đang đi {pl} kiếm gì ăn.", "r": "lái xe nâng ở khu công nghiệp này", "b": "Hôm nay xưởng bận, nhưng bạn cần gì cứ nói."}, "yen": {"w": ["office"], "a": "Chào bạn! Bạn có hẹn với ai trong tòa nhà không? Để mình báo giúp nhé.", "o": "Chào bạn, mình tan ca rồi mà gặp người mới vẫn phải chào, thói quen lễ tân mà.", "r": "lễ tân ở tòa nhà này", "b": "Hôm nay tòa nhà có tin mới, bạn muốn nghe không?"}, "khoa": {"w": ["downtown"], "a": "Chào bạn! Bạn dừng lại nghe mình đàn à? Cảm ơn nhé, bài này mình mới tập.", "o": "Chào bạn, mình đang đi tìm góc đàn mới ở {pl}.", "r": "đàn hát ở góc phố này", "b": "Bài mới mình vừa tập xong, bạn nghe thử nhé."}, "tu": {"s": "bà", "u": "con", "t": "bà", "w": ["residential"], "a": "Chào con, con mới tới khu này hả? Tạp hóa của bà ngay đầu hẻm, cần gì cứ ghé.", "o": "Chào con, bà đang đi dạo ở {pl} một chút, thấy mặt lạ nên hỏi thăm.", "r": "chủ tạp hóa đầu hẻm", "b": "Con ăn cơm chưa? Tạp hóa mới về cải canh tươi đó."}, "linh": {"w": ["office"], "a": "Chào bạn, buổi {P} ở khu văn phòng này lúc nào cũng vội. Bạn đang tìm ai hay tìm đường à?", "o": "Chào bạn, mình vừa tan làm, đang đi dạo ở {pl} cho đỡ ngộp deadline.", "r": "làm chiến lược thương hiệu cho một công ty gần đây", "b": "Mình vừa xong buổi họp, bạn đến đúng lúc."}, "minh": {"w": ["office"], "a": "Chào buổi {P}! Bạn là người mới ở khu văn phòng này à? Chưa thấy mặt bao giờ.", "o": "Chào bạn, mình đang nghỉ giải lao ở {pl}, gặp người lạ thì chào cho lịch sự.", "r": "kỹ sư sản phẩm ở một công ty gần đây", "b": "Mình vừa gỡ xong một cái bug, tâm trạng đang tốt."}, "hana": {"w": ["mall", "office"], "a": "Chào bạn! Bạn tới xem sự kiện hay đang đi dạo? Chỗ này hay có hoạt động lắm.", "o": "Chào bạn, mình vừa chạy qua {pl} khảo sát địa điểm, may gặp được người mới.", "r": "sản xuất sự kiện quanh khu này", "b": "Tuần này có sự kiện mới, bạn nhớ ghé nhé."}, "an": {"w": ["office", "park"], "a": "À… chào bạn. Bạn cũng đến ngắm tòa nhà này à? Mình hay ngồi phác thảo ở đây.", "o": "Chào bạn, mình đang đi chụp vài góc phố ở {pl} để làm đồ án.", "r": "sinh viên kiến trúc, hay ra đây vẽ phác thảo", "b": "Mình đang vẽ dở một bản phác, bạn xem thử không?"}, "mai": {"w": ["cafe"], "a": "Chào mừng bạn đến quán! Bạn là khách mới à? Ngồi chỗ nào cũng được nhé.", "o": "Chào bạn! Mình vừa rời quán, ra {pl} hít thở một chút. Bạn là người mới à?", "r": "chủ quán cà phê trên con phố này", "b": "Hôm nay quán có món mới, bạn thử nhé?"}, "kai": {"w": ["factory", "office"], "a": "Chào bạn, bạn tìm ai ở đây à? Mình đang chạy việc cho startup nên hơi vội một chút.", "o": "Chào bạn, mình vừa xong ca chạy việc, ra {pl} cho đỡ mệt.", "r": "thực tập vận hành ở một startup gần đây", "b": "Hôm nay deadline dày, nhưng mình vẫn rảnh vài phút."}, "vy": {"w": ["downtown", "mall", "cafe"], "a": "Chào bạn! Mình đang tìm góc sáng đẹp ở đây, chỗ bạn đứng ánh sáng đẹp lắm đó.", "o": "Chào bạn, mình đang đi tìm bối cảnh chụp ở {pl}, nãy giờ chưa thấy gì hay thì gặp bạn.", "r": "chụp ảnh thời trang, hay đi săn góc phố", "b": "Mình đang tìm cảnh chụp mới, bạn có gợi ý nào không?"}, "quan": {"w": ["cafe"], "a": "Chào buổi {P}! Bạn muốn thử gì không? Mình pha cho bạn ly đang được gọi nhiều nhất hôm nay nhé.", "o": "Chào bạn, mình đang đi mua hạt cà phê ở {pl}, thấy bạn lạ mặt nên chào.", "r": "pha chế ở quán cà phê gần đây", "b": "Hôm nay quán có hạt mới, bạn thử nhé?"}, "thao": {"w": ["office"], "a": "Chào bạn! Bạn đến phỏng vấn hay chỉ đi ngang qua? Khu này giờ này hay đông ứng viên lắm.", "o": "Chào bạn, mình hết giờ làm rồi nên ra {pl} thư giãn một chút.", "r": "làm nhân sự ở một công ty gần đây", "b": "Hôm nay mình vừa xong mấy buổi phỏng vấn, đầu hơi nặng."}, "duy": {"w": ["office", "mall"], "a": "Chào bạn. Bạn có thấy lối đi này hơi khó hiểu không? Mình đang để ý bảng chỉ dẫn ở đây.", "o": "Chào bạn, mình đang dạo ở {pl} xem người ta dùng mọi thứ ngoài đời thế nào.", "r": "thiết kế UX, hay để ý mấy thứ dùng chưa tiện", "b": "Mình đang bắt lỗi giao diện, bạn có thấy gì phiền không?"}, "nora": {"w": ["mall", "park"], "a": "Chào bạn! Bạn có nghe thấy tiếng đàn không? Mình đang thử vài giai điệu ở đây.", "o": "Chào bạn, mình đang dạo ở {pl} tìm giai điệu mới.", "r": "chơi nhạc, hay đi tìm cảm hứng quanh đây", "b": "Mình vừa nghĩ ra một đoạn nhạc mới, bạn nghe thử không?"}, "tung": {"w": ["cafe"], "a": "Chào bạn! Bánh vừa ra lò, bạn thử không? Mình còn đang tập sự nên cần người góp ý.", "o": "Chào bạn, mình đang đi mua bơ trứng ở {pl}, thấy bạn nên chào.", "r": "bếp phụ tập sự ở tiệm bánh gần đây", "b": "Bánh mới ra lò, bạn thử rồi cho mình ý kiến nhé."}, "ivy": {"w": ["cafe", "park"], "a": "À, chào bạn… Mình đang vẽ dở một bức, hy vọng không làm phiền bạn.", "o": "Chào bạn, mình ra {pl} tìm cảm hứng vẽ một chút.", "r": "họa sĩ minh họa tự do, hay vẽ ở những chỗ yên tĩnh", "b": "Mình đang vẽ dở một bức, bạn xem cùng được không?"}, "phuc": {"w": ["downtown"], "a": "Chào bạn! Bạn cần hỏi đường tắt không? Mình chạy khu này quen từng ngõ.", "o": "Chào bạn, mình đang tranh thủ giao đơn qua {pl}, dừng một phút chào bạn nhé.", "r": "giao hàng quanh khu này", "b": "Mình đang chạy đơn gấp, bạn cần gì cứ nói nhanh nhé."}, "huyen": {"w": ["downtown", "office", "cafe"], "a": "Chào bạn! Mình đang viết bài về đời sống khu này, bạn cho mình hỏi vài câu được không?", "o": "Chào bạn, mình vừa phỏng vấn xong, ra {pl} nghỉ một chút.", "r": "sinh viên báo chí, đang viết bài về khu này", "b": "Mình đang viết bài, bạn kể mình nghe chuyện khu này nhé."}, "son": {"w": ["factory", "downtown"], "a": "Chào bạn. Mình đang quay cảnh ở đây, bạn đừng bước vào khung hình nhé.", "o": "Chào bạn, mình đang đi tìm bối cảnh quay ở {pl}.", "r": "sinh viên điện ảnh, đang quay phim ở khu này", "b": "Mình đang xem lại cảnh quay, bạn đến đúng lúc."}, "bao": {"w": ["factory"], "a": "Chào bạn! Xe nào cần độ thì cứ nói, còn chỉ ghé xem thì cũng được.", "o": "Chào bạn, mình ghé {pl} mua đồ nghề, bạn có đi xe máy không?", "r": "độ xe ở xưởng gần đây", "b": "Xưởng hôm nay có xe mới về, bạn ghé xem nhé."}, "chi": {"w": ["mall"], "a": "Chào bạn, bạn tìm sách gì không? Quầy mình gợi ý được vài cuốn hay đó.", "o": "Chào bạn, mình vừa tan ca ra {pl} nghỉ chút, nhìn bạn có vẻ hay đọc sách.", "r": "làm thêm ở hiệu sách trong trung tâm", "b": "Có mấy cuốn mới về, bạn ghé quầy xem nhé."}},PHL={"downtown": "trung tâm thành phố", "cafe": "phố cà phê", "office": "khu văn phòng", "park": "công viên bờ sông", "mall": "trung tâm thương mại", "residential": "khu dân cư", "factory": "khu công nghiệp"};
 openDialogue=window.openDialogue=function(sp,tx,ch){
 (ch||[]).forEach(function(c){delete c.note;if(c.text)c.text=c.text.replace(/“{2,}/g,'“').replace(/”{2,}/g,'”')});if(tx)tx=tx.replace(/“{2,}/g,'“').replace(/”{2,}/g,'”');
 for(var z in NPCS){var iv=NPCS[z].intro;if(iv&&tx&&tx.indexOf(iv)>=0)tx=tx.split(iv).join('').replace(/\s+$/,'')}
@@ -5997,15 +6130,16 @@ var n=NPCS[id],me=game.name||'bạn',P=PL[period()],J=({Florist:'bán hoa','Bán
 fn=window.CH_FULL&&CH_FULL[id]||n.name,go=function(){busy=1;try{_od(sp,tx,ch)}finally{busy=0}},
 O=function(s,c){busy=1;try{_od(sp,s,c)}finally{busy=0}},
 end=function(){hi[id]=1;F.met[id]=true;last[id]=performance.now();go()};
-if(!first){var k=sc<35?0:sc<60?1:2,L=[['“Chào '+me+', lại gặp nhau rồi. Mình '+n.name+', làm '+J+' quanh đây, bạn còn nhớ mình chứ?”','“Buổi '+P+' tốt lành '+me+'. Mình '+n.name+' đây, rất vui được trò chuyện với bạn thêm lần nữa.”'],['“Ê '+me+'! Chào buổi '+P+'. Thấy bạn là biết hôm nay có chuyện vui rồi.”','“Hi '+me+', buổi '+P+' của bạn sao rồi? '+n.name+' đang mong có người tám đây.”'],['“'+me+' à, chào buổi '+P+'. Thấy bạn là mình đỡ mệt hẳn.”','“Đến rồi hả '+me+'? '+n.name+' đang nghĩ tới bạn đúng lúc luôn.”']][k][(game.npcState[id].talkCount||0)%2];
-return O(L,[{text:k?'“Chào '+n.name+', buổi '+P+' vui nhé!”':'“Chào '+n.name+', mình là '+me+', bạn nhớ mình chứ?”',onChoose:function(){changeRel(id,{respect:2,comfort:2});end()}},{text:'“Mình ghé làm phiền bạn chút nhé?”',onChoose:function(){changeRel(id,{trust:2,curiosity:1});end()}}])}
-var sh=/ít nói|kín|trầm|điềm|dịu|ngại/.test((n.traits||[]).join(' ')+(n.intro||'')),
-g=sh?'“Ơ… chào bạn, chào buổi '+P+'.” '+n.name+' hơi ngập ngừng rồi mỉm cười. “Mình hay thấy bạn quanh đây mà chưa kịp chào. Mình là '+fn+', làm '+J+'. Cứ gọi '+n.name+' là được.”':'“Chào buổi '+P+'! Bạn mới tới đúng không? Mình là '+fn+', làm '+J+' quanh đây, gọi '+n.name+' cho thân nhé. Còn bạn?”';
-O(g,[{text:'“Chào '+n.name+', mình là '+me+'. Rất vui được gặp bạn.”',onChoose:function(){changeRel(id,{respect:4,comfort:3,trust:2});s2('“'+me+', tên dễ nhớ ghê. Rất vui được quen bạn.”')}},
-{text:'“Hi! Mình là '+me+', mới chuyển tới đây. Có gì chỉ giúp mình nhé :))”',onChoose:function(){changeRel(id,{chemistry:3,comfort:4,curiosity:2});s2('“Hay quá, người mới! Để mình kể bạn nghe vài chỗ hay ho quanh đây.”')}},
-{text:'“Ờ… chào. Mình là '+me+'. Mình hơi ngại người lạ.”',onChoose:function(){changeRel(id,{trust:4,comfort:2,respect:2});s2('“Không sao, mình cũng vậy lúc đầu. Cứ thong thả, '+me+'.”')}}]);
-function s2(r){O(r,[{text:'“Bạn sống ở khu này lâu chưa?”',onChoose:function(){changeRel(id,{curiosity:3,interest:2});s3('“Cũng một thời gian rồi. Có mấy chỗ mình thích, sẽ chỉ bạn dần.”')}},{text:'“Mình đang đi loanh quanh làm quen thành phố.”',onChoose:function(){changeRel(id,{comfort:3,consistency:2});s3('“Vậy bạn gặp đúng người rồi. Đi bộ là cách hay nhất để hiểu một nơi.”')}}])}
-function s3(r){try{remember(id,'lần đầu gặp, đã chào hỏi và giới thiệu tên.','positive',['intro'])}catch(_){}O(r+'\n\n“Mình nói chuyện thêm chút nhé?”',[{text:'“Có chứ, mình rảnh.”',onChoose:function(){advance(5);end()}},{text:'“Để lần sau nhé, hẹn gặp lại '+n.name+'.”',onChoose:function(){hi[id]=1;F.met[id]=true;try{addPhone(n.name,'“Rất vui được làm quen với bạn hôm nay.”')}catch(_){}closeDialogue()}}])}
+var GE=GR[id]||{},s=GE.s||'mình',u=GE.u||'bạn',cp=function(x){return x.charAt(0).toUpperCase()+x.slice(1)},S=cp(s),ti=GE.t?GE.t+' ':'',call=ti+n.name,loc=game.location,pl=PHL[loc]||'khu này',at=(GE.w||[]).indexOf(loc)>=0,fill=function(x){return String(x||'').replace(/\{P\}/g,P).replace(/\{pl\}/g,pl)},rl=GE.r||('làm '+J+' quanh đây'),bk=fill(GE.b||'Hôm nay '+u+' thế nào?'),ap='ở '+pl;
+if(!first){var k=sc<35?0:sc<60?1:2,tc=(game.npcState[id].talkCount||0)%2,Lq=at?[['“Chào '+me+', lại gặp nhau rồi. '+bk+'”','“Buổi '+P+' tốt lành '+me+'. '+n.name+' đây, '+rl+'. Rất vui được trò chuyện với '+u+' thêm lần nữa.”'],['“Ê '+me+'! Chào buổi '+P+'. '+bk+'”','“Hi '+me+', buổi '+P+' của '+u+' sao rồi? '+n.name+' đang mong có người tám đây.”'],['“'+me+' à, chào buổi '+P+'. Thấy '+u+' là '+s+' đỡ mệt hẳn.”','“Đến rồi hả '+me+'? '+bk+'”']]:[['“Chào '+me+', gặp '+u+' '+ap+' bất ngờ ghê. '+S+' là '+n.name+', '+u+' còn nhớ '+s+' chứ?”','“Buổi '+P+' tốt lành '+me+'. Không ngờ lại gặp '+u+' '+ap+', '+n.name+' vui lắm.”'],['“Ê '+me+'! Gặp '+u+' '+ap+' đúng lúc ghê, chào buổi '+P+'.”','“Hi '+me+', buổi '+P+' của '+u+' sao rồi? '+n.name+' đang tìm người tám đây.”'],['“'+me+' à, chào buổi '+P+'. Gặp '+u+' '+ap+' là '+s+' đỡ mệt hẳn.”','“Đến rồi hả '+me+'? '+n.name+' đang nghĩ tới '+u+' đúng lúc luôn.”']];
+return O(Lq[k][tc],[{text:k?'“Chào '+call+', buổi '+P+' vui nhé!”':'“Chào '+call+', mình là '+me+', bạn nhớ mình chứ?”',onChoose:function(){changeRel(id,{respect:2,comfort:2});end()}},{text:'“Mình ghé làm phiền bạn chút nhé?”',onChoose:function(){changeRel(id,{trust:2,curiosity:1});end()}}])}
+var sh=/ít nói|kín|trầm|điềm|dịu|ngại/.test((n.traits||[]).join(' ')+(n.intro||'')),op=fill(at?GE.a:GE.o)||'Chào buổi '+P+'! Bạn mới tới đúng không?',
+g=(sh?n.name+' khẽ ngập ngừng rồi mỉm cười.\n\n':'')+'“'+op+' '+S+' là '+fn+', '+rl+'. '+(ti?'Cứ gọi là '+call:'Cứ gọi '+s+' là '+n.name)+' nhé. Còn '+u+'?”';
+O(g,[{text:'“Chào '+call+', mình là '+me+'. Rất vui được gặp.”',onChoose:function(){changeRel(id,{respect:4,comfort:3,trust:2});s2('“'+me+', tên dễ nhớ ghê. Rất vui được quen '+u+'.”')}},
+{text:'“Hi! Mình là '+me+', mới chuyển tới đây. Có gì chỉ giúp mình nhé :))”',onChoose:function(){changeRel(id,{chemistry:3,comfort:4,curiosity:2});s2('“Hay quá, người mới! Để '+s+' kể '+u+' nghe vài chỗ hay ho quanh đây.”')}},
+{text:'“Ờ… chào. Mình là '+me+'. Mình hơi ngại người lạ.”',onChoose:function(){changeRel(id,{trust:4,comfort:2,respect:2});s2('“Không sao, '+s+' cũng vậy lúc đầu. Cứ thong thả, '+me+'.”')}}]);
+function s2(r){O(r,[{text:at?'“Bạn làm ở đây lâu chưa?”':'“Bạn sống ở khu này lâu chưa?”',onChoose:function(){changeRel(id,{curiosity:3,interest:2});s3('“Cũng một thời gian rồi. Có mấy chỗ '+s+' thích, sẽ chỉ '+u+' dần.”')}},{text:'“Mình đang đi loanh quanh làm quen thành phố.”',onChoose:function(){changeRel(id,{comfort:3,consistency:2});s3('“Vậy '+u+' gặp đúng người rồi. Đi bộ là cách hay nhất để hiểu một nơi.”')}}])}
+function s3(r){try{remember(id,'lần đầu gặp, đã chào hỏi và giới thiệu tên.','positive',['intro'])}catch(_){}O(r+'\n\n“'+S+' nói chuyện thêm chút nhé?”',[{text:'“Có chứ, mình rảnh.”',onChoose:function(){advance(5);end()}},{text:'“Để lần sau nhé, hẹn gặp lại '+call+'.”',onChoose:function(){hi[id]=1;F.met[id]=true;try{addPhone(n.name,'“Rất vui được làm quen với bạn hôm nay.”')}catch(_){}closeDialogue()}}])}
 };
 })();</script>
 
@@ -6086,7 +6220,7 @@ const n=NPCS[x.npcId];const here=game.location===x.location;return `<div class="
 function historyHtml(){const d=ensureLifeDirector();const arr=d.history.slice(0,6);if(!arr.length)return '<div class="life-director-note">Chưa có tình huống nào được ghi lại.</div>';return arr.map(x=>`<div class="life-director-note">${x.status==='done'?'✓':'↺'} <strong>${escapeHtml(x.title)}</strong><br><span>${escapeHtml(NPCS[x.npcId]?.name||'NPC')} · Ngày ${x.createdDay}</span></div>`).join('');}
 function directorCalendarHtml(){
 if(typeof ensureDirectorState==='function')ensureDirectorState();
-const goals=Array.isArray(game.dailyGoals)?game.dailyGoals.map(g=>`${g.done?'✓':'○'} ${g.title} (${Math.round(g.progress)}/${g.target})`).join('<br>'):'Chưa có mục tiêu';
+const goals=Array.isArray(game.dailyGoals)?game.dailyGoals.map(g=>`${g.done?'✓':'○'} ${escapeHtml(g.title)} (${Math.round(g.progress)}/${g.target})${g.desc?`<br><small style="color:#7c644a">${escapeHtml(g.desc)}</small>`:''}`).join('<br>'):'Chưa có mục tiêu';
 return `<h3>📅 Nhịp sống hôm nay</h3><p><strong>Ngày ${game.day}</strong> · ${worldTime()} · ${escapeHtml(WORLD[game.location]?.name||game.location)}</p>${lifeCardHtml()}<div class="section"><div class="tag">MỤC TIÊU — CHỈ LÀ GỢI Ý</div><p>${goals}</p></div><div class="section"><div class="tag">NHỮNG CHUYỆN ĐÃ XẢY RA</div>${historyHtml()}</div><p>Năng lượng: ${Math.round(game.energy)}% · Danh tiếng: ${game.reputation} · Số dư: ${game.money.toLocaleString('vi-VN')}đ</p>`;
 }
 const _recordTalkLD=window.recordTalk||recordTalk;
