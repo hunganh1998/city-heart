@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV9MTHQ637"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DV9MTHQ637');
-</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
 <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="City Heart"><meta name="theme-color" content="#1b0f1f">
@@ -198,51 +190,51 @@ const NPC_DIALOGUES={
 linh:[
 {text:"“Tui khá để ý mấy chi tiết nhỏ á. Nhiều khi một chuyện tưởng xàm xí lại thành story hay ho.”",choices:[
 {text:"“Mik cũng hay để ý mấy thứ linh tinh lắm.”",reply:"“Thế hnay bn vừa catch được gì?”",effects:{"curiosity":4,"chemistry":3}},
-{text:"“Mik thích nghe người khác kể hơn là tự kể.”",reply:"“Vậy là bn chịu ngồi nghe người ta kể ha, điểm này tui thích.”",effects:{"trust":4,"respect":2}},
-{text:"“Mik chỉ để ý giờ tan làm thôi :))”",reply:"“Ít ra bn nói thật, tui thích kiểu đó =))”",effects:{"comfort":2,"consistency":2}}
+{text:"“Mik thích nghe người khác kể hơn là tự kể.”",reply:"“Nghe có vẻ biết lắng nghe nha. +điểm.”",effects:{"trust":4,"respect":2}},
+{text:"“Mik chỉ để ý giờ tan làm thôi :))”",reply:"“Ít ra bn sống thật =))”",effects:{"comfort":2,"consistency":2}}
 ]},
 {text:"“Dạo này tui hơi rén mấy kiểu hứa xong để đó. Mất trust nhanh lắm.”",choices:[
 {text:"Hỏi nhẹ: “Có chuyện gì à? Kể nếu bn muốn.”",reply:"“Cảm ơn vì hỏi mà k ép. Dễ chịu ghê.”",effects:{"trust":5,"comfort":3}},
 {text:"“Mik cũng từng tin nhầm người. Toang nhẹ.”",reply:"“Ít ra bn không giả vờ mình hoàn hảo.”",effects:{"chemistry":4,"trust":3}},
-{text:"“Thôi đổi topic nha, lúc khác nói cũng dc.”",reply:"“Ừ, biết dừng đúng lúc vậy dễ chịu á.”",effects:{"respect":4,"comfort":4}}
+{text:"“Thôi đổi topic nha, lúc khác nói cũng dc.”",reply:"“Biết giữ chừng mực là một điểm cộng.”",effects:{"respect":4,"comfort":4}}
 ]},
 {text:"“Một buổi hẹn lý tưởng với bn là kiểu nào?”",choices:[
-{text:"“Chỗ yên yên để ngồi nói chuyện lâu.”",reply:"“Ủa, đúng gu tui thiệt đó :))”",effects:{"comfort":4,"compatibility":3}},
-{text:"“Plan bất ngờ, miễn đừng bắt cóc mik nha :))”",reply:"“Chốt nha :)) Mà báo trước, tui mê mấy kèo ngẫu hứng lắm.”",effects:{"chemistry":5,"curiosity":3}},
-{text:"“Có người hợp, thì đi đâu cũng ổn.”",reply:"“...Câu này hơi bị dễ thương đó.”",effects:{"interest":5,"chemistry":4}}
+{text:"“Chỗ yên yên để ngồi nói chuyện lâu.”",reply:"“Ừm, nghe đúng gu tui.”",effects:{"comfort":4,"compatibility":3}},
+{text:"“Plan bất ngờ, miễn đừng bắt cóc mik :))”",reply:"“Deal. Nhưng tui báo trước là tui khá thích spontaneous.”",effects:{"chemistry":5,"curiosity":3}},
+{text:"“Có người hợp là đi đâu cũng ổn.”",reply:"“...Câu này hơi bị dễ thương đó.”",effects:{"interest":5,"chemistry":4}}
 ]}
 ],
 minh:[
 {text:"“Tối qua mik fix bug tới 2h. Sáng ra nó comeback như chưa từng rời đi. Đời đúng kiểu recursive.”",choices:[
-{text:"“Nghe như một mối quan hệ toxic vậy :))”",reply:"“Ủa, cuối cùng cũng có người hiểu nỗi đau nghề tui =))”",effects:{"chemistry":5,"comfort":3}},
+{text:"“Nghe như một mối quan hệ toxic vậy :))”",reply:"“Cuối cùng cũng có người hiểu nghề. Respect.”",effects:{"chemistry":5,"comfort":3}},
 {text:"“Bug gì thế? Kể mik nghe thử.”",reply:"“Bn thật sự muốn nghe á? Ok, ngồi xuống.”",effects:{"curiosity":4,"trust":3}},
-{text:"“Lần sau ngủ đi ông ơi. Não cũng cần reboot.”",reply:"“Nghe như HR giả dạng bạn bè vậy =)) Mà thôi, bn nói cũng có lý.”",effects:{"respect":2,"comfort":2}}
+{text:"“Lần sau ngủ đi ông ơi. Não cũng cần reboot.”",reply:"“Nghe như HR đội lốt bạn bè =))”",effects:{"respect":2,"comfort":2}}
 ]},
 {text:"“Mik k hợp small talk. Nói chuyện có ý nghĩa đi.”",choices:[
-{text:"“Vậy câu to nhất hiện tại: bn đang muốn làm gì nhất?”",reply:"“Câu này được nè. Nghe là thấy bn cũng hay nghĩ mấy vụ này.”",effects:{"curiosity":5,"trust":2}},
-{text:"“Ngồi im chill cũng là một kiểu nói chuyện mà.”",reply:"“Nghe hơi deep á =)) Mà cũng đúng.”",effects:{"comfort":5,"chemistry":2}},
+{text:"“Vậy câu to nhất hiện tại: bn đang muốn làm gì nhất?”",reply:"“Câu hỏi này được. Có chiều sâu.”",effects:{"curiosity":5,"trust":2}},
+{text:"“Ngồi im chill cũng là một kiểu nói chuyện mà.”",reply:"“Nghe hơi triết nhưng… cũng hợp lý.”",effects:{"comfort":5,"chemistry":2}},
 {text:"“Thế mik nói một câu vô tri phá mood nha.”",reply:"“Ok, thử xem độ vô tri tới đâu.”",effects:{"chemistry":4}}
 ]},
 {text:"“Bn có chơi game không?”",choices:[
 {text:"“Có. Game chiến thuật là chân ái.”",reply:"“Ồ, vậy tối nay có kèo board game. Join không?”",effects:{"chemistry":4,"compatibility":4}},
-{text:"“K chơi nhiều, nhưng xem người khác chơi khá cuốn.”",reply:"“Vậy cũng tính là chơi theo kiểu riêng mà :)) Ngồi xem đúng lúc cũng cuốn lắm.”",effects:{"comfort":3,"curiosity":2}},
+{text:"“K chơi nhiều, nhưng xem người khác chơi khá cuốn.”",reply:"“Spectator cũng là role nha.”",effects:{"comfort":3,"curiosity":2}},
 {text:"“Game nào teamwork mới vui.”",reply:"“Câu này nghe như đang tự ứng tuyển teammate.”",effects:{"respect":3,"chemistry":5}}
 ]}
 ],
 hana:[
 {text:"“Tui vừa ôm event 800 khách. Mưa cái là cả team đi vào cõi hư vô luôn :))”",choices:[
 {text:"“Mưa thì biến thành concept. Problem solved.”",reply:"“Ê câu này được nha. Có tố chất cứu event.”",effects:{"chemistry":5,"curiosity":4}},
-{text:"“Chuẩn bị phương án B trước, đừng để ông trời làm mình bất ngờ.”",reply:"“Ừ, có sẵn plan B thì đỡ hoảng hơn nhiều á. Tui thích kiểu nghĩ này.”",effects:{"respect":4,"trust":2}},
+{text:"“Chuẩn bị phương án B trước. Đừng để ông trời làm mình bất ngờ.”",reply:"“Thực tế. Tui thích kiểu người này.”",effects:{"respect":4,"trust":2}},
 {text:"“800 khách? Cho mik đứng xa 2km được không?”",reply:"“Thành thật tới mức tui phải cười =))”",effects:{"comfort":3,"chemistry":3}}
 ]},
-{text:"“Tui ghét nhất kiểu chưa biết full story, đã vội phán.”",choices:[
+{text:"“Tui ghét nhất kiểu chưa biết full story đã phán.”",choices:[
 {text:"“Mik cũng né kiểu đó. Hỏi trước rồi hẵng kết luận.”",reply:"“Đúng. Cùng hệ tư tưởng rồi.”",effects:{"respect":3,"trust":3}},
-{text:"“Có ai từng phán bn oan à, hay chỉ là bn không thích bị hiểu lầm?”",reply:"“Có. Nhưng chuyện đó để lúc thân hơn kể.”",effects:{"curiosity":5,"trust":4}},
-{text:"“Mik không biết hết chuyện thì mik k dám kết luận.”",reply:"“Ừ, biết hỏi trước rồi hẵng kết luận, nghe dễ chịu hơn hẳn.”",effects:{"comfort":3,"respect":5}}
+{text:"“Có ai từng phán bn oan à?”",reply:"“Có. Nhưng chuyện đó để lúc thân hơn kể.”",effects:{"curiosity":5,"trust":4}},
+{text:"“Mik không biết hết chuyện thì mik k dám kết luận.”",reply:"“Good. Ít nhất bn biết chừa đường lui cho người khác.”",effects:{"comfort":3,"respect":5}}
 ]},
 {text:"“Cuối tuần bn thuộc team plan kỹ hay team ‘ra đường rồi tính’?”",choices:[
 {text:"“Ra đường rồi tính. Càng bất ngờ càng vui.”",reply:"“Ok chốt. Nhưng 10p nữa đi đâu thì tự chịu =))”",effects:{"chemistry":6,"curiosity":4}},
-{text:"“Có plan chính, còn side quest thì tính sau.”",reply:"“Vậy là vừa có plan vừa biết quẹo side quest :))”",effects:{"compatibility":4,"trust":2}},
+{text:"“Có plan chính, còn side quest tính sau.”",reply:"“Cân bằng thế mới sống lâu nha.”",effects:{"compatibility":4,"trust":2}},
 {text:"“Bn vui là được, mik theo.”",reply:"“Dễ chiều vậy coi chừng bị kéo đi mất.”",effects:{"comfort":4,"interest":4}}
 ]}
 ],
@@ -250,203 +242,203 @@ an:[
 {text:"“Mình thích những chỗ có khoảng thở. Không phải lúc nào cũng cần nói.”",choices:[
 {text:"“Vậy công viên tối nay hợp vibe đó.”",reply:"“Ừ. Có những ngày im lặng cũng đủ rồi.”",effects:{"comfort":5,"compatibility":4}},
 {text:"“Mik lại thích nơi đông người hơn.”",reply:"“Khác gu thôi. Biết đâu lại bù cho nhau.”",effects:{"curiosity":3,"respect":2}},
-{text:"“Có người hợp thì ngồi ở đâu cũng chill.”",reply:"“Nghe cũng hợp lý á. Quan trọng vẫn là ngồi với ai thôi.”",effects:{"chemistry":3,"compatibility":4}}
+{text:"“Có người hợp thì ngồi ở đâu cũng chill.”",reply:"“Câu này nghe khá ổn.”",effects:{"chemistry":3,"compatibility":4}}
 ]},
 {text:"“Mình đang thiết kế một căn hộ nhỏ. Ánh sáng là thứ mình để ý nhất.”",choices:[
 {text:"“Sao lại là ánh sáng?”",reply:"“Vì đôi khi một buổi sáng đẹp cứu được cả một ngày.”",effects:{"curiosity":5,"trust":3}},
-{text:"“Mik có một chỗ ngồi cũng chill lắm, hôm nào dẫn bn đi thử.”",reply:"“Khi nào tiện, dẫn tui đi thử nha, nghe có vẻ chill á.”",effects:{"comfort":4,"interest":3}},
-{text:"“Miễn căn hộ đó không có họp online, là tui duyệt :))”",reply:"“Haha, cái này tui đồng ý tuyệt đối, họp hành để ngoài cửa thôi :))”",effects:{"chemistry":4}}
+{text:"“Mik có một chỗ ngồi cũng chill lắm.”",reply:"“Khi nào tiện, dẫn mình xem.”",effects:{"comfort":4,"interest":3}},
+{text:"“Miễn căn hộ đó không có họp online :))”",reply:"“Điểm này mình đồng ý tuyệt đối.”",effects:{"chemistry":4}}
 ]},
 {text:"“Bn thường quyết định bằng cảm xúc hay lý trí?”",choices:[
-{text:"“Cảm xúc vote trước, lý trí chốt kèo sau.”",reply:"“Nghe hơi nguy hiểm á, mà nghĩ kỹ lại cũng có lý =))”",effects:{"chemistry":4,"curiosity":3}},
-{text:"“Lý trí trước.”",reply:"“Ừ, nghe cách bn nói là tui đoán được phần nào rồi.”",effects:{"respect":4,"compatibility":3}},
-{text:"“Tùy người đang đứng cạnh mik.”",reply:"“Ủa… câu này nghe có gì đó nha 👀”",effects:{"interest":4,"chemistry":4}}
+{text:"“Cảm xúc vote trước, lý trí chốt kèo sau.”",reply:"“Nghe nguy hiểm mà hợp lý.”",effects:{"chemistry":4,"curiosity":3}},
+{text:"“Lý trí trước.”",reply:"“Mình đoán được. Khá rõ ràng.”",effects:{"respect":4,"compatibility":3}},
+{text:"“Tùy người đang đứng cạnh mik.”",reply:"“...Câu này đáng để nghĩ.”",effects:{"interest":4,"chemistry":4}}
 ]}
 ],
 mai:[
 {text:"“Hôm nay quán đông dã man. Chắc ai cũng đang chạy deadline và cần cà phê cứu mạng.”",choices:[
-{text:"“Hoặc họ chỉ cần một chỗ trốn deadline :))”",reply:"“Ừ, chắc phải 90% khách quán tui là đang trốn deadline đó :))”",effects:{"chemistry":4,"comfort":3}},
-{text:"“Mik nghĩ khách thích nhất việc bạn nhớ tên họ.”",reply:"“Ủa, bn cũng để ý chuyện đó hả? Tui tưởng ít ai để ý á.”",effects:{"interest":4,"trust":3}},
+{text:"“Hoặc họ chỉ cần một chỗ trốn deadline :))”",reply:"“Chuẩn 90% luôn.”",effects:{"chemistry":4,"comfort":3}},
+{text:"“Mik nghĩ khách thích nhất việc bạn nhớ tên họ.”",reply:"“Bn để ý chuyện đó hả?”",effects:{"interest":4,"trust":3}},
 {text:"“Món nào ở đây là chân ái của bạn?”",reply:"“Hỏi đúng người rồi. Để mình recommend.”",effects:{"curiosity":4,"compatibility":3}}
 ]},
 {text:"“Có một cuốn sách ở quán làm mình đổi cách nhìn về công việc.”",choices:[
-{text:"“Tên sách gì? Drop mik đi.”",reply:"“Được chứ, tui còn đánh dấu mấy đoạn hay nữa nè.”",effects:{"curiosity":5,"trust":2}},
-{text:"“Mik cũng có một cuốn từng cứu mood.”",reply:"“Thế là có thêm một đề tài để tám rồi nha :))”",effects:{"chemistry":3,"compatibility":4}},
-{text:"“Cho mik dessert trước, triết lý sau :))”",reply:"“Ăn trước nói sau, chuẩn bài :))”",effects:{"comfort":3,"chemistry":3}}
+{text:"“Tên sách gì? Drop mik đi.”",reply:"“Được. Tui còn đánh dấu đoạn hay nữa.”",effects:{"curiosity":5,"trust":2}},
+{text:"“Mik cũng có một cuốn từng cứu mood.”",reply:"“Vậy là có đề tài nói chuyện rồi.”",effects:{"chemistry":3,"compatibility":4}},
+{text:"“Cho mik dessert trước, triết lý sau :))”",reply:"“Ưu tiên hợp lý. Tui duyệt.”",effects:{"comfort":3,"chemistry":3}}
 ]},
 {text:"“Bn có bao giờ vào quán chỉ để nghe chuyện người khác không?”",choices:[
-{text:"“Có, nhưng mik không chen.”",reply:"“Vậy là có ý tứ đó nha :))”",effects:{"respect":4,"comfort":4}},
+{text:"“Có, nhưng mik không chen.”",reply:"“Thế là đủ lịch sự rồi.”",effects:{"respect":4,"comfort":4}},
 {text:"“Có. Quan sát thành phố cũng vui.”",reply:"“Mình biết ngay bn có kiểu đó.”",effects:{"curiosity":4,"chemistry":3}},
-{text:"“Mik thích người khác kể cho mik nghe hơn.”",reply:"“Để bữa nào mood tới tui kể cho nghe :))”",effects:{"interest":4,"trust":3}}
+{text:"“Mik thích người khác kể cho mik nghe hơn.”",reply:"“Một ngày đẹp trời tui kể.”",effects:{"interest":4,"trust":3}}
 ]}
 ],
 kai:[
 {text:"“Ở nhà máy, cái khó đôi khi không phải máy. Là người ta quên báo nhau đúng lúc.”",choices:[
 {text:"“Có case nào nhớ đời không?”",reply:"“Có. Để hôm nào rảnh kể, dài lắm.”",effects:{"trust":4,"curiosity":4}},
-{text:"“Vậy giao tiếp với bn là chuyện nghiêm túc nhỉ.”",reply:"“Ừ, nói đúng lúc đỡ khối chuyện luôn.”",effects:{"respect":4,"compatibility":3}},
+{text:"“Vậy giao tiếp với bn là chuyện nghiêm túc nhỉ.”",reply:"“Ừ. Nói đúng lúc tiết kiệm rất nhiều việc.”",effects:{"respect":4,"compatibility":3}},
 {text:"“Mik đoán bn ghét người trễ hẹn.”",reply:"“Không thích. Nhưng báo trước thì vẫn ổn.”",effects:{"curiosity":3,"chemistry":2}}
 ]},
 {text:"“Sau ca tối tui hay đi ăn đồ đường phố. Đó mới là phần thưởng.”",choices:[
-{text:"“Món ruột của bn là gì?”",reply:"“Bánh mì cay đầu phố. Ngon hơn mức cần thiết.”",effects:{"curiosity":4,"comfort":3}},
-{text:"“Hôm nào, hẹn nhau đi ăn nha?”",reply:"“Được. Nhưng đừng hứa cho vui.”",effects:{"interest":4,"consistency":4}},
+{text:"“Món ruột là gì?”",reply:"“Bánh mì cay đầu phố. Ngon hơn mức cần thiết.”",effects:{"curiosity":4,"comfort":3}},
+{text:"“Hẹn hôm nào đi ăn?”",reply:"“Được. Nhưng đừng hứa cho vui.”",effects:{"interest":4,"consistency":4}},
 {text:"“Mik đang nghiện một món khác.”",reply:"“Có gu là được.”",effects:{"chemistry":3,"compatibility":3}}
 ]},
 {text:"“Tui không thích excuse. Có vấn đề thì nói thẳng.”",choices:[
-{text:"“Cái này mik cùng phe.”",reply:"“Ừ, nghe vậy là tui thấy yên tâm hơn rồi.”",effects:{"respect":4,"consistency":3}},
+{text:"“Cái này mik cùng phe.”",reply:"“Tốt.”",effects:{"respect":4,"consistency":3}},
 {text:"“Có lúc nói thật khó mà.”",reply:"“Khó thì nói chậm. Đừng né.”",effects:{"trust":3,"curiosity":3}},
 {text:"“Vậy mik sẽ cố đúng giờ.”",reply:"“Đó là một khởi đầu ổn.”",effects:{"consistency":5}}
 ]}
 ],
 vy:[
 {text:"“Có mấy góc phố nhìn ngoài hơi xấu, qua máy ảnh lại thành có vibe.”",choices:[
-{text:"“Bn hay chụp người hay chụp phố?”",reply:"“Cả hai á, nhưng nếu gặp người thú vị thì tui sẽ giơ máy lên nhiều hơn.”",effects:{"curiosity":5,"chemistry":3}},
-{text:"“Cho mik xem tấm bn thích nhất, được không?”",reply:"“Được chứ, nhưng coi xong đừng chê tui nha :))”",effects:{"trust":4,"interest":3}},
+{text:"“Bn hay chụp người hay chụp phố?”",reply:"“Cả hai. Nhưng người thú vị hơn.”",effects:{"curiosity":5,"chemistry":3}},
+{text:"“Cho mik xem tấm bn thích nhất.”",reply:"“Được. Nhưng đừng phán xét nha.”",effects:{"trust":4,"interest":3}},
 {text:"“Mik thích cách bn nhìn mọi thứ.”",reply:"“Khen sớm thế. Tui còn chưa cho xem ảnh đẹp nhất đâu.”",effects:{"interest":4,"chemistry":4}}
 ]},
 {text:"“Tui catch lời khen giả nhanh lắm.”",choices:[
 {text:"“Vậy mik chỉ khen thứ mik thật sự thích.”",reply:"“Nghe hợp lý. Đỡ mùi quảng cáo.”",effects:{"trust":4,"consistency":3}},
-{text:"“Mik k giỏi khen người khác đâu.”",reply:"“Vậy lại đỡ áp lực cho cả hai ha :))”",effects:{"comfort":4,"chemistry":3}},
+{text:"“Mik k giỏi khen người khác đâu.”",reply:"“Thế lại đỡ áp lực.”",effects:{"comfort":4,"chemistry":3}},
 {text:"“Mik làm checklist khen bn nhé?”",reply:"“Đừng biến romance thành Notion board =))”",effects:{"chemistry":5}}
 ]},
-{text:"“Có chỗ nào trong thành phố, bn tới một mình mà vẫn thấy dễ chịu không?”",choices:[
+{text:"“Có chỗ nào trong thành phố mà bn tới một mình vẫn thấy dễ chịu không?”",choices:[
 {text:"“Một góc công viên gần mặt nước.”",reply:"“Ok, tui bắt đầu thấy câu trả lời này có điểm.”",effects:{"chemistry":5,"curiosity":3}},
-{text:"“Quán nào có ghế gần cửa sổ.”",reply:"“Ừ, tui nhớ gu này nha 👀”",effects:{"comfort":4,"interest":3}},
-{text:"“Chưa có, mik vẫn đang tìm.”",reply:"“Chuẩn bài. Thành phố này còn khối side quest :))”",effects:{"curiosity":5,"compatibility":3}},
+{text:"“Quán nào có ghế gần cửa sổ.”",reply:"“Ghi nhận. Tui nhớ gu này.”",effects:{"comfort":4,"interest":3}},
+{text:"“Chưa có, mik vẫn đang tìm.”",reply:"“Chuẩn. Thành phố còn nhiều side quest.”",effects:{"curiosity":5,"compatibility":3}},
 ]}
 ],
 quan:[
 {text:"“Sáng sớm là lúc cà phê ngon nhất. Thành phố chưa kịp ồn.”",choices:[
 {text:"“Vậy sáng mai bn có mở quán không?”",reply:"“Bn đang kiếm cớ quay lại đúng không?”",effects:{"interest":4,"chemistry":4}},
 {text:"“Ly nào bn hay uống nhất?”",reply:"“Flat white. Gọn, đủ, không drama.”",effects:{"curiosity":4,"compatibility":2}},
-{text:"“Mik thích thành phố lúc khuya hơn.”",reply:"“Ok, thế là có vụ để cà khịa nhau rồi =))”",effects:{"chemistry":3,"curiosity":3}}
+{text:"“Mik thích thành phố lúc khuya hơn.”",reply:"“Thế là có topic để cãi nhau rồi.”",effects:{"chemistry":3,"curiosity":3}}
 ]},
 {text:"“Có khách uống một ngụm xong bảo cà phê đắng.”",choices:[
 {text:"“Có khi họ đang thiếu một chút ngọt.”",reply:"“Câu này có vẻ không chỉ nói về cà phê ha?”",effects:{"chemistry":5,"curiosity":4}},
 {text:"“Mỗi người một khẩu vị.”",reply:"“Chuẩn. Miễn là đừng bắt người khác uống giống mình.”",effects:{"respect":3,"compatibility":3}},
-{text:"“Vậy nếu phải chọn, bn thích cà phê đắng nguyên bản hay thêm chút ngọt?”",reply:"“Tui nghiêng về đắng một chút, thêm ngọt vừa đủ thôi, giữ được vị cà phê.”",effects:{"respect":4,"trust":2}}
+{text:"“Đừng lãng phí đồ ăn nha.”",reply:"“Điểm cộng.”",effects:{"respect":4,"trust":2}}
 ]},
 {text:"“Bn thích nói chuyện hay chỉ cần có người ngồi cạnh?”",choices:[
-{text:"“Tùy ngày. Có hôm nói, có hôm chỉ ngồi.”",reply:"“Tui cũng vậy á, có hôm chỉ cần ngồi cạnh nhau thôi là đủ rồi.”",effects:{"compatibility":4,"comfort":4}},
-{text:"“Nói chuyện lâu.”",reply:"“Vậy hôm nay ngồi lâu hơn chút cũng được, tui đang rảnh nè.”",effects:{"interest":4,"chemistry":3}},
-{text:"“Ngồi cạnh là đủ.”",reply:"“Ừ, câu này dễ làm người ta nhớ thiệt đó.”",effects:{"comfort":5,"chemistry":2}}
+{text:"“Tùy ngày. Có hôm nói, có hôm chỉ ngồi.”",reply:"“Tui cũng vậy.”",effects:{"compatibility":4,"comfort":4}},
+{text:"“Nói chuyện lâu.”",reply:"“Vậy hôm nay tui rảnh.”",effects:{"interest":4,"chemistry":3}},
+{text:"“Ngồi cạnh là đủ.”",reply:"“Câu này dễ làm người ta nhớ.”",effects:{"comfort":5,"chemistry":2}}
 ]}
 ],
 thao:[
 {text:"“Ở văn phòng, người nói rõ mình cần gì thường giải quyết được nửa vấn đề.”",choices:[
-{text:"“Nửa còn lại, là gì?”",reply:"“Ngủ đủ. Và đừng gửi mail lúc 2h sáng :))”",effects:{"chemistry":4,"trust":3}},
+{text:"“Nửa còn lại là gì?”",reply:"“Ngủ đủ. Và đừng gửi mail lúc 2h sáng :))”",effects:{"chemistry":4,"trust":3}},
 {text:"“Kiểu đồng nghiệp nào làm bn mệt nhất?”",reply:"“Người hứa rất hay nhưng làm thì… mất hút.”",effects:{"respect":4,"consistency":3}},
-{text:"“Mik sẽ cố đừng thành kiểu đó.”",reply:"“Ừ, tui nhớ câu này đó nha, đừng nói xong rồi quên :))”",effects:{"consistency":5,"interest":3}}
+{text:"“Mik sẽ cố đừng thành kiểu đó.”",reply:"“Tui sẽ nhớ câu này.”",effects:{"consistency":5,"interest":3}}
 ]},
 {text:"“Tui thích người có plan nhưng biết đổi plan khi cần.”",choices:[
-{text:"“Plan là bản đồ, không phải còng tay.”",reply:"“Chuẩn kiểu tui luôn á, tui cũng thích mấy plan có chỗ thở.”",effects:{"compatibility":5,"chemistry":3}},
+{text:"“Plan là bản đồ, không phải còng tay.”",reply:"“Đúng ý tui.”",effects:{"compatibility":5,"chemistry":3}},
 {text:"“Mik hơi cứng đầu.”",reply:"“Nói thật trước cũng là điểm cộng.”",effects:{"trust":4,"respect":2}},
-{text:"“Mik đổi gì cũng hỏi trước.”",reply:"“Ừ, cứ hỏi nhau một tiếng trước, vậy là cả hai đều dễ chịu.”",effects:{"respect":5,"trust":3}}
+{text:"“Mik đổi gì cũng hỏi trước.”",reply:"“Tôn trọng nhau là được.”",effects:{"respect":5,"trust":3}}
 ]},
 {text:"“Bn nghĩ người ta có thể thay đổi vì một mối quan hệ không?”",choices:[
-{text:"“Có, nhưng đừng đánh mất mình.”",reply:"“Ừ, câu này nghe hợp lý á, tui thích.”",effects:{"compatibility":5,"trust":3}},
-{text:"“Không cần đổi, chỉ cần hiểu nhau hơn.”",reply:"“Nghe thực tế á. Tui thích kiểu nghĩ vậy.”",effects:{"respect":4,"curiosity":2}},
+{text:"“Có, nhưng đừng đánh mất mình.”",reply:"“Ừ. Tui thích câu này.”",effects:{"compatibility":5,"trust":3}},
+{text:"“Không cần đổi, chỉ cần hiểu nhau hơn.”",reply:"“Khá thực tế.”",effects:{"respect":4,"curiosity":2}},
 {text:"“Tùy người. Phải tìm hiểu mới biết.”",reply:"“Vậy thì cứ tìm hiểu thôi.”",effects:{"curiosity":4,"interest":4}}
 ]}
 ],
 duy:[
 {text:"“Thiết kế ngon là khi user dùng xong mà không phải nghĩ mình vừa dùng design.”",choices:[
-{text:"“Giống người tinh tế, không cần cố gây ấn tượng?”",reply:"“Chuẩn luôn. Càng tự nhiên càng khó làm á.”",effects:{"chemistry":4,"curiosity":4}},
+{text:"“Giống người tinh tế, không cần cố gây ấn tượng?”",reply:"“Exactly. Càng tự nhiên càng khó làm.”",effects:{"chemistry":4,"curiosity":4}},
 {text:"“App nào bn thích nhất?”",reply:"“Mấy cái đơn giản, nhanh, không hành người dùng.”",effects:{"curiosity":3,"compatibility":3}},
 {text:"“Mik thích thứ có cá tính.”",reply:"“Thế thì mình còn topic để nói rồi.”",effects:{"interest":4,"chemistry":4}}
 ]},
 {text:"“Có mấy cuộc họp đáng lẽ chỉ cần một tin nhắn.”",choices:[
 {text:"“Cho mik vào team bn.”",reply:"“Bạn vừa pass vòng phỏng vấn hài hước.”",effects:{"chemistry":5,"comfort":3}},
 {text:"“Mik sẽ gửi agenda trước.”",reply:"“Không. Làm ơn đừng :))”",effects:{"comfort":3,"curiosity":2}},
-{text:"“Thế chỗ trốn họp bí mật của bn đâu?”",reply:"“Không khai đâu, lỡ bật mí rồi lần nào họp cũng thấy mặt tui trong đó :))”",effects:{"curiosity":5}}
+{text:"“Thế chỗ trốn họp bí mật của bn đâu?”",reply:"“Không khai. Bảo mật cấp độ quốc gia.”",effects:{"curiosity":5}}
 ]},
-{text:"“Bn để ý một người, qua cái gì đầu tiên?”",choices:[
-{text:"“Cách họ đối xử với người khác.”",reply:"“Cái này khó giả nhất á, nhìn một lúc là thường lộ ra.”",effects:{"respect":5,"trust":3}},
+{text:"“Bn để ý một người qua cái gì đầu tiên?”",choices:[
+{text:"“Cách họ đối xử với người khác.”",reply:"“Cái này khó giả nhất.”",effects:{"respect":5,"trust":3}},
 {text:"“Cách họ nói chuyện.”",reply:"“Vậy chắc bn đang observe tui rồi?”",effects:{"chemistry":4,"interest":3}},
-{text:"“Sense of humor.”",reply:"“Cái này tui tự tin nha, ít nhất tui cũng biết pha trò đúng lúc :))”",effects:{"chemistry":5}}
+{text:"“Sense of humor.”",reply:"“Ok, phần này tui có tự tin.”",effects:{"chemistry":5}}
 ]}
 ],
 nora:[
 {text:"“Có những bài hát chỉ nghe đúng vibe lúc đêm.”",choices:[
-{text:"“Bn đang nghe bài gì vậy?”",reply:"“Chưa nói đâu, bn đoán thử xem 👀”",effects:{"curiosity":5,"chemistry":3}},
-{text:"“Gửi mik playlist đi.”",reply:"“Được chứ, nhưng bài số 3 nhớ nghe hết nha, cấm skip :))”",effects:{"interest":4,"trust":3}},
-{text:"“Mik thích im lặng lúc khuya, nhất là khi đầu óc quá ồn.”",reply:"“Vậy chắc bn cũng hiểu cái cảm giác khuya rồi, chỉ muốn yên một chút ha.”",effects:{"comfort":4,"compatibility":4}}
+{text:"“Bn đang nghe bài gì?”",reply:"“Không nói. Tự đoán đi.”",effects:{"curiosity":5,"chemistry":3}},
+{text:"“Gửi mik playlist đi.”",reply:"“Được. Nhưng bài số 3 cấm skip.”",effects:{"interest":4,"trust":3}},
+{text:"“Mik thích im lặng lúc khuya.”",reply:"“Vậy chắc bn hiểu cảm giác đó.”",effects:{"comfort":4,"compatibility":4}}
 ]},
 {text:"“Tui ghét cảm giác bị ai đó bắt phải vui hay phải buồn.”",choices:[
 {text:"“Bn được quyền có nhịp riêng.”",reply:"“Cảm ơn. Nghe câu đó dễ thở ghê.”",effects:{"respect":5,"trust":4}},
-{text:"“Mik cũng cần khoảng riêng đôi lúc.”",reply:"“Vậy là hai đứa mình hiểu nhau thêm một chút rồi đó.”",effects:{"comfort":4,"compatibility":4}},
+{text:"“Mik cũng cần khoảng riêng đôi lúc.”",reply:"“Vậy là hiểu nhau thêm một chút.”",effects:{"comfort":4,"compatibility":4}},
 {text:"“Thôi nói về nhạc đi.”",reply:"“Thông minh. Nhạc cứu mood tốt hơn lời khuyên.”",effects:{"comfort":3,"respect":3}}
 ]},
 {text:"“Đi dạo đêm không mục đích nghe hơi cuốn không?”",choices:[
-{text:"“Cuốn. Chốt.”",reply:"“Vậy càng phải rủ tui đi bộ đêm chứ, ngủ sớm làm gì :))”",effects:{"chemistry":6,"interest":4}},
-{text:"“Miễn có cà phê.”",reply:"“Có cà phê thì tui duyệt kèo này :))”",effects:{"comfort":4,"compatibility":3}},
-{text:"“Mik thích có lịch trình.”",reply:"“Vậy tui báo trước đàng hoàng nha, khỏi để bn hoảng :))”",effects:{"trust":3,"curiosity":3}}
+{text:"“Cuốn. Chốt.”",reply:"“Vậy đừng rủ tui đi ngủ sớm :))”",effects:{"chemistry":6,"interest":4}},
+{text:"“Miễn có cà phê.”",reply:"“Deal.”",effects:{"comfort":4,"compatibility":3}},
+{text:"“Mik thích có lịch trình.”",reply:"“Tui sẽ cố không làm bn hoảng.”",effects:{"trust":3,"curiosity":3}}
 ]}
 ],
 tung:[
 {text:"“Món ngon đôi khi không quan trọng bằng ăn với ai.”",choices:[
-{text:"“Thế thường, bn nấu cho ai?”",reply:"“Gia đình, bạn bè… lâu lâu cho người quan trọng.”",effects:{"interest":4,"curiosity":4}},
-{text:"“Món mik thích là món cay.”",reply:"“Ok, tui note gu này nha, lần sau còn biết đường chiều bn :))”",effects:{"trust":3,"comfort":4}},
+{text:"“Thế thường bn nấu cho ai?”",reply:"“Gia đình, bạn bè… lâu lâu cho người quan trọng.”",effects:{"interest":4,"curiosity":4}},
+{text:"“Món mik thích là món cay.”",reply:"“Ok, gu này tui note.”",effects:{"trust":3,"comfort":4}},
 {text:"“Mik chỉ giỏi ăn thôi.”",reply:"“Không sao. Người biết ăn cũng là một skill.”",effects:{"chemistry":4}}
 ]},
 {text:"“Tui ghét lãng phí đồ ăn.”",choices:[
-{text:"“Mik cũng vậy.”",reply:"“Ừ, nghe vậy là tui thấy yên tâm hơn rồi.”",effects:{"respect":4,"compatibility":3}},
-{text:"“Món nào, bn ăn hoài mà vẫn không chán?”",reply:"“Cơm nhà. Safe pick nhưng never old.”",effects:{"curiosity":5,"trust":2}},
+{text:"“Mik cũng vậy.”",reply:"“Tốt.”",effects:{"respect":4,"compatibility":3}},
+{text:"“Món nào bn ăn hoài không chán?”",reply:"“Cơm nhà. Safe pick nhưng never old.”",effects:{"curiosity":5,"trust":2}},
 {text:"“Để mik ăn giúp cho.”",reply:"“Thế thì tuyển bn làm cộng sự được rồi.”",effects:{"chemistry":5,"comfort":3}}
 ]},
 {text:"“Bn có từng nấu cho người mình thích chưa?”",choices:[
-{text:"“Có, nếu họ chịu ăn thử.”",reply:"“Gan nha :)) Nếu họ chịu ăn thử, tui cũng thấy vui nữa.”",effects:{"chemistry":5,"interest":4}},
-{text:"“Chưa. Sợ fail.”",reply:"“Fail thì ăn luôn chứ sao :)) Lần sau sửa công thức tiếp.”",effects:{"comfort":3,"curiosity":3}},
-{text:"“Khi nào họ hỏi thì mik nấu.”",reply:"“Cái này tui respect nè. Không ép người ta là đúng.”",effects:{"respect":4,"trust":3}}
+{text:"“Có, nếu họ chịu ăn thử.”",reply:"“Gan nha. Tui thích.”",effects:{"chemistry":5,"interest":4}},
+{text:"“Chưa. Sợ fail.”",reply:"“Fail thì ăn luôn. Lần sau sửa.”",effects:{"comfort":3,"curiosity":3}},
+{text:"“Khi nào họ hỏi thì mik nấu.”",reply:"“Respect. Không ép ai ăn là điểm cộng.”",effects:{"respect":4,"trust":3}}
 ]}
 ],
 ivy:[
 {text:"“Có nhân vật tui vẽ mãi vẫn chưa hiểu hết. Cũng hơi giống con người.”",choices:[
-{text:"“Có khi người thật còn khó hơn.”",reply:"“Chuẩn á. Câu này tui phải nhớ mới được =))”",effects:{"chemistry":5,"curiosity":4}},
+{text:"“Có khi người thật còn khó hơn.”",reply:"“Chuẩn. Câu này tui muốn ghi lại.”",effects:{"chemistry":5,"curiosity":4}},
 {text:"“Nhân vật đó giống ai vậy?”",reply:"“Một người tui từng biết. Khá phiền :))”",effects:{"trust":4,"curiosity":5}},
-{text:"“Mik tưởng vẽ là phải hiểu.”",reply:"“Không hẳn đâu, có khi vẽ xong rồi, tui mới hiểu nhân vật đang nghĩ gì.”",effects:{"respect":3,"compatibility":3}}
+{text:"“Mik tưởng vẽ là phải hiểu.”",reply:"“Không. Có khi vẽ xong mới hiểu.”",effects:{"respect":3,"compatibility":3}}
 ]},
 {text:"“Tui thích hiệu sách vì ở đó không ai bắt mình phải nói.”",choices:[
 {text:"“Nhưng mik muốn nghe bn nói.”",reply:"“Cẩn thận. Tui nói rồi là hơi nhiều.”",effects:{"interest":5,"chemistry":4}},
-{text:"“Mik cũng mê mấy chỗ yên.”",reply:"“Vậy đỡ phải gồng cho giống người hướng ngoại ha :))”",effects:{"comfort":5,"compatibility":4}},
-{text:"“Mik dễ lạc trong hiệu sách lắm.”",reply:"“Vậy để tui làm Google Maps cho, ít nhất khỏi lạc giữa mấy kệ sách :))”",effects:{"curiosity":3,"interest":3}}
+{text:"“Mik cũng mê mấy chỗ yên.”",reply:"“Vậy đỡ phải giả vờ hướng ngoại.”",effects:{"comfort":5,"compatibility":4}},
+{text:"“Mik dễ lạc trong hiệu sách lắm.”",reply:"“Vậy để tui làm Google Maps.”",effects:{"curiosity":3,"interest":3}}
 ]},
 {text:"“Có cuốn sách nào bn muốn tặng đúng một người không?”",choices:[
-{text:"“Có. Nhưng phải đúng người.”",reply:"“Đúng á. Tặng nhầm đôi khi còn làm cả hai ngại nữa.”",effects:{"respect":4,"interest":4}},
-{text:"“Mik hay chọn theo cảm tính.”",reply:"“Có khi cảm tính lại trúng thật á, đâu phải lúc nào lý trí cũng biết hết.”",effects:{"chemistry":3,"curiosity":3}},
+{text:"“Có. Nhưng phải đúng người.”",reply:"“Đúng. Tặng nhầm còn áp lực hơn.”",effects:{"respect":4,"interest":4}},
+{text:"“Mik hay chọn theo cảm tính.”",reply:"“Đôi khi cảm tính lại trúng.”",effects:{"chemistry":3,"curiosity":3}},
 {text:"“Chưa nghĩ tới.”",reply:"“Vậy hôm nay mở tab mới trong đầu đi.”",effects:{"curiosity":4,"comfort":2}}
 ]}
 ],
 phuc:[
 {text:"“Thành phố có mấy con hẻm đi nhanh hơn đường lớn. Nghề tui sống nhờ mấy chỗ đó.”",choices:[
-{text:"“Chỉ mik quán ăn ngon nhất đi.”",reply:"“Được, nhưng đổi lại bn đi bộ cùng tui nha, quán ngon thường nằm khá sâu đó :))”",effects:{"curiosity":5,"comfort":3}},
-{text:"“Mik hay lạc lắm.”",reply:"“Vậy càng phải đi gần tui :)) Không khéo đang đi lại lạc sang quận khác.”",effects:{"chemistry":4,"comfort":4}},
-{text:"“Mik thích tự khám phá.”",reply:"“Chuẩn á, tự khám phá mới dễ dính mấy side quest bất ngờ.”",effects:{"curiosity":4,"compatibility":3}}
+{text:"“Chỉ mik quán ăn ngon nhất đi.”",reply:"“Đổi lại bn phải đi bộ cùng tui.”",effects:{"curiosity":5,"comfort":3}},
+{text:"“Mik hay lạc lắm.”",reply:"“Đúng nghề rồi. Theo tui.”",effects:{"chemistry":4,"comfort":4}},
+{text:"“Mik thích tự khám phá.”",reply:"“Chuẩn. Thành phố còn đầy side quest.”",effects:{"curiosity":4,"compatibility":3}}
 ]},
 {text:"“Khó chịu nhất là khách hẹn 5 phút mà 20 phút mới xuống.”",choices:[
-{text:"“Mik ghét để người khác chờ.”",reply:"“Cái này tui ưng nè. Nói rõ vậy dễ làm việc hơn hẳn.”",effects:{"consistency":5,"respect":3}},
-{text:"“Kẹt xe còn có mà. Nhưng báo trước là được.”",reply:"“Ừ, biết tình hình trước thì đỡ đứng đó chờ rồi cáu nhau.”",effects:{"trust":3,"comfort":3}},
+{text:"“Mik ghét để người khác chờ.”",reply:"“Điểm cộng. Rõ ràng là ngon.”",effects:{"consistency":5,"respect":3}},
+{text:"“Kẹt xe còn có mà. Nhưng báo trước là được.”",reply:"“Chuẩn. Biết tình hình mới đỡ cáu.”",effects:{"trust":3,"comfort":3}},
 {text:"“Mik sẽ chạy xuống trước cả bn.”",reply:"“Đừng biến chuyện giao hàng thành cuộc đua :))”",effects:{"chemistry":5}}
 ]},
 {text:"“Bn nhớ một người lâu hơn vì giọng nói, cách nhắn tin hay lúc họ xuất hiện đúng lúc?”",choices:[
-{text:"“Giọng nói, nghe một lần là nhớ.”",reply:"“Đúng á, có những giọng nghe một lần là nhớ luôn.”",effects:{"comfort":4,"chemistry":4}},
-{text:"“Cách nhắn tin, đọc là biết ngay.”",reply:"“Chuẩn, nhìn cách người ta nhắn cũng đoán được kha khá tính cách đó.”",effects:{"respect":3,"compatibility":2}},
-{text:"“Lúc họ tới đúng lúc mik cần.”",reply:"“Câu này làm tui hơi ưng đó nha :))”",effects:{"interest":4,"curiosity":4}},
+{text:"“Giọng nói, nghe một lần là nhớ.”",reply:"“Đúng vibe. Tui cũng mê giọng nói.”",effects:{"comfort":4,"chemistry":4}},
+{text:"“Cách nhắn tin, đọc là biết ngay.”",reply:"“Tôn trọng. Chữ cũng có tính cách mà.”",effects:{"respect":3,"compatibility":2}},
+{text:"“Lúc họ tới đúng lúc mik cần.”",reply:"“Câu này ghi điểm, thiệt.”",effects:{"interest":4,"curiosity":4}},
 ]}
 ],
 huyen:[
 {text:"“Tui thích story thật, không cần người kể tự tô mình thành người hoàn hảo.”",choices:[
 {text:"“Vậy kể chuyện quê nhất của mik nhé?”",reply:"“Ok. Giờ tui tò mò thật rồi.”",effects:{"chemistry":5,"trust":4}},
-{text:"“Bn từng gặp ai thú vị nhất?”",reply:"“Khó chọn lắm, thành phố này gặp ai cũng có chuyện để kể.”",effects:{"curiosity":5}},
-{text:"“Mik kể chuyện không giỏi.”",reply:"“Không sao, tui hỏi, bn kể tới đâu hay tới đó, khỏi áp lực.”",effects:{"comfort":3,"trust":3}}
+{text:"“Bn từng gặp ai thú vị nhất?”",reply:"“Khó chọn. Thành phố này thiếu gì người lạ đời.”",effects:{"curiosity":5}},
+{text:"“Mik kể chuyện không giỏi.”",reply:"“Không sao. Tui hỏi, bn trả lời.”",effects:{"comfort":3,"trust":3}}
 ]},
 {text:"“Tin đồn là tin đồn. Tui thích check trước khi tin.”",choices:[
-{text:"“Nghe khá cẩn trọng.”",reply:"“Nghề bắt tui phải kỹ vậy á, sai một chi tiết là cả câu chuyện lệch đi.”",effects:{"respect":5,"trust":3}},
+{text:"“Nghe khá cẩn trọng.”",reply:"“Nghề bắt vậy. Một cú sai là cả story lệch.”",effects:{"respect":5,"trust":3}},
 {text:"“Bn từng bị hiểu lầm chưa?”",reply:"“Có. Nên tui mới ghét kết luận vội.”",effects:{"curiosity":4,"trust":4}},
-{text:"“Mik chỉ nói thứ mik biết chắc.”",reply:"“Nguyên tắc này hợp tui á, biết tới đâu nói tới đó thì đỡ sai.”",effects:{"respect":5,"consistency":3}}
+{text:"“Mik chỉ nói thứ mik biết chắc.”",reply:"“Nguyên tắc này tui thích.”",effects:{"respect":5,"consistency":3}}
 ]},
 {text:"“Cà phê đêm có một kiểu thật lòng hơi lạ.”",choices:[
-{text:"“Vậy tối nay đừng phỏng vấn mik nha :))”",reply:"“Không hứa nha :)) Tui tò mò quá, kiểu gì cũng phải hỏi vài câu.”",effects:{"chemistry":4,"curiosity":4}},
-{text:"“Mik thích nói chuyện không cần mục đích.”",reply:"“Vậy ngồi thêm chút đi, khỏi cần kiếm lý do cũng được.”",effects:{"comfort":5,"interest":3}},
+{text:"“Vậy tối nay đừng phỏng vấn mik nha :))”",reply:"“Không hứa đâu.”",effects:{"chemistry":4,"curiosity":4}},
+{text:"“Mik thích nói chuyện không cần mục đích.”",reply:"“Vậy ngồi thêm đi.”",effects:{"comfort":5,"interest":3}},
 {text:"“Bn hỏi nhiều ghê.”",reply:"“Tại tui tò mò. Nghề nghiệp thôi mà.”",effects:{"chemistry":3,"comfort":2}}
 ]}
 ],
@@ -456,49 +448,49 @@ son:[
 {text:"“Mik thích yên tĩnh.”",reply:"“Vậy có điểm chung.”",effects:{"compatibility":4,"comfort":4}},
 {text:"“Mik chắc ngủ luôn.”",reply:"“Cũng hợp lý.”",effects:{"chemistry":2,"comfort":2}}
 ]},
-{text:"“Tui hay nhìn cách một người đối xử với người yếu thế hơn.”",choices:[
-{text:"“Mik cũng để ý chuyện đó.”",reply:"“Ừ, nghe vậy là tui thấy yên tâm hơn rồi.”",effects:{"respect":5,"trust":4}},
+{text:"“Tôi nhìn một người qua cách họ đối xử với người yếu thế hơn.”",choices:[
+{text:"“Mik cũng để ý chuyện đó.”",reply:"“Tốt.”",effects:{"respect":5,"trust":4}},
 {text:"“Sao anh coi trọng chuyện đó?”",reply:"“Vì lúc không cần chứng minh gì, con người thật dễ lộ.”",effects:{"curiosity":4,"trust":3}},
-{text:"“Vậy chắc anh cũng đang quan sát mik.”",reply:"“Cũng có thể đó 👀 Tui chỉ để ý chút thôi.”",effects:{"chemistry":4,"interest":3}}
+{text:"“Vậy chắc anh cũng đang quan sát mik.”",reply:"“Có thể.”",effects:{"chemistry":4,"interest":3}}
 ]},
 {text:"“Người ít nói đôi khi lại nhớ lâu nhất.”",choices:[
-{text:"“Vậy mik phải cẩn thận lời nói rồi.”",reply:"“Ừ, nghe vậy là tui thấy yên tâm hơn rồi.”",effects:{"respect":4,"consistency":3}},
-{text:"“Anh nhớ gì về mik?”",reply:"“Khoan, vụ này để bữa khác tui kể nha :)) Kể giờ mất hay.”",effects:{"curiosity":5,"interest":4}},
+{text:"“Vậy mik phải cẩn thận lời nói rồi.”",reply:"“Tốt.”",effects:{"respect":4,"consistency":3}},
+{text:"“Anh nhớ gì về mik?”",reply:"“Câu này để sau.”",effects:{"curiosity":5,"interest":4}},
 {text:"Im lặng một lúc.",reply:"“...Dễ chịu hơn tui nghĩ.”",effects:{"comfort":5}}
 ]}
 ],
 bao:[
 {text:"“Xe cũng như người. Có tiếng lạ là phải để ý.”",choices:[
 {text:"“Người có tiếng lạ thì sao?”",reply:"“Đưa đi uống cà phê trước rồi chẩn đoán.”",effects:{"chemistry":5,"comfort":4}},
-{text:"“Chiếc xe bn thích nhất là chiếc nào?”",reply:"“Con cũ thôi, bền, dễ sửa, với lại ít drama nữa :))”",effects:{"curiosity":4,"compatibility":3}},
-{text:"“Mik chỉ giỏi lái.”",reply:"“Biết lái tốt là đủ xài rồi, chuyện máy móc cứ để tui lo.”",effects:{"respect":3}}
+{text:"“Chiếc xe bn thích nhất là chiếc nào?”",reply:"“Con cũ thôi. Bền, ít drama.”",effects:{"curiosity":4,"compatibility":3}},
+{text:"“Mik chỉ giỏi lái.”",reply:"“Thế là đã có ích rồi.”",effects:{"respect":3}}
 ]},
 {text:"“Tui thích road trip hơn nghỉ dưỡng.”",choices:[
 {text:"“Có cung nào bn muốn đi nhất?”",reply:"“Ven biển phía Nam. Đi chậm mới vui.”",effects:{"curiosity":5,"interest":3}},
-{text:"“Mik thích có điểm đến rõ ràng.”",reply:"“Một người lo đường, một người lo tận hưởng. Nghe cũng ổn phết.”",effects:{"compatibility":4}},
-{text:"“Cho mik list đi.”",reply:"“Để tui gom mấy cung đáng đi rồi gửi bn, list dài lắm á.”",effects:{"comfort":3,"curiosity":3}}
+{text:"“Mik thích có điểm đến rõ ràng.”",reply:"“Một người lo route, một người lo tới nơi. Cũng ổn.”",effects:{"compatibility":4}},
+{text:"“Cho mik list đi.”",reply:"“Dài lắm. Tui note dần.”",effects:{"comfort":3,"curiosity":3}}
 ]},
 {text:"“Đừng giả vờ biết nếu bạn không biết.”",choices:[
-{text:"“Mik đồng ý. Không biết thì hỏi.”",reply:"“Ừ, nghe vậy là tui thấy yên tâm hơn rồi.”",effects:{"respect":4,"trust":4}},
+{text:"“Mik đồng ý. Không biết thì hỏi.”",reply:"“Tốt.”",effects:{"respect":4,"trust":4}},
 {text:"“Đôi lúc nhận sai hơi ngại.”",reply:"“Ngại thì vẫn nhận. Sửa được là được.”",effects:{"consistency":4,"trust":3}},
-{text:"“Thế không biết là mik hỏi bn.”",reply:"“Haha, vậy thì cứ hỏi tui, biết gì tui nói hết nha.”",effects:{"interest":3,"curiosity":4}}
+{text:"“Thế không biết là mik hỏi bn.”",reply:"“Câu này tui thích.”",effects:{"interest":3,"curiosity":4}}
 ]}
 ],
 chi:[
 {text:"“Mưa làm hiệu sách vắng hơn, nhưng ai ghé cũng ở lâu hơn.”",choices:[
-{text:"“Có lẽ họ đang trốn mưa.”",reply:"“Hoặc họ chỉ muốn trốn khỏi cái ồn ào ngoài kia một lúc thôi.”",effects:{"comfort":4,"curiosity":3}},
+{text:"“Có lẽ họ đang trốn mưa.”",reply:"“Hoặc trốn thế giới một lúc.”",effects:{"comfort":4,"curiosity":3}},
 {text:"“Cuốn nào bn hay recommend nhất?”",reply:"“Tùy mood. Sách cũng có ngày hợp ngày không.”",effects:{"curiosity":5,"interest":2}},
-{text:"“Mik muốn một cuốn dễ đọc thôi.”",reply:"“Để tui chọn cho. Biết đâu vớ được đúng cuốn bn đang cần :))”",effects:{"trust":3,"comfort":4}}
+{text:"“Mik muốn một cuốn dễ đọc thôi.”",reply:"“Để tui chọn. Đúng người đúng sách.”",effects:{"trust":3,"comfort":4}}
 ]},
 {text:"“Tui ghét spoiler. Kể cả spoiler cho chính cuộc đời mình.”",choices:[
-{text:"“Mik cũng không muốn biết trước.”",reply:"“Vậy cứ mở từng chương rồi tính nha :)) Biết trước quá lại mất vui.”",effects:{"compatibility":4,"curiosity":4}},
+{text:"“Mik cũng không muốn biết trước.”",reply:"“Tốt. Cứ mở từng chương thôi.”",effects:{"compatibility":4,"curiosity":4}},
 {text:"“Một chút spoiler không sao.”",reply:"“Không. Vẫn không :))”",effects:{"chemistry":1}},
-{text:"“Mik chỉ muốn biết chương tiếp theo.”",reply:"“Vậy mình đọc tiếp rồi cùng xem chương sau có gì nha.”",effects:{"interest":4,"chemistry":3}}
+{text:"“Mik chỉ muốn biết chương tiếp theo.”",reply:"“Vậy cùng tìm.”",effects:{"interest":4,"chemistry":3}}
 ]},
 {text:"“Bn nghĩ tình cảm là một câu chuyện dài hay chỉ là vài khoảnh khắc?”",choices:[
-{text:"“Một đống khoảnh khắc nhỏ ghép lại.”",reply:"“Tui cũng nghĩ vậy á, mấy khoảnh khắc nhỏ thường lại nhớ lâu nhất.”",effects:{"compatibility":5,"comfort":4}},
-{text:"“Một khoảnh khắc đủ quyết định.”",reply:"“Nghe lãng mạn phết á, kiểu chỉ cần đúng khoảnh khắc thôi.”",effects:{"chemistry":4,"interest":3}},
-{text:"“Không biết. Phải sống mới biết.”",reply:"“Nghe giống một cuốn sách còn đang viết dở á, phải sống tiếp mới biết chương sau thế nào.”",effects:{"curiosity":5,"trust":2}}
+{text:"“Một đống khoảnh khắc nhỏ ghép lại.”",reply:"“Tui cũng nghĩ vậy.”",effects:{"compatibility":5,"comfort":4}},
+{text:"“Một khoảnh khắc đủ quyết định.”",reply:"“Nghe lãng mạn phết.”",effects:{"chemistry":4,"interest":3}},
+{text:"“Không biết. Phải sống mới biết.”",reply:"“Câu này hợp với một cuốn sách chưa viết xong.”",effects:{"curiosity":5,"trust":2}}
 ]}
 ]
 };
@@ -511,18 +503,18 @@ const id=n.id;
 const extra=[
 {text:`“Có một chuyện tui hơi để ý ở bn: bn có vẻ ${trait}. Nhìn vậy mà hay ho phết.”`,choices:[
 {text:'“Bn mới gặp mik mà đã soi dữ vậy :))”',reply:'“Tại tui quan sát thôi. K có ý xấu nha =))”',effects:{curiosity:4,chemistry:3}},
-{text:'“Vậy bn thấy mik kiểu gì?”',reply:'“Khó trả lời á :)) Cho tui biết bn thêm chút đã.”',effects:{interest:4,curiosity:5}},
-{text:'“Mik cũng đang tò mò về bn đây.”',reply:'“Haha, vậy là huề nha :))”',effects:{chemistry:4,comfort:3}}
+{text:'“Vậy bn thấy mik kiểu gì?”',reply:'“Câu này khó. Cho tui thêm data đã 👀”',effects:{interest:4,curiosity:5}},
+{text:'“Mik cũng đang tò mò về bn đây.”',reply:'“Thế thì công bằng rồi.”',effects:{chemistry:4,comfort:3}}
 ]},
 {text:`“Nhiều lúc đi làm ${job} xong tui chỉ muốn dành một lúc cho ${like}. Không cần productive gì hết.”`,choices:[
-{text:'“Đúng. Nghỉ mà cứ thấy có lỗi cũng mệt.”',reply:'“Đúng cái tui cần nghe luôn =)) Cuối cùng cũng có người hiểu.”',effects:{comfort:5,compatibility:3}},
+{text:'“Đúng. Nghỉ mà cứ thấy có lỗi cũng mệt.”',reply:'“YES. Cuối cùng cũng có người nói hộ tui.”',effects:{comfort:5,compatibility:3}},
 {text:'“Nếu có mik đi cùng thì sao?”',reply:'“Tùy bn định làm tui vui hay làm tui mệt nha :))”',effects:{chemistry:5,interest:3}},
 {text:'“Productive quá đôi khi cũng thành áp lực.”',reply:'“Chuẩn. Có ngày chỉ cần sống bình thường là đủ.”',effects:{trust:4,comfort:4}}
 ]},
 {text:'“Nói thật nha, tui k thích mấy cuộc nói chuyện lúc nào cũng phải tỏ ra hay ho.”',choices:[
 {text:'“Vậy mik nói chuyện vô tri được không :))”',reply:'“Được. Miễn vô tri có duyên.”',effects:{chemistry:5,comfort:4}},
 {text:'“Mik cũng thích nói thật hơn.”',reply:'“Thế nói thật đi. Hnay bn thấy tui thế nào?”',effects:{trust:5,curiosity:3}},
-{text:'“Có khi ngồi im với đúng người cũng đủ.”',reply:'“Ừ, tui cũng thấy vậy.”',effects:{compatibility:5,comfort:5}}
+{text:'“Có khi ngồi im với đúng người cũng đủ.”',reply:'“Ừ. Cái này tui đồng ý.”',effects:{compatibility:5,comfort:5}}
 ]},
 {text:'“Nếu hôm nay có một việc nhỏ bn muốn làm cho chính mình, đó là gì?”',choices:[
 {text:'“Dọn lại góc làm việc cho dễ thở.”',reply:'“Nghe nhỏ mà thật. Tui hiểu cảm giác đó.”',effects:{chemistry:6,interest:4}},
@@ -625,7 +617,7 @@ document.getElementById('btnPhone').onclick=()=>game.panel==='phone'?closePanel(
 document.getElementById('btnRel').onclick=()=>game.panel==='relations'?closePanel():openPanel('relations');
 document.getElementById('btnMap').onclick=()=>game.panel==='map'?closePanel():openPanel('map');
 document.getElementById('btnSave').onclick=saveGame;document.getElementById('btnLoad').onclick=loadGame;
-document.getElementById('quickInteract').onclick=tryInteract;document.getElementById('quickPhone').onclick=()=>game.panel==='phone'?closePanel():openPanel('phone');document.getElementById('quickMap').onclick=()=>game.panel==='map'?closePanel():openPanel('map');document.getElementById('quickRel').onclick=()=>game.panel==='relations'?closePanel():openPanel('relations');
+document.getElementById('quickInteract').onclick=()=>tryInteract();document.getElementById('quickPhone').onclick=()=>game.panel==='phone'?closePanel():openPanel('phone');document.getElementById('quickMap').onclick=()=>game.panel==='map'?closePanel():openPanel('map');document.getElementById('quickRel').onclick=()=>game.panel==='relations'?closePanel():openPanel('relations');
 function drawPixelCar(x,y,c,flip=false,headlights=false){
 ctx.save();ctx.translate(Math.round(x),Math.round(y));if(flip)ctx.scale(-1,1);
 ctx.fillStyle='rgba(0,0,0,.28)';ctx.fillRect(-36,12,72,7);
@@ -1033,9 +1025,10 @@ weekendPhoto:{id:'weekendPhoto',icon:'📷',title:'Chụp ảnh sự kiện cu�
 function receiveIncome(amount,source){amount=Math.max(0,Math.round(amount));game.money+=amount;game.jobState=game.jobState||{daily:{},totalEarned:0};game.jobState.totalEarned=(game.jobState.totalEarned||0)+amount;game.dailyStats=game.dailyStats||{};game.dailyStats.moneyEarned=(game.dailyStats.moneyEarned||0)+amount;game.transactions=Array.isArray(game.transactions)?game.transactions:[];game.transactions.unshift({day:game.day,minutes:game.minutes,type:'income',amount,source});if(game.transactions.length>80)game.transactions.pop();}
 function jobAvailable(job){const h=Math.floor(game.minutes/60)%24;const weekend=((game.day-1)%7)>=5;if(job.weekend&&!weekend)return{ok:false,msg:'Job này chỉ mở vào cuối tuần.'};if(!job.weekend&&weekend===true&&job.id==='cafeShift'){}if(h<job.hours[0]||h>job.hours[1])return{ok:false,msg:`Khung giờ: ${String(job.hours[0]).padStart(2,'0')}:00–${String(job.hours[1]).padStart(2,'0')}:00.`};if((game.jobState?.daily?.[job.id]||0)>=job.limit)return{ok:false,msg:'Hôm nay bạn đã làm job này rồi.'};if(game.energy<job.energy)return{ok:false,msg:`Cần ít nhất ${job.energy} năng lượng.`};if(job.minRep&&game.reputation<job.minRep)return{ok:false,msg:`Cần reputation ${job.minRep} để nhận job này.`};if(job.location!=='any'&&game.location!==job.location)return{ok:false,msg:`Hãy tới ${WORLD[job.location]?.name||'đúng địa điểm'} để nhận job.`};return{ok:true};}
 function doJob(id){const job=JOBS[id];if(!job)return;const a=jobAvailable(job);if(!a.ok){toast(a.msg);return;}game.jobState.daily[id]=(game.jobState.daily[id]||0)+1;spendEnergy(job.energy);advance(job.minutes);receiveIncome(job.pay,job.title);game.reputation=clamp(game.reputation+job.rep,0,100);addPhone('Thu nhập',`${job.icon} ${job.title}: +${job.pay.toLocaleString('vi-VN')}đ · ${job.minutes} phút.`);toast(`${job.icon} +${job.pay.toLocaleString('vi-VN')}đ · -${job.energy} năng lượng`);openPanel('jobs');}
-function jobsHtml(){const total=game.jobState?.totalEarned||0;return `<h3>💼 Việc làm & kiếm thêm</h3><p>Kiếm tiền bằng những công việc phụ có giới hạn theo ngày. Không phải job nào cũng mở mọi lúc — hãy để ý giờ, năng lượng và reputation.</p><div class="section"><strong>Thu nhập từ job phụ: ${total.toLocaleString('vi-VN')}đ</strong></div><div class="shop-grid">${Object.values(JOBS).map(j=>{const a=jobAvailable(j);return `<div class="shop-card"><div class="shop-icon">${j.icon}</div><div class="shop-main"><strong>${j.title}</strong><span>${j.desc}</span><small>+${j.pay.toLocaleString('vi-VN')}đ · ${j.minutes} phút · -${j.energy} NL</small><small>${j.location==='any'?'Có thể nhận qua điện thoại':`Địa điểm: ${WORLD[j.location]?.name||j.location}`} · ${String(j.hours[0]).padStart(2,'0')}:00–${String(j.hours[1]).padStart(2,'0')}:00</small><button class="mini ${a.ok?'primary':''}" data-job="${j.id}" ${a.ok?'':'disabled'}>${a.ok?'Nhận job':'Chưa phù hợp'}</button>${!a.ok?`<small>${a.msg}</small>`:''}</div></div>`}).join('')}</div>`;}
+function jobsHtml(){const total=game.jobState?.totalEarned||0;return `<h3>💼 Việc làm & kiếm thêm</h3><p>Công việc nhận trực tiếp tại đây, giới hạn theo ngày. Không phải job nào cũng mở mọi lúc — hãy để ý giờ, năng lượng và reputation.</p><div class="section"><strong>Thu nhập từ job phụ: ${total.toLocaleString('vi-VN')}đ</strong></div><div class="shop-grid">${Object.values(JOBS).map(j=>{const a=jobAvailable(j);return `<div class="shop-card"><div class="shop-icon">${j.icon}</div><div class="shop-main"><strong>${j.title}</strong><span>${j.desc}</span><small>+${j.pay.toLocaleString('vi-VN')}đ · ${j.minutes} phút · -${j.energy} NL</small><small>${j.location==='any'?'Có thể nhận qua điện thoại':`Địa điểm: ${WORLD[j.location]?.name||j.location}`} · ${String(j.hours[0]).padStart(2,'0')}:00–${String(j.hours[1]).padStart(2,'0')}:00</small><button class="mini ${a.ok?'primary':''}" data-job="${j.id}" ${a.ok?'':'disabled'}>${a.ok?'Nhận job':'Chưa phù hợp'}</button>${!a.ok?`<small>${a.msg}</small>`:''}</div></div>`}).join('')}</div>`;}
 const SERVICE_POINTS={
-mallGift:{location:'mall',x:430,y:430,type:'shop',label:'Cửa hàng quà',title:'Tiệm Quà Pixel'},
+mallGift:{location:'mall',x:430,y:456,type:'shop',label:'Tiệm Quà Pixel',title:'Tiệm Quà Pixel'},
+mallJobs:{location:'mall',x:255,y:456,type:'jobs',label:'Trung tâm việc làm',title:'Trung tâm việc làm'},
 cinema:{location:'mall',x:820,y:430,type:'cinema',label:'Rạp chiếu phim',title:'Rạp Ánh Đèn'},
 cafe:{location:'cafe',x:640,y:450,type:'cafe',label:'Quán cà phê',title:'Phố Cà Phê'},
 bookstore:{location:'mall',x:1020,y:430,type:'bookstore',label:'Hiệu sách',title:'Hiệu sách Mây'}
@@ -1045,7 +1038,7 @@ function addGift(id,qty=1){if(!game.inventory)game.inventory={gifts:[]};game.inv
 function spendMoney(amount){if(game.money<amount){toast(`Không đủ tiền · cần ${amount.toLocaleString('vi-VN')}đ`);return false;}game.money-=amount;game.dailyStats.moneySpent=(game.dailyStats.moneySpent||0)+amount;return true;}
 function buyGift(id){const item=SHOP_ITEMS[id];if(!item)return;if(!spendMoney(item.price))return;addGift(id);sfx('click');addPhone('Tiệm Quà Pixel',`Bạn vừa mua ${item.name} ${item.icon} · -${item.price.toLocaleString('vi-VN')}đ.`);toast(`${item.icon} ${item.name} · -${item.price.toLocaleString('vi-VN')}đ`);openPanel('shop');}
 function shopHtml(){return `<h3>🎁 Tiệm Quà Pixel</h3><p>Mua những món quà nhỏ để tặng người bạn đang tìm hiểu. Mỗi người sẽ phản ứng khác nhau tùy gu và ký ức.</p><div class="shop-grid">${Object.entries(SHOP_ITEMS).map(([id,it])=>`<div class="shop-card"><div class="shop-icon">${it.icon}</div><div class="shop-main"><strong>${it.name}</strong><span>${it.desc}</span><small>${it.price.toLocaleString('vi-VN')}đ · đang có ${invCount(id)}</small><button class="mini primary" data-buy-gift="${id}">Mua</button></div></div>`).join('')}</div>`;}
-function giftTargetHtml(){const gifts=Object.entries(SHOP_ITEMS).filter(([id])=>invCount(id)>0);return `<h3>🎁 Túi quà</h3><p>Chọn một người đã gặp để tặng quà. Quà sẽ tạo một ký ức riêng, không chỉ cộng điểm.</p>${gifts.length?gifts.map(([id,it])=>`<div class="gift-row"><span>${it.icon} <strong>${it.name}</strong> ×${invCount(id)}</span><div class="menu-row">${Object.values(NPCS).filter(n=>game.flags.met[n.id]).map(n=>`<button class="mini" data-gift="${id}" data-gift-npc="${n.id}">${n.name}</button>`).join('')}</div></div>`).join(''):'<p>Bạn chưa có món quà nào. Ghé Tiệm Quà Pixel ở Trung tâm thương mại nhé.</p>'}`;}
+function giftTargetHtml(){const gifts=Object.entries(SHOP_ITEMS).filter(([id])=>invCount(id)>0);return `<h3>🎁 Túi quà</h3><p>Chọn một người đã gặp để tặng quà. Quà đúng gu được cảm tình nhiều hơn và tạo một ký ức riêng. Muốn mua thêm, hãy ghé Tiệm Quà Pixel ở Trung tâm thương mại.</p>${gifts.length?gifts.map(([id,it])=>`<div class="gift-row"><span>${it.icon} <strong>${it.name}</strong> ×${invCount(id)}</span><div class="menu-row">${Object.values(NPCS).filter(n=>game.flags.met[n.id]).map(n=>`<button class="mini" data-gift="${id}" data-gift-npc="${n.id}">${n.name}</button>`).join('')}</div></div>`).join(''):'<p>Bạn chưa có món quà nào. Hãy đi tới Trung tâm thương mại, đứng trước Tiệm Quà Pixel và ấn nút ✦ Tương tác để mua trực tiếp.</p>'}`;}
 function openShop(){openPanel('shop');}
 function openGifts(){openPanel('gifts');}
 function buyService(type){
@@ -1055,6 +1048,7 @@ if(type==='bookstore'){if(!spendMoney(45000))return;game.energy=clamp(game.energ
 }
 function serviceInteraction(point){
 if(point.type==='shop'){openShop();return true;}
+if(point.type==='jobs'){openPanel('jobs');return true;}
 if(point.type==='cinema'){openPanel('cinema');return true;}
 if(point.type==='cafe'){buyService('cafe');return true;}
 if(point.type==='bookstore'){buyService('bookstore');return true;}
@@ -1315,6 +1309,7 @@ const from=game.location;game.location=to;const p=nearestEntry(to,from);game.x=p
 }
 function tryInteract(){
 if(game.dialogue||game.panel)return;
+const sp=Object.values(SERVICE_POINTS).find(p=>p.location===game.location&&Math.hypot(game.x-p.x,game.y-p.y)<70);if(sp&&serviceInteraction(sp))return;
 const nearby=currentNPCs().filter(n=>Math.hypot(game.x-game.npcState[n.id].x,game.y-game.npcState[n.id].y)<72);
 if(nearby.length){nearby.sort((a,b)=>Math.hypot(game.x-game.npcState[a.id].x,game.y-game.npcState[a.id].y)-Math.hypot(game.x-game.npcState[b.id].x,game.y-game.npcState[b.id].y));npcChoice(nearby[0].id);return;}
 const service=Object.values(SERVICE_POINTS).find(p=>p.location===game.location&&Math.hypot(game.x-p.x,game.y-p.y)<85);
@@ -1332,8 +1327,8 @@ function drawWorldExtras(){
 const lanes=TRAFFIC[game.location]?.lanes||[];
 for(const lane of lanes){ctx.fillStyle='rgba(230,205,130,.55)';for(let x=0;x<1280;x+=72)ctx.fillRect(x,lane.y,32,3);}
 const ap=ACTION_POINTS[game.location];
-if(ap&&!game.dialogue&&!game.panel){ctx.fillStyle='rgba(255,116,154,.97)';ctx.strokeStyle='#7a2344';ctx.lineWidth=1;ctx.fillRect(ap.x-42,ap.y-34,84,18);ctx.strokeRect(ap.x-42,ap.y-34,84,18);ctx.fillStyle='#fff7fb';ctx.font='bold 8px system-ui';ctx.textAlign='center';ctx.fillText('E · '+ap.label,ap.x,ap.y-22);ctx.textAlign='left';}
-if(!game.dialogue&&!game.panel){for(const p of Object.values(SERVICE_POINTS)){if(p.location!==game.location)continue;ctx.fillStyle='rgba(109,222,211,.97)';ctx.strokeStyle='#1f6865';ctx.fillRect(p.x-54,p.y-38,108,20);ctx.strokeRect(p.x-54,p.y-38,108,20);ctx.fillStyle='#102f32';ctx.font='bold 9px system-ui';ctx.textAlign='center';ctx.fillText('E · '+p.label,p.x,p.y-24);ctx.textAlign='left';}}
+if(ap&&!game.dialogue&&!game.panel){ctx.fillStyle='rgba(255,116,154,.97)';ctx.strokeStyle='#7a2344';ctx.lineWidth=1;ctx.fillRect(ap.x-42,ap.y-34,84,18);ctx.strokeRect(ap.x-42,ap.y-34,84,18);ctx.fillStyle='#fff7fb';ctx.font='bold 8px system-ui';ctx.textAlign='center';ctx.fillText('✦ '+ap.label,ap.x,ap.y-22);ctx.textAlign='left';}
+if(!game.dialogue&&!game.panel){for(const p of Object.values(SERVICE_POINTS)){if(p.location!==game.location)continue;ctx.fillStyle='rgba(109,222,211,.97)';ctx.strokeStyle='#1f6865';ctx.fillRect(p.x-54,p.y-38,108,20);ctx.strokeRect(p.x-54,p.y-38,108,20);ctx.fillStyle='#102f32';ctx.font='bold 9px system-ui';ctx.textAlign='center';ctx.fillText('✦ '+p.label,p.x,p.y-24);ctx.textAlign='left';}}
 drawWeather();
 }
 function drawWorld(){drawWorldBase();drawWorldExtras();}
@@ -1361,7 +1356,7 @@ return `${newsHtml}<div class="msg"><strong>Mọi người quanh bạn</strong><
 function panelHtml(kind){
 if(kind==='map')return `<h3>🗺 Bản đồ thành phố</h3><p>Chọn khu vực. Bạn sẽ xuất hiện tại lối vào gần nhất thay vì bị dịch chuyển vào trong công trình.</p><div class="panel-tabs"><button class="mini active">Khu vực</button></div><div class="menu-row">${LOCS.map(k=>`<button class="mini ${k===game.location?'primary':''}" data-go="${k}">${WORLD[k].name}</button>`).join('')}</div><div class="section"><div class="tag">HIỆN TẠI</div><strong>${WORLD[game.location].name}</strong><p>${WORLD[game.location].subtitle}</p></div>`;
 if(kind==='relations')return `<h3>♡ Mọi người</h3><p>Mỗi người có lịch sống, ký ức và phản ứng riêng. Quan hệ không chỉ có tình yêu mà còn có tình bạn, công việc và sự tin tưởng.</p>${Object.values(NPCS).map(n=>{const s=game.npcState[n.id],r=s.relationship,seen=!!game.flags.met[n.id],score=relationshipScore(n.id);return `<div class="rel-card"><div class="rel-head"><div class="rel-avatar" style="background:${n.color}">${n.name[0]}</div><div><strong>${n.name}</strong><div class="rel-meta">${jobVi(n.job)} · ${seen?'đã gặp':'chưa gặp'} · ${({warm:'thân thiết',open:'cởi mở',guarded:'dè chừng',neutral:'trung lập'})[s.mood]||s.mood}</div></div></div><div style="margin:6px 0">${n.traits.slice(0,3).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}<span class="tag">Mức gắn kết ${score}/100</span></div>${[['interest','Quan tâm'],['trust','Tin tưởng'],['comfort','Thoải mái'],['respect','Tôn trọng']].map(([k,label])=>`<div class="stat"><span>${label}</span><div class="bar"><div class="fill" style="width:${r[k]}%"></div></div><span>${r[k]}</span></div>`).join('')}<div style="font-size:10px;color:#715b44;margin-top:6px">${escapeHtml(s.memory.slice(-1)[0]?.text||n.intro)}</div></div>`}).join('')}`;
-if(kind==='phone')return `<h3>📱 Điện thoại</h3><div class="panel-tabs"><button class="mini active" data-tab="messages">Tin nhắn</button><button class="mini" data-tab="calendar">Lịch</button><button class="mini" data-tab="social">Bản tin</button></div><div class="menu-row"><button class="mini" data-open-panel="gifts">🎁 Túi quà</button><button class="mini" data-open-panel="shop">🛍 Cửa hàng</button><button class="mini" data-open-panel="jobs">💼 Kiếm tiền</button></div><div class="section" id="phoneTab">${phoneMessages()}</div>`;
+if(kind==='phone')return `<h3>📱 Điện thoại</h3><div class="panel-tabs"><button class="mini active" data-tab="messages">Tin nhắn</button><button class="mini" data-tab="calendar">Lịch</button><button class="mini" data-tab="social">Bản tin</button></div><div class="menu-row"><button class="mini" data-open-panel="gifts">🎁 Túi quà</button></div><div class="section" id="phoneTab">${phoneMessages()}</div>`;
 if(kind==='shop')return shopHtml();
 if(kind==='gifts')return giftTargetHtml();
 if(kind==='jobs')return jobsHtml();
@@ -2580,6 +2575,7 @@ window.__cityHeartsRealisticTravel=realisticTravel;
 const originalTryInteractV6=tryInteract;
 tryInteract=function(){
 if(game.dialogue||game.panel)return;
+const sp=Object.values(SERVICE_POINTS).find(p=>p.location===game.location&&Math.hypot(game.x-p.x,game.y-p.y)<70);if(sp&&serviceInteraction(sp))return;
 const nearby=currentNPCs().filter(n=>Math.hypot(game.x-game.npcState[n.id].x,game.y-game.npcState[n.id].y)<72);
 if(nearby.length){nearby.sort((a,b)=>Math.hypot(game.x-game.npcState[a.id].x,game.y-game.npcState[a.id].y)-Math.hypot(game.x-game.npcState[b.id].x,game.y-game.npcState[b.id].y));npcChoice(nearby[0].id);return;}
 const ap=ACTION_POINTS[game.location];
@@ -2846,12 +2842,17 @@ html:'<div class="onboard-grid"><div class="onboard-item"><strong>🕐 Thời gi
 {
 icon:'📱',title:'Hãy để tình yêu xảy ra tự nhiên',
 copy:'Bạn không cần ép mọi mối quan hệ thành chuyện tình. Hãy để câu chuyện tự phát triển:',
-html:'<div class="onboard-grid"><div class="onboard-item"><strong>💬 Hội thoại</strong><span>Cả bạn và NPC đều có thể hỏi, trả lời và tạo ký ức.</span></div><div class="onboard-item"><strong>💼 Kiếm tiền</strong><span>Ca quán, giao hàng, freelance, kèm học và việc cuối tuần.</span></div><div class="onboard-item"><strong>🛍 Chi tiêu</strong><span>Café, cinema, bookstore, cửa hàng quà và các lựa chọn đi lại.</span></div><div class="onboard-item"><strong>🎁 Tặng quà</strong><span>Quà đúng gu có thể tạo phản ứng tốt hơn và được ghi nhớ.</span></div><div class="onboard-item"><strong>🎲 Sự kiện</strong><span>Thành phố có những tình huống ngẫu nhiên. Đôi khi chúng mở ra cơ hội mới.</span></div><div class="onboard-item"><strong>📅 Điện thoại</strong><span>Xem tin nhắn, lịch, mục tiêu và các thông tin xã hội đang diễn ra.</span></div></div>'
+html:'<div class="onboard-grid"><div class="onboard-item"><strong>💬 Hội thoại</strong><span>Cả bạn và NPC đều có thể hỏi, trả lời và tạo ký ức.</span></div><div class="onboard-item"><strong>💼 Kiếm tiền</strong><span>Đến Trung tâm việc làm ở Trung tâm thương mại, ấn nút ✦ Tương tác để nhận ca và làm trực tiếp.</span></div><div class="onboard-item"><strong>🛍 Chi tiêu</strong><span>Café, rạp phim, hiệu sách, Tiệm Quà Pixel và các lựa chọn đi lại. Mọi thứ đều mua trực tiếp tại nơi bán.</span></div><div class="onboard-item"><strong>🎁 Tặng quà</strong><span>Mua ở Tiệm Quà Pixel, rồi tặng qua 📱 Điện thoại → 🎁 Túi quà. Quà đúng gu được ghi nhớ lâu hơn.</span></div><div class="onboard-item"><strong>🎲 Sự kiện</strong><span>Thành phố có những tình huống ngẫu nhiên. Đôi khi chúng mở ra cơ hội mới.</span></div><div class="onboard-item"><strong>📅 Điện thoại</strong><span>Xem tin nhắn, lịch, mục tiêu và các thông tin xã hội đang diễn ra.</span></div></div>'
+},
+{
+icon:'🎁',title:'Cửa hàng quà: mua và tặng',
+copy:'Quà không mua qua tin nhắn. Bạn phải tới tận nơi, nhìn tận mắt rồi mới chọn:',
+html:'<div class="onboard-flow"><div class="step"><b>🚶</b><span>Đi tới Trung tâm thương mại</span></div><div class="step"><b>🏪</b><span>Đứng trước Tiệm Quà Pixel</span></div><div class="step"><b>✦</b><span>Ấn nút Tương tác để vào tiệm</span></div><div class="step"><b>🛒</b><span>Chọn nhóm quà và bấm Mua</span></div><div class="step"><b>🎁</b><span>Tặng ở 📱 → Túi quà</span></div></div><div class="onboard-grid" style="margin-top:10px"><div class="onboard-item"><strong>♥ Hợp với</strong><span>Mỗi món ghi người bạn đã gặp thích nó. Chưa biết gu ai thì hãy trò chuyện trước.</span></div><div class="onboard-item"><strong>🕗 Giờ mở cửa</strong><span>Tiệm mở 08:00–22:00. Biển MỞ / ĐÓNG treo ở cửa tiệm.</span></div><div class="onboard-item"><strong>💰 Giá quà</strong><span>Từ 25.000đ tới 250.000đ, hơn 35 món chia theo 7 nhóm. Món đắt không phải lúc nào cũng hợp nhất.</span></div><div class="onboard-item"><strong>🎂 Sinh nhật</strong><span>Mua sẵn vài món nhỏ trong túi để dịp sinh nhật NPC không bị lỡ.</span></div></div>'
 },
 {
 icon:'🚶',title:'30 phút đầu nên làm gì?',
 copy:'Không có đáp án bắt buộc. Đây là một lộ trình nhẹ để làm quen hệ thống:',
-html:'<div class="onboard-grid"><div class="onboard-item"><strong>① Đi quanh khu Downtown</strong><span>Thử di chuyển và làm quen các biển báo / điểm tương tác.</span></div><div class="onboard-item"><strong>② Gặp 1–2 NPC</strong><span>Nói chuyện tự nhiên, thử dùng câu hỏi của chính bạn.</span></div><div class="onboard-item"><strong>③ Mở 📱 Điện thoại</strong><span>Xem tin nhắn, lịch, mục tiêu và phần xã hội.</span></div><div class="onboard-item"><strong>④ Thử một việc kiếm tiền</strong><span>Để biết nhịp thời gian, năng lượng và tiền hoạt động ra sao.</span></div></div><div class="onboard-note" style="margin-top:10px"><strong>Sẵn sàng chưa?</strong> Chọn <b>Vào thành phố</b>. Hướng dẫn này không khóa gì ngoài vài giây đầu và sẽ chỉ xuất hiện ở lúc bạn bắt đầu một hành trình mới.</div>'
+html:'<div class="onboard-grid"><div class="onboard-item"><strong>① Đi quanh khu Downtown</strong><span>Thử di chuyển và làm quen các biển báo / điểm tương tác.</span></div><div class="onboard-item"><strong>② Gặp 1–2 NPC</strong><span>Nói chuyện tự nhiên, thử dùng câu hỏi của chính bạn.</span></div><div class="onboard-item"><strong>③ Mở 📱 Điện thoại</strong><span>Xem tin nhắn, lịch, mục tiêu và phần xã hội.</span></div><div class="onboard-item"><strong>④ Thử một việc kiếm tiền</strong><span>Ghé Trung tâm việc làm (Trung tâm thương mại) để biết nhịp thời gian, năng lượng và tiền.</span></div><div class="onboard-item"><strong>⑤ Ghé Tiệm Quà Pixel</strong><span>Ở Trung tâm thương mại. Mua một món nhỏ để tặng người bạn vừa quen.</span></div></div><div class="onboard-note" style="margin-top:10px"><strong>Sẵn sàng chưa?</strong> Chọn <b>Vào thành phố</b>. Hướng dẫn này không khóa gì ngoài vài giây đầu và sẽ chỉ xuất hiện ở lúc bạn bắt đầu một hành trình mới.</div>'
 }
 ];
 const overlay=document.createElement('div');
@@ -2964,59 +2965,59 @@ const PHONE_SCENARIOS=[
 {text:'“Bn làm được mà. Mik tin bn.”',reply:'“Nghe câu này tự nhiên thấy tự tin ghê.”',effects:{comfort:5,interest:3},memory:'động viên đối phương trước ngày quan trọng'}
 ]};}},
 {id:'umbrella',tag:'thời tiết',minScore:28,make(n){return{title:'Nhắc mang ô',incoming:`“Chiều nay trời sắp mưa đó. Nhớ mang ô nha, đừng như lần trước =))”`,choices:[
-{text:'“Nhớ rồi. Cảm ơn bn đã nhắc nha.”',reply:'“Ok, nghe vậy tui yên tâm hẳn :))”',effects:{comfort:4,consistency:2},memory:'cảm ơn vì được nhắc mang ô'},
+{text:'“Nhớ rồi. Cảm ơn bn đã nhắc nha.”',reply:'“Ok, vậy tui yên tâm rồi.”',effects:{comfort:4,consistency:2},memory:'cảm ơn vì được nhắc mang ô'},
 {text:'“Lần trước là tai nạn, đừng nhắc :))”',reply:'“Tui nhớ rõ lắm nha, nhớ hoài luôn =)))”',effects:{chemistry:4,comfort:3},memory:'trêu nhau về lần quên mang ô'},
 {text:'“Nếu mik quên thì bn đón mik hả?”',reply:'“Ủa… tùy tâm trạng tui lúc đó =))”',effects:{chemistry:5,interest:3},memory:'đùa về chuyện che chung ô'}
 ]};}},
 {id:'gift',tag:'quà tặng',minScore:50,make(n){return{title:'Chọn quà',incoming:`“Tui đang phân vân mua quà cho một người bạn. Bn gợi ý giúp tui được không?”`,choices:[
-{text:'“Chọn thứ hợp với họ, đừng chọn thứ đắt nhất.”',reply:'“Ừ, câu này đúng thiệt. Nghe vậy tự nhiên thấy nhẹ đầu.”',effects:{respect:4,trust:4},memory:'giúp đối phương chọn quà bằng sự chân thành'},
-{text:'“Kể mik nghe người đó thích gì đã.”',reply:'“Ừ, để tui kể từ đầu cho bn dễ hiểu nha…”',effects:{curiosity:5,comfort:3},memory:'hỏi kỹ về người nhận quà trước khi gợi ý'},
+{text:'“Chọn thứ hợp với họ, đừng chọn thứ đắt nhất.”',reply:'“Câu này đúng thiệt. Tui cần nghe vậy.”',effects:{respect:4,trust:4},memory:'giúp đối phương chọn quà bằng sự chân thành'},
+{text:'“Kể mik nghe người đó thích gì đã.”',reply:'“Ok, để tui kể từ đầu…”',effects:{curiosity:5,comfort:3},memory:'hỏi kỹ về người nhận quà trước khi gợi ý'},
 {text:'“Một món nhỏ kèm tấm thiệp viết tay.”',reply:'“Ý hay đó. Tui thấy cảm động giùm luôn.”',effects:{chemistry:4,interest:4},memory:'gợi ý quà nhỏ kèm thiệp viết tay'}
 ]};}},
 {id:'sorry',tag:'làm hòa',minScore:44,make(n){return{title:'Xin lỗi',incoming:`“Hôm trước tui trả lời hơi cụt, bn có để bụng không? Tui hơi áy náy.”`,choices:[
-{text:'“Không sao đâu. Cảm ơn bn đã nói thật nha.”',reply:'“Nhẹ cả người. Cảm ơn bn nha.”',effects:{trust:5,respect:3},memory:'chấp nhận lời xin lỗi một cách nhẹ nhàng'},
+{text:'“Không sao. Cảm ơn bn đã nói ra.”',reply:'“Nhẹ cả người. Cảm ơn bn nha.”',effects:{trust:5,respect:3},memory:'chấp nhận lời xin lỗi một cách nhẹ nhàng'},
 {text:'“Có hơi buồn xíu, nhưng giờ ổn rồi.”',reply:'“Cảm ơn bn đã nói thật. Tui sẽ chú ý hơn.”',effects:{trust:6,comfort:3},memory:'nói thật cảm xúc của mình sau một lần hiểu lầm'},
-{text:'“Bù bằng một ly café là huề.”',reply:'“Chốt :)) Ly đó tui bao, khỏi cãi.”',effects:{chemistry:4,comfort:4},memory:'làm hòa bằng một ly café'}
+{text:'“Bù bằng một ly café là huề.”',reply:'“Deal. Tui bao, không cãi =))”',effects:{chemistry:4,comfort:4},memory:'làm hòa bằng một ly café'}
 ]};}},
 {id:'secret',tag:'chuyện riêng',minScore:56,make(n){return{title:'Chuyện riêng',incoming:`“Tui kể bn nghe một chuyện, nhưng bn đừng kể ai nha? Tui chỉ tin bn thôi.”`,choices:[
 {text:'“Kể đi. Mik giữ kín, hứa.”',reply:'“Ok… vậy tui kể. Bn nghe thôi nha.”',effects:{trust:7,comfort:4},memory:'được tin tưởng kể một chuyện riêng tư'},
-{text:'“Chuyện có ảnh hưởng ai không? Mik muốn hiểu trước.”',reply:'“Ừ, hỏi vậy cũng đúng. Để tui kể kỹ hơn cho bn nghe.”',effects:{respect:5,curiosity:4},memory:'hỏi cẩn thận trước khi nhận giữ một bí mật'},
-{text:'“Bn kể khi nào thấy sẵn sàng cũng được.”',reply:'“Cảm ơn bn nha, bn không ép nên tui thấy dễ kể hơn.”',effects:{comfort:6,respect:4},memory:'không ép đối phương kể chuyện riêng'}
+{text:'“Chuyện có ảnh hưởng ai không? Mik muốn hiểu trước.”',reply:'“Câu hỏi hợp lý. Tui sẽ kể kỹ hơn.”',effects:{respect:5,curiosity:4},memory:'hỏi cẩn thận trước khi nhận giữ một bí mật'},
+{text:'“Bn kể khi nào thấy sẵn sàng cũng được.”',reply:'“Cảm ơn bn vì không ép tui.”',effects:{comfort:6,respect:4},memory:'không ép đối phương kể chuyện riêng'}
 ]};}},
 {id:'checkin',tag:'hỏi thăm',minScore:28,make(n){return{title:'Hỏi thăm',incoming:`“Bn về tới nhà chưa? Hồi nãy nói chuyện vui phết :))”`,choices:[
 {text:'“Về rồi. Tự nhiên hnay nói chuyện với bn thấy nhẹ đầu ghê.”',reply:'“Ủa nghe câu này tự nhiên tui cũng vui =))”',effects:{comfort:4,trust:2},memory:'đã nhắn một lời hỏi thăm sau khi về nhà'},
-{text:'“Chưa, tui đang lang thang thêm tí. Bn thì sao?”',reply:'“Tui cũng còn ngoài đường. Tối nay đi ngoài này thấy dễ chịu ghê.”',effects:{curiosity:3,chemistry:2},memory:'tiếp tục nói chuyện khi cả hai còn ở ngoài đường'},
-{text:'“Về rồi nha. Mai nói tiếp không?”',reply:'“Chốt nha :)) Mà đừng mất hút là được.”',effects:{consistency:4,interest:2},memory:'chủ động hẹn nói chuyện tiếp vào hôm sau'}
+{text:'“Chưa, tui đang lang thang thêm tí. Bn thì sao?”',reply:'“Tui cũng còn ngoài đường. Thành phố tối nay khá dễ chịu.”',effects:{curiosity:3,chemistry:2},memory:'tiếp tục nói chuyện khi cả hai còn ở ngoài đường'},
+{text:'“Về rồi nha. Mai nói tiếp không?”',reply:'“Deal :)) Đừng mất hút là được.”',effects:{consistency:4,interest:2},memory:'chủ động hẹn nói chuyện tiếp vào hôm sau'}
 ]};}},
 {id:'photo',tag:'ảnh / story',minScore:30,make(n){const like=(n.likes||[])[0]||'mấy thứ bn thích';return{title:'Gửi ảnh',incoming:`“Ê tui vừa chụp cái này xong. Nhìn phát nhớ tới ${like} bn hay kể :))”`,choices:[
-{text:'“Gửi tui coi 👀”',reply:'“Đây nè 👀 Tự nhiên nhìn nó tui nhớ tới bn thiệt.”',effects:{interest:4,curiosity:3},memory:'chủ động xem và phản hồi một bức ảnh được gửi qua điện thoại'},
+{text:'“Gửi tui coi 👀”',reply:'“Đây nè. Tui thấy nó có vibe của bn thiệt.”',effects:{interest:4,curiosity:3},memory:'chủ động xem và phản hồi một bức ảnh được gửi qua điện thoại'},
 {text:'“Ủa nhớ tới mik luôn hả =)))”',reply:'“Thì... tình cờ thôi nha. Đừng suy diễn :))”',effects:{chemistry:5,comfort:2},memory:'trêu nhau vì một bức ảnh gợi nhớ đối phương'},
-{text:'“Để tui gửi lại bn một tấm cũng hợp vibe.”',reply:'“Haha, đổi ảnh lấy ảnh nha =))”',effects:{interest:3,compatibility:3},memory:'trao đổi ảnh và chia sẻ gu với nhau'}
+{text:'“Để tui gửi lại bn một tấm cũng hợp vibe.”',reply:'“Ok, trao đổi văn hoá nha =))”',effects:{interest:3,compatibility:3},memory:'trao đổi ảnh và chia sẻ gu với nhau'}
 ]};}},
 {id:'plan',tag:'rủ kèo',minScore:34,make(n){return{title:'Rủ kèo',incoming:`“Cuối tuần bn có rảnh không? Tui đang tính ra ngoài một chút.”`,choices:[
-{text:'“Có nha. Bn tính đi đâu?”',reply:'“Tui đang lăn tăn giữa café với đi dạo. Bn chốt kèo nào?”',effects:{interest:4,compatibility:4},memory:'trao đổi kế hoạch gặp nhau qua điện thoại'},
-{text:'“Có thể. Báo tui giờ trước nha.”',reply:'“Oke, tui nhớ giờ. Kèo này tui note đàng hoàng :))”',effects:{trust:3,consistency:4},memory:'đặt lịch trước để tránh lỡ hẹn'},
-{text:'“Tuỳ hôm. Nhưng cứ rủ đi, biết đâu tui xuất hiện :))”',reply:'“Nghe hơi hên xui nha =)))) Thôi tui cứ rủ trước đã.”',effects:{chemistry:5,curiosity:2},memory:'giữ một lời hẹn mở cho cuối tuần'}
+{text:'“Có nha. Bn tính đi đâu?”',reply:'“Tui đang cân giữa café với đi dạo. Bn chọn.”',effects:{interest:4,compatibility:4},memory:'trao đổi kế hoạch gặp nhau qua điện thoại'},
+{text:'“Có thể. Báo tui giờ trước nha.”',reply:'“Oke, tui nhớ. Kèo này tui lên lịch cho đàng hoàng =))”',effects:{trust:3,consistency:4},memory:'đặt lịch trước để tránh lỡ hẹn'},
+{text:'“Tuỳ hôm. Nhưng cứ rủ đi, biết đâu tui xuất hiện :))”',reply:'“Nghe nguy hiểm ghê =)))) Tui cứ rủ trước.”',effects:{chemistry:5,curiosity:2},memory:'giữ một lời hẹn mở cho cuối tuần'}
 ]};}},
 {id:'mood',tag:'tâm trạng',minScore:36,make(n){return{title:'Tâm sự',incoming:`“Hnay có một chuyện làm tui lăn tăn mãi. Bn nghe tui nói chút được không?”`,choices:[
 {text:'“Kể đi. Mik nghe nè, không cần phải giải quyết gì ngay.”',reply:'“Cảm ơn. Nghe kiểu này đỡ áp lực hơn hẳn.”',effects:{trust:6,comfort:5},memory:'lắng nghe đối phương khi họ mệt'},
 {text:'“Chuyện gì làm bn lăn tăn vậy?”',reply:'“Cũng nhiều thứ nhỏ nhỏ cộng lại thôi...”',effects:{trust:5,curiosity:4},memory:'hỏi kỹ hơn khi đối phương chia sẻ chuyện không vui'},
-{text:'“Mik không giỏi an ủi lắm nhưng mik ở đây.”',reply:'“Vậy là đủ với tui rồi. Thiệt đó.”',effects:{comfort:6,respect:2},memory:'ở cạnh và lắng nghe thay vì cố sửa mọi thứ'}
+{text:'“Mik không giỏi an ủi lắm nhưng mik ở đây.”',reply:'“Thế là đủ rồi. Thiệt.”',effects:{comfort:6,respect:2},memory:'ở cạnh và lắng nghe thay vì cố sửa mọi thứ'}
 ]};}},
 {id:'goodluck',tag:'chúc may mắn',minScore:26,make(n){return{title:'Nhắn trước giờ làm',incoming:`“Nghe nói hnay bn có việc quan trọng. Good luck nha 👀”`,choices:[
 {text:'“Cảm ơn. Tự nhiên được bn chúc thấy tự tin hơn hẳn.”',reply:'“Vậy là lời chúc có tác dụng rồi =))”',effects:{comfort:4,interest:2},memory:'chúc nhau trước một ngày quan trọng'},
 {text:'“Bn nhớ luôn à?”',reply:'“Nhớ chứ. Tui có não mà :))”',effects:{interest:4,curiosity:2},memory:'nhớ một chi tiết nhỏ về lịch trình của nhau'},
-{text:'“Tối nay mik kể bn nghe kết quả.”',reply:'“Chốt :)) Xong nhớ kể tui nghe nha.”',effects:{consistency:3,trust:3},memory:'hứa cập nhật kết quả sau khi xong việc'}
+{text:'“Tối nay mik kể bn nghe kết quả.”',reply:'“Deal. Tui chờ story.”',effects:{consistency:3,trust:3},memory:'hứa cập nhật kết quả sau khi xong việc'}
 ]};}},
 {id:'randomfood',tag:'đồ ăn',minScore:24,make(n){return{title:'Đồ ăn',incoming:`“Tui vừa thấy một chỗ bán đồ ăn ngon quá. Gu bn có vẻ sẽ thích.”`,choices:[
-{text:'“Tên quán đâu, gửi mik với =))”',reply:'“Tui gửi map luôn nè, khỏi ngồi mò :))”',effects:{interest:3,comfort:3},memory:'chia sẻ quán ăn qua tin nhắn'},
+{text:'“Tên quán đâu, gửi mik với =))”',reply:'“Tui gửi map luôn. Đỡ phải tìm.”',effects:{interest:3,comfort:3},memory:'chia sẻ quán ăn qua tin nhắn'},
 {text:'“Bn ăn chưa?”',reply:'“Rồi. Và giờ tui đang hơi có tội vì không rủ bn :))”',effects:{chemistry:4,comfort:3},memory:'trêu nhau chuyện đồ ăn và lời mời chưa kịp rủ'},
-{text:'“Lưu địa điểm lại. Hôm nào test chung.”',reply:'“Ừ, nghe cũng ổn áp đó.”',effects:{compatibility:4,interest:3},memory:'lưu một địa điểm để thử cùng nhau'}
+{text:'“Lưu địa điểm lại. Hôm nào test chung.”',reply:'“Ok, nghe hợp lý.”',effects:{compatibility:4,interest:3},memory:'lưu một địa điểm để thử cùng nhau'}
 ]};}},
 {id:'late',tag:'đêm muộn',minScore:42,make(n){return{title:'Nhắn đêm',incoming:`“Tui vừa đi ngang quán hôm trước mình ngồi. Đèn vẫn sáng nè :))”`,choices:[
-{text:'“Ủa giờ này còn mở hả? Mik cũng muốn ghé.”',reply:'“Ừ ha :)) Mai mình ghé chung không?”',effects:{chemistry:5,comfort:4},memory:'nhắn nhau về một quán quen vào đêm muộn'},
-{text:'“Nhớ hôm đó ghê, vui thật sự.”',reply:'“Tui cũng nhớ. Lần sau để tui chọn chỗ cho =)))”',effects:{consistency:3,comfort:3},memory:'nhắc lại một buổi ngồi quán vui với nhau'},
-{text:'“Khuya rồi, về cẩn thận nha.”',reply:'“Ừ, cảm ơn bn nhắc nha. Tui cũng hay quên lúc khuya lắm :))”',effects:{respect:4,comfort:3},memory:'nhắc nhau về an toàn lúc khuya'}
+{text:'“Ủa giờ này còn mở hả? Mik cũng muốn ghé.”',reply:'“Đúng không :)) Mai mình ghé cùng nha.”',effects:{chemistry:5,comfort:4},memory:'nhắn nhau về một quán quen vào đêm muộn'},
+{text:'“Nhớ hôm đó ghê, vui thật sự.”',reply:'“Tui cũng nhớ. Lần sau tui chọn chỗ nha =)))”',effects:{consistency:3,comfort:3},memory:'nhắc lại một buổi ngồi quán vui với nhau'},
+{text:'“Khuya rồi, về cẩn thận nha.”',reply:'“Ừm. Cảm ơn đã nhắc nha.”',effects:{respect:4,comfort:3},memory:'nhắc nhau về an toàn lúc khuya'}
 ]};}}
 ];
 function ensurePhoneSocial(){
@@ -3240,7 +3241,7 @@ body.innerHTML=key==='messages'?phoneMessagesEnhanced():key==='contacts'?contact
 }
 });
 }
-const phoneMenuButtons=()=>`<div class="menu-row" style="margin-top:7px"><button class="mini" data-open-panel="gifts">🎁 Túi quà</button><button class="mini" data-open-panel="shop">🛍 Cửa hàng</button><button class="mini" data-open-panel="jobs">💼 Kiếm tiền</button></div>`;
+const phoneMenuButtons=()=>`<div class="menu-row" style="margin-top:7px"><button class="mini" data-open-panel="gifts">🎁 Túi quà</button></div>`;
 const oldPhoneHub=phoneHubHtml;
 phoneHubHtml=function(){return oldPhoneHub()+phoneMenuButtons();};
 const oldAddContact=addContact;
@@ -4043,14 +4044,14 @@ const sc=bank[idx],state=ensureSocialPath(id),path=state.intent==='undecided'?'e
 let intro=round===0?sc.text+'\n\n'+n.intro:sc.text+'\n\n“Ê mà nói tới đây tui lại nhớ chuyện khác…”';
 const options=(sc.choices||[]).slice(0,3).map((ch,i)=>({text:teenCode(ch.text,id+':choice:'+round+':'+i),note:'Không có đáp án sai — lựa chọn này mở một nhánh khác.',onChoose(){
 const e=safeEffects(ch.effects||{});changeRel(id,e);markSocialChoice(id,ch.text,e);remember(id,ch.text,'positive',['branch-choice']);s.talkCount=(s.talkCount||0)+1;s.chatIndex=(idx+1)%bank.length;advance(6);
-const reply=teenCode(ch.reply||'“Ừ, tui hiểu bn đang nói gì rồi.”',id+':reply:'+round+':'+i);
+const reply=teenCode(ch.reply||'“Ừ, tui hiểu ý bn.”',id+':reply:'+round+':'+i);
 openDialogue(game.name,ch.text,[{text:'“Kể tiếp đi, tui đang nghe nè.”',onChoose(){
 const route=ensureSocialPath(id).intent==='romance'?'romance':ensureSocialPath(id).intent==='friend'?'friend':ensureSocialPath(id).intent==='slow'?'slow':'explore';
 const br=branchReply(n,id,route,i),be=safeEffects(br[1]);changeRel(id,be);markSocialChoice(id,br[0],be);remember(id,br[0],'positive',['branch-scene']);
 openDialogue(n.name,reply+'\n\n'+teenCode(br[0],id+':branch:'+round+':'+i),[{text:round>=2?'“Ừm, tui hiểu bn hơn một chút rồi.”':'“Rồi sao nữa? Kể tiếp đi :))”',onChoose(){round++;if(round>=4)finishSocialDirection(id);else{idx=(idx+1)%bank.length;scene();}}}]);
 }}]);
 }}));
-const q=round%2===0?{text:'❓ “Ê, dạo này bn ổn thiệt hong?”',note:'Mở nhánh tâm sự / tin tưởng.',onChoose(){const e={trust:5,comfort:5,curiosity:3};changeRel(id,e);markSocialChoice(id,'hỏi thật về cảm xúc',e);remember(id,'đã chủ động hỏi thăm cảm xúc','positive',['care']);openDialogue(n.name,'“Hơi mệt thôi á. Mà bn hỏi vậy tự nhiên thấy nhẹ người hơn.”',[{text:'“Tui nghe tiếp nè.”',onChoose(){round++;if(round>=4)finishSocialDirection(id);else{idx=(idx+1)%bank.length;scene();}}}]);}}:{text:'✨ “Nói chuyện với bn tự nhiên thấy dễ chịu ghê.”',note:'Mở nhánh cảm tình / chemistry.',onChoose(){const e={chemistry:5,interest:4,comfort:3};changeRel(id,e);markSocialChoice(id,'nói rằng nói chuyện với nhau khá dễ chịu',e);remember(id,'đã nói thật về cảm giác khi nói chuyện','positive',['chemistry']);openDialogue(n.name,'“Ủa… nghe bn nói vậy tự nhiên tui cũng vui :)) Tui cũng thấy dễ chịu thiệt.”',[{text:'“Vậy nói tiếp nha.”',onChoose(){round++;if(round>=4)finishSocialDirection(id);else{idx=(idx+1)%bank.length;scene();}}}]);}};
+const q=round%2===0?{text:'❓ “Cho mik hỏi thật: dạo này bn ổn không?”',note:'Mở nhánh tâm sự / tin tưởng.',onChoose(){const e={trust:5,comfort:5,curiosity:3};changeRel(id,e);markSocialChoice(id,'hỏi thật về cảm xúc',e);remember(id,'đã chủ động hỏi thăm cảm xúc','positive',['care']);openDialogue(n.name,'“Hơi mệt thôi. Nhưng được hỏi vậy tự nhiên thấy ổn hơn.”',[{text:'“Tui nghe tiếp nè.”',onChoose(){round++;if(round>=4)finishSocialDirection(id);else{idx=(idx+1)%bank.length;scene();}}}]);}}:{text:'✨ “Tui thấy nói chuyện với bn khá dễ chịu á.”',note:'Mở nhánh cảm tình / chemistry.',onChoose(){const e={chemistry:5,interest:4,comfort:3};changeRel(id,e);markSocialChoice(id,'nói rằng nói chuyện với nhau khá dễ chịu',e);remember(id,'đã nói thật về cảm giác khi nói chuyện','positive',['chemistry']);openDialogue(n.name,'“Ủa… nghe câu này tui hơi vui nha :)) Tui cũng thấy vậy.”',[{text:'“Vậy nói tiếp nha.”',onChoose(){round++;if(round>=4)finishSocialDirection(id);else{idx=(idx+1)%bank.length;scene();}}}]);}};
 options.push(q);openDialogue(n.name,teenCode(intro,id+':intro:'+round),options);
 }
 if(id==='linh'&&!game.flags.firstCoffee){
@@ -4528,18 +4529,19 @@ chEnsurePrivateState();
 function chTeen(v,key){return typeof teenCode==='function'?teenCode(String(v),key):String(v);}
 function chNpc(id){return NPCS&&NPCS[id]?NPCS[id]:null;}
 function chQuestion(id,index){return PRIVATE_QUESTIONS[id]?.[index]||'';}
-const PRIVATE_DIRECT_ANSWERS={"linh":[["Có, tui thường để ý vài chi tiết nhỏ rồi mới ghép thành tổng vibe.","Tui nhìn vibe trước, nhưng vẫn để ý ánh mắt, cách nói chuyện với người khác.","Tùy người; có người phải nói chuyện lâu tui mới để ý chi tiết."],["Tui sẽ chọn brand tối giản, tông ấm, nhìn vào thấy gần gũi ngay.","Tui thích kiểu có chút retro, màu sắc vừa đủ để nổi bật trên phố.","Tui sẽ làm playful hơn, có một chi tiết nhận diện khiến ai đi ngang cũng nhớ."],["Mùi là thứ đập vào tui đầu tiên, nhất là mùi đất và café sau mưa.","Tui hay để ý âm thanh: tiếng mưa, xe chạy, mái hiên.","Tui nghĩ tới màu trước; trời mưa thường kéo palette của tui về tông dịu."],["Tui chốt lại mục tiêu cốt lõi rồi dựng một version gọn để cứu idea.","Tui hỏi khách phần nào bắt buộc đổi, phần nào còn room để giữ chất riêng.","Tui tách idea thành từng mảnh, đổi thứ có thể đổi mà giữ lại cái “linh hồn”."],["Tui sẽ hỏi họ trước xem họ muốn chia sẻ insight ở phần nào, không kéo họ lên giữa spotlight ngay.","Tui cho họ một khoảng nói trong nhóm nhỏ trước để họ thấy an toàn hơn.","Nếu insight thật sự xịn, tui sẽ chủ động nhắc lại và ghi nhận công sức của họ."],["Có lẽ là một góc café trong hẻm, vừa có người qua lại vừa có chỗ ngồi yên.","Tui thích đoạn phố có nhà cũ, biển hiệu nhỏ và nhiều lớp ánh sáng.","Một góc gần sông lúc chiều tối hợp vibe tui hơn: thoáng mà không quá ồn."],["Tui thích góp ý thẳng nhưng chỉ rõ chỗ nào và vì sao, đừng chê chung chung.","Nói riêng sẽ dễ nghe hơn nói giữa đám đông.","Tui ổn với góp ý mạnh, miễn người góp ý vẫn tôn trọng cái tui đã làm."],["Tui muốn giữ việc ghi lại một chi tiết nhỏ mỗi ngày.","Tui muốn luôn có một buổi đi dạo không mục đích để nạp lại.","Tui muốn giữ nhịp có lúc làm, có lúc nghỉ thật sự."]],"minh":[["Bug chỉ xuất hiện lúc demo làm tui cay hơn hẳn.","Bug ngớ ngẩn mới đáng ghét vì nhìn lại không hiểu sao mình bỏ sót.","Tui ghét nhất bug chỉ xảy ra trên đúng một máy hoặc một điều kiện rất khó tái hiện."],["Tui pick chiến thuật, càng tính nhiều bước càng cuốn.","Troll nhau vui hơn, miễn cả bàn chịu được độ toxic =))).","Tui thích game có cả chiến thuật lẫn bluff, vừa nghĩ vừa đọc người."],["Small talk không vô dụng; đôi lúc nó đúng là loading screen của một mối quan hệ.","Tui thích nói chuyện có nội dung hơn, nhưng small talk giúp mở cửa trước đã.","Tui nghĩ nó tùy người: có cuộc nói chuyện bắt đầu rất nhạt rồi mới hay."],["Tui sửa flow khiến người dùng phải bấm đi bấm lại nhiều nhất trước.","Tui ưu tiên flow gây lỗi hoặc làm người dùng dễ hiểu nhầm.","Tui sẽ sửa điểm người dùng gặp thường xuyên nhất, chưa chắc là thứ nhìn xấu nhất."],["Tui tách việc thành task nhỏ rồi xử từng cái một như debug.","Tui rời màn hình một lúc, đi bộ hoặc uống café rồi quay lại.","Tui viết ra thứ đang vướng trong đầu để biết mình đang overload ở đâu."],["Đi dạo, thường lúc đứng lên là có lời giải =))","Ngồi lì, bỏ đi là mất flow luôn.","Viết ra giấy rồi mới quay lại màn hình."],["Tui build một app ghi lại mấy ý tưởng ngớ ngẩn trong đầu.","Tui làm một app mini để track thói quen hoặc mood mỗi ngày.","Tui sẽ code một thứ useless nhưng vui, kiểu random challenge generator."],["Người đó biết đặt câu hỏi và nói có ví dụ, không chỉ quăng opinion.","Họ chịu nghe lại người khác chứ không biến cuộc nói chuyện thành độc thoại.","Tui thấy có substance khi họ nói ít nhưng ý nào cũng có lý do phía sau."]],"hana":[["Cứu timeline trước, vì trễ cả hệ thống thì mood cũng chẳng cứu được.","Tui gom team xử lý vấn đề lớn nhất rồi mới quay lại trấn an mọi người.","Tùy sự cố; nếu timeline còn cứu được thì tui ưu tiên mood để cả team không hoảng."],["Một tin nhắn rủ đi ngay, điểm đến nghe vui và không phải chuẩn bị quá nhiều là đủ.","Kèo có nhạc, đồ ăn hoặc activity mới lạ là tui dễ đổi plan nhất.","Nếu người rủ là người tui thích đi cùng thì plan cũ cũng dễ bay =)))."],["Concert có năng lượng mạnh là dù mệt tui vẫn đi.","Tui mê concert có crowd vui và setlist khiến mình nhảy từ đầu tới cuối.","Nếu artist tui thích diễn ở gần nhà thì khó có lý do để tui ở nhà."],["Tui nghiêng về thử cái mới; thắng thì vui nhưng thử được thứ chưa biết mới đã.","Tui thích cảm giác vượt qua một challenge khó vì nó tạo adrenaline.","Tui cần cả hai: thử cái mới trước, thắng sau càng vui."],["Người có năng lượng riêng và không cố hòa vào đám đông làm tui chú ý.","Tui để ý người nói chuyện tự tin nhưng vẫn quan tâm người xung quanh.","Người có vibe hơi khác thường hoặc đang làm một thứ thú vị thường lọt mắt tui."],["Khoảng 30–40% random là đẹp; nhiều hơn dễ thành hỗn loạn.","Tui thích để ít nhất một nửa buổi tối cho những kèo phát sinh.","Chỉ cần có một đoạn không plan gì cả là tối đó đã đủ vui."],["Biển, nhất là chuyến đi tự phát có nhiều hoạt động ngoài trời.","Một thành phố lạ sẽ kích thích tui hơn vì có nhiều thứ để khám phá.","Tui chọn chỗ hoàn toàn lạ nếu chuyến đi có cảm giác “đi rồi mới biết”."],["Có, nhất là lúc phải giữ năng lượng cho mọi người xung quanh.","Có lúc tui nói “ổn mà” rồi về nhà mới nhận ra mình quá tải.","Tui có, và thường cần một khoảng riêng trước khi nói thật là mình đang rối."]],"an":[["Hình khối giữ tui lại đầu tiên, nhất là khi tổng thể có một ý tưởng rõ.","Ánh sáng làm tui muốn đứng lâu hơn nếu nó thay đổi cảm giác của công trình.","Khoảng trống khiến tui tò mò nhất vì nó cho thấy công trình đang “thở” thế nào."],["Một bức tường màu cũ, chút rêu, nhìn là thấy thời gian.","Vài chậu cây của nhà ai đó, có hơi người.","Tiếng quán vọng ra từ xa, hẻm có sống mới đẹp."],["Nắng sáng, vì nó thay đổi không gian tự nhiên mà không cần nhiều đồ.","Đèn vàng tối hợp những lúc cần thư giãn lâu.","Tui sẽ kết hợp: ánh sáng tự nhiên ban ngày, đèn vàng khi tối."],["Tui giữ lại thứ ảnh hưởng trực tiếp tới cách người ta sử dụng không gian.","Tui giữ ánh sáng và khoảng lưu thông trước các chi tiết trang trí.","Tui sẽ giữ chi tiết tạo nên bản sắc của công trình, dù nhỏ."],["Nhiều cây, nhưng phải có khoảng trống đủ rộng để không thấy bí.","Tui ưu tiên khoảng trống và chỗ ngồi, rồi mới bổ sung cây theo cấu trúc.","Một công viên đẹp với tui là có cả bóng mát, đường đi và khoảng mở."],["Tui muốn chỉnh giao thông và khả năng đi bộ trước.","Tui ưu tiên thêm cây, vỉa hè dễ đi và không gian công cộng.","Tui sẽ xử lý những điểm khiến các khu dân cư kết nối với nhau khó khăn."],["Phải có một góc đọc hoặc ngồi thật yên.","Tui cần một khoảng ban công/hiên để đón gió và nhìn ra ngoài.","Một góc có ánh sáng đẹp và đủ riêng tư là thứ tui giữ lại."],["Tui nghĩ kiên nhẫn có phần tính cách nhưng phần lớn là luyện.","Có người sẵn kiên nhẫn hơn, nhưng trải nghiệm vẫn rèn nó rất nhiều.","Tui tin đây là kỹ năng: hiểu mình đang chờ cái gì thì dễ kiên nhẫn hơn."]],"mai":[["Có; có người uống để tỉnh, có người đang tận hưởng nghi thức và không khí.","Tui nghĩ hai nhóm đều có, và nhiều người là cả hai luôn.","Nhìn cách họ chọn món và ngồi lại bao lâu thường đoán được khá chuẩn."],["Mùi chocolate hoặc caramel cho cảm giác ấm và dễ nhớ.","Tui muốn mùi hạt rang, hơi nutty, rõ chất café hơn.","Tui chọn citrus nhẹ để blend có cảm giác tươi và khác biệt."],["Người mệt mà vẫn nói cảm ơn, tui muốn pha kỹ hơn cho họ.","Khách quen ngồi đúng chỗ cũ, tui thích pha đúng ly họ hay uống.","Người lần đầu tới, tui muốn ly đầu tiên làm họ nhớ."],["Món có texture thú vị, ăn một lần là nhớ, như tiramisu hoặc cheesecake.","Tui thích dessert nhìn đơn giản nhưng vị cân bằng, không quá ngọt.","Món nào khách ăn xong quay lại hỏi “hôm nay còn không?” là tui vui nhất."],["Lúc quán đông mà khách vẫn vui và team phối hợp mượt là tui thấy đáng.","Một khách quay lại vì nhớ món cũ cũng làm tui thấy hôm đó đáng.","Có ngày chỉ cần quán đầy tiếng cười là tui thấy công sức có ý nghĩa."],["Yên, thơm mùi café mới xay và mọi thứ còn đang chuẩn bị.","Buổi sáng có chút vội nhưng ánh sáng đẹp và quán chưa quá ồn.","Tui thích khoảnh khắc trước giờ mở cửa, ai cũng đang vào guồng."],["Tui thử món mới, vắng là lúc nghịch ngợm được nhất.","Dọn lại quán trước, yên rồi mới nghĩ tiếp.","Tui ngồi nhìn quán một chút, tự nhiên thấy quán đẹp ghê."],["Ấm áp, vì hợp với café và dễ khiến người ta muốn ngồi lâu.","Tối giản nếu muốn khách tập trung vào đồ uống và câu chuyện.","Hơi điên một tí thì đáng nhớ hơn, nhất là nếu vẫn giữ chất café."]],"kai":[["Người làm chậm nhưng không nói làm tui khó chịu hơn vì không biết để xử lý thế nào.","Đi trễ khó chịu ở chỗ ảnh hưởng cả ca, nhất là khi không báo trước.","Tui ghét nhất việc im lặng khi biết mình đang trễ hoặc đang gặp vấn đề."],["Tui luôn check lịch, chuẩn bị đồ và xác định việc quan trọng nhất trước.","Tui có routine mở checklist rồi xử lý task theo thứ tự.","Tui dành vài phút nhìn lại hôm nay cần tránh lỗi gì từ ca trước."],["Tui xử lý nguyên nhân làm hệ thống nghẽn trước, đồng thời phân người giữ an toàn.","Máy gây tắc thì phải giải quyết máy trước; người thì phân công để không loạn.","Tui kiểm tra xem nghẽn do máy hay do thao tác rồi mới quyết định ưu tiên."],["Một mình tầm 15 phút, rồi mới nói chuyện lại được.","Nghe giọng ai đó, kể gì cũng được, miễn không phải việc.","Chỉ cần ngồi gần người mình tin, không cần nói nhiều."],["Lịch rõ giúp tui giữ nhịp, nhất là lúc nhiều việc cùng lúc.","Giữ lời quan trọng hơn; lịch có thể đổi nhưng đã hứa thì phải báo.","Tui nghĩ phải có cả hai: lịch tạo kỷ luật, giữ lời tạo uy tín."],["Biết báo vấn đề sớm.","Đã nhận việc thì theo tới cùng, có vướng cũng chủ động nói.","Không đổ lỗi và luôn để người khác biết tình trạng công việc."],["Ca ở nhà máy thiên về nhịp vận hành và sự an toàn, khá “đã” theo kiểu máy móc.","Ca văn phòng yên hơn và có nhiều việc xử lý qua trao đổi.","Tui thấy nhà máy cần phản ứng nhanh hơn, văn phòng cần kiên nhẫn hơn."],["Tui báo ngay cho người liên quan rồi mới tìm phương án thay.","Tui chỉnh lại lịch và ưu tiên việc ảnh hưởng người khác trước.","Tui nói thẳng là kế hoạch vỡ ở đâu để mọi người cùng đổi kèo."]],"vy":[["Ánh đèn phản chiếu trên đường ướt là thứ tui săn đầu tiên.","Gương nước tạo frame rất đã, nhất là lúc có xe hoặc người đi qua.","Người đi đường trong mưa thường cho ảnh có câu chuyện nhất."],["Một chiếc máy ảnh film cũ hoặc món phụ kiện vintage tui dùng thường xuyên là khó bỏ.","Áo khoác hoặc túi cũ nhưng có form đẹp cũng thuộc nhóm “đừng bắt tui bỏ”.","Món nào gắn với một kỷ niệm cụ thể thì cũ mấy tui vẫn giữ."],["Người trong frame nếu biểu cảm thật và không tạo dáng quá nhiều.","Không gian trống lại giữ được cảm giác lâu hơn nếu ánh sáng đúng.","Tui thích ảnh có người nhưng để họ hòa vào bối cảnh, không chiếm hết frame."],["“Ánh sáng này bn xử lý đẹp” làm tui vui vì cụ thể.","Tui thích lời khen nói đúng một chi tiết mà người xem thật sự nhìn thấy.","Khen cảm giác của bức ảnh hơn là chỉ nói “đẹp” nghe thật hơn với tui."],["Đổi góc, đổi đường đi, kiếm một thứ mới để nhìn thường hiệu quả hơn.","Tui ép mình làm một sketch hoặc chụp vài frame xấu trước để phá block.","Tui nghỉ một lúc rồi quay lại với một môi trường khác."],["Tui thích chụp khoảnh khắc tự nhiên hơn vì phản ứng thật khó diễn.","Set up rõ ràng hợp với những bộ ảnh có concept.","Tui thích cả hai nhưng sẽ nói rõ để người được chụp biết mình đang làm gì."],["Đi hai người là cân bằng nhất: vẫn có người nói chuyện mà không quá đông.","Đi một mình giúp tui quan sát kỹ hơn và dễ đổi route.","Kéo cả hội vui nếu mục tiêu là săn vibe chứ không cần tập trung từng frame."],["Camera thường bắt được vẻ tập trung hoặc cách tui nhìn một thứ rất lâu.","Có lúc nó bắt được cả sự ngại ngùng mà đời thường tui giấu.","Tui nghĩ camera hay lộ cách mình quan sát hơn là ngoại hình."]],"quan":[["Có; thường là ly gắn với một người hoặc một buổi sáng cụ thể.","Tui nhớ nhất những lần uống café trong lúc thành phố vừa thức dậy.","Có, nhất là khi ly đó đi cùng một cuộc trò chuyện đáng nhớ."],["Sáng sớm nghe rộng và nhẹ, có cảm giác từng lớp âm thanh rõ hơn.","Sau 10h đêm, cùng một đĩa lại nghe sâu và tối hơn.","Tui thấy khác ở cách mình cảm nhận: sáng để bắt đầu, đêm để ngồi lại."],["Tui thích quán vắng vừa đủ để nghe tiếng đá trong ly.","Background chatter nhẹ nghe ấm hơn và làm quán có đời sống.","Tùy mood; sáng chọn yên, tối tui thích có tiếng người một chút."],["Khách bước vào với nhịp riêng và không nhìn menu quá lâu thường tui đoán được.","Tui hay đoán theo thói quen gọi món và cách họ hỏi về hạt.","Có người nhìn vibe là tui đoán được, nhưng tui vẫn hỏi lại để khỏi đoán sai."],["Bánh ngọt ít ngọt, nhất là croissant hoặc tiramisu, đi với café rất hợp.","Một món bánh có vị bơ và chút mặn cân bằng sẽ không ngán.","Tui thích đồ ăn đơn giản nhưng làm tốt, không lấn mùi café."],["Chậm, ấm, có vocal nhẹ và không quá nhiều beat.","Một playlist có acoustic, jazz hoặc indie mềm sẽ đúng vibe.","Tui muốn nhạc có nhịp nhưng không kéo mood xuống quá buồn."],["Đúng người quan trọng hơn số câu hỏi.","Một cuộc trò chuyện hay cần cả hỏi đúng lẫn chịu nghe.","Nếu người đối diện thật sự tò mò thì ít câu cũng đủ để nói sâu."],["Một ly café yên tĩnh trước khi thành phố đông lên.","Nghe một bài nhạc quen trong lúc chuẩn bị ngày mới.","Ngồi nhìn phố vài phút mà không mở điện thoại là ritual tui thích."]],"thao":[["Người biết lắng nghe và tôn trọng người khác thường lộ “fit” khá nhanh.","Tui để ý cách họ phản hồi khi có người không đồng ý với họ.","Một người hợp team thường vừa làm được việc vừa khiến người khác thấy an toàn khi nói."],["Tui không góp ý trước đám đông, tui nhắn riêng trước.","Tui nói vào việc chứ không nói vào người, ngắn gọn thôi.","Tui nói điều làm tốt trước, rồi mới nói điều cần chỉnh."],["Drama kiểu nói vòng, kéo người thứ ba vào và không nói thẳng với nhau.","Tui né kiểu chat group bóng gió nhưng không ai chịu xử lý vấn đề.","Tui ngại nhất drama liên quan gossip về đời tư hoặc đổ lỗi công khai."],["Nếu người đó thân, tui hỏi thẳng nhưng chọn lúc riêng tư.","Tui thường mở bằng một câu nhẹ để họ có quyền chọn kể hay không.","Tui không ép; tui cho họ biết tui sẵn sàng nghe khi họ muốn nói."],["Ranh giới về tôn trọng thời gian và đời tư của nhau.","Không mang chuyện cá nhân ra làm công cụ trong công việc.","Tui luôn coi việc nói chuyện có sự đồng thuận là ranh giới rất quan trọng."],["Trà ô long nhẹ giúp tui tỉnh mà không quá nặng.","Tui thích trà hoa cúc vào những lúc muốn hạ nhịp.","Một ly trà nóng đơn giản cũng đủ nếu hôm đó cần reset."],["Cách người ta đối xử với nhau; kỹ năng có thể học nhưng thái độ mới giữ team bền.","Tui nghĩ skill giúp vào team, cách cư xử mới quyết định ở lại được bao lâu.","“Fit” với tui là cả năng lực lẫn sự tôn trọng, không chỉ một bên."],["Feedback chung chung kiểu “làm lại đi” mà không nói chỗ nào.","Feedback đúng nhưng nói sai thời điểm.","Feedback tới muộn, lúc mọi thứ không còn sửa được nữa."]],"duy":[["Tui sửa navigation hoặc flow khiến user bị lạc trước.","Tui ưu tiên lỗi usability nghiêm trọng hơn lỗi nhìn xấu.","Ba điểm đầu: điều hướng, feedback hệ thống và những bước thừa."],["Game có UI khiến tui nể thường là game biết ẩn độ phức tạp mà vẫn cho control.","Tui thích những game có onboarding rất mượt, vào là hiểu ngay.","Có game tui nể UI hơn gameplay vì menu, feedback và animation đều cực sạch."],["Popup ép đồng ý hoặc mặc định đã tick khiến tui cảnh giác ngay.","Ẩn nút từ chối và làm nút mua nổi bật quá là red flag.","Countdown giả và thông báo kiểu “chỉ còn 1 suất” để ép quyết định là dark pattern tui ghét."],["Timing; trả lời đúng nội dung nhưng sai lúc vẫn làm chat awkward.","UX của câu hỏi quan trọng vì hỏi quá rộng hoặc quá dồn dễ khiến người kia bí.","Tui nghĩ cả hai: flow câu hỏi tệ cộng timing lệch là chat fail rất nhanh."],["Tui hỏi “đẹp hơn” nghĩa là tăng chuyển đổi, dễ dùng hay chỉ đổi visual.","Tui đưa 2–3 hướng mẫu để client chọn thay vì đoán.","Tui hỏi target user và mục tiêu trước rồi mới chạm vào màu, layout."],["Tui cứ phải mở thêm một tab dù không dùng tới =))","Tui phải sắp lại desktop rồi mới làm được.","Tui nghe lofi dù đã thuộc từng bài."],["Feedback có ví dụ cụ thể về lúc user gặp khó khăn là quý nhất.","Feedback nói rõ họ muốn làm gì nhưng bị chặn ở đâu giúp tui sửa nhanh.","Một bug report có bối cảnh và bước tái hiện còn giá trị hơn lời khen chung chung."],["Tui giữ flow ngắn và rõ vì quay lại dùng mỗi ngày không nên mệt.","Tui ưu tiên feedback nhanh để user luôn biết hệ thống đang làm gì.","Tui giữ một lý do để quay lại, nhưng không dùng notification để ép."]],"nora":[["Intro vài giây là đủ; âm thanh mở đầu có thể đổi mood ngay.","Tui thường bị kéo bởi một bassline hoặc vocal vào đúng thời điểm.","Có bài không cần intro “hay”, chỉ cần đúng texture là mood đổi."],["Tui thích tự xếp playlist nếu đang có một mood rất cụ thể.","Có lúc tui để algorithm chọn để gặp bài ngoài dự đoán.","Tui dùng cả hai: set vài bài đầu rồi để phần còn lại tự chảy."],["Tui thường nghĩ về nhịp mở màn và người nghe sẽ cảm thấy gì.","Tui hay hơi hồi hộp chuyện âm thanh và cue đầu tiên hơn bản thân lời bài hát.","Tui nghĩ xem mình cần giữ năng lượng thế nào để không đốt hết từ phút đầu."],["Có, nó như góc riêng của tui, chia ra là mất vibe.","Có, nhưng đúng người thì tui sẽ cho nghe thử.","Không, bài nào hay là tui gửi liền =))"],["Lúc đang trào, sau đó tui mới tỉa lại.","Lúc bình tĩnh, tui cần khoảng cách để thấy rõ.","Tùy ngày, nhưng bản nháp lúc trào luôn thật hơn."],["Tui giữ lại nếu melody hoặc cảm xúc có một thứ thật riêng.","Tui thường lưu voice note trước, chưa quyết định ngay giữ hay bỏ.","Nếu mood lạ mà hook không có gì, tui để đó rồi quay lại sau."],["Giữ lịch và năng lượng cho nhiều việc cùng lúc mệt nhất.","Biểu diễn mệt về thể lực, còn sáng tạo mệt ở đầu.","Tui thấy phần khó là cân bằng sáng tạo với việc vẫn phải sống và giữ deadline."],["Tui cần thời gian một mình và quyền không phải phản hồi ngay.","Một khoảng tự do về lịch giúp tui vẫn giữ được nhịp riêng.","Tui cần người bên cạnh hiểu rằng im lặng đôi lúc chỉ là đang nạp pin."]],"tung":[["Cơm tấm hoặc phở là kiểu tui tự tin nói “để tui làm” =))).","Một món xào hoặc món kho quen tay là tui làm nhanh và chắc nhất.","Tui thích nấu món cần canh vị kỹ vì đó là lúc tay nghề thể hiện rõ."],["Vị mạnh là một phần, nhưng câu chuyện và không khí đường phố mới khiến tui nhớ lâu.","Tui mê street food vì ăn nóng ngoài đường có cảm giác rất thật.","Tui thích cả vị lẫn bối cảnh: món ngon mà ăn đúng chỗ càng đã."],["Có người ngồi ăn chung và nói chuyện vui làm bữa cơm ngon hơn.","Một bữa cơm đủ đầy và không ai phải vội là tui thấy ngon nhất.","Tui để ý cảm giác “được ăn cùng nhau” nhiều hơn món đắt hay rẻ."],["Rau, trứng hoặc đậu phụ đều có thể thành món xịn nếu xử lý đúng.","Nước dùng là thứ nguyên liệu bình thường nhưng tay nghề làm khác hẳn.","Khoai tây hoặc nấm nếu làm đúng texture cũng có thể thành món chính."],["Tui ưu tiên việc ảnh hưởng chất lượng món và an toàn trước.","Tui phân loại ticket theo thời gian và độ phức tạp rồi chạy những món dễ nghẽn trước.","Tui chia người rõ: một người giữ line, người khác xử lý điểm đang nghẽn."],["Không nhất thiết; mê ăn có thể chỉ là khả năng thưởng thức.","Biết nấu giúp hiểu món hơn, nhưng không phải điều kiện để mê ăn.","Tui thích người chịu ăn thử và tò mò về món, biết nấu là bonus."],["Với đồng đội; sau ca ai cũng đói mà ăn cùng vui hơn.","Một mình nếu tui cần xả đầu sau ngày dài.","Kéo thêm một người bạn thì hợp những đêm muốn nói chuyện nhiều."],["Tui muốn vị đậm, có chút cay và một chi tiết bất ngờ.","Một món ấm, dễ ăn nhưng có hậu vị để người ta nhớ.","Tui chọn món đường phố Việt nhưng làm gọn và hiện đại hơn một chút."]],"ivy":[["Tui thích vẽ người thật vì dáng và biểu cảm luôn có thứ không đoán trước.","Nhân vật tưởng tượng vui hơn vì tui được tự quyết mọi chi tiết.","Tui thích xen kẽ: người thật để quan sát, nhân vật để thử nghiệm."],["Một cốc nước nóng với đèn bàn vàng, thế là đủ.","Nhiều bút màu lộn xộn, nhìn loạn mà tui biết chỗ nào cũng thuộc.","Một tấm postcard để nhìn lúc bí ý tưởng."],["Tui hay lẩm bẩm với nhân vật đang vẽ =))","Tui vẽ xong là phải xoay ngược bức tranh lại để soi lỗi.","Tui nghe đi nghe lại đúng một bài suốt buổi vẽ."],["Mèo mặt ngơ, tai hơi cụp là tui muốn vẽ ngay.","Mấy con mèo nằm cuộn tròn hoặc có biểu cảm khó ở luôn đáng sketch.","Mèo càng có pattern lông lạ tui càng muốn đem vào sketchbook."],["Tự kỷ luật khó nhất vì không ai đứng cạnh nhắc deadline.","Kiếm cảm hứng khó nhất lúc phải tạo đều chứ không chỉ khi có mood.","Deadline làm áp lực nhất, nhưng khách feedback mơ hồ mới thực sự mệt."],["Đổi môi trường thường giúp tui mở mắt lại.","Đổi medium là cách nhanh để não không lặp một kiểu nữa.","Tui sẽ làm cả hai: đổi chỗ trước, nếu vẫn bí thì đổi medium."],["Tranh có ánh sáng ấm, nhìn mà muốn kể chuyện.","Tranh nhìn đơn giản mà nhìn mãi vẫn ra thêm chi tiết.","Tranh vẽ người đang nhìn đi chỗ khác, tui tò mò họ nghĩ gì."],["Có, quay lại thấy nó như người bạn cũ, vừa lạ vừa quen.","Có, nhưng tui thường vẽ lại từ đầu vì mood đã khác.","Chưa quay lại thì tui vẫn giữ nó trong sketchbook để nhìn."]],"phuc":[["Một route qua hẻm nhỏ, phải nhớ từng lối rẽ và khung giờ cấm xe là tui thuộc lòng.","Tui nhớ các shortcut qua ngõ và những đoạn ít kẹt xe hơn đường lớn.","Route khó nhất thường là khu nhiều hẻm và đổi hướng liên tục, nhưng chạy quen thì nhớ như map trong đầu."],["Xe máy với tui trước hết là công cụ kiếm sống, sau đó mới thành bạn đồng hành.","Nó vừa là phương tiện vừa là thứ giúp tui chủ động giờ giấc.","Chạy lâu rồi nên nhiều lúc nghe máy là tui biết xe đang “khó ở”."],["Hẻm thông sang đường lớn hoặc đoạn cắt qua khu dân cư là kiểu shortcut tui hay dùng.","Tui biết mấy đường ven chợ và hẻm nối tắt, nhưng phải nhìn giờ mới đi được.","Shortcut tốt nhất là route ít đèn đỏ và ít điểm giao cắt đông."],["Khách nói chuyện duyên hoặc nhận đồ rồi cảm ơn thật lòng.","Người đang mệt mà vẫn tử tế với shipper thường làm tui vui.","Khách có câu đùa nhẹ đúng lúc là đang mệt cũng bật cười."],["Tui né mưa an toàn trước, nhưng nếu đơn sắp hết thời gian thì tính lại route.","Tui tìm chỗ trú gần nhất rồi báo khách rõ ETA.","An toàn trước, vì cố chốt thêm vài phút mà trượt xe thì không đáng."],["Nhạc, nhưng nhỏ thôi để còn nghe còi xe.","Tui nghe tiếng phố, nó cho tui biết hôm nay thành phố ổn không.","Podcast chuyện đời, đoạn đường dài nghe mới đáng."],["Tui muốn chạy ra biển hoặc một cung đường nhiều cảnh, không cần lịch dày.","Một ngày chạy lên vùng ngoại ô, ghé ăn và về là đủ vui.","Tui thích một route dài có vài điểm dừng hơn là nằm nghỉ cả ngày."],["Tui vẫn thích công việc gắn với đường phố nhưng muốn chủ động hơn về thời gian.","Có lúc tui muốn thử nghề liên quan logistics hoặc vận hành.","Tui cũng tò mò một việc hoàn toàn khác, miễn vẫn có cảm giác được di chuyển và xử lý vấn đề."]],"huyen":[["Chi tiết cụ thể mà người trong cuộc bình thường không để ý thường làm câu chuyện “đắt”.","Một chi tiết nhỏ nhưng kiểm chứng được có giá trị hơn cả tiêu đề giật gân.","Tui thích chi tiết cho thấy con người và bối cảnh, không chỉ con số."],["Tui tìm nguồn gốc đầu tiên rồi đối chiếu ít nhất một nguồn độc lập.","Tui kiểm tra thời gian, ngữ cảnh và xem nguồn có lợi ích liên quan không.","Nếu câu quá hấp dẫn, tui càng chậm lại: kiểm chứng trước, đăng sau."],["Facts trước; vibe chỉ giúp mình đặt câu hỏi chứ không thay thế kiểm chứng.","Nếu facts chưa đủ, tui không kết luận chỉ vì câu chuyện nghe hợp lý.","Tui ghi nhận cả hai nhưng sẽ ưu tiên thứ có bằng chứng rõ."],["Nó cho tui một không gian ít formal hơn để nghe người ta kể chuyện.","Quán mở muộn có những cuộc gặp và nhịp sống mà văn phòng khó thấy.","Tui thích café đêm vì người ta thường nói những chuyện rất đời thường."],["Headline dùng từ tuyệt đối, gây sốc hoặc hứa “bạn sẽ không tin” là tui nghi ngờ ngay.","Câu quá kích thích nhưng không có dữ kiện cụ thể thường là clickbait.","Tui thấy red flag khi tiêu đề kể luôn kết luận mà bài chưa chứng minh."],["Dùng thông tin đời tư không cần thiết chỉ để tăng lượt đọc là vượt ranh giới.","Gặng hỏi chuyện riêng khi người khác chưa đồng ý khiến tò mò thành xâm phạm.","Tui giữ ranh giới ở chỗ thông tin đó có thực sự cần cho câu chuyện hay chỉ để gây chú ý."],["Tui muốn kể câu chuyện của người làm việc bình thường nhưng có trải nghiệm ít ai biết.","Một người sống qua thay đổi lớn trong thành phố cũng rất đáng kể.","Tui thích người có góc nhìn riêng, không nhất thiết phải nổi tiếng."],["Tui muốn được nhớ vì một bài làm người đọc hiểu một vấn đề họ từng bỏ qua.","Một bài về con người cụ thể nhưng chạm tới vấn đề lớn sẽ khiến tui tự hào.","Tui muốn được nhớ vì những bài kỹ, có nguồn và vẫn giữ được chất người."]],"son":[["Tui để ý âm thanh nhỏ và những thứ thay đổi trong không gian.","Tui thường nhìn lối ra, ánh sáng và ai còn ở đó.","Ca yên quá thì tui để ý những chuyển động bất thường trước tiên."],["Tui quan sát thêm một lúc nhưng không tự dựng chuyện trong đầu.","Nếu hành vi vẫn bình thường thì tui bỏ qua, không cố tìm drama.","Tui để ý nếu họ liên tục có dấu hiệu lạ, còn không thì cứ để họ tự nhiên."],["Mấy phim noir hoặc old movie chậm nhịp là tui xem lại được nhiều lần.","Phim có không khí và nhân vật mạnh làm tui xem lại mà vẫn thấy hay.","Tui thích old movie ít ồn, nhìn cách người ta nói chuyện là đủ cuốn."],["Ý nghĩ có người đang tin mình ở đó.","Nhìn quanh thấy mọi thứ yên ổn là đủ để tui đứng tiếp.","Một tách trà nóng và vài phút ngồi yên."],["Tui nói chuyện trước nếu tình huống chưa đến mức nguy hiểm.","Nếu có rủi ro ngay lập tức thì tui sẽ cứng rắn trước, rồi giải thích sau.","Tui ưu tiên hạ nhiệt và hiểu nguyên nhân trước khi dùng biện pháp cứng."],["Giữ lời trong một việc nhỏ cũng đủ làm tui tin hơn.","Đối xử tử tế với người không đem lại lợi ích cho mình là dấu hiệu mạnh.","Một người biết nhận lỗi và sửa cũng khiến tui tin họ hơn."],["Tui thích chỗ yên để nghe suy nghĩ của mình rõ hơn.","Đông vui có lúc cũng thích, nhất là khi đi cùng người hợp.","Tui tùy mood, nhưng nói chuyện sâu thường cần không gian yên."],["Nặng nhưng đáng, vì niềm tin kéo theo trách nhiệm.","Tui nghĩ đáng hơn nặng nếu hai bên hiểu rõ mình đang tin nhau ở điều gì.","Nó là trách nhiệm thật, nên tui không thích nhận lời quá dễ."]],"bao":[["Tiếng gõ, rung hoặc tiếng máy hụt bất thường là tui chú ý ngay.","Âm thanh lạch cạch theo vòng tua thường là red flag với tui.","Tiếng máy thay đổi so với bình thường quan trọng hơn một âm thanh “lạ” chung chung."],["Mấy ca sửa lỗi khó tìm và phải tháo gần hết xe thường nhớ rất lâu.","Chiếc xe bị bệnh lắt léo, thay vài món mới tìm ra nguyên nhân là kiểu tui nhớ nhất.","Ca sửa giữa lúc khách cần xe gấp mà vẫn phải làm chuẩn là ca khó quên."],["Khoảng 3–4 điểm dừng là đẹp, vừa chạy vừa ăn.","Tui thích 2 điểm ăn chính và vài điểm ghé cảnh dọc đường.","Đi nhiều thì cứ 1–2 tiếng dừng một lần, chứ ăn dày quá mất route."],["Đoán bệnh xe mà không nghe máy hoặc kiểm tra gì là tui thấy buồn cười.","Tui hay cười khi ai đó nghe một tiếng rồi kết luận chắc nịch.","Đoán vui thì được, nhưng phán như thợ mà chưa kiểm tra mới buồn cười."],["Người thực tế nhìn vào dữ kiện và xử lý việc cần làm, không phải ít cảm xúc.","Khô khan là cách thể hiện; thực tế vẫn có thể rất ấm.","Tui nghĩ khác nhau ở chỗ người thực tế vẫn hiểu cảm xúc nhưng không để nó quyết định hết."],["Cả hậu quả lẫn thái độ đều khó chịu, nhưng thái độ làm tui mất niềm tin nhanh hơn.","Nếu hậu quả nặng thì tui quan tâm xử lý trước, sau đó mới nói về thái độ.","Cẩu thả lặp đi lặp lại vì không chịu sửa mới là thứ làm tui bực nhất."],["Lúc tìm đúng bệnh xe sau nhiều bước kiểm tra và xe nổ lại êm là đã nhất.","Khi mình xử lý được lỗi khó mà khách dùng xe an tâm trở lại.","Tui thấy tay nghề có giá trị nhất khi giải được bệnh mà người khác đã bỏ cuộc."],["Máy móc trước: build đúng hiệu năng rồi mới lo ngoại hình.","Ngoại hình quan trọng nếu build theo gu cá nhân, miễn không hy sinh máy.","Tui sẽ cân bằng nhưng máy và độ ổn định vẫn là ưu tiên một."]],"chi":[["Một cuốn khiến tui muốn giới thiệu thường có một ý tưởng còn ở trong đầu nhiều ngày.","Tui thích sách có câu chữ đẹp nhưng vẫn khiến mình nhìn thế giới khác đi.","Một nhân vật thật hoặc một góc nhìn rất riêng là lý do tui hay giới thiệu sách."],["Nhiều góc ngồi thấp, ánh sáng ấm và kệ không quá dày khiến tui thích hơn.","Kệ cao cho cảm giác như mê cung sách, tui cũng rất thích.","Tui muốn cả hai: kệ cao để khám phá và góc thấp để ngồi đọc."],["Có, tui chép vào sổ nhỏ để thỉnh thoảng đọc lại.","Tui hay gạch chân luôn trong sách, sách như nhật ký thứ hai.","Tui nhớ ý chứ ít nhớ nguyên câu, nhưng ý đó ở lại rất lâu."],["Nonfiction cho tui cảm giác học thêm một thứ thật mới.","Fiction hấp dẫn vì mình được sống thử một đời khác.","Tui đọc cả hai: nonfiction để mở đầu óc, fiction để đổi góc nhìn."],["Người đi chậm giữa các kệ và cầm vài cuốn lên đọc kỹ thường đang tìm một câu chuyện.","Khách hỏi “có gì giống cuốn này nhưng sâu hơn không?” thường là đang tìm trải nghiệm chứ không chỉ tên sách.","Có người chỉ im lặng ở một góc rất lâu, nhìn là biết họ đang tìm thứ gì đó cho mình."],["Một không gian đủ yên để cả hai không phải vội.","Cần người biết nghe và không ngắt lời liên tục.","Tui nghĩ điều kiện quan trọng nhất là cả hai đều thật sự muốn ở đó."],["Tui sẽ xếp self-help nhẹ, fiction chữa lành và sách về những giai đoạn chuyển mình.","Tui thêm thơ, tản văn và vài cuốn ngắn để người đang mệt vẫn đọc được.","Tui sẽ làm một kệ có chủ đề “đi chậm lại”: văn học, tâm lý phổ thông và những cuốn ấm áp."],["Được gợi ý chuẩn gu rất vui, nhất là khi người kia hiểu mình thích gì.","Tự đào ra một cuốn bất ngờ có cảm giác săn được treasure.","Tui thích cả hai: để người khác gợi ý vài cuốn, rồi tự chọn một cuốn ngoài danh sách."]]};
+const PRIVATE_DIRECT_ANSWERS={"linh":[["Có, tui thường để ý vài chi tiết nhỏ rồi mới ghép thành tổng vibe.","Tui nhìn vibe trước, nhưng vẫn để ý ánh mắt, cách nói chuyện với người khác.","Tùy người; có người phải nói chuyện lâu tui mới để ý chi tiết."],["Tui sẽ chọn brand tối giản, tông ấm, nhìn vào thấy gần gũi ngay.","Tui thích kiểu có chút retro, màu sắc vừa đủ để nổi bật trên phố.","Tui sẽ làm playful hơn, có một chi tiết nhận diện khiến ai đi ngang cũng nhớ."],["Mùi là thứ đập vào tui đầu tiên, nhất là mùi đất và café sau mưa.","Tui hay để ý âm thanh: tiếng mưa, xe chạy, mái hiên.","Tui nghĩ tới màu trước; trời mưa thường kéo palette của tui về tông dịu."],["Tui chốt lại mục tiêu cốt lõi rồi dựng một version gọn để cứu idea.","Tui hỏi khách phần nào bắt buộc đổi, phần nào còn room để giữ chất riêng.","Tui tách idea thành từng mảnh, đổi thứ có thể đổi mà giữ lại cái “linh hồn”."],["Tui sẽ hỏi họ trước xem họ muốn chia sẻ insight ở phần nào, không kéo họ lên giữa spotlight ngay.","Tui cho họ một khoảng nói trong nhóm nhỏ trước để họ thấy an toàn hơn.","Nếu insight thật sự xịn, tui sẽ chủ động nhắc lại và ghi nhận công sức của họ."],["Có lẽ là một góc café trong hẻm, vừa có người qua lại vừa có chỗ ngồi yên.","Tui thích đoạn phố có nhà cũ, biển hiệu nhỏ và nhiều lớp ánh sáng.","Một góc gần sông lúc chiều tối hợp vibe tui hơn: thoáng mà không quá ồn."],["Tui thích góp ý thẳng nhưng chỉ rõ chỗ nào và vì sao, đừng chê chung chung.","Nói riêng sẽ dễ nghe hơn nói giữa đám đông.","Tui ổn với góp ý mạnh, miễn người góp ý vẫn tôn trọng cái tui đã làm."],["Tui muốn giữ việc ghi lại một chi tiết nhỏ mỗi ngày.","Tui muốn luôn có một buổi đi dạo không mục đích để nạp lại.","Tui muốn giữ nhịp có lúc làm, có lúc nghỉ thật sự."]],"minh":[["Bug chỉ xuất hiện lúc demo làm tui cay hơn hẳn.","Bug ngớ ngẩn mới đáng ghét vì nhìn lại không hiểu sao mình bỏ sót.","Tui ghét nhất bug chỉ xảy ra trên đúng một máy hoặc một điều kiện rất khó tái hiện."],["Tui pick chiến thuật, càng tính nhiều bước càng cuốn.","Troll nhau vui hơn, miễn cả bàn chịu được độ toxic =))).","Tui thích game có cả chiến thuật lẫn bluff, vừa nghĩ vừa đọc người."],["Small talk không vô dụng; đôi lúc nó đúng là loading screen của một mối quan hệ.","Tui thích nói chuyện có nội dung hơn, nhưng small talk giúp mở cửa trước đã.","Tui nghĩ nó tùy người: có cuộc nói chuyện bắt đầu rất nhạt rồi mới hay."],["Tui sửa flow khiến người dùng phải bấm đi bấm lại nhiều nhất trước.","Tui ưu tiên flow gây lỗi hoặc làm người dùng dễ hiểu nhầm.","Tui sẽ sửa điểm người dùng gặp thường xuyên nhất, chưa chắc là thứ nhìn xấu nhất."],["Tui tách việc thành task nhỏ rồi xử từng cái một như debug.","Tui rời màn hình một lúc, đi bộ hoặc uống café rồi quay lại.","Tui viết ra thứ đang vướng trong đầu để biết mình đang overload ở đâu."],["Đi dạo, thường lúc đứng lên là có lời giải =))","Ngồi lì, bỏ đi là mất flow luôn.","Viết ra giấy rồi mới quay lại màn hình."],["Tui build một app ghi lại mấy ý tưởng ngớ ngẩn trong đầu.","Tui làm một app mini để track thói quen hoặc mood mỗi ngày.","Tui sẽ code một thứ useless nhưng vui, kiểu random challenge generator."],["Người đó biết đặt câu hỏi và nói có ví dụ, không chỉ quăng opinion.","Họ chịu nghe lại người khác chứ không biến cuộc nói chuyện thành độc thoại.","Tui thấy có substance khi họ nói ít nhưng ý nào cũng có lý do phía sau."]],"hana":[["Cứu timeline trước, vì trễ cả hệ thống thì mood cũng chẳng cứu được.","Tui gom team xử lý vấn đề lớn nhất rồi mới quay lại trấn an mọi người.","Tùy sự cố; nếu timeline còn cứu được thì tui ưu tiên mood để cả team không hoảng."],["Một tin nhắn rủ đi ngay, điểm đến nghe vui và không phải chuẩn bị quá nhiều là đủ.","Kèo có nhạc, đồ ăn hoặc activity mới lạ là tui dễ đổi plan nhất.","Nếu người rủ là người tui thích đi cùng thì plan cũ cũng dễ bay =)))."],["Concert có năng lượng mạnh là dù mệt tui vẫn đi.","Tui mê concert có crowd vui và setlist khiến mình nhảy từ đầu tới cuối.","Nếu artist tui thích diễn ở gần nhà thì khó có lý do để tui ở nhà."],["Tui nghiêng về thử cái mới; thắng thì vui nhưng thử được thứ chưa biết mới đã.","Tui thích cảm giác vượt qua một challenge khó vì nó tạo adrenaline.","Tui cần cả hai: thử cái mới trước, thắng sau càng vui."],["Người có năng lượng riêng và không cố hòa vào đám đông làm tui chú ý.","Tui để ý người nói chuyện tự tin nhưng vẫn quan tâm người xung quanh.","Người có vibe hơi khác thường hoặc đang làm một thứ thú vị thường lọt mắt tui."],["Khoảng 30–40% random là đẹp; nhiều hơn dễ thành hỗn loạn.","Tui thích để ít nhất một nửa buổi tối cho những kèo phát sinh.","Chỉ cần khoảng 20% không plan gì cả là tối đó đã đủ vui."],["Biển, nhất là chuyến đi tự phát có nhiều hoạt động ngoài trời.","Một thành phố lạ sẽ kích thích tui hơn vì có nhiều thứ để khám phá.","Tui chọn chỗ hoàn toàn lạ nếu chuyến đi có cảm giác “đi rồi mới biết”."],["Có, nhất là lúc phải giữ năng lượng cho mọi người xung quanh.","Có lúc tui nói “ổn mà” rồi về nhà mới nhận ra mình quá tải.","Tui có, và thường cần một khoảng riêng trước khi nói thật là mình đang rối."]],"an":[["Hình khối giữ tui lại đầu tiên, nhất là khi tổng thể có một ý tưởng rõ.","Ánh sáng làm tui muốn đứng lâu hơn nếu nó thay đổi cảm giác của công trình.","Khoảng trống khiến tui tò mò nhất vì nó cho thấy công trình đang “thở” thế nào."],["Một bức tường màu cũ, chút rêu, nhìn là thấy thời gian.","Vài chậu cây của nhà ai đó, có hơi người.","Tiếng quán vọng ra từ xa, hẻm có sống mới đẹp."],["Nắng sáng, vì nó thay đổi không gian tự nhiên mà không cần nhiều đồ.","Đèn vàng tối hợp những lúc cần thư giãn lâu.","Tui sẽ kết hợp: ánh sáng tự nhiên ban ngày, đèn vàng khi tối."],["Tui giữ lại thứ ảnh hưởng trực tiếp tới cách người ta sử dụng không gian.","Tui giữ ánh sáng và khoảng lưu thông trước các chi tiết trang trí.","Tui sẽ giữ chi tiết tạo nên bản sắc của công trình, dù nhỏ."],["Nhiều cây, nhưng phải có khoảng trống đủ rộng để không thấy bí.","Tui ưu tiên khoảng trống và chỗ ngồi, rồi mới bổ sung cây theo cấu trúc.","Một công viên đẹp với tui là có cả bóng mát, đường đi và khoảng mở."],["Tui muốn chỉnh giao thông và khả năng đi bộ trước.","Tui ưu tiên thêm cây, vỉa hè dễ đi và không gian công cộng.","Tui sẽ xử lý những điểm khiến các khu dân cư kết nối với nhau khó khăn."],["Phải có một góc đọc hoặc ngồi thật yên.","Tui cần một khoảng ban công/hiên để đón gió và nhìn ra ngoài.","Một góc có ánh sáng đẹp và đủ riêng tư là thứ tui giữ lại."],["Tui nghĩ kiên nhẫn có phần tính cách nhưng phần lớn là luyện.","Có người sẵn kiên nhẫn hơn, nhưng trải nghiệm vẫn rèn nó rất nhiều.","Tui tin đây là kỹ năng: hiểu mình đang chờ cái gì thì dễ kiên nhẫn hơn."]],"mai":[["Có; có người uống để tỉnh, có người đang tận hưởng nghi thức và không khí.","Tui nghĩ hai nhóm đều có, và nhiều người là cả hai luôn.","Nhìn cách họ chọn món và ngồi lại bao lâu thường đoán được khá chuẩn."],["Mùi chocolate hoặc caramel cho cảm giác ấm và dễ nhớ.","Tui muốn mùi hạt rang, hơi nutty, rõ chất café hơn.","Tui chọn citrus nhẹ để blend có cảm giác tươi và khác biệt."],["Người mệt mà vẫn nói cảm ơn, tui muốn pha kỹ hơn cho họ.","Khách quen ngồi đúng chỗ cũ, tui thích pha đúng ly họ hay uống.","Người lần đầu tới, tui muốn ly đầu tiên làm họ nhớ."],["Món có texture thú vị, ăn một lần là nhớ, như tiramisu hoặc cheesecake.","Tui thích dessert nhìn đơn giản nhưng vị cân bằng, không quá ngọt.","Món nào khách ăn xong quay lại hỏi “hôm nay còn không?” là tui vui nhất."],["Lúc quán đông mà khách vẫn vui và team phối hợp mượt là tui thấy đáng.","Một khách quay lại vì nhớ món cũ cũng làm tui thấy hôm đó đáng.","Có ngày chỉ cần quán đầy tiếng cười là tui thấy công sức có ý nghĩa."],["Yên, thơm mùi café mới xay và mọi thứ còn đang chuẩn bị.","Buổi sáng có chút vội nhưng ánh sáng đẹp và quán chưa quá ồn.","Tui thích khoảnh khắc trước giờ mở cửa, ai cũng đang vào guồng."],["Tui thử món mới, vắng là lúc nghịch ngợm được nhất.","Dọn lại quán trước, yên rồi mới nghĩ tiếp.","Tui ngồi nhìn quán một chút, tự nhiên thấy quán đẹp ghê."],["Ấm áp, vì hợp với café và dễ khiến người ta muốn ngồi lâu.","Tối giản nếu muốn khách tập trung vào đồ uống và câu chuyện.","Hơi điên một tí thì đáng nhớ hơn, nhất là nếu vẫn giữ chất café."]],"kai":[["Người làm chậm nhưng không nói làm tui khó chịu hơn vì không biết để xử lý thế nào.","Đi trễ khó chịu ở chỗ ảnh hưởng cả ca, nhất là khi không báo trước.","Tui ghét nhất việc im lặng khi biết mình đang trễ hoặc đang gặp vấn đề."],["Tui luôn check lịch, chuẩn bị đồ và xác định việc quan trọng nhất trước.","Tui có routine mở checklist rồi xử lý task theo thứ tự.","Tui dành vài phút nhìn lại hôm nay cần tránh lỗi gì từ ca trước."],["Tui xử lý nguyên nhân làm hệ thống nghẽn trước, đồng thời phân người giữ an toàn.","Máy gây tắc thì phải giải quyết máy trước; người thì phân công để không loạn.","Tui kiểm tra xem nghẽn do máy hay do thao tác rồi mới quyết định ưu tiên."],["Một mình tầm 15 phút, rồi mới nói chuyện lại được.","Nghe giọng ai đó, kể gì cũng được, miễn không phải việc.","Chỉ cần ngồi gần người mình tin, không cần nói nhiều."],["Lịch rõ giúp tui giữ nhịp, nhất là lúc nhiều việc cùng lúc.","Giữ lời quan trọng hơn; lịch có thể đổi nhưng đã hứa thì phải báo.","Tui nghĩ phải có cả hai: lịch tạo kỷ luật, giữ lời tạo uy tín."],["Biết báo vấn đề sớm.","Đã nhận việc thì theo tới cùng, có vướng cũng chủ động nói.","Không đổ lỗi và luôn để người khác biết tình trạng công việc."],["Ca ở nhà máy thiên về nhịp vận hành và sự an toàn, khá “đã” theo kiểu máy móc.","Ca văn phòng yên hơn và có nhiều việc xử lý qua trao đổi.","Tui thấy nhà máy cần phản ứng nhanh hơn, văn phòng cần kiên nhẫn hơn."],["Tui báo ngay cho người liên quan rồi mới tìm phương án thay.","Tui chỉnh lại lịch và ưu tiên việc ảnh hưởng người khác trước.","Tui nói thẳng là kế hoạch vỡ ở đâu để mọi người cùng đổi kèo."]],"vy":[["Ánh đèn phản chiếu trên đường ướt là thứ tui săn đầu tiên.","Gương nước tạo frame rất đã, nhất là lúc có xe hoặc người đi qua.","Người đi đường trong mưa thường cho ảnh có câu chuyện nhất."],["Một chiếc máy ảnh film cũ hoặc món phụ kiện vintage tui dùng thường xuyên là khó bỏ.","Áo khoác hoặc túi cũ nhưng có form đẹp cũng thuộc nhóm “đừng bắt tui bỏ”.","Món nào gắn với một kỷ niệm cụ thể thì cũ mấy tui vẫn giữ."],["Người trong frame nếu biểu cảm thật và không tạo dáng quá nhiều.","Không gian trống lại giữ được cảm giác lâu hơn nếu ánh sáng đúng.","Tui thích ảnh có người nhưng để họ hòa vào bối cảnh, không chiếm hết frame."],["“Ánh sáng này bn xử lý đẹp” làm tui vui vì cụ thể.","Tui thích lời khen nói đúng một chi tiết mà người xem thật sự nhìn thấy.","Khen cảm giác của bức ảnh hơn là chỉ nói “đẹp” nghe thật hơn với tui."],["Đổi góc, đổi đường đi, kiếm một thứ mới để nhìn thường hiệu quả hơn.","Tui ép mình làm một sketch hoặc chụp vài frame xấu trước để phá block.","Tui nghỉ một lúc rồi quay lại với một môi trường khác."],["Tui thích chụp khoảnh khắc tự nhiên hơn vì phản ứng thật khó diễn.","Set up rõ ràng hợp với những bộ ảnh có concept.","Tui thích cả hai nhưng sẽ nói rõ để người được chụp biết mình đang làm gì."],["Đi hai người là cân bằng nhất: vẫn có người nói chuyện mà không quá đông.","Đi một mình giúp tui quan sát kỹ hơn và dễ đổi route.","Kéo cả hội vui nếu mục tiêu là săn vibe chứ không cần tập trung từng frame."],["Camera thường bắt được vẻ tập trung hoặc cách tui nhìn một thứ rất lâu.","Có lúc nó bắt được cả sự ngại ngùng mà đời thường tui giấu.","Tui nghĩ camera hay lộ cách mình quan sát hơn là ngoại hình."]],"quan":[["Có; thường là ly gắn với một người hoặc một buổi sáng cụ thể.","Tui nhớ nhất những lần uống café trong lúc thành phố vừa thức dậy.","Có, nhất là khi ly đó đi cùng một cuộc trò chuyện đáng nhớ."],["Sáng sớm nghe rộng và nhẹ, có cảm giác từng lớp âm thanh rõ hơn.","Sau 10h đêm, cùng một đĩa lại nghe sâu và tối hơn.","Tui thấy khác ở cách mình cảm nhận: sáng để bắt đầu, đêm để ngồi lại."],["Tui thích quán vắng vừa đủ để nghe tiếng đá trong ly.","Background chatter nhẹ nghe ấm hơn và làm quán có đời sống.","Tùy mood; sáng chọn yên, tối tui thích có tiếng người một chút."],["Khách bước vào với nhịp riêng và không nhìn menu quá lâu thường tui đoán được.","Tui hay đoán theo thói quen gọi món và cách họ hỏi về hạt.","Có người nhìn vibe là tui đoán được, nhưng tui vẫn hỏi lại để khỏi đoán sai."],["Bánh ngọt ít ngọt, nhất là croissant hoặc tiramisu, đi với café rất hợp.","Một món bánh có vị bơ và chút mặn cân bằng sẽ không ngán.","Tui thích đồ ăn đơn giản nhưng làm tốt, không lấn mùi café."],["Chậm, ấm, có vocal nhẹ và không quá nhiều beat.","Một playlist có acoustic, jazz hoặc indie mềm sẽ đúng vibe.","Tui muốn nhạc có nhịp nhưng không kéo mood xuống quá buồn."],["Đúng người quan trọng hơn số câu hỏi.","Một cuộc trò chuyện hay cần cả hỏi đúng lẫn chịu nghe.","Nếu người đối diện thật sự tò mò thì ít câu cũng đủ để nói sâu."],["Một ly café yên tĩnh trước khi thành phố đông lên.","Nghe một bài nhạc quen trong lúc chuẩn bị ngày mới.","Ngồi nhìn phố vài phút mà không mở điện thoại là ritual tui thích."]],"thao":[["Người biết lắng nghe và tôn trọng người khác thường lộ “fit” khá nhanh.","Tui để ý cách họ phản hồi khi có người không đồng ý với họ.","Một người hợp team thường vừa làm được việc vừa khiến người khác thấy an toàn khi nói."],["Tui không góp ý trước đám đông, tui nhắn riêng trước.","Tui nói vào việc chứ không nói vào người, ngắn gọn thôi.","Tui nói điều làm tốt trước, rồi mới nói điều cần chỉnh."],["Drama kiểu nói vòng, kéo người thứ ba vào và không nói thẳng với nhau.","Tui né kiểu chat group bóng gió nhưng không ai chịu xử lý vấn đề.","Tui ngại nhất drama liên quan gossip về đời tư hoặc đổ lỗi công khai."],["Nếu người đó thân, tui hỏi thẳng nhưng chọn lúc riêng tư.","Tui thường mở bằng một câu nhẹ để họ có quyền chọn kể hay không.","Tui không ép; tui cho họ biết tui sẵn sàng nghe khi họ muốn nói."],["Ranh giới về tôn trọng thời gian và đời tư của nhau.","Không mang chuyện cá nhân ra làm công cụ trong công việc.","Tui luôn coi việc nói chuyện có sự đồng thuận là ranh giới rất quan trọng."],["Trà ô long nhẹ giúp tui tỉnh mà không quá nặng.","Tui thích trà hoa cúc vào những lúc muốn hạ nhịp.","Một ly trà nóng đơn giản cũng đủ nếu hôm đó cần reset."],["Cách người ta đối xử với nhau; kỹ năng có thể học nhưng thái độ mới giữ team bền.","Tui nghĩ skill giúp vào team, cách cư xử mới quyết định ở lại được bao lâu.","“Fit” với tui là cả năng lực lẫn sự tôn trọng, không chỉ một bên."],["Feedback chung chung kiểu “làm lại đi” mà không nói chỗ nào.","Feedback đúng nhưng nói sai thời điểm.","Feedback tới muộn, lúc mọi thứ không còn sửa được nữa."]],"duy":[["Tui sửa navigation hoặc flow khiến user bị lạc trước.","Tui ưu tiên lỗi usability nghiêm trọng hơn lỗi nhìn xấu.","Ba điểm đầu: điều hướng, feedback hệ thống và những bước thừa."],["Mấy game xây dựng hay quản lý nhà hàng làm tui nể vì ẩn được độ phức tạp mà vẫn cho mình control.","Tui nể mấy game có onboarding rất mượt, vào là hiểu ngay.","Có game tui nể UI hơn gameplay vì menu, feedback và animation đều cực sạch."],["Popup ép đồng ý hoặc mặc định đã tick khiến tui cảnh giác ngay.","Ẩn nút từ chối và làm nút mua nổi bật quá là red flag.","Countdown giả và thông báo kiểu “chỉ còn 1 suất” để ép quyết định là dark pattern tui ghét."],["Timing; trả lời đúng nội dung nhưng sai lúc vẫn làm chat awkward.","UX của câu hỏi quan trọng vì hỏi quá rộng hoặc quá dồn dễ khiến người kia bí.","Tui nghĩ cả hai: flow câu hỏi tệ cộng timing lệch là chat fail rất nhanh."],["Tui hỏi “đẹp hơn” nghĩa là tăng chuyển đổi, dễ dùng hay chỉ đổi visual.","Tui đưa 2–3 hướng mẫu để client chọn thay vì đoán.","Tui hỏi target user và mục tiêu trước rồi mới chạm vào màu, layout."],["Tui cứ phải mở thêm một tab dù không dùng tới =))","Tui phải sắp lại desktop rồi mới làm được.","Tui nghe lofi dù đã thuộc từng bài."],["Feedback có ví dụ cụ thể về lúc user gặp khó khăn là quý nhất.","Feedback nói rõ họ muốn làm gì nhưng bị chặn ở đâu giúp tui sửa nhanh.","Một bug report có bối cảnh và bước tái hiện còn giá trị hơn lời khen chung chung."],["Tui giữ flow ngắn và rõ vì quay lại dùng mỗi ngày không nên mệt.","Tui ưu tiên feedback nhanh để user luôn biết hệ thống đang làm gì.","Tui giữ một lý do để quay lại, nhưng không dùng notification để ép."]],"nora":[["Intro vài giây là đủ; âm thanh mở đầu có thể đổi mood ngay.","Tui thường bị kéo bởi một bassline hoặc vocal vào đúng thời điểm.","Có bài không cần intro “hay”, chỉ cần đúng texture là mood đổi."],["Tui thích tự xếp playlist nếu đang có một mood rất cụ thể.","Có lúc tui để algorithm chọn để gặp bài ngoài dự đoán.","Tui dùng cả hai: set vài bài đầu rồi để phần còn lại tự chảy."],["Tui thường nghĩ về nhịp mở màn và người nghe sẽ cảm thấy gì.","Tui hay hơi hồi hộp chuyện âm thanh và cue đầu tiên hơn bản thân lời bài hát.","Tui nghĩ xem mình cần giữ năng lượng thế nào để không đốt hết từ phút đầu."],["Có, nó như góc riêng của tui, chia ra là mất vibe.","Có, nhưng đúng người thì tui sẽ cho nghe thử.","Không, bài nào hay là tui gửi liền =))"],["Lúc đang trào, sau đó tui mới tỉa lại.","Lúc bình tĩnh, tui cần khoảng cách để thấy rõ.","Tùy ngày, nhưng bản nháp lúc trào luôn thật hơn."],["Tui giữ lại nếu melody hoặc cảm xúc có một thứ thật riêng.","Tui thường lưu voice note trước, chưa quyết định ngay giữ hay bỏ.","Nếu mood lạ mà hook không có gì, tui để đó rồi quay lại sau."],["Giữ lịch và năng lượng cho nhiều việc cùng lúc mệt nhất.","Biểu diễn mệt về thể lực, còn sáng tạo mệt ở đầu.","Tui thấy phần khó là cân bằng sáng tạo với việc vẫn phải sống và giữ deadline."],["Tui cần thời gian một mình và quyền không phải phản hồi ngay.","Một khoảng tự do về lịch giúp tui vẫn giữ được nhịp riêng.","Tui cần người bên cạnh hiểu rằng im lặng đôi lúc chỉ là đang nạp pin."]],"tung":[["Cơm tấm hoặc phở là kiểu tui tự tin nói “để tui làm” =))).","Một món xào hoặc món kho quen tay là tui làm nhanh và chắc nhất.","Tui thích nấu món cần canh vị kỹ vì đó là lúc tay nghề thể hiện rõ."],["Vị mạnh là một phần, nhưng câu chuyện và không khí đường phố mới khiến tui nhớ lâu.","Tui mê street food vì ăn nóng ngoài đường có cảm giác rất thật.","Tui thích cả vị lẫn bối cảnh: món ngon mà ăn đúng chỗ càng đã."],["Có người ngồi ăn chung và nói chuyện vui làm bữa cơm ngon hơn.","Một bữa cơm đủ đầy và không ai phải vội là tui thấy ngon nhất.","Tui để ý cảm giác “được ăn cùng nhau” nhiều hơn món đắt hay rẻ."],["Rau, trứng hoặc đậu phụ đều có thể thành món xịn nếu xử lý đúng.","Nước dùng là thứ nguyên liệu bình thường nhưng tay nghề làm khác hẳn.","Khoai tây hoặc nấm nếu làm đúng texture cũng có thể thành món chính."],["Tui ưu tiên việc ảnh hưởng chất lượng món và an toàn trước.","Tui phân loại ticket theo thời gian và độ phức tạp rồi chạy những món dễ nghẽn trước.","Tui chia người rõ: một người giữ line, người khác xử lý điểm đang nghẽn."],["Không nhất thiết; mê ăn có thể chỉ là khả năng thưởng thức.","Biết nấu giúp hiểu món hơn, nhưng không phải điều kiện để mê ăn.","Tui thích người chịu ăn thử và tò mò về món, biết nấu là bonus."],["Với đồng đội; sau ca ai cũng đói mà ăn cùng vui hơn.","Một mình nếu tui cần xả đầu sau ngày dài.","Kéo thêm một người bạn thì hợp những đêm muốn nói chuyện nhiều."],["Tui muốn vị đậm, có chút cay và một chi tiết bất ngờ.","Một món ấm, dễ ăn nhưng có hậu vị để người ta nhớ.","Tui chọn món đường phố Việt nhưng làm gọn và hiện đại hơn một chút."]],"ivy":[["Tui thích vẽ người thật vì dáng và biểu cảm luôn có thứ không đoán trước.","Nhân vật tưởng tượng vui hơn vì tui được tự quyết mọi chi tiết.","Tui thích xen kẽ: người thật để quan sát, nhân vật để thử nghiệm."],["Một cốc nước nóng với đèn bàn vàng, thế là đủ.","Nhiều bút màu lộn xộn, nhìn loạn mà tui biết chỗ nào cũng thuộc.","Một tấm postcard để nhìn lúc bí ý tưởng."],["Tui hay lẩm bẩm với nhân vật đang vẽ =))","Tui vẽ xong là phải xoay ngược bức tranh lại để soi lỗi.","Tui nghe đi nghe lại đúng một bài suốt buổi vẽ."],["Mèo mặt ngơ, tai hơi cụp là tui muốn vẽ ngay.","Mấy con mèo nằm cuộn tròn hoặc có biểu cảm khó ở luôn đáng sketch.","Mèo càng có pattern lông lạ tui càng muốn đem vào sketchbook."],["Tự kỷ luật khó nhất vì không ai đứng cạnh nhắc deadline.","Kiếm cảm hứng khó nhất lúc phải tạo đều chứ không chỉ khi có mood.","Deadline làm áp lực nhất, nhưng khách feedback mơ hồ mới thực sự mệt."],["Đổi môi trường thường giúp tui mở mắt lại.","Đổi medium là cách nhanh để não không lặp một kiểu nữa.","Tui sẽ làm cả hai: đổi chỗ trước, nếu vẫn bí thì đổi medium."],["Tranh có ánh sáng ấm, nhìn mà muốn kể chuyện.","Tranh nhìn đơn giản mà nhìn mãi vẫn ra thêm chi tiết.","Tranh vẽ người đang nhìn đi chỗ khác, tui tò mò họ nghĩ gì."],["Có, quay lại thấy nó như người bạn cũ, vừa lạ vừa quen.","Có, nhưng tui thường vẽ lại từ đầu vì mood đã khác.","Chưa quay lại thì tui vẫn giữ nó trong sketchbook để nhìn."]],"phuc":[["Một route qua hẻm nhỏ, phải nhớ từng lối rẽ và khung giờ cấm xe là tui thuộc lòng.","Tui nhớ các shortcut qua ngõ và những đoạn ít kẹt xe hơn đường lớn.","Route khó nhất thường là khu nhiều hẻm và đổi hướng liên tục, nhưng chạy quen thì nhớ như map trong đầu."],["Xe máy với tui trước hết là công cụ kiếm sống, sau đó mới thành bạn đồng hành.","Nó vừa là phương tiện vừa là thứ giúp tui chủ động giờ giấc.","Chạy lâu rồi nên nhiều lúc nghe máy là tui biết xe đang “khó ở”."],["Hẻm thông sang đường lớn hoặc đoạn cắt qua khu dân cư là kiểu shortcut tui hay dùng.","Tui biết mấy đường ven chợ và hẻm nối tắt, nhưng phải nhìn giờ mới đi được.","Shortcut tốt nhất là route ít đèn đỏ và ít điểm giao cắt đông."],["Khách nói chuyện duyên hoặc nhận đồ rồi cảm ơn thật lòng.","Người đang mệt mà vẫn tử tế với shipper thường làm tui vui.","Khách có câu đùa nhẹ đúng lúc là đang mệt cũng bật cười."],["Tui né mưa an toàn trước, nhưng nếu đơn sắp hết thời gian thì tính lại route.","Tui tìm chỗ trú gần nhất rồi báo khách rõ ETA.","An toàn trước, vì cố chốt thêm vài phút mà trượt xe thì không đáng."],["Nhạc, nhưng nhỏ thôi để còn nghe còi xe.","Tui nghe tiếng phố, nó cho tui biết hôm nay thành phố ổn không.","Podcast chuyện đời, đoạn đường dài nghe mới đáng."],["Tui muốn chạy ra biển hoặc một cung đường nhiều cảnh, không cần lịch dày.","Một ngày chạy lên vùng ngoại ô, ghé ăn và về là đủ vui.","Tui thích một route dài có vài điểm dừng hơn là nằm nghỉ cả ngày."],["Tui vẫn thích công việc gắn với đường phố nhưng muốn chủ động hơn về thời gian.","Có lúc tui muốn thử nghề liên quan logistics hoặc vận hành.","Tui cũng tò mò một việc hoàn toàn khác, miễn vẫn có cảm giác được di chuyển và xử lý vấn đề."]],"huyen":[["Chi tiết cụ thể mà người trong cuộc bình thường không để ý thường làm câu chuyện “đắt”.","Một chi tiết nhỏ nhưng kiểm chứng được có giá trị hơn cả tiêu đề giật gân.","Tui thích chi tiết cho thấy con người và bối cảnh, không chỉ con số."],["Tui tìm nguồn gốc đầu tiên rồi đối chiếu ít nhất một nguồn độc lập.","Tui kiểm tra thời gian, ngữ cảnh và xem nguồn có lợi ích liên quan không.","Nếu câu quá hấp dẫn, tui càng chậm lại: kiểm chứng trước, đăng sau."],["Facts trước; vibe chỉ giúp mình đặt câu hỏi chứ không thay thế kiểm chứng.","Nếu facts chưa đủ, tui không kết luận chỉ vì câu chuyện nghe hợp lý.","Tui ghi nhận cả hai nhưng sẽ ưu tiên thứ có bằng chứng rõ."],["Nó cho tui một không gian ít formal hơn để nghe người ta kể chuyện.","Quán mở muộn có những cuộc gặp và nhịp sống mà văn phòng khó thấy.","Tui thích café đêm vì người ta thường nói những chuyện rất đời thường."],["Headline dùng từ tuyệt đối, gây sốc hoặc hứa “bạn sẽ không tin” là tui nghi ngờ ngay.","Câu quá kích thích nhưng không có dữ kiện cụ thể thường là clickbait.","Tui thấy red flag khi tiêu đề kể luôn kết luận mà bài chưa chứng minh."],["Dùng thông tin đời tư không cần thiết chỉ để tăng lượt đọc là vượt ranh giới.","Gặng hỏi chuyện riêng khi người khác chưa đồng ý khiến tò mò thành xâm phạm.","Tui giữ ranh giới ở chỗ thông tin đó có thực sự cần cho câu chuyện hay chỉ để gây chú ý."],["Tui muốn kể câu chuyện của người làm việc bình thường nhưng có trải nghiệm ít ai biết.","Một người sống qua thay đổi lớn trong thành phố cũng rất đáng kể.","Tui thích người có góc nhìn riêng, không nhất thiết phải nổi tiếng."],["Tui muốn được nhớ vì một bài làm người đọc hiểu một vấn đề họ từng bỏ qua.","Một bài về con người cụ thể nhưng chạm tới vấn đề lớn sẽ khiến tui tự hào.","Tui muốn được nhớ vì những bài kỹ, có nguồn và vẫn giữ được chất người."]],"son":[["Tui để ý âm thanh nhỏ và những thứ thay đổi trong không gian.","Tui thường nhìn lối ra, ánh sáng và ai còn ở đó.","Ca yên quá thì tui để ý những chuyển động bất thường trước tiên."],["Tui quan sát thêm một lúc nhưng không tự dựng chuyện trong đầu.","Nếu hành vi vẫn bình thường thì tui bỏ qua, không cố tìm drama.","Tui để ý nếu họ liên tục có dấu hiệu lạ, còn không thì cứ để họ tự nhiên."],["Mấy phim noir hoặc old movie chậm nhịp là tui xem lại được nhiều lần.","Phim có không khí và nhân vật mạnh làm tui xem lại mà vẫn thấy hay.","Tui thích old movie ít ồn, nhìn cách người ta nói chuyện là đủ cuốn."],["Ý nghĩ có người đang tin mình ở đó.","Nhìn quanh thấy mọi thứ yên ổn là đủ để tui đứng tiếp.","Một tách trà nóng và vài phút ngồi yên."],["Tui nói chuyện trước nếu tình huống chưa đến mức nguy hiểm.","Nếu có rủi ro ngay lập tức thì tui sẽ cứng rắn trước, rồi giải thích sau.","Tui ưu tiên hạ nhiệt và hiểu nguyên nhân trước khi dùng biện pháp cứng."],["Giữ lời trong một việc nhỏ cũng đủ làm tui tin hơn.","Đối xử tử tế với người không đem lại lợi ích cho mình là dấu hiệu mạnh.","Một người biết nhận lỗi và sửa cũng khiến tui tin họ hơn."],["Tui thích chỗ yên để nghe suy nghĩ của mình rõ hơn.","Đông vui có lúc cũng thích, nhất là khi đi cùng người hợp.","Tui tùy mood, nhưng nói chuyện sâu thường cần không gian yên."],["Nặng nhưng đáng, vì niềm tin kéo theo trách nhiệm.","Tui nghĩ đáng hơn nặng nếu hai bên hiểu rõ mình đang tin nhau ở điều gì.","Nó là trách nhiệm thật, nên tui không thích nhận lời quá dễ."]],"bao":[["Tiếng gõ, rung hoặc tiếng máy hụt bất thường là tui chú ý ngay.","Âm thanh lạch cạch theo vòng tua thường là red flag với tui.","Tiếng máy thay đổi so với bình thường quan trọng hơn một âm thanh “lạ” chung chung."],["Mấy ca sửa lỗi khó tìm và phải tháo gần hết xe thường nhớ rất lâu.","Chiếc xe bị bệnh lắt léo, thay vài món mới tìm ra nguyên nhân là kiểu tui nhớ nhất.","Ca sửa giữa lúc khách cần xe gấp mà vẫn phải làm chuẩn là ca khó quên."],["Khoảng 3–4 điểm dừng là đẹp, vừa chạy vừa ăn.","Tui thích 2 điểm ăn chính và vài điểm ghé cảnh dọc đường.","Tui chọn khoảng 5 điểm dừng, cứ 1–2 tiếng ghé một chỗ, chứ ăn dày quá mất route."],["Đoán bệnh xe mà không nghe máy hoặc kiểm tra gì là tui thấy buồn cười.","Tui hay cười khi ai đó nghe một tiếng rồi kết luận chắc nịch.","Đoán vui thì được, nhưng phán như thợ mà chưa kiểm tra mới buồn cười."],["Người thực tế nhìn vào dữ kiện và xử lý việc cần làm, không phải ít cảm xúc.","Khô khan là cách thể hiện; thực tế vẫn có thể rất ấm.","Tui nghĩ khác nhau ở chỗ người thực tế vẫn hiểu cảm xúc nhưng không để nó quyết định hết."],["Cả hậu quả lẫn thái độ đều khó chịu, nhưng thái độ làm tui mất niềm tin nhanh hơn.","Nếu hậu quả nặng thì tui quan tâm xử lý trước, sau đó mới nói về thái độ.","Cẩu thả lặp đi lặp lại vì không chịu sửa mới là thứ làm tui bực nhất."],["Lúc tìm đúng bệnh xe sau nhiều bước kiểm tra và xe nổ lại êm là đã nhất.","Khi mình xử lý được lỗi khó mà khách dùng xe an tâm trở lại.","Tui thấy tay nghề có giá trị nhất khi giải được bệnh mà người khác đã bỏ cuộc."],["Máy móc trước: build đúng hiệu năng rồi mới lo ngoại hình.","Ngoại hình quan trọng nếu build theo gu cá nhân, miễn không hy sinh máy.","Tui sẽ cân bằng nhưng máy và độ ổn định vẫn là ưu tiên một."]],"chi":[["Một cuốn khiến tui muốn giới thiệu thường có một ý tưởng còn ở trong đầu nhiều ngày.","Tui thích sách có câu chữ đẹp nhưng vẫn khiến mình nhìn thế giới khác đi.","Một nhân vật thật hoặc một góc nhìn rất riêng là lý do tui hay giới thiệu sách."],["Nhiều góc ngồi thấp, ánh sáng ấm và kệ không quá dày khiến tui thích hơn.","Kệ cao cho cảm giác như mê cung sách, tui cũng rất thích.","Tui muốn cả hai: kệ cao để khám phá và góc thấp để ngồi đọc."],["Có, tui chép vào sổ nhỏ để thỉnh thoảng đọc lại.","Tui hay gạch chân luôn trong sách, sách như nhật ký thứ hai.","Tui nhớ ý chứ ít nhớ nguyên câu, nhưng ý đó ở lại rất lâu."],["Nonfiction cho tui cảm giác học thêm một thứ thật mới.","Fiction hấp dẫn vì mình được sống thử một đời khác.","Tui đọc cả hai: nonfiction để mở đầu óc, fiction để đổi góc nhìn."],["Người đi chậm giữa các kệ và cầm vài cuốn lên đọc kỹ thường đang tìm một câu chuyện.","Khách hỏi “có gì giống cuốn này nhưng sâu hơn không?” thường là đang tìm trải nghiệm chứ không chỉ tên sách.","Có người chỉ im lặng ở một góc rất lâu, nhìn là biết họ đang tìm thứ gì đó cho mình."],["Một không gian đủ yên để cả hai không phải vội.","Cần người biết nghe và không ngắt lời liên tục.","Tui nghĩ điều kiện quan trọng nhất là cả hai đều thật sự muốn ở đó."],["Tui sẽ xếp self-help nhẹ, fiction chữa lành và sách về những giai đoạn chuyển mình.","Tui thêm thơ, tản văn và vài cuốn ngắn để người đang mệt vẫn đọc được.","Tui sẽ làm một kệ có chủ đề “đi chậm lại”: văn học, tâm lý phổ thông và những cuốn ấm áp."],["Được gợi ý chuẩn gu rất vui, nhất là khi người kia hiểu mình thích gì.","Tự đào ra một cuốn bất ngờ có cảm giác săn được treasure.","Tui thích cả hai: để người khác gợi ý vài cuốn, rồi tự chọn một cuốn ngoài danh sách."]]};
 for(const id in NPCS){const n=NPCS[id];(PRIVATE_QUESTIONS[id]=PRIVATE_QUESTIONS[id]||[]);(PRIVATE_DIRECT_ANSWERS[id]=PRIVATE_DIRECT_ANSWERS[id]||[]);DEEP_Q.forEach(q=>{PRIVATE_QUESTIONS[id].push(deepFmt(n,q[0]));PRIVATE_DIRECT_ANSWERS[id].push(q[1]);});}
+const DEEP_R=[["“Ừ… phải gồng suốt thì mệt thật. Ở đây bn không cần mạnh mẽ giùm tui đâu.”", "“Tui hiểu cảm giác bị đồng hồ rượt phía sau. Thành công đến chậm vẫn là của mình mà.”", "“Không ai làm vừa lòng được tất cả đâu. Bỏ được cái này chắc nhẹ người lắm.”"], ["“Đừng nặng lời với mình vậy. Im lặng vì sợ người khác buồn đâu có nghĩa là hèn.”", "“Tập nói thẳng khó lắm đó. Tui thấy bn đang đi đúng hướng.”", "“Haha, nói trước nghĩ sau hả? Ít ra bn thật lòng. Khoản này tui hơi ghen tị á.”"], ["“Giờ tui biết rồi nè. Lần sau bn lo cho người khác thì để tui lo ngược lại cho bn nha.”", "“Cảm ơn bn đã nói thật. Mệt thì cứ cho tui biết, tui không phán xét đâu.”", "“Giấc mơ lớn mà bn dám kể với tui, tui sẽ giữ kỹ. Khi nào sẵn sàng thì kể thêm nha.”"], ["“Cảm giác ai cũng chạy trước mình… tui cũng từng vậy. Bn không chậm đâu, đường mỗi người khác nhau thôi.”", "“Sợ mất bản thân giữa đường… câu này nghe thật ghê. Đi chậm mà còn là mình vẫn hơn.”", "“Đi chậm cũng là một cách đi. Tui đi chậm cùng bn một đoạn nha.”"], ["“Ít nhất biết mình đang sống… nghe liều mà dễ thương. Chỉ mong bn đừng bị tổn thương nhiều.”", "“Có chỗ để về… tui hiểu. Ổn định đâu có nhạt, nó là sự an tâm.”", "“Muốn cả hai thì đòi hỏi cao đó nha =)) Nhưng chắc có người như vậy thật.”"], ["“Biết xin lỗi người thân sau khi cáu là không dễ. Chắc họ cũng thấy được.”", "“Còn nợ một lời xin lỗi… Nếu muốn thì lúc nào nói ra cũng chưa muộn đâu.”", "“Khó xin lỗi mà vẫn đang cố, vậy là đáng quý rồi.”"], ["“Sợ làm gia đình, bạn bè buồn… ai cũng có lúc vậy. Chỉ cần đừng quên phần của chính mình.”", "“Chọn đường riêng dù khó, chỗ này tui nể bn thiệt.”", "“Chưa biết phiên bản của mình là gì cũng không sao. Vừa đi vừa tìm cũng được mà.”"], ["“Có người nhớ mình thích gì… đúng là kiểu thương lặng lẽ. Tui sẽ để ý chi tiết của bn.”", "“Ồn ào kiểu được ôm, được khoe luôn hả? Nghe ấm ghê, tui thích sự thẳng thắn đó.”", "“Được là chính mình mà không bị sửa… câu này tui muốn giữ lại.”"], ["“Bạn thân xa dần mà không có lý do rõ… đau kiểu rất lặng. Tui hiểu.”", "“Kết thúc khi chưa kịp chuẩn bị thì ai cũng chới với. Cảm ơn bn đã kể.”", "“Học từ sớm nên khó tin người… Tui không ép bn tin ngay đâu, cứ từ từ.”"], ["“Đi bộ buổi tối mà không nghe gì nghe yên ghê. Hôm nào mình đi chung một vòng nha.”", "“Có đúng một người để nói chuyện là quý lắm. Mong tui cũng được là người đó.”", "“Làm gì đó bằng tay cho đầu trống đi… tui cũng hợp kiểu này. Nhẹ người liền.”"], ["“Tự trách khi không đạt thì mệt lắm. Tui cũng hay vậy nên hiểu bn.”", "“Biết dừng đúng lúc cũng là một kỹ năng đó. Chắc tui phải học bn.”", "“Trì hoãn vì sợ thất bại… nghe quen ghê. Bắt đầu một bước nhỏ thôi cũng được mà.”"], ["“Có hoài mà vẫn học cách giải thích nhẹ nhàng… bn kiên nhẫn hơn tui nghĩ.”", "“Im lặng cho đỡ mệt… tui hiểu. Với tui, bn không cần giải thích quá nhiều đâu.”", "“Hay hiểu sai người khác trước… thành thật vậy hiếm lắm đó.”"]];
 function chChoiceSet(id,q,index){
 const qi=(PRIVATE_QUESTIONS[id]||[]).indexOf(q);
 const direct=PRIVATE_DIRECT_ANSWERS[id]?.[qi];
 const v=PRIVATE_VOICES[id]||'vibe';
 const key=q.slice(0,48).toLowerCase();
 const replies=[
-`“Ừ, tui thích câu trả lời có quan điểm rõ á. Nghe bn kể vậy tui hiểu bn hơn chút rồi :))”`,
-`“Kkk, lựa chọn này đúng chất bn ghê. Vụ này mà kể tiếp chắc còn nhiều cái hay ho.”`,
-`“Tui thích bn có lý do riêng á. Không cần giống tui đâu, khác gu mới có cái để tám.”`,
-`“Ok, vụ này để bữa khác đào tiếp nha. Cũng cuốn đó :))”`
+`“Ừ, nghe bn trả lời xong tui thấy hiểu bn hơn một chút á :))”`,
+`“Kkk, câu trả lời này nghe đúng chất bn ghê. Nói tiếp chắc còn nhiều chuyện hay.”`,
+`“Tui thích chỗ bn có lý do riêng, không cần giống tui đâu. Khác nhau mới dễ nói chuyện.”`,
+`“Deal. Chủ đề này đủ thú vị để lần sau đào tiếp.”`
 ];
 const effects=[
 {trust:3,curiosity:4,comfort:2},
@@ -4547,8 +4549,9 @@ const effects=[
 {respect:4,curiosity:2,trust:2},
 {consistency:3,interest:3,comfort:2}
 ];
-const base=direct||[[`“Tui chưa chốt, nhưng vụ ${v} này nghe cũng cuốn 👀”`,`“Tui muốn nghe bn nói thêm về ${v}.”`,`“Còn tùy lúc á :)) Để tui nghĩ coi rồi kể bn nghe.”`]];
-return base.map((t,i)=>({text:chTeen(t,id+':private-choice:'+q+':'+qi+':'+i),reply:chTeen(replies[i]||replies[0],id+':private-reply:'+q+':'+qi+':'+i),effects:effects[i%effects.length],note:key}));
+const base=direct||[[`“Tui chưa chốt, nhưng vụ ${v} này nghe cũng cuốn 👀”`,`“Tui muốn nghe bn nói thêm về ${v}.”`,`“Tùy tình huống; để tui nghĩ kỹ rồi trả lời.”`]];
+const di=qi-((PRIVATE_QUESTIONS[id]||[]).length-DEEP_Q.length),dr=di>=0?DEEP_R[di]:null;
+return base.map((t,i)=>({text:chTeen(t,id+':private-choice:'+q+':'+qi+':'+i),reply:chTeen((dr&&dr[i])||replies[i]||replies[0],id+':private-reply:'+q+':'+qi+':'+i),effects:effects[i%effects.length],note:key}));
 }
 function chAllQuestionIds(id){return(PRIVATE_QUESTIONS[id]||[]).map((_,i)=>i);}
 function chPickQuestion(id){
@@ -4709,9 +4712,9 @@ if(!n||!q.length)return __chOldPhoneReplies.apply(this,arguments);
 const idx=(Number(turn)||0)%q.length;
 const topic=q[idx];const v=PRIVATE_VOICES[npcId]||'vibe';
 return[
-{text:chTeen(`“Vụ ${topic.replace(/[“”?]/g,'').slice(0,55)} nghe cuốn á 👀”`,npcId+':phone-private:'+turn+':a'),reply:chTeen(`“Kkk biết ngay bn sẽ bắt đúng ${v}. Kể tui nghe thêm nha.”`,npcId+':phone-private-reply:'+turn+':a'),effects:{interest:3,curiosity:3},memory:'tiếp tục chủ đề riêng của hai người'},
+{text:chTeen('“Chủ đề này nghe cuốn á, kể tui nghe thêm đi 👀”',npcId+':phone-private:'+turn+':a'),reply:chTeen('“Kkk, vậy để tui kể thêm nha. Bn nghe tới đâu hỏi tới đó cũng được.”',npcId+':phone-private-reply:'+turn+':a'),effects:{interest:3,curiosity:3},memory:'tiếp tục chủ đề riêng của hai người'},
 {text:chTeen('“Tui hơi khác bn ở vụ này, nhưng vẫn muốn nghe lý do :))”',npcId+':phone-private:'+turn+':b'),reply:chTeen('“Khác quan điểm mà vẫn nói chuyện được mới vui chứ =))”',npcId+':phone-private-reply:'+turn+':b'),effects:{respect:3,trust:3},memory:'chia sẻ khác biệt nhưng vẫn lắng nghe'},
-{text:chTeen('“Để gặp nhau rồi nói, chat vụ này dài quá =)))”',npcId+':phone-private:'+turn+':c'),reply:chTeen('“Ừ, gặp rồi nói tiếp nha. Vụ này tui còn muốn tám tiếp =))”',npcId+':phone-private-reply:'+turn+':c'),effects:{consistency:3,chemistry:2},memory:'để dành một chủ đề cho lần gặp sau'}
+{text:chTeen('“Để gặp nhau rồi nói, chat vụ này dài quá =)))”',npcId+':phone-private:'+turn+':c'),reply:chTeen('“Deal. Gặp rồi nói tiếp, tui nhớ topic này.”',npcId+':phone-private-reply:'+turn+':c'),effects:{consistency:3,chemistry:2},memory:'để dành một chủ đề cho lần gặp sau'}
 ];
 };
 window.phoneReplyChoices=phoneReplyChoices;
@@ -5142,7 +5145,7 @@ if(loc==='downtown'){ch16MiniFacade(-2,242,128,126,'stone','NGÂN HÀNG',103,'#7
 else if(loc==='cafe'){ch16MiniFacade(404,254,136,126,'brick','TIỆM BÁNH',211,'#b87864');ch16MiniFacade(746,264,102,116,'stone','GIẶT ỦI',217,'#8d9991');ch16MiniFacade(1190,244,92,136,'stone','TẠP HÓA',221,'#8a7f72');}
 else if(loc==='office'){ch16MiniFacade(-2,248,128,130,'stone','CLINIC',301,'#6f8e95');ch16ParkingGarage(470,252,176,126,'PARKING');ch16MiniFacade(650,250,118,128,'stone','SẢNH',307,'#82939a');ch16GuardBooth(1180,298,'BẢO VỆ');}
 else if(loc==='park'){ch16MiniFacade(24,264,118,102,'stone','NHÀ VỆ SINH',401,'#7f8f86');ch16MiniFacade(1110,268,142,100,'brick','QUÁN BỜ SÔNG',409,'#9a6e56');ch16Rect(488,300,304,7,'#665447');ch16Rect(505,250,7,50,'#4c3d34');ch16Rect(768,250,7,50,'#4c3d34');ch16Rect(500,242,280,9,'#8a674d');for(let x=530;x<760;x+=36)ch16Rect(x,230,5,18,'#5b493b');}
-else if(loc==='mall'){ch16ParkingGarage(-2,260,182,110,'PARKING');ch16MiniFacade(598,250,176,120,'stone','FOOD COURT',501,'#9a8092');ch16MiniFacade(1004,248,278,124,'brick','RẠP CHIẾU PHIM',509,'#7f5268');}
+else if(loc==='mall'){ch16ParkingGarage(-2,260,182,110,'PARKING');ch16MiniFacade(598,250,176,120,'stone','FOOD COURT',501,'#9a8092');ch16MiniFacade(1004,248,278,124,'brick','RẠP CHIẾU PHIM',509,'#7f5268');if(window.chDrawShopfront)window.chDrawShopfront('mall');}
 else if(loc==='residential'){ch16Planter(58,458,36);ch16Planter(300,456,42);ch16Planter(620,458,40);ch16Planter(1018,456,44);ch16Mailboxes(190,454,4);ch16Mailboxes(870,456,5);ch16BikeRack(675,472);}
 else if(loc==='factory'){ch16GuardBooth(-2,294,'BẢO VỆ');ch16MiniFacade(534,248,150,130,'stone','XƯỞNG B',701,'#7c8585');ch16MiniFacade(1200,240,82,138,'stone','KHO C',707,'#777d80');for(let i=0;i<4;i++){const x=700+i*74;ch16Rect(x,302,54,70,P16.ink);ch16Rect(x+6,308,42,54,'#5e6668');ch16Rect(x+12,318,30,34,'#6f7778');}}
 }
@@ -5385,7 +5388,7 @@ ch16Rect(game.x-18,game.y-77,36,14,P16.ink);ch16Rect(game.x-16,game.y-75,32,10,P
 }
 if(!game.dialogue&&!game.panel){
 const ap=(typeof ACTION_POINTS!=='undefined')?ACTION_POINTS[locKey]:null;
-if(ap){ch16Rect(ap.x-52,ap.y-33,104,18,P16.ink);ch16Rect(ap.x-49,ap.y-30,98,12,P16.cyan);ctx.fillStyle=P16.ink;ctx.font='900 9px system-ui,Arial';ctx.textAlign='center';ctx.fillText('E · '+ap.label,ap.x,ap.y-21);ctx.textAlign='left';}
+if(ap){ch16Rect(ap.x-52,ap.y-33,104,18,P16.ink);ch16Rect(ap.x-49,ap.y-30,98,12,P16.cyan);ctx.fillStyle=P16.ink;ctx.font='900 9px system-ui,Arial';ctx.textAlign='center';ctx.fillText('✦ '+ap.label,ap.x,ap.y-21);ctx.textAlign='left';}
 }
 if(game.weather==='rain'&&performance.now()<game.weatherUntil){ctx.save();ctx.globalAlpha=.55;for(let i=0;i<85;i++){const rx=(i*83+performance.now()*.08)%1280,ry=(i*47+performance.now()*.16)%680;ch16Rect(rx,ry,2,8,P16.glass2);}ctx.restore();}
 if(night){ctx.fillStyle='rgba(8,15,24,.20)';ctx.fillRect(0,0,1280,720);}else if(ch16Evening()){ctx.fillStyle='rgba(219,119,109,.07)';ctx.fillRect(0,0,1280,720);}
@@ -6383,33 +6386,7 @@ g=(sh?n.name+' khẽ ngập ngừng rồi mỉm cười.\n\n':'')+'“'+op+' '+S
 O(g,[{text:'“Chào '+call+', mình là '+me+'. Rất vui được gặp.”',onChoose:function(){changeRel(id,{respect:4,comfort:3,trust:2});s2('“'+me+', tên dễ nhớ ghê. Rất vui được quen '+u+'.”')}},
 {text:'“Hi! Mình là '+me+', mới chuyển tới đây. Có gì chỉ giúp mình nhé :))”',onChoose:function(){changeRel(id,{chemistry:3,comfort:4,curiosity:2});s2('“Hay quá, người mới! Để '+s+' kể '+u+' nghe vài chỗ hay ho quanh đây.”')}},
 {text:'“Ờ… chào. Mình là '+me+'. Mình hơi ngại người lạ.”',onChoose:function(){changeRel(id,{trust:4,comfort:2,respect:2});s2('“Không sao, '+s+' cũng vậy lúc đầu. Cứ thong thả, '+me+'.”')}}]);
-function s2(r){var Q={
-lan:['“Hoa nào hôm nay bán chạy nhất vậy bn?”','“Hoa hồng với mấy bó theo mùa đang chạy nhất á. Nhìn gu của bn tui nghĩ có thể hợp hoa này.”'],
-hung:['“Xe bánh mì của anh có món nào khách hay order nhất vậy?”','“Bánh mì đặc biệt á :)) Khách quen cứ ghé là gọi món này, khỏi nghĩ nhiều.”'],
-trang:['“Giờ này khách ở nhà thuốc hay hỏi gì nhất vậy bn?”','“Thường là mấy món thông dụng thôi. Ai hỏi thuốc thì tui vẫn phải nhắc dùng đúng cách nha.”'],
-long:['“Thầy hay ngồi đánh cờ ở bờ sông này vào mỗi ngày hả thầy?”','“Ừ, ông hay ra đây. Có người chơi cùng thì vui hơn, còn không thì ngồi nhìn sông cũng đủ.”'],
-dung:['“Ca hôm nay khu xưởng đang bận nhất ở khâu nào vậy anh?”','“Khâu vận chuyển á. Xe chạy liên tục nên anh cứ nhắc người mới đứng nép vô cho an toàn.”'],
-yen:['“Trong tòa nhà này, người ta hay tìm tới bộ phận nào nhất vậy bn?”','“Tùy giờ á, nhưng phòng họp với lễ tân là hai chỗ bị hỏi đường suốt :))”'],
-khoa:['“Góc này chơi nhạc có dễ bắt vibe không vậy bn?”','“Cũng ổn á. Buổi này ít xe hơn nên tiếng đàn nghe rõ hơn, tui thích chỗ này vì vậy.”'],
-tu:['“Tạp hóa của bn có món nào dân trong hẻm hay ghé mua nhất?”','“Đồ ăn vặt với mấy món dùng hằng ngày bán đều lắm :)) Có gì cần cứ ghé, tui nhớ mặt khách nhanh.”'],
-linh:['“Làm brand strategy, đoạn nào trong một buổi họp thường làm bn đau đầu nhất?”','“Khúc sửa idea phút 89 á =)) Đang ngon tự nhiên có thêm 7749 ý kiến, nhưng cứu được thì cũng vui.”'],
-minh:['“Cái bug vừa rồi bn gỡ kiểu gì hay vậy?”','“Bắt đầu từ log với reproduce lại á. Tìm đúng điểm lỗi rồi sửa mới đỡ bị nó quay lại lần nữa :))”'],
-hana:['“Nếu một event tự nhiên có sự cố, bn thường cứu timeline hay cứu mood trước?”','“Timeline trước nha :)) Trễ một nhịp là cả đống thứ phía sau lệch theo. Xong rồi mới kéo mood lên.”'],
-an:['“Góc này có chi tiết kiến trúc nào bn hay ngồi sketch nhất?”','“Mấy đường nét và khoảng trống quanh mặt đứng á. Nhìn đơn giản nhưng ngồi vẽ mới thấy nhiều thứ hay.”'],
-mai:['“Ở quán bn, món nào đang là best-seller vậy?”','“Món latte với dessert hôm nay đang cháy đơn á :)) Nhưng tui vẫn thích nghe khách gọi món lạ hơn.”'],
-kai:['“Ca chạy việc hôm nay đang dính deadline gì căng vậy bn?”','“Mấy việc vận hành dồn cùng lúc á. Cứ ưu tiên cái nào gấp trước, còn lại xử lý từng nhịp cho đỡ loạn.”'],
-vy:['“Góc này lên ảnh đẹp thiệt à? Bn nhìn ánh sáng kiểu gì vậy?”','“Tui nhìn hướng sáng với bóng trước á. Chỉ cần nắng chạm đúng mặt tường là có frame xịn liền 👀”'],
-quan:['“Hạt mới hôm nay có note vị gì vậy bn?”','“Mẻ này có vị hơi ngọt với hậu khá sạch á. Uống chậm mới thấy rõ, không cần thêm gì nhiều.”'],
-thao:['“Sau mấy buổi phỏng vấn, điều gì khiến bn nhớ một ứng viên lâu vậy?”','“Thường là cách họ kể về việc mình làm á. Không cần nói quá hay, nhưng có ví dụ thật là tui nhớ liền.”'],
-duy:['“Cái bảng chỉ dẫn này đang vướng UX ở chỗ nào vậy bn?”','“Người ta phải đứng lại đọc quá lâu mới hiểu hướng á. UX ổn thì nhìn một phát nên biết đi đâu luôn.”'],
-nora:['“Đoạn nhạc bn vừa thử đang có mood gì vậy?”','“Hơi mơ màng nhưng không buồn á. Kiểu đi một vòng thành phố lúc tối, chẳng cần có đích cụ thể :))”'],
-tung:['“Mẻ bánh này bn đang thử công thức gì á?”','“Tui đang chỉnh phần kem với độ ngọt á. Muốn nó thơm nhưng ăn xong không bị ngán.”'],
-ivy:['“Bn thường tìm cảm hứng vẽ từ người hay từ không gian hơn?”','“Không gian trước á, nhất là mấy chỗ yên. Nhưng đôi khi chỉ một người lướt qua cũng đủ thành cả một ý tưởng.”'],
-phuc:['“Chạy khu này có cung đường tắt nào cứu đơn ngon nhất không?”','“Có vài đường nhỏ á :)) Quen khu này rồi thì né được mấy đoạn đông, đỡ mất cả đống thời gian.”'],
-huyen:['“Bài bn đang viết tập trung vào câu chuyện gì của khu này vậy?”','“Tui đang nhìn đời sống thường ngày á — những chuyện nhỏ nhưng ghép lại mới ra vibe thật của khu này.”'],
-son:['“Cảnh này bn đang muốn bắt vibe gì vậy?”','“Hơi đời thường nhưng có chút cô đơn á. Không cần drama, chỉ cần đúng ánh sáng là đủ kể chuyện rồi.”'],
-bao:['“Con xe nào trong xưởng đang đáng để độ nhất vậy bn?”','“Con kia á. Form ổn, máy còn ngon, sửa vài chi tiết là nhìn khác hẳn ngay :))”'],
-chi:['“Dạo này hiệu sách có cuốn nào đọc cuốn quá quên giờ không?”','“Có mấy cuốn mới về á. Tui thích mấy cuốn đọc chậm mà càng đọc càng muốn lật tiếp.”']}[id]||['“Công việc của bn dạo này có gì vui không?”','“Cũng có vài chuyện hay ho á. Để tui kể bn nghe dần.”'];O(r,[{text:Q[0],onChoose:function(){changeRel(id,{curiosity:3,interest:2});s3(Q[1])}},{text:'“Mình đang đi loanh quanh làm quen thành phố.”',onChoose:function(){changeRel(id,{comfort:3,consistency:2});s3('“Vậy '+u+' gặp đúng người rồi. Đi bộ là cách hay nhất để hiểu một nơi.”')}}])}
+function s2(r){O(r,[{text:at?'“Bạn làm ở đây lâu chưa?”':'“Bạn sống ở khu này lâu chưa?”',onChoose:function(){changeRel(id,{curiosity:3,interest:2});s3('“Cũng một thời gian rồi. Có mấy chỗ '+s+' thích, sẽ chỉ '+u+' dần.”')}},{text:'“Mình đang đi loanh quanh làm quen thành phố.”',onChoose:function(){changeRel(id,{comfort:3,consistency:2});s3('“Vậy '+u+' gặp đúng người rồi. Đi bộ là cách hay nhất để hiểu một nơi.”')}}])}
 function s3(r){try{remember(id,'lần đầu gặp, đã chào hỏi và giới thiệu tên.','positive',['intro'])}catch(_){}O(r+'\n\n“'+S+' nói chuyện thêm chút nhé?”',[{text:'“Có chứ, mình rảnh.”',onChoose:function(){advance(5);end()}},{text:'“Để lần sau nhé, hẹn gặp lại '+call+'.”',onChoose:function(){hi[id]=1;F.met[id]=true;try{addPhone(n.name,'“Rất vui được làm quen với bạn hôm nay.”')}catch(_){}closeDialogue()}}])}
 };
 })();</script>
@@ -6954,114 +6931,245 @@ k.fillStyle='#e8a33a';k.fillRect(cx-1.5,cy-1.5,3,3);}catch(e){}requestAnimationF
 let was=false;setInterval(()=>{try{const n=cur();if(n&&!was&&game.started!==false)toast('🌙 Đêm khuya, phố vắng người. Hãy nhắn tin cho mọi người.');was=n;}catch(e){}},1500);
 })();
 </script>
-<script id="chPoorSnubV1">(function(){
-const LIMIT=50000;
-const now=()=>game.day*1440+game.minutes;
-const pick=(a,id)=>a[[...String(id)].reduce((x,c)=>x+c.charCodeAt(0),0)%a.length];
-const STRANGER=[
-'“Cậu định bắt chuyện với tôi à? Nhìn lại cái ví của mình đi đã.”',
-'“Xin lỗi, tôi không có thời gian làm quen với người còn chưa có nổi 50.000đ trong túi.”',
-'“Ví lép kẹp mà đòi làm quen? Thôi khỏi, đi chỗ khác đi.”',
-'“Ai cũng có giá của mình. Còn cậu thì… chưa đủ để tôi dừng lại.”'];
-const COLD=[
-'“Dạo này trông cậu thảm thật đấy. Tôi đang bận, để hôm khác.”',
-'“Cậu khó khăn thì tự lo đi, đừng kéo tôi vào.”'];
-function snubs(){return game.snubs=game.snubs||{};}
-function leaveChoices(n,id,full){
-return [
-{text:'Lặng lẽ rời đi',onChoose(){advance(3);toast('Bạn cúi đầu bước đi. Ánh mắt đó vẫn ám bạn một lúc.');closeDialogue();}},
-{text:'“Tiền không quyết định giá trị con người đâu.”',onChoose(){
-game.energy=clamp(game.energy-3,0,100);advance(4);
-openDialogue(n.name,'“Nói hay lắm. Khi nào có tiền hãy quay lại nói tiếp.” '+n.name+' quay lưng đi.',[{text:'Im lặng bỏ đi',onChoose(){closeDialogue();}}]);}},
-{text:'Mình cần kiếm tiền ngay 💼',onChoose(){closeDialogue();setTimeout(()=>openPanel('jobs'),60);}}];}
-const prev=window.npcChoice||npcChoice;
-function wrapped(npcId,topic){
-const n=NPCS[npcId],s=game.npcState&&game.npcState[npcId];
-if(!n||!s||(topic!==undefined&&topic!=='greet'))return prev.apply(this,arguments);
-const met=!!(game.flags&&game.flags.met&&game.flags.met[npcId]),sn=snubs();
-if(game.money>=LIMIT){
-const r=sn[npcId];
-if(r&&!r.forgiven&&!met){
-openDialogue(n.name,'“Ơ… cậu là người lúc trước đúng không? Giờ có tiền rồi mới muốn làm quen à?”',[
-{text:'“Xin lỗi, lúc đó mình đang khó khăn.”',onChoose(){r.forgiven=true;changeRel(npcId,{respect:-2});closeDialogue();setTimeout(()=>prev(npcId),50);}},
-{text:'“Không sao, mình đi chỗ khác.”',onChoose(){advance(2);closeDialogue();}}]);return;}
-return prev.apply(this,arguments);}
-const score=relationshipScore(npcId);
-if(met&&score>=35){toast('💛 Họ vẫn nói chuyện với bạn vì đã thân, dù ví bạn đang mỏng.');changeRel(npcId,{trust:2});return prev.apply(this,arguments);}
-const r=sn[npcId]=sn[npcId]||{count:0,t:-9999,forgiven:false};
-if(now()-r.t<120){toast(n.name+' làm lơ, không buồn nhìn bạn.');return;}
-r.t=now();r.count++;r.forgiven=false;
-changeRel(npcId,{respect:-3,comfort:-4,interest:-3});
-game.reputation=clamp(game.reputation-2,0,100);
-const line=met?pick(COLD,npcId):pick(STRANGER,npcId);
-try{remember(npcId,'đã từ chối bạn vì ví quá mỏng','negative',['money','snub']);}catch(e){}
-try{addPhone('Thành phố','Có người vừa coi thường bạn vì ví dưới 50.000đ. Hãy kiếm thêm tiền.');}catch(e){}
-openDialogue(n.name,'Ánh mắt '+n.name+' lướt qua đôi giày cũ và chiếc ví xẹp lép của bạn.\n\n'+line+'\n\n(Danh tiếng -2)',leaveChoices(n,npcId,true));}
-window.npcChoice=wrapped;npcChoice=wrapped;
-const m=document.getElementById('moneyMetric');
-setInterval(()=>{try{if(m){m.style.color=game.money<LIMIT?'#ff5a5a':'';m.title=game.money<LIMIT?'Dưới 50.000đ: người lạ sẽ không muốn làm quen':'';}}catch(e){}},700);
-})();
-</script>
-
-<script id="cityHeartsDialogueOnlyGenZFixV1">
-(function(){
+<script id="chShopV2">(function(){
 'use strict';
-/* DIALOGUE-ONLY PATCH: chỉ chỉnh text choice/reply, không đổi gameplay/UI/map/render/logic. */
-const EXACT={
-  '“Đưa đi uống cà phê trước rồi chẩn đoán.”':'“Thì hỏi trước đã chứ, chưa biết gì mà phán là toang liền =))”',
-  '“Nguyên tắc này tui thích.”':'“Nguyên tắc này tui mê á. Rõ ràng, đỡ drama.”',
-  '“Good. Ít nhất bn biết chừa đường lui cho người khác.”':'“Good. Biết chừa đường lui cho người khác là tinh tế đó :))”',
-  '“Tốt.”':'“Ổn áp á :))”',
-  '“Có thể.”':'“Có thể á 👀”',
-  '“Được.”':'“Đc chứ :))”',
-  '“Không sao.”':'“K sao đâu :))”',
-  '“Nghe hợp lý.”':'“Nghe hợp lý á.”',
-  '“Câu hỏi hợp lý.”':'“Câu hỏi hợp lý á.”',
-  '“Cũng hợp lý.”':'“Cũng hợp lý á :))”',
-  '“Đúng.”':'“Chuẩn á.”',
-  '“Vậy là hiểu nhau thêm một chút.”':'“Vậy là hiểu nhau thêm 1 chút r đó :))”',
-  '“Đúng. Cùng hệ tư tưởng rồi.”':'“Chuẩn. Cùng hệ tư tưởng r đó 👀”',
-  '“Mình biết ngay bn có kiểu đó.”':'“Tui đoán đúng vibe bn r :))”',
-  '“Tôi cũng thế.”':'“Tui cũng z.”',
-  '“Tôi cũng vậy.”':'“Tui cũng z.”',
-  '“Mình cũng thế.”':'“Tui cũng z.”',
-  '“Mình cũng vậy.”':'“Tui cũng z.”',
-  '“...Dễ chịu hơn tui nghĩ.”':'“...Ủa, dễ chịu hơn tui tưởng á.”',
-  '“Không. Vẫn không :))”':'“Không nha. Vẫn no spoiler =))”',
-  '“Câu hay. Nhưng đừng chọn nó quá lâu nhé.”':'“Câu này hay á. Nhưng đừng ôm cô đơn lâu quá nha.”'
+if(typeof SHOP_ITEMS==='undefined'||typeof game==='undefined')return;
+/* ============ 1. DANH MỤC QUÀ MỞ RỘNG ============ */
+const CAT={
+flowers:'flower',sunflower:'flower',rose:'flower',plant:'flower',cactus:'flower',
+chocolate:'sweet',cake:'sweet',macaron:'sweet',boba:'sweet',cookies:'sweet',icecream:'sweet',
+coffeeGift:'drink',dripbag:'drink',teaset:'drink',thermos:'drink',
+book:'write',notebook:'write',poetry:'write',sketchbook:'write',letter:'write',
+vinyl:'fun',headphones:'fun',concertTicket:'fun',guitarPick:'fun',boardgame:'fun',chess:'fun',gameCard:'fun',filmCam:'fun',
+keychain:'gadget',teddy:'gadget',catPlush:'gadget',scarf:'gadget',umbrella:'gadget',lipstick:'gadget',lantern:'gadget',archModel:'gadget',engineModel:'gadget',soccerBall:'gadget',
+noodles:'snack',chilli:'snack',banhMi:'snack'
 };
-const STYLE={
-  '“K sao.”':'“K sao đâu :))”',
-  '“K sao đâu.”':'“K sao đâu :))”',
-  '“Đc.”':'“Đc chứ :))”',
-  '“Chuẩn.”':'“Chuẩn á.”'
+const MORE_TAGS={flowers:['hoa','flower'],plant:['cây','green'],coffeeGift:['café','specialty coffee'],book:['story','stories','book'],vinyl:['live music'],cake:['dessert'],teddy:['cute'],letter:['stories']};
+const NEWITEMS={
+sunflower:{name:'Hoa hướng dương',icon:'🌻',price:40000,desc:'Một bông to, vàng rực. Hợp với ai thích nắng sớm và những lời chúc tươi tắn.',effects:{comfort:3,interest:3,chemistry:1},tags:['hoa','flower','nắng sớm','cheerful']},
+rose:{name:'Hoa hồng đơn',icon:'🌹',price:80000,desc:'Một bông thôi, nhưng ý nghĩa thì rất rõ. Đừng tặng khi chưa chắc về cảm xúc của mình.',effects:{chemistry:5,interest:3,comfort:1},tags:['hoa','flower','romantic']},
+cactus:{name:'Xương rồng bé',icon:'🌵',price:35000,desc:'Dễ nuôi, dễ thương, đặt cạnh màn hình là hợp. Quà cho người bận rộn.',effects:{comfort:3,interest:2,respect:1},tags:['plant','desk','cây']},
+macaron:{name:'Hộp macaron',icon:'🧁',price:110000,desc:'Sáu chiếc nhiều màu trong hộp xinh. Quà cho người thích đồ ngọt tinh tế.',effects:{chemistry:4,comfort:3,interest:3},tags:['dessert','sweet','cake']},
+boba:{name:'Trà sữa trân châu',icon:'🧋',price:45000,desc:'Ly to, ít đá, nhiều trân châu. Rẻ mà chưa bao giờ thất bại.',effects:{comfort:4,chemistry:2},tags:['trà sữa','tea','sweet']},
+cookies:{name:'Hộp bánh quy bơ',icon:'🍪',price:65000,desc:'Thơm mùi bơ, ăn kèm trà hay café đều hợp.',effects:{comfort:4,interest:2,chemistry:2},tags:['dessert','sweet','snack']},
+icecream:{name:'Kem ốc quế',icon:'🍦',price:25000,desc:'Tặng ngay tại chỗ trước khi kem chảy. Nhỏ nhưng vui.',effects:{comfort:3,chemistry:2},tags:['dessert','sweet']},
+dripbag:{name:'Hộp cà phê phin giấy',icon:'☕',price:70000,desc:'Mười gói pha nhanh. Hợp với người nghiện café nhưng không có thời gian.',effects:{comfort:3,interest:3,respect:1},tags:['coffee','café','black coffee']},
+teaset:{name:'Hộp trà thảo mộc',icon:'🍵',price:90000,desc:'Hoa cúc, gừng và bạc hà. Một món quà dịu cho người cần được nghỉ ngơi.',effects:{comfort:5,respect:2,trust:1},tags:['tea','trà','trà thảo mộc','calm']},
+thermos:{name:'Bình giữ nhiệt',icon:'🧴',price:120000,desc:'Giữ nóng, giữ lạnh, hợp với người hay di chuyển hoặc tập luyện.',effects:{respect:3,comfort:3,trust:2},tags:['gym','coffee','tea','practical']},
+notebook:{name:'Sổ tay bìa da',icon:'📓',price:85000,desc:'Trang giấy dày, có dây buộc. Hợp với người hay ghi chép và thích lên kế hoạch.',effects:{respect:4,consistency:3,interest:2},tags:['sổ tay','writing','notebook','clear plans']},
+poetry:{name:'Tuyển tập thơ',icon:'📖',price:100000,desc:'Một cuốn mỏng để đọc chậm vào buổi chiều. Hợp với người thích câu chữ đẹp.',effects:{respect:4,curiosity:3,comfort:2},tags:['thơ','books','poetry','good stories']},
+sketchbook:{name:'Sổ phác thảo',icon:'🎨',price:90000,desc:'Giấy dày, không sợ màu nước. Quà cho người hay vẽ hoặc thích nghệ thuật.',effects:{respect:4,interest:3,curiosity:2},tags:['illustration','art','sketch']},
+headphones:{name:'Tai nghe nhỏ',icon:'🎧',price:220000,desc:'Món quà đắt hơn mặt bằng chung. Chỉ tặng khi bạn hiểu gu nhạc của người ấy.',effects:{respect:5,interest:4,comfort:3},tags:['music','live music','tech']},
+concertTicket:{name:'Vé mini concert',icon:'🎟️',price:250000,desc:'Một đêm nhạc sống cho hai người. Hợp với người thích tự phát và những lựa chọn táo bạo.',effects:{chemistry:6,interest:5,comfort:2},tags:['concerts','live music','bold choices']},
+guitarPick:{name:'Bộ pick guitar',icon:'🎸',price:50000,desc:'Vài chiếc pick nhiều màu. Nhỏ gọn, hợp cho người chơi nhạc đường phố.',effects:{respect:3,comfort:3,interest:2},tags:['guitar','guitar cũ','music','live music']},
+boardgame:{name:'Board game nhỏ',icon:'🎲',price:180000,desc:'Bộ bài gọn trong túi, chơi hai đến bốn người. Hợp với người thích động não.',effects:{interest:5,compatibility:4,chemistry:2},tags:['board games','games','game','playful']},
+chess:{name:'Bộ cờ tướng mini',icon:'♟️',price:130000,desc:'Bàn gấp, quân gỗ nhỏ. Hợp cho buổi chiều ngồi bên sông.',effects:{respect:5,interest:3,consistency:2},tags:['cờ tướng','games']},
+gameCard:{name:'Thẻ game',icon:'🎮',price:150000,desc:'Thẻ nạp cho một tựa game đang hot. Thực tế và ít khi bị chê.',effects:{interest:4,comfort:3,compatibility:2},tags:['games','game','good interfaces']},
+filmCam:{name:'Máy ảnh film dùng một lần',icon:'📷',price:160000,desc:'Hai mươi bảy tấm, không xem lại được. Hợp với người mê ảnh và phim.',effects:{interest:5,curiosity:4,chemistry:3},tags:['street photography','photography','vintage shops','film','indie films']},
+catPlush:{name:'Mèo bông',icon:'🐱',price:95000,desc:'Mặt hơi ngơ, mềm và đáng yêu. Hợp với người mê mèo.',effects:{comfort:4,chemistry:3,interest:2},tags:['cats','cute']},
+scarf:{name:'Khăn len vintage',icon:'🧣',price:140000,desc:'Màu trầm, mùi hơi cũ nhưng ấm. Hợp với ai thích đồ cổ điển.',effects:{comfort:4,respect:3,chemistry:3},tags:['vintage shops','vintage','cozy']},
+umbrella:{name:'Ô gấp xinh',icon:'☂️',price:90000,desc:'Nhỏ gọn, màu nhã. Hợp với người thích những ngày mưa, hoặc hay quên mang ô.',effects:{comfort:5,respect:2,trust:2},tags:['rain','rainy streets','mưa','mưa phùn','practical']},
+lipstick:{name:'Son dưỡng',icon:'💄',price:150000,desc:'Một thỏi son nhẹ nhàng. Hợp với người hay chăm chút bản thân.',effects:{interest:4,comfort:3,chemistry:3},tags:['mỹ phẩm','beauty']},
+lantern:{name:'Đèn lồng mini',icon:'🏮',price:70000,desc:'Ánh sáng ấm cho những buổi đi dạo đêm.',effects:{comfort:4,chemistry:3,interest:2},tags:['night walks','cozy','calm']},
+archModel:{name:'Mô hình kiến trúc',icon:'🏛️',price:130000,desc:'Một công trình thu nhỏ để lắp ráp. Hợp với người mê hình khối và không gian.',effects:{respect:5,interest:4,curiosity:2},tags:['architecture','model']},
+engineModel:{name:'Mô hình động cơ',icon:'🔧',price:170000,desc:'Tự lắp được, quay được. Hợp với người mê xe máy và máy móc.',effects:{respect:5,interest:4,compatibility:2},tags:['engines','motorbikes','tech']},
+soccerBall:{name:'Quả bóng mini',icon:'⚽',price:100000,desc:'Hợp để tặng kèm một lời rủ đá bóng cuối tuần.',effects:{interest:4,comfort:3,chemistry:2},tags:['đá bóng','gym']},
+noodles:{name:'Hộp mì ăn khuya',icon:'🍜',price:60000,desc:'Mì ly, trứng và xúc xích. Cứu đói lúc nửa đêm, bất ngờ mà hiệu quả.',effects:{comfort:4,interest:2,chemistry:2},tags:['mì gói','late-night noodles','late-night snacks','street food','street snacks','snack']},
+chilli:{name:'Hũ ớt tự làm',icon:'🌶️',price:55000,desc:'Cay thật sự. Chỉ tặng cho người biết ăn cay.',effects:{interest:3,chemistry:3,comfort:2},tags:['spicy food','street food']},
+banhMi:{name:'Ổ bánh mì nóng',icon:'🥖',price:25000,desc:'Giòn rụm, vừa ra lò. Món quà bình dân nhưng đúng giờ thì rất được lòng.',effects:{comfort:3,interest:2},tags:['bánh mì nóng','street food','street snacks']}
 };
-function genz(v){
-  if(typeof v!=='string') return v;
-  if(EXACT[v]) return EXACT[v];
-  let x=v;
-  x=x.replace(/\bMình\b/g,'Mik').replace(/\bmình\b/g,'mik');
-  x=x.replace(/\bTôi\b/g,'Tui').replace(/\btôi\b/g,'tui');
-  x=x.replace(/\bBạn\b/g,'Bn').replace(/\bbạn\b/g,'bn');
-  x=x.replace(/\bKhông\b/g,'K').replace(/\bkhông\b/g,'k');
-  x=x.replace(/\bĐược\b/g,'Đc').replace(/\bđược\b/g,'đc');
-  x=x.replace(/\bHôm nay\b/g,'Hnay').replace(/\bhôm nay\b/g,'hnay');
-  return STYLE[x] || x;
+for(const k in NEWITEMS){if(!SHOP_ITEMS[k])SHOP_ITEMS[k]=NEWITEMS[k];}
+for(const k in CAT){if(SHOP_ITEMS[k])SHOP_ITEMS[k].cat=CAT[k];}
+for(const k in MORE_TAGS){const it=SHOP_ITEMS[k];if(!it)continue;it.tags=it.tags||[];MORE_TAGS[k].forEach(t=>{if(!it.tags.includes(t))it.tags.push(t)});}
+const CATS=[['all','✨ Tất cả'],['flower','💐 Hoa & cây'],['sweet','🍰 Đồ ngọt'],['drink','☕ Trà & café'],['write','📚 Sách & viết'],['fun','🎧 Nhạc & game'],['gadget','🧸 Phụ kiện'],['snack','🍜 Đồ ăn vặt']];
+/* ============ 2. ĐIỀU KIỆN MUA: PHẢI ĐỨNG TRƯỚC TIỆM ============ */
+const money=n=>Number(n).toLocaleString('vi-VN')+'đ';
+function likedBy(n,it){return(it.tags||[]).some(tag=>(n.likes||[]).some(l=>{l=String(l).toLowerCase();return l.indexOf(tag)>=0||tag.indexOf(l)>=0}))}
+function shopState(){
+const p=SERVICE_POINTS&&SERVICE_POINTS.mallGift,h=Math.floor((Number(game.minutes)||0)/60)%24;
+if(!p||game.location!=='mall'||Math.hypot(game.x-p.x,game.y-p.y)>150)return{ok:false,where:false,msg:'🛍 Quà chỉ mua trực tiếp ở Tiệm Quà Pixel (Trung tâm thương mại). Hãy đến đó và ấn nút ✦ Tương tác.'};
+if(h<8||h>=22)return{ok:false,where:true,msg:'🌙 Tiệm Quà Pixel mở cửa 08:00–22:00. Hãy quay lại vào ban ngày.'};
+return{ok:true};}
+window.chShopState=shopState;
+const _op=window.openPanel||openPanel;
+const guardedOpen=function(kind){
+if(kind==='shop'){const s=shopState();if(!s.ok){toast(s.msg);return;}}
+if(kind==='jobs'){const j=SERVICE_POINTS.mallJobs;if(game.location!=='mall'||Math.hypot(game.x-j.x,game.y-j.y)>150){toast('💼 Việc làm nhận trực tiếp tại Trung tâm việc làm (Trung tâm thương mại). Đến đó và ấn nút ✦ Tương tác.');return;}}
+return _op.apply(this,arguments);};
+openPanel=window.openPanel=guardedOpen;
+/* ============ 3. GIAO DIỆN CỬA HÀNG ============ */
+function shopHtml2(){
+const cat=game._shopCat||'all',first=!game._shopGuideSeen;game._shopGuideSeen=true;
+const owned=Object.keys(SHOP_ITEMS).reduce((a,k)=>a+invCount(k),0);
+const list=Object.entries(SHOP_ITEMS).filter(([id,it])=>cat==='all'||it.cat===cat).sort((a,b)=>a[1].price-b[1].price);
+const tabs=CATS.map(c=>`<button class="mini ${c[0]===cat?'primary':''}" data-shop-cat="${c[0]}">${c[1]}</button>`).join('');
+const cards=list.map(([id,it])=>{
+const who=Object.values(NPCS).filter(n=>game.flags&&game.flags.met&&game.flags.met[n.id]&&likedBy(n,it)).map(n=>n.name);
+const hint=who.length?`<small class="shop-fit">♥ Hợp với: ${who.slice(0,4).join(', ')}${who.length>4?' +'+(who.length-4):''}</small>`:`<small class="shop-fit dim">Chưa có ai bạn đã gặp đặc biệt thích món này.</small>`;
+const can=game.money>=it.price;
+return `<div class="shop-card"><div class="shop-icon">${it.icon}</div><div class="shop-main"><strong>${it.name}</strong><span>${it.desc}</span>${hint}<small>${money(it.price)} · đang có ${invCount(id)}</small><button class="mini ${can?'primary':''}" data-buy-gift="${id}" ${can?'':'disabled'}>${can?'Mua · '+money(it.price):'Chưa đủ tiền'}</button></div></div>`}).join('');
+return `<h3>🎁 Tiệm Quà Pixel</h3>
+<div class="shop-top"><span>💰 ${money(game.money)}</span><span>🎒 Quà đang có: ${owned}</span><span>🕗 08:00–22:00</span></div>
+<details class="shop-guide" ${first?'open':''}><summary>📖 Hướng dẫn mua &amp; tặng quà</summary><ol>
+<li><b>Mua tại tiệm:</b> quà chỉ mua trực tiếp ở đây, không mua qua tin nhắn hay điện thoại. Tiệm mở 08:00–22:00.</li>
+<li><b>Chọn đúng gu:</b> dòng <b class="shop-fit-inline">♥ Hợp với</b> cho biết người bạn đã gặp nào thích món đó. Chưa biết gu ai thì hãy trò chuyện, xem mục ♡ Mọi người.</li>
+<li><b>Bấm Mua:</b> tiền bị trừ ngay và quà vào <b>🎁 Túi quà</b>. Giá quà từ 25.000đ đến 250.000đ, món đắt không phải lúc nào cũng tốt hơn.</li>
+<li><b>Tặng quà:</b> mở 📱 Điện thoại → 🎁 Túi quà → chọn người nhận. Mỗi lần tặng là một tình huống nhỏ: chọn cách đưa quà, người nhận phản ứng theo tính cách riêng. Quà đúng gu được cảm tình gấp khoảng 1,6 lần, và mỗi người có một món “đặc biệt” tạo khoảnh khắc riêng.</li>
+<li><b>Dịp đặc biệt:</b> sinh nhật NPC là lúc quà có ý nghĩa nhất. Hãy mua sẵn vài món nhỏ trong túi.</li></ol></details>
+<div class="shop-tabs">${tabs}</div><div class="shop-grid">${cards}</div>`;}
+shopHtml=window.shopHtml=shopHtml2;
+buyGift=window.buyGift=function(id){
+const it=SHOP_ITEMS[id];if(!it)return;
+const s=shopState();if(!s.ok){toast(s.msg);return;}
+if(!spendMoney(it.price))return;
+addGift(id);try{sfx('click')}catch(e){}
+toast(`${it.icon} ${it.name} · -${money(it.price)} · đã vào Túi quà`);
+_op.call(window,'shop');};
+document.addEventListener('click',function(e){
+const t=e.target.closest&&e.target.closest('[data-shop-cat]');
+if(!t)return;e.preventDefault();game._shopCat=t.dataset.shopCat;_op.call(window,'shop');},true);
+/* ============ 4. VẼ TIỆM QUÀ TRONG CẢNH TRUNG TÂM THƯƠNG MẠI ============ */
+window.chDrawShopfront=function(loc){
+if(loc!=='mall'||typeof ctx==='undefined')return;
+const c=ctx,t=performance.now()/1000,h=((Number(game.minutes)||0)/60)%24,nt=h>=18||h<6,open=h>=8&&h<22;
+const INK='#25242b';
+const R=(f,a,b,w,hh)=>{c.fillStyle=f;c.fillRect(Math.round(a),Math.round(b),Math.max(1,Math.round(w)),Math.max(1,Math.round(hh)))};
+const x=340,y=340,W=180,H=86,cx=x+W/2;
+R('rgba(14,16,22,.34)',x+8,y+H-6,W+8,12);
+/* bảng hiệu */
+R(INK,x+22,y-6,5,10);R(INK,x+W-27,y-6,5,10);
+R(INK,x+8,y-32,W-16,28);R(nt?'#8a4a6c':'#7a3d5c',x+11,y-29,W-22,22);R('rgba(255,255,255,.18)',x+11,y-29,W-22,3);
+const bx=x+16,by=y-24;R('#d9534f',bx,by+3,12,10);R('#ffe08a',bx+5,by+3,2,10);R('#ffe08a',bx,by+7,12,2);R('#ffe08a',bx+2,by,4,4);R('#ffe08a',bx+6,by,4,4);
+c.save();c.font='900 11px system-ui,Arial';c.textAlign='center';c.textBaseline='middle';c.fillStyle='rgba(0,0,0,.35)';c.fillText('TIỆM QUÀ PIXEL',cx+7,y-17);c.fillStyle='#ffe9a8';c.fillText('TIỆM QUÀ PIXEL',cx+7,y-18);c.restore();
+/* thân nhà */
+R(INK,x,y,W,H);R('#f0c9d2',x+3,y+3,W-6,H-6);R('rgba(255,255,255,.2)',x+3,y+3,4,H-6);R('rgba(0,0,0,.12)',x+W-9,y+3,5,H-6);
+R('#8b4a68',x-4,y-2,W+8,8);R('rgba(255,255,255,.25)',x-4,y-2,W+8,2);
+/* mái hiên sọc */
+const n=Math.ceil((W+8)/12);
+for(let i=0;i<n;i++){const col=i%2?'#fff3f5':'#e0607f';R(col,x-4+i*12,y+8,12,16);R(col,x-4+i*12+1,y+24,10,4);R('rgba(0,0,0,.08)',x-4+i*12,y+8,12,2)}
+R('rgba(0,0,0,.18)',x,y+29,W,4);
+/* cửa sổ + kệ quà */
+function win(wx,wy,ww,wh,kind){
+R(INK,wx-3,wy-3,ww+6,wh+6);R(nt?'#ffe3a0':'#a9d8e2',wx,wy,ww,wh);
+if(nt)R('rgba(255,225,140,.18)',wx-6,wy-5,ww+12,wh+12);else{R('rgba(255,255,255,.3)',wx+3,wy+2,5,wh-4);R('rgba(255,255,255,.18)',wx+11,wy+2,2,wh-4)}
+R('#8a6f58',wx,wy+17,ww,3);R('#8a6f58',wx,wy+wh-6,ww,3);
+if(kind===0){
+/* gấu bông */R('#b9824f',wx+4,wy+6,10,9);R('#b9824f',wx+3,wy+4,3,3);R('#b9824f',wx+12,wy+4,3,3);R(INK,wx+6,wy+9,1,1);R(INK,wx+11,wy+9,1,1);R('#d9a874',wx+7,wy+12,4,2);
+/* hộp quà */R('#4a8fd9',wx+20,wy+8,13,9);R('#ffe08a',wx+25,wy+8,2,9);R('#ffe08a',wx+20,wy+12,13,2);R('#ffe08a',wx+22,wy+5,4,3);R('#ffe08a',wx+27,wy+5,4,3);
+/* hoa */R('#4f8a52',wx+41,wy+10,2,7);R('#e86f9a',wx+39,wy+5,6,5);R('#f2d16e',wx+46,wy+8,5,4);R('#4f8a52',wx+48,wy+12,2,5);
+/* tầng dưới: sách + đĩa */R('#4a8a6a',wx+4,wy+25,14,4);R('#d0a24f',wx+4,wy+29,14,4);R(INK,wx+24,wy+23,10,10);R('#e8e8ea',wx+27,wy+26,4,4);R('#e05a5a',wx+38,wy+27,12,6);R('#fff',wx+38,wy+24,12,4);
+}else{
+/* bánh */R('#f3d7b5',wx+4,wy+9,14,8);R('#fff',wx+4,wy+6,14,4);R('#e0405a',wx+10,wy+3,3,3);
+/* socola */R('#5a3524',wx+24,wy+9,12,8);R('#8a5a3c',wx+25,wy+10,4,3);R('#ffd36e',wx+24,wy+12,12,1);
+/* mèo bông */R('#ddd',wx+41,wy+8,10,9);R('#ddd',wx+41,wy+5,3,4);R('#ddd',wx+48,wy+5,3,4);R(INK,wx+43,wy+11,1,1);R(INK,wx+48,wy+11,1,1);
+/* đèn lồng + chậu cây */R('#e0607f',wx+5,wy+24,9,10);R('#ffd36e',wx+8,wy+22,3,2);R('#8a5a3c',wx+22,wy+30,12,5);R('#4f8a52',wx+24,wy+24,3,6);R('#6fb36b',wx+28,wy+26,3,4);R('#c0392b',wx+40,wy+27,12,7);R('#fff',wx+44,wy+27,2,7);
 }
-function fix(arr){
-  if(!Array.isArray(arr)) return;
-  for(const item of arr){
-    if(!item || typeof item!=='object') continue;
-    if(typeof item.text==='string') item.text=genz(item.text);
-    if(typeof item.reply==='string') item.reply=genz(item.reply);
-    if(Array.isArray(item.choices)) fix(item.choices);
-  }
-}
-if(typeof NPC_DIALOGUES!=='undefined') for(const id of Object.keys(NPC_DIALOGUES)) fix(NPC_DIALOGUES[id]);
-if(typeof PHONE_SCENARIOS!=='undefined') for(const sc of PHONE_SCENARIOS) if(sc&&Array.isArray(sc.choices)) fix(sc.choices);
-if(typeof game!=='undefined') game._dialogueTextPatch='genz-v1';
-console.log('[City Hearts] Dialogue-only Gen Z/teencode patch applied.');
-})();
-</script>
+R(INK,wx+ww/2,wy,1,wh);}
+win(x+12,y+38,54,38,0);win(x+W-66,y+38,54,38,1);
+/* cửa chính */
+R(INK,cx-18,y+34,36,H-34);R(nt?'#ffd98a':'#9ccfe0',cx-15,y+37,30,H-39);R(INK,cx,y+37,1,H-39);R('rgba(255,255,255,.28)',cx-13,y+39,4,H-44);
+R('#e8c050',cx-3,y+62,2,6);R('#e8c050',cx+2,y+62,2,6);
+/* biển MỞ / ĐÓNG */
+const glow=open&&nt&&Math.sin(t*3)>-.2;
+R(INK,cx-12,y+44,24,12);R(open?'#2f8f5b':'#b83a3a',cx-10,y+46,20,8);
+if(glow)R('rgba(120,255,170,.25)',cx-15,y+42,30,16);
+c.save();c.font='900 7px system-ui,Arial';c.textAlign='center';c.textBaseline='middle';c.fillStyle='#fff';c.fillText(open?'MỞ':'ĐÓNG',cx,y+50.5);c.restore();
+/* thảm chân cửa */
+R('#a5483f',cx-22,y+H-3,44,5);R('#d9695f',cx-20,y+H-2,40,1);
+if(nt)R('rgba(255,225,140,.12)',cx-60,y+H+2,120,12);
+/* chậu hoa bên trái */
+R('#8a5a3c',x-20,y+H-16,16,16);R(INK,x-21,y+H-17,18,2);R('#4f8a52',x-17,y+H-26,2,10);R('#4f8a52',x-11,y+H-28,2,12);
+R('#e86f9a',x-19,y+H-31,6,6);R('#f2d16e',x-13,y+H-33,6,6);R('#e86f9a',x-9,y+H-27,5,5);
+/* bóng bay bên phải */
+for(let i=0;i<3;i++){const bxx=x+W+10+i*9,sw=Math.sin(t*1.5+i)*2,top=y+H-70-(i%2)*8;
+R('rgba(40,40,40,.5)',bxx+3+sw/2,top+16,1,y+H-4-top-16);
+R(['#e0607f','#ffd36e','#5aa0d9'][i],bxx+sw,top,8,12);R('rgba(255,255,255,.4)',bxx+sw+1,top+1,2,4);}
+/* Trung tâm việc làm */
+const X=190,Y=346,JW=130,JH=80,jx=X+JW/2;
+R('rgba(14,16,22,.34)',X+6,Y+JH-6,JW+6,12);
+R(INK,X+4,Y-30,JW-8,26);R('#2f5f8f',X+7,Y-27,JW-14,20);R('rgba(255,255,255,.18)',X+7,Y-27,JW-14,3);
+c.save();c.font='900 9px system-ui,Arial';c.textAlign='center';c.textBaseline='middle';c.fillStyle='rgba(0,0,0,.35)';c.fillText('TRUNG TÂM VIỆC LÀM',jx,Y-16);c.fillStyle='#d8ecff';c.fillText('TRUNG TÂM VIỆC LÀM',jx,Y-17);c.restore();
+R(INK,X,Y,JW,JH);R('#cfe0ef',X+3,Y+3,JW-6,JH-6);R('rgba(255,255,255,.25)',X+3,Y+3,4,JH-6);
+for(let i=0;i<11;i++){R(i%2?'#fff':'#3f78b5',X-3+i*12,Y+6,12,13);R('rgba(0,0,0,.1)',X-3+i*12,Y+19,12,3)}
+const jw=(wx,wy,ww,wh)=>{R(INK,wx-3,wy-3,ww+6,wh+6);R(nt?'#ffe3a0':'#a9d8e2',wx,wy,ww,wh);if(!nt)R('rgba(255,255,255,.3)',wx+3,wy+2,4,wh-4)};
+jw(X+10,Y+32,34,30);R('#a77b4f',X+12,Y+34,30,26);['#fff3a8','#ffd0d8','#bfe6ff','#fff3a8'].forEach((cl,i)=>{R(cl,X+14+(i%2)*14,Y+37+(i>>1)*12,11,9);R('#d9534f',X+19+(i%2)*14,Y+36+(i>>1)*12,2,2)});
+jw(X+JW-44,Y+32,34,30);R('#f2c14e',X+JW-34,Y+40,14,14);R('#c9962a',X+JW-31,Y+43,8,8);R('#f2c14e',X+JW-29,Y+45,4,4);R('#8a5a3c',X+JW-39,Y+54,24,6);
+R(INK,jx-12,Y+34,24,JH-34);R(nt?'#ffd98a':'#9ccfe0',jx-9,Y+37,18,JH-39);R(INK,jx,Y+37,1,JH-39);
+R(INK,jx-14,Y+24,28,8);R('#2f8f5b',jx-12,Y+26,24,4);
+c.save();c.font='900 6px system-ui,Arial';c.textAlign='center';c.textBaseline='middle';c.fillStyle='#fff';c.fillText('TUYỂN',jx,Y+28.5);c.restore();
+R('#3f78b5',jx-18,Y+JH-3,36,5);
+};
+/* ============ 5. CSS ============ */
+const st=document.createElement('style');st.id='chShopV2Style';
+st.textContent=`.shop-top{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 8px}.shop-top span{background:#fff7df;border:2px solid #c19b67;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:800;color:#4d3829}
+.shop-guide{margin:0 0 9px;background:#fff7df;border:2px solid #c19b67;border-radius:10px;padding:8px 10px;color:#3a2c20;font-size:12px;line-height:1.45}.shop-guide summary{cursor:pointer;font-weight:900}.shop-guide ol{margin:7px 0 2px 18px;padding:0}.shop-guide li{margin:4px 0}
+.shop-tabs{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 9px}.shop-tabs .mini{padding:5px 8px;font-size:11px}
+.shop-fit{display:block;color:#a13a62;font-weight:800;font-size:10.5px;margin:2px 0}.shop-fit.dim{color:#8a7a6a;font-weight:600}
+.shop-fit-inline{color:#a13a62}.shop-card button[disabled]{opacity:.5;cursor:not-allowed}`;
+document.head.appendChild(st);
+console.log('[City Hearts] Shop v2 loaded:',Object.keys(SHOP_ITEMS).length,'items');
+})();</script>
+
+<script id="chGiftScenes">(function(){'use strict';
+if(typeof giveGift==='undefined')return;
+/* [hợp gu, bình thường, món đặc biệt (khoảnh khắc riêng)] */
+const V={
+linh:['Đúng thứ tui đang cần luôn. Bn để ý kỹ hơn tui tưởng đó.','Cảm ơn bn nha, tui sẽ để chỗ dễ thấy.','Chiếc ô này… hôm trước tui than hay quên ô mà bn nhớ thật hả? Mưa lần sau mình đi chung ô nha.'],
+minh:['Ồ, gu này tui thích. Hôm nào chơi một ván, tui không nhường đâu.','Cảm ơn bn. Tui coi đây là “đầu tư” cho tình bạn =))','Board game hả?! Tui đang thèm có người chơi cùng. Tối thứ bảy rảnh không, tui thách bn.'],
+hana:['Nghe đã ghê! Đúng gu tui, bn biết chọn quá đi.','Dễ thương ghê, cảm ơn bn nha.','Vé concert?! Bn rủ tui đi thật hả? Tui cứ nghĩ bn là kiểu ngồi nhà cơ.'],
+an:['Tui sẽ để ngay trên bàn vẽ. Cảm ơn bn đã nhớ.','Cảm ơn nhé. Tui hơi ngại nhưng vui lắm.','Mô hình này tinh quá. Tui muốn lắp cùng bn, mỗi lần một tầng thôi, chậm cũng được.'],
+mai:['Trời, đúng món tui mê! Để tui mang xuống quán, mình ăn chung.','Cảm ơn bn. Tui sẽ pha cho bn một ly đền ơn.','Tui bán đồ ngọt cả ngày mà vẫn xúc động khi được tặng. Cảm ơn bn thật nhiều.'],
+kai:['Quá chuẩn luôn! Mai tui mang đi tập liền.','Ơ cảm ơn nha, tui xài ngay!','Bình giữ nhiệt hả? Bn để ý tui hay xách trà sữa đi tập hả. Tui xúc động thật đó.'],
+vy:['Bn có mắt nhìn đó. Tui sẽ chụp bn bằng cái này đầu tiên.','Xinh ghê. Cảm ơn bn, tui để vào túi máy.','Máy film… tui chỉ chụp những khoảnh khắc người ta không để ý. Tui sẽ chụp bn lúc không để ý nha.'],
+quan:['Hợp gu tui quá. Sáng mai bn ghé quán, tui mở nhạc cho bn nghe.','Cảm ơn bn. Tui không nói nhiều nhưng tui vui.','Đĩa than này tui tìm lâu lắm. Sáng mai bn ghé quán, tui mở nó cho bn nghe đầu tiên.'],
+thao:['Gọn, đẹp, hợp lý. Đúng gu tui, cảm ơn bn.','Cảm ơn bn. Tui ghi bn vào danh sách “người tử tế” nha.','Bn tặng trà vì thấy tui bận quá hả? Tui sẽ nghỉ năm phút, uống cùng bn nếu bn rảnh.'],
+duy:['Gu này đúng bài! Bn tặng đúng thứ tui đang cần.','Cảm ơn bn nha, tui dùng thử.','Thẻ game… bn nhớ tui than ví mỏng hả. Tối nay mình co-op nha, tui bao mì.'],
+nora:['Chuẩn gu tui quá. Tối nay tui nghe thử, mai kể bn nghe cảm giác.','Cảm ơn bn. Tui giữ trong túi đàn.','Tai nghe tốt vậy… nhưng nhớ là nghe chung mới vui nha.'],
+tung:['Thơm quá! Đúng gu tui, tui nướng đáp lễ bn.','Ơ, bn tặng tui hả? Cảm ơn bn, tui ăn thử.','Tặng đồ ăn cho thợ làm bánh là liều lắm. Mà ngon thiệt! Tui làm bánh đáp lễ bn nha.'],
+ivy:['Dễ thương quá! Tui sẽ vẽ nó vào sổ ngay.','Cảm ơn bn nha, tui đặt cạnh bàn vẽ.','Mèo bông… sao bn biết tui mê mèo? Tui sẽ đặt tên cho nó rồi vẽ bn bên cạnh.'],
+phuc:['Chuẩn bài luôn. Giao hàng mệt mấy cũng đỡ.','Cảm ơn bn nha, tui nhận liền.','Mô hình động cơ… chạy xe cả ngày mà tui vẫn mê máy móc. Cuối tuần mình ghé xưởng Bảo lắp chung nha.'],
+huyen:['Cảm giác như bn đọc được tui. Cảm ơn bn nhiều.','Cảm ơn bn nha, tui để vào túi viết bài.','Thư viết tay… giữa thời nhắn tin mà bn viết tay cho tui sao? Tui sẽ giữ rất lâu.'],
+son:['Bn có gu đó. Tui sẽ nhớ bn khi nhớ lại đêm nay.','Cảm ơn bn nha, tui để trong ba lô.','Cà phê đen pha sẵn… đúng thứ tui cần lúc dựng phim đêm. Cảm ơn bn đã nhớ.'],
+bao:['Cay đúng ý tui! Bn chịu chơi đó.','Cảm ơn nha, tui sẽ thử.','Hũ ớt tự làm… cay thật không? Tui thích bn kiểu này, chịu chơi, không nhạt.'],
+chi:['Cuốn mỏng mà nặng tình. Cảm ơn bn đã nhớ gu tui.','Cảm ơn bn. Tui sẽ đọc từ từ nhé.','Tuyển tập thơ… tặng giữa buổi chiều mưa là chuẩn nhất. Tui sẽ đọc cho bn một bài.'],
+lan:['Hoa đẹp vậy! Chị cắm vào bình nước ngay.','Cảm ơn bn nha, chị mang vào tiệm.','Hướng dương cho người bán hoa? Bn biết chị dậy sớm vì mấy bông này chứ. Cảm ơn bn nhiều lắm.'],
+hung:['Đúng khẩu vị anh! Bn đúng là khách quen quý.','Ơ cảm ơn nha, lần sau anh bớt cho bn một ổ.','Bán bánh mì cả đời giờ có người tặng lại… Từ giờ bn tới là anh làm ổ nóng nhất cho.'],
+trang:['Thứ này dùng được thật, tui thích. Cảm ơn bn.','Cảm ơn bn. Tui giữ gọn gàng.','Sổ tay… bn biết tui hay ghi chú cho khách đủ thứ hả? Tui sẽ ghi tên bn lên trang đầu.'],
+long:['Đúng thứ thầy thích. Chiều sông, bn ghé chơi một ván nhé.','Cảm ơn con. Thầy vui lắm.','Cờ tướng mini… lâu lắm mới có người chơi cùng. Chiều nay bên sông, thầy đợi bn nhé.'],
+dung:['Quá hợp ca đêm luôn! Cảm ơn bn nha.','Cảm ơn bn nha, tui mang theo.','Mì ly lúc nửa đêm… ca đêm một mình mà có người nhớ tui ăn gì. Tui nhớ ơn đó.'],
+yen:['Trời, đúng loại tui thích! Bn nhớ tui hả, sướng ghê.','Cảm ơn bn! Tui sẽ khoe với đồng nghiệp.','Son dưỡng… bn tinh ý ghê. Tui sẽ nhớ tên bn lâu hơn mọi người nữa.'],
+khoa:['Chuẩn gu luôn. Bn nghe tui đàn thì tui đàn riêng cho bn.','Cảm ơn bn nha, tối nay tui dùng.','Bn là người dừng lại nghe tui đàn, giờ lại tặng pick. Tối nay tui đàn một bài riêng cho bn.'],
+tu:['Bn chu đáo quá! Ngọc cảm ơn nhiều nha.','Cảm ơn bn. Bn là người biết chào hỏi, Ngọc quý lắm.','Xương rồng bé… để trên quầy chắc đẹp. Ngọc sẽ nhớ bn mỗi lần nhìn thấy nó.']};
+const SIG={linh:'umbrella',minh:'boardgame',hana:'concertTicket',an:'archModel',mai:'macaron',kai:'thermos',vy:'filmCam',quan:'vinyl',thao:'teaset',duy:'gameCard',nora:'headphones',tung:'cookies',ivy:'catPlush',phuc:'engineModel',huyen:'letter',son:'dripbag',bao:'chilli',chi:'poetry',lan:'sunflower',hung:'banhMi',trang:'notebook',long:'chess',dung:'noodles',yen:'lipstick',khoa:'guitarPick',tu:'cactus'};
+const OPEN={flower:'Hoa hả? Sao tự dưng…',sweet:'Ơ, đồ ngọt kìa…',drink:'Là thứ để uống hả…',write:'Một món để đọc, để viết hả…',fun:'Đây là đồ chơi hay đồ để nghe vậy…',gadget:'Cái này dễ thương ghê…',snack:'Mùi gì mà thơm vậy…'};
+const WAY=[
+['Nói thật: “Mình thấy món này hợp với bạn.”',{trust:2,respect:1},'Bn nói thẳng vậy là tui thấy yên tâm.'],
+['Đùa: “Đi ngang tiệm thấy hợp nên mua, đừng nghĩ nhiều :))”',{chemistry:2,interest:1},'Kkk, “đi ngang” hả? Ừ ừ, tui tin bn =))'],
+['Đặt xuống nhẹ nhàng: “Để dành cho bạn, không cần trả lời liền.”',{comfort:2,respect:1},'Không cần vội cũng được. Cảm ơn bn đã tế nhị.']];
+const has=(n,it,k)=>(it.tags||[]).some(t=>(n[k]||[]).some(l=>{l=String(l).toLowerCase();return l.includes(t)||t.includes(l)}));
+giveGift=window.giveGift=function(npcId,itemId){
+const n=NPCS[npcId],it=SHOP_ITEMS[itemId];if(!n||!it||invCount(itemId)<=0)return;
+const log=game.giftLog=game.giftLog||{},lg=log[npcId]=log[npcId]||{},rep=lg[itemId]||0;
+const sig=SIG[npcId]===itemId&&!!V[npcId],liked=sig||has(n,it,'likes'),bad=!liked&&has(n,it,'dislikes'),v=V[npcId]||['Cảm ơn bn, tui thích lắm.','Cảm ơn bn nha.','Cảm ơn bn nhiều.'];
+closePanel();
+const lead=(rep?`(Bạn đã tặng ${n.name} món này rồi.) `:'')+`${n.name} nhìn ${it.icon} ${it.name} bạn đưa. “${OPEN[it.cat]||'Ơ, cho tui hả?'}”`;
+openDialogue(n.name+'\u200b',lead,WAY.map(w=>({text:w[0],onChoose(){
+if(invCount(itemId)<=0){closeDialogue();return;}
+game.inventory[itemId]--;game.inventory.giftCount=Math.max(0,(game.inventory.giftCount||0)-1);lg[itemId]=rep+1;
+let ch={...it.effects};
+if(bad)ch={comfort:1,trust:1};else if(liked)for(const k in ch)ch[k]=Math.round(ch[k]*1.6);else{ch.comfort=Math.max(1,Math.round((ch.comfort||0)*.55));ch.chemistry=Math.max(0,Math.round((ch.chemistry||0)*.5));}
+for(const k in w[1])ch[k]=(ch[k]||0)+w[1][k];
+if(sig&&!rep){ch.chemistry=(ch.chemistry||0)+4;ch.trust=(ch.trust||0)+3;}
+if(rep)for(const k in ch)ch[k]=Math.max(1,Math.round(ch[k]/2));
+changeRel(npcId,ch);
+const line=bad?'Ơ… cảm ơn bn. Món này không hợp gu tui lắm, nhưng tui biết bn có lòng.':sig&&!rep?v[2]:rep?'Bn lại tặng nữa hả? Tui vui, nhưng đừng tốn tiền vì tui hoài nha.':liked?v[0]:v[1];
+remember(npcId,sig&&!rep?`nhận món quà đặc biệt: ${it.name.toLowerCase()} ${it.icon}`:`được bạn tặng ${it.name.toLowerCase()} ${it.icon}`,bad?'neutral':'positive',['gift',...(it.tags||[])]);
+game.dailyStats.social=(game.dailyStats.social||0)+1;
+if(sig&&!rep){game.flags.giftSig=game.flags.giftSig||{};game.flags.giftSig[npcId]=itemId;addPhone(n.name,`“${v[2].split('. ')[0].replace(/\.$/,'')}. Cảm ơn bn nha ${it.icon}”`);toast(`✨ Khoảnh khắc đặc biệt với ${n.name}`);}
+else toast(`${it.icon} Đã tặng ${n.name} · ${bad?'hơi lệch gu':liked?'đúng gu 👀':'một bất ngờ nhỏ :))'}`);
+openDialogue(n.name+'\u200b',`${w[2]} ${line}`,[{text:'Cảm ơn nhé',onChoose(){closeDialogue();openPanel('gifts')}}]);}})));};
+const g=document.querySelector('#chShopV2');
+console.log('[City Hearts] Gift scenes loaded for',Object.keys(V).length,'NPCs');
+})();</script>
 </body>
 </html>
